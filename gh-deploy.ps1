@@ -6,6 +6,7 @@ Try
     git add dist -f
     git commit -m "deploying..."
     git subtree push --prefix dist origin gh-pages
+    Remove-Item dist
 }
 Finally
 {
