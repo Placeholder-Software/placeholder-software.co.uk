@@ -26,11 +26,14 @@ body {
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
   position: relative;
   font-family: Bangers, cursive;
+  margin-bottom: 1em;
 }
 
 .header .skew:before {
@@ -94,15 +97,27 @@ body {
     background: url("../images/unity.png") #333333 no-repeat 95% 50%;
 }
 
-@media only screen and (max-width : 650px) {
-  .header-callout {
-      clear: both;
-      box-shadow: none;
-      width: 100%;
-      text-align: center;
-      margin-right: 0;
-      border-radius: 0;
-  }
+#sidebar {
+    background: #333333;
+    text-align: center;
+    border-radius: 0 7px 7px 0;
+    width: inherit;
+    max-width: 300px;
+    font-weight: bold;
+}
+
+#sidebar.affix {
+    width: inherit;
+}
+
+.nav > li > a {
+    color: #eee;
+    font-family: sans-serif;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #444;
 }
 
 .nav-options-container {
@@ -112,32 +127,34 @@ body {
   top: 3em;
 }
 
-
-
-
-
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
+@media screen and (max-width: 768px) {
   .header {
-    margin-bottom: 30px;
+    background: $primary-color;
+    margin: 0;
   }
 
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  .header .skew:before {
+    display: none;
+  }
+
+  .affix {
+    position: inherit;
+  }
+
+  #sidebar {
+    border-radius: 0;
+    background: #333333;
+    text-align: center;
+    width: 100%;
+    max-width: none;
+  }
+
+  .header-callout {
+      clear: both;
+      box-shadow: none;
+      width: 100%;
+      text-align: center;
+      margin-right: 0;
+      border-radius: 0;
   }
 }
