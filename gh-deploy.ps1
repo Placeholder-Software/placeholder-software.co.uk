@@ -8,7 +8,8 @@ Try
         gulp
         git add dist -f
         git commit -m "deploying..."
-        git subtree push --prefix dist origin gh-pages
+        $magic = git subtree split --prefix dist gh-pages
+        git subtree push origin $magic:gh-pages --force
         Remove-Item dist -Recurse
     }
 }
