@@ -4,6 +4,7 @@ Try
     $ckerr = git checkout gh-deploy
     if ($?)
     {
+        git reset master --hard
         gulp
         git add dist -f
         git commit -m "deploying..."
