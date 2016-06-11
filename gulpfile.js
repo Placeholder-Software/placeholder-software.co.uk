@@ -4,6 +4,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
+const template = require('gulp-template');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -59,6 +60,7 @@ gulp.task('lint:test', () => {
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
+    .pipe(template({name: 'Sindre'}))
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
@@ -113,7 +115,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
-
+  
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);

@@ -85,6 +85,12 @@ body {
     color: #eee;
 }
 
+a.header-callout:hover, a.header-callout:focus {
+    text-decoration: none;
+    background-color: #444;
+    color: #eee;
+}
+
 .header-callout.reddit {
     background: url("../images/reddit-32x32.png") #333333 no-repeat 95% 50%;
 }
