@@ -1,23 +1,52 @@
 @import "variables.scss";
 
-.site-header {
+.navbar {
   background-color: $dark-color;
-  z-index: 2;
-  position: fixed;
-  width: 100%;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  border-radius: 0;
 
-  .site-header-nav {
-    float: right;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.15em;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
 
-    .site-header-nav-item {
-      padding-right: 2em;
-      font-family: Roboto, sans-serif;
-      font-weight: bold;
+  border: none;
+
+  margin-bottom: 0;
+
+  .navbar-brand {
+    font-family: Michroma, sans-serif;
+    color: $primary-color;
+    font-size: 3vmin;
+  }
+
+  .nav {
+    li {
+      a {
+        color: $mid-color;
+      }
     }
   }
+}
+
+.site-title-container {
+    z-index: 1;
+    width: 100%;
+    background-color: $primary-color;
+    font-family: Bangers, sans-serif;
+    font-size: 4vw;
+}
+
+.bg-color-polyline {
+  fill: $bg-color;
+}
+
+.site-title {
+    display: inline-block;
+    padding-left: 0.35em;
+
+    @at-root h1#{&} {
+      font-size: 2em;
+    }
+
+    @at-root h2#{&} {
+      font-size: 1.25em;
+    }
 }

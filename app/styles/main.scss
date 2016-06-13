@@ -9,11 +9,17 @@ $icon-font-path: '../fonts/';
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 @import url(https://fonts.googleapis.com/css?family=Bangers);
 
+@import "variables.scss";
+
 a {
     &:hover {
         text-shadow: 0 0 1px;
         text-decoration: none;
     }
+}
+
+body {
+  background-color: $bg-color;
 }
 
 @import "header.scss";
