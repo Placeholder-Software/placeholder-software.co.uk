@@ -1,0 +1,23 @@
+@import "variables.scss";
+
+.site-header {
+  background-color: $dark-color;
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  .site-header-nav {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.15em;
+
+    .site-header-nav-item {
+      padding-right: 2em;
+      font-family: Roboto, sans-serif;
+      font-weight: bold;
+    }
+  }
+}
