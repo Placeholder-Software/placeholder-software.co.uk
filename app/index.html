@@ -55,14 +55,22 @@
 
     <header class="site-title-container">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row site-alert-row collapse in" id="header-alert" data-toggle="collapse" data-target="#header-alert">
+          <div class="col-xs-11 text-center">
+            Alert! It's Wednesday
+          </div>
+          <div class="col-xs-1 text-center">
+            <span>&times;</span>
+          </div>
+        </div>
+        <div class="row site-title-row">
           <h1 class="site-title">DISSONANCE</h1>
           <h2 class="site-title">Unity Voice Chat</h2>
         </div>
         <div class="row">
           <div class="column-xs-12" style="height: 0.5em">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" style="float:left">
-              <polyline points="100,0, 0,100 100,100" class="bg-color-polyline" />
+              <polyline points="0,0, 0,100 100,0" class="splash-color-polyline" />
             </svg>
           </div>
         </div>
@@ -71,21 +79,10 @@
 
     <div class="container main-content">
       <div class="row">
-        <div class="col-xs-12">
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
+        <div class="col-xs-12" data-toggle="collapse" data-target="#big-content">
+          Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />
+        </div>
+        <div class="col-xs-12 collapse in" id="big-content">
           Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
           Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
           Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
@@ -107,17 +104,18 @@
       </div>
     </div>
 
-    <footer class="navbar navbar-fixed-bottom">
+    <footer class="navbar">
       <div class="container">
         <div class="row underline-links">
-          <div class="col-sm-4">
+          <div class="col-xs-6 col-sm-4">
             <h3>Community</h3>
             <ul class="footer-list">
               <li><a href="">Submit an Issue</a></li>
               <li><a href="">Discuss</a></li>
+              <li><a href="mailto:admin@placeholder-software.co.uk">Contact Us</a></li>
             </ul>
           </div>
-          <div class="col-sm-4">
+          <div class="col-xs-6 col-sm-4">
             <h3>Network</h3>
             <ul class="footer-list">
               <li><a href="">Documentation</a></li>
@@ -125,7 +123,7 @@
               <li><a href="">Store</a></li>
             </ul>
           </div>
-          <div class="col-sm-4">
+          <div class="col-xs-12 col-sm-4">
             <h3>Site</h3>
             <p class="footer-list">
               Site built by <a href="http://martindevans.me/">Martin Evans</a> with <a href="https://getbootstrap.com/">Bootstrap</a> and <a href="https://hexo.io/">Hexo</a>.

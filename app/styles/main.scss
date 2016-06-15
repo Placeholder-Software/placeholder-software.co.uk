@@ -23,11 +23,6 @@ a {
   }
 }
 
-body {
-  background-color: $bg-color;
-  font-family: Roboto, sans-serif;
-}
-
 @import "header.scss";
 @import "body.scss";
 @import "footer.scss";

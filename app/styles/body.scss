@@ -1,5 +1,14 @@
 @import "variables.scss";
 
+body {
+  background-color: $bg-color;
+  font-family: Roboto, sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
 .main-content {
-  
+
 }
