@@ -4,22 +4,30 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Michroma);
-@import url(https://fonts.googleapis.com/css?family=Inconsolata);
-@import url(https://fonts.googleapis.com/css?family=Bangers);
+@import url(https://fonts.googleapis.com/css?family=Roboto);      // Main font
+@import url(https://fonts.googleapis.com/css?family=Michroma);    // Placeholder Software branding
+@import url(https://fonts.googleapis.com/css?family=Inconsolata); // Footer and code
+@import url(https://fonts.googleapis.com/css?family=Bangers);     // Big title
 
 @import "variables.scss";
 
 a {
     &:hover {
-        text-shadow: 0 0 1px;
         text-decoration: none;
     }
 }
 
+.underline-links {
+  a {
+      text-decoration: underline;
+  }
+}
+
 body {
   background-color: $bg-color;
+  font-family: Roboto, sans-serif;
 }
 
 @import "header.scss";
+@import "body.scss";
+@import "footer.scss";

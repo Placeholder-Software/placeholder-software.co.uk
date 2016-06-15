@@ -22,6 +22,10 @@
       a {
         color: $mid-color;
       }
+
+      a:hover, a:focus {
+        color: $light-color;
+      }
     }
   }
 }

@@ -1,0 +1,20 @@
+@import "variables.scss";
+
+.navbar-fixed-bottom {
+  padding-bottom: 4em;
+  color: $mid-color;
+  font-family: Inconsolata, monospace;
+
+  a {
+    color: $mid-color;
+  }
+
+  a:hover, a:focus {
+    color: $light-color;
+  }
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 1em;
+}
