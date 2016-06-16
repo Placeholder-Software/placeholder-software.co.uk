@@ -1,10 +1,10 @@
-// generated on 2016-06-08 using generator-webapp 2.1.0
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const template = require('gulp-template');
+const nunjucksRender = require('gulp-nunjucks-render');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -58,13 +58,24 @@ gulp.task('lint:test', () => {
     .pipe(gulp.dest('test/spec/**/*.js'));
 });
 
+gulp.task('nunjucks', function() {
+  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+  .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+  .pipe(gulp.dest('app'))
+});
+
 gulp.task('html', ['styles', 'scripts'], () => {
-  return gulp.src('app/*.html')
-    .pipe(template({name: 'Sindre'}))
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+    .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+    .pipe($.useref())
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe(gulp.dest('.tmp'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -98,12 +109,16 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
+gulp.task('reload', () => {
+    reload();
+});
+
+gulp.task('serve', ['html', 'styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['.tmp', 'app'],
+      baseDir: ['.tmp'],
       routes: {
         '/bower_components': 'bower_components'
       }
@@ -111,11 +126,15 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   });
 
   gulp.watch([
-    'app/*.html',
+    'app/pages/**/*.+(html|nunjucks)',
+    'app/templates/**/*.+(html|nunjucks)',
     'app/images/**/*',
-    '.tmp/fonts/**/*'
+    '.tmp/fonts/**/*',
+    '.tmp/*'
   ]).on('change', reload);
   
+  gulp.watch('app/pages/**/*.+(html|nunjucks)', ['html', 'reload']);
+  gulp.watch('app/templates/**/*.+(html|nunjucks)', ['html', 'reload']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);

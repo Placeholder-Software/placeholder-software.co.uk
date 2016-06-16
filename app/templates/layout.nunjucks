@@ -15,11 +15,11 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../../dist/styles/main.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="../../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
@@ -78,30 +78,8 @@
     </header>
 
     <div class="container main-content">
-      <div class="row">
-        <div class="col-xs-12" data-toggle="collapse" data-target="#big-content">
-          Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />Intro!<br />
-        </div>
-        <div class="col-xs-12 collapse in" id="big-content">
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-          Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />Hello!<br />
-        </div>
-      </div>
+<!-- You write code for this content block in another file -->
+{% block content %} {% endblock %}
     </div>
 
     <footer class="navbar">
@@ -145,27 +123,27 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="../../dist/scripts/main.js"></script>
     <!-- endbuild -->
   </body>
 </html>
