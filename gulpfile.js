@@ -71,7 +71,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(nunjucksRender({
       path: ['app/templates']
     }))
-    .pipe($.useref())
+    .pipe($.useref({searchPath: ['.tmp', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
@@ -111,34 +111,6 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('reload', () => {
     reload();
-});
-
-gulp.task('serve', ['html', 'styles', 'scripts', 'fonts'], () => {
-  browserSync({
-    notify: false,
-    port: 9000,
-    server: {
-      baseDir: ['.tmp'],
-      routes: {
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
-
-  gulp.watch([
-    'app/pages/**/*.+(html|nunjucks)',
-    'app/templates/**/*.+(html|nunjucks)',
-    'app/images/**/*',
-    '.tmp/fonts/**/*',
-    '.tmp/*'
-  ]).on('change', reload);
-  
-  gulp.watch('app/pages/**/*.+(html|nunjucks)', ['html', 'reload']);
-  gulp.watch('app/templates/**/*.+(html|nunjucks)', ['html', 'reload']);
-  gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/scripts/**/*.js', ['scripts']);
-  gulp.watch('app/fonts/**/*', ['fonts']);
-  gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
 gulp.task('serve:dist', () => {

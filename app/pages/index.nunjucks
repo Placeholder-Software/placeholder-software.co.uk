@@ -1,5 +1,6 @@
-<!-- index.nunjucks -->
 {% extends "layout.nunjucks" %}
+
+{% set alert_message = "Alert! Gotta get down on Friday!" %}
 
 {% block content %}
 <h1>This is the index page.</h1>
