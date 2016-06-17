@@ -9,7 +9,7 @@ Try
     {
         git merge -X theirs master
         gulp
-        git add dist -f
+        git add dist -f --all
         git commit -m "deploying..."
         git subtree push --prefix dist origin gh-pages
         Remove-Item dist -Recurse
