@@ -43,11 +43,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://github.com/Placeholder-Software/Dissonance/wiki">Docs</a></li>
+            <li><a href="https://github.com/Placeholder-Software/Dissonance/wiki" target="_blank">Docs</a></li>
             <li><a href="/news">News</a></li>
-            <li><a href="#">Store</a></li>
-            <li><a href="https://www.reddit.com/r/dissonance_voip/">Community</a></li>
-            <li><a href="https://github.com/Placeholder-Software/Dissonance">Github</a></li>
+            <li><a href="#" target="_blank">Store</a></li>
+            <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Community</a></li>
+            <li><a href="https://github.com/Placeholder-Software/Dissonance" target="_blank">Github</a></li>
           </ul>
         </div>
       </div>
@@ -80,7 +80,7 @@
     </header>
 
     <div class="container main-content">
-    
+
 <!-- You write code for this content block in another file -->
 {% block content %} {% endblock %}
 
@@ -92,24 +92,25 @@
           <div class="col-xs-6 col-sm-4">
             <h3>Community</h3>
             <ul class="footer-list">
-              <li><a href="https://github.com/Placeholder-Software/Dissonance/issues">Submit an Issue</a></li>
-              <li><a href="https://www.reddit.com/r/dissonance_voip/">Discuss</a></li>
+              <li><a href="https://github.com/Placeholder-Software/Dissonance/issues" target="_blank">Submit an Issue</a></li>
+              <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Discuss</a></li>
               <li><a href="mailto:admin@placeholder-software.co.uk">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-xs-6 col-sm-4">
             <h3>Network</h3>
             <ul class="footer-list">
-              <li><a href="https://github.com/Placeholder-Software/Dissonance/wiki">Documentation</a></li>
+              <li><a href="https://github.com/Placeholder-Software/Dissonance/wiki" target="_blank">Documentation</a></li>
               <li><a href="/news">News</a></li>
-              <li><a href="#">Store</a></li>
+              <li><a href="#" target="_blank">Store</a></li>
             </ul>
           </div>
           <div class="col-xs-12 col-sm-4">
             <h3>Site</h3>
             <p class="footer-list">
-              Site built by <a href="http://martindevans.me/">Martin Evans</a> with <a href="https://getbootstrap.com/">Bootstrap</a> and <a href="https://hexo.io/">Hexo</a>.
-              Hosted by <a href="https://pages.github.com/">Github</a>. Source <a href="https://github.com/Placeholder-Software/placeholder-software.co.uk">available</a> under MIT license.
+              Site built by <a href="http://martindevans.me/" target="_blank">Martin Evans</a> with <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+              and <a href="https://hexo.io/" target="_blank">Hexo</a>. Hosted by <a href="https://pages.github.com/" target="_blank">Github</a>.
+              Source <a href="https://github.com/Placeholder-Software/placeholder-software.co.uk" target="_blank">available</a> under MIT license.
             </p>
           </div>
         </div>
