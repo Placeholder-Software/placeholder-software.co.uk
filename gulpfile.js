@@ -5,6 +5,8 @@ const del = require('del');
 const wiredep = require('wiredep').stream;
 const template = require('gulp-template');
 const nunjucksRender = require('gulp-nunjucks-render');
+const flatmap = require('gulp-flatmap');
+const path = require('path');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -58,25 +60,24 @@ gulp.task('lint:test', () => {
     .pipe(gulp.dest('test/spec/**/*.js'));
 });
 
-gulp.task('nunjucks', function() {
-  return gulp.src('app/pages/**/*.+(html|nunjucks)')
-  .pipe(nunjucksRender({
-      path: ['app/templates']
-    }))
-  .pipe(gulp.dest('app'))
-});
-
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
-    .pipe(nunjucksRender({
-      path: ['app/templates']
+    .pipe(flatmap((stream, file) => {
+
+      var directory = path.dirname(file.history[0]);
+      return stream.pipe(nunjucksRender({
+        path: ['app/templates'],
+        data: {
+          base_path: path.relative(directory, path.join(file.cwd, "app", "pages")).replace("\\", "/")
+        }
+      }))
+      .pipe($.useref({searchPath: ['.tmp', '.']}))
+      .pipe($.if('*.js', $.uglify()))
+      .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
+      .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+      .pipe(gulp.dest('.tmp'))
+      .pipe(gulp.dest('dist'));
     }))
-    .pipe($.useref({searchPath: ['.tmp', '.']}))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-    .pipe(gulp.dest('.tmp'))
-    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', () => {
