@@ -7,6 +7,7 @@ const template = require('gulp-template');
 const nunjucksRender = require('gulp-nunjucks-render');
 const flatmap = require('gulp-flatmap');
 const path = require('path');
+const argv = require('yargs').argv;
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -61,17 +62,21 @@ gulp.task('lint:test', () => {
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
+
+  var base_path = argv.base_path || "";
+  console.log("Base path is: '" + base_path + "'");
+
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
     .pipe(flatmap((stream, file) => {
-
-      var directory = path.dirname(file.history[0]);
       return stream.pipe(nunjucksRender({
         path: ['app/templates'],
         data: {
-          base_path: path.relative(directory, path.join(file.cwd, "app", "pages")).replace("\\", "/")
+          base_path: base_path
         }
       }))
-      .pipe($.useref({searchPath: ['.tmp', '.']}))
+      .pipe($.useref({
+        searchPath: ['.tmp', '.'],
+      }))
       .pipe($.if('*.js', $.uglify()))
       .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
       .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))

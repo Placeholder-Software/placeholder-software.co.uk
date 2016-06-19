@@ -14,7 +14,7 @@
   .navbar-brand {
     font-family: Michroma, sans-serif;
     color: $primary-color;
-    font-size: 3vmin;
+    font-size: 1.7em;
   }
 
   .nav {
@@ -26,6 +26,14 @@
       a:hover, a:focus {
         color: $light-color;
       }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    .navbar-brand {
+        font-size: 1.1em;
     }
   }
 }
