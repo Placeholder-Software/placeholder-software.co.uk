@@ -8,7 +8,7 @@ Try
     if ($?)
     {
         git merge -X theirs master
-        gulp
+        gulp base_path="https://placeholder-software.github.io/placeholder-software.co.uk/"
         git add dist -f --all
         git commit -m "deploying..."
         git subtree push --prefix dist origin gh-pages
