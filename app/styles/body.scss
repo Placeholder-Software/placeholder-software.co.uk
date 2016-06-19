@@ -9,6 +9,45 @@ body {
   flex-direction: column;
 }
 
+h3 {
+  font-family: Bangers, sans-serif;
+  font-size: 87px;
+}
+
+@media (max-width: 767px) {
+  h3 {
+    font-size: 55px;
+  }
+}
+
+h4 {
+  font-family: Bangers, sans-serif;
+  font-size: 54px;
+}
+
+@media (max-width: 767px) {
+  h4 {
+    font-size: 35px;
+  }
+}
+
 .main-content {
 
+}
+
+.section-header {
+  font-family: Bangers, sans-serif;
+  font-size: 3em;
+}
+
+.mini-graphic {
+  &.left {
+    float: left;
+  }
+
+  &.right {
+    float: right;
+  }
+
+  margin: 1em;
 }

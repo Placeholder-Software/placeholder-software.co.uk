@@ -3,5 +3,93 @@
 {% set alert_message = "Alert! Gotta get down on Friday!" %}
 
 {% block content %}
-<h1>{{ base_path }}</h1>
+
+<div class="row section-header">
+  <div class="col-xs-12 text-center">
+    <h3>Simple</h3>
+  </div>
+</div>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 text-justify">
+        <h4>Kittens are cute</h4>
+
+				<img src="/images/GitHub-Mark-Light-64px.png" class="hidden-sm hidden-md hidden-lg">
+
+        <p>Bacon ipsum dolor amet et minim qui, leberkas mollit biltong do chicken nulla enim pork belly cow picanha boudin eu.
+        Shoulder landjaeger boudin, dolore pork chop tenderloin t-bone ullamco officia bacon. Dolor ut duis sausage,
+        tail jerky spare ribs cillum ground round nulla sirloin. Shank chuck landjaeger tongue in id consectetur sirloin anim shankle andouille quis.
+        Ex magna cupim strip steak tri-tip eiusmod beef ribs cillum pork loin landjaeger aliqua ribeye pastrami salami hamburger.</p>
+
+        <p>Venison pig meatloaf meatball, salami beef ribs officia. Bacon short loin sausage enim. Shank reprehenderit ribeye,
+        quis ham occaecat ea aute culpa chicken tenderloin. Pariatur ullamco culpa, ribeye in aute aliqua tongue.
+        Ham hock ea meatball est dolore meatloaf minim ut bresaola et pork chop ut boudin.</p>
+
+				<a href="https://simpleinjector.org/documentation" class="btn btn-link">More ...</a>
+			</div>
+			<div class="col-sm-6 hidden-xs text-center">
+				<img src="/images/GitHub-Mark-Light-64px.png" height="256px">
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="row section-header">
+  <div class="col-xs-12 text-center">
+    <h3>Fast</h3>
+  </div>
+</div>
+
+<section>
+	<div class="container">
+		<div class="row">
+      <div class="col-sm-6 hidden-xs text-center">
+        <img src="/images/GitHub-Mark-Light-64px.png" height="256px">
+      </div>
+			<div class="col-sm-6 text-justify">
+        <h4>Rabbits are nice too</h4>
+
+				<img src="/images/GitHub-Mark-Light-64px.png" class="hidden-sm hidden-md hidden-lg mini-graphic left">
+
+        <p>Bacon ipsum dolor amet et minim qui, leberkas mollit biltong do chicken nulla enim pork belly cow picanha boudin eu.
+        Shoulder landjaeger boudin, dolore pork chop tenderloin t-bone ullamco officia bacon. Dolor ut duis sausage,
+        tail jerky spare ribs cillum ground round nulla sirloin. Shank chuck landjaeger tongue in id consectetur sirloin anim shankle andouille quis.
+        Ex magna cupim strip steak tri-tip eiusmod beef ribs cillum pork loin landjaeger aliqua ribeye pastrami salami hamburger.</p>
+
+        <p>Venison pig meatloaf meatball, salami beef ribs officia. Bacon short loin sausage enim. Shank reprehenderit ribeye,
+        quis ham occaecat ea aute culpa chicken tenderloin. Pariatur ullamco culpa, ribeye in aute aliqua tongue.
+        Ham hock ea meatball est dolore meatloaf minim ut bresaola et pork chop ut boudin.</p>
+
+				<a href="https://simpleinjector.org/documentation" class="btn btn-link">More ...</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="row section-header">
+  <div class="col-xs-12 text-center">
+    <h3>Powerful</h3>
+  </div>
+</div>
+
+<div class="row section-header">
+  <div class="col-xs-12 text-center">
+    <h3>Well Documented</h3>
+  </div>
+</div>
+
+<div class="row section-header">
+  <div class="col-xs-12 text-center">
+    <h3>Great Support</h3>
+  </div>
+</div>
+
+<div class="row section-header">
+  <div class="col-xs-12 text-center">
+    <h3>Get Started</h3>
+  </div>
+</div>
+
 {% endblock %}
