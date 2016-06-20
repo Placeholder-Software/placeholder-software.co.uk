@@ -90,7 +90,7 @@
       <div class="container">
         <div class="row underline-links">
           <div class="col-xs-6 col-sm-4">
-            <h3>Community</h3>
+            <h4>Community</h4>
             <ul class="footer-list">
               <li><a href="https://github.com/Placeholder-Software/Dissonance/issues" target="_blank">Submit an Issue</a></li>
               <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Discuss</a></li>
@@ -98,7 +98,7 @@
             </ul>
           </div>
           <div class="col-xs-6 col-sm-4">
-            <h3>Network</h3>
+            <h4>Network</h4>
             <ul class="footer-list">
               <li><a href="https://github.com/Placeholder-Software/Dissonance/wiki" target="_blank">Documentation</a></li>
               <li><a href="/news">News</a></li>
@@ -106,7 +106,7 @@
             </ul>
           </div>
           <div class="col-xs-12 col-sm-4">
-            <h3>Site</h3>
+            <h4>Site</h4>
             <p class="footer-list">
               Site built by <a href="http://martindevans.me/" target="_blank">Martin Evans</a> with <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
               and <a href="https://hexo.io/" target="_blank">Hexo</a>. Hosted by <a href="https://pages.github.com/" target="_blank">Github</a>.

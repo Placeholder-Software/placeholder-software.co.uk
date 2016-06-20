@@ -31,6 +31,34 @@ h4 {
   }
 }
 
+.btn {
+  &.btn-link {
+
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+      outline-offset: 10px;
+      outline-color: rgba($dark-color, 0.06);
+    }
+
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: 1px solid;
+    outline-offset: 1px;
+    outline-color: $primary-color;
+    margin: 20px 0 0 0;
+    padding: 8px 13px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.vertical-center-row {
+  display: flex;
+  align-items: center;
+}
+
 .main-content {
 
 }

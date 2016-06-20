@@ -6,17 +6,17 @@
 
 <div class="row section-header">
   <div class="col-xs-12 text-center">
-    <h3>Simple</h3>
+    <h3 id="simple">Simple</h3>
   </div>
 </div>
 
 <section>
 	<div class="container">
-		<div class="row">
+		<div class="row vertical-center-row">
 			<div class="col-sm-6 text-justify">
         <h4>Kittens are cute</h4>
 
-				<img src="/images/GitHub-Mark-Light-64px.png" class="hidden-sm hidden-md hidden-lg">
+				<img src="/images/GitHub-Mark-Light-64px.png" class="hidden-sm hidden-md hidden-lg mini-graphic right">
 
         <p>Bacon ipsum dolor amet et minim qui, leberkas mollit biltong do chicken nulla enim pork belly cow picanha boudin eu.
         Shoulder landjaeger boudin, dolore pork chop tenderloin t-bone ullamco officia bacon. Dolor ut duis sausage,
@@ -38,13 +38,13 @@
 
 <div class="row section-header">
   <div class="col-xs-12 text-center">
-    <h3>Fast</h3>
+    <h3 id="fast">Fast</h3>
   </div>
 </div>
 
 <section>
 	<div class="container">
-		<div class="row">
+		<div class="row vertical-center-row">
       <div class="col-sm-6 hidden-xs text-center">
         <img src="/images/GitHub-Mark-Light-64px.png" height="256px">
       </div>
@@ -70,25 +70,25 @@
 
 <div class="row section-header">
   <div class="col-xs-12 text-center">
-    <h3>Powerful</h3>
+    <h3 id="powerful">Powerful</h3>
   </div>
 </div>
 
 <div class="row section-header">
   <div class="col-xs-12 text-center">
-    <h3>Well Documented</h3>
+    <h3 id="well-documentated">Well Documented</h3>
   </div>
 </div>
 
 <div class="row section-header">
   <div class="col-xs-12 text-center">
-    <h3>Great Support</h3>
+    <h3 id="support">Great Support</h3>
   </div>
 </div>
 
 <div class="row section-header">
   <div class="col-xs-12 text-center">
-    <h3>Get Started</h3>
+    <h3 id="get-started">Get Started</h3>
   </div>
 </div>
 
