@@ -1,186 +1,82 @@
 {% extends "layout.nunjucks" %}
-
+{% import "macros/icon-section.nunjucks" as icon_section %}
 {% set alert_message = "Alert! Dissonance 1.0 Is Now Available!" %}
 
 {% block content %}
+    
+    {{ icon_section.header("Simple", "simple") }}
 
-<div class="row section-header">
-  <div class="col-xs-12 text-center">
-    <h3 id="simple">Simple</h3>
-  </div>
-</div>
-
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-			<div class="col-sm-6 text-justify">
-                <h4>Kittens are cute</h4>
-
-                <img src="/images/microphone.svg" class="hidden-sm hidden-md hidden-lg mini-graphic right">
-
-                <p>Bacon ipsum dolor amet et minim qui, leberkas mollit biltong do chicken nulla enim pork belly cow picanha boudin eu.
-                Shoulder landjaeger boudin, dolore pork chop tenderloin t-bone ullamco officia bacon. Dolor ut duis sausage,
-                tail jerky spare ribs cillum ground round nulla sirloin. Shank chuck landjaeger tongue in id consectetur sirloin anim shankle andouille quis.
-                Ex magna cupim strip steak tri-tip eiusmod beef ribs cillum pork loin landjaeger aliqua ribeye pastrami salami hamburger.</p>
-
-                <p>Venison pig meatloaf meatball, salami beef ribs officia. Bacon short loin sausage enim. Shank reprehenderit ribeye,
-                quis ham occaecat ea aute culpa chicken tenderloin. Pariatur ullamco culpa, ribeye in aute aliqua tongue.
-                Ham hock ea meatball est dolore meatloaf minim ut bresaola et pork chop ut boudin.</p>
-
-                <a href="todo:insert-link" class="btn btn-link">More ...</a>
-            </div>
-			<div class="col-sm-6 hidden-xs text-center">
-				<img src="/images/microphone.svg" height="256px">
-			</div>
-		</div>
-	</div>
-</section>
-
-<div class="row section-header">
-  <div class="col-xs-12 text-center">
-    <h3 id="fast">Fast</h3>
-  </div>
-</div>
-
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-            <div class="col-sm-6 hidden-xs text-center">
-                <img src="/images/rocket.svg" height="256px">
-            </div>
-			<div class="col-sm-6 text-justify">
-				<img src="/images/rocket.svg" class="hidden-sm hidden-md hidden-lg mini-graphic left">
-
-                <p>Dissonance was built from the ground up with <strong>performance</strong> in mind. Minimal allocations, recycling buffers, native C++ plugins and multiple
-                threads - we've used every trick in the book to make Dissonance as fast as possible so you can stay focused on what's important - making your game - and never
-                have to worry about performance on any platform.</p>
-                
-                <p>The cutting edge <a href="https://www.opus-codec.org/" target="_blank">Opus Codec</a> is used to quickly and efficiently compress the voice
-                before it's transmitted across the network - potentially using just <strong>6kb/s</strong!</p>
-
-				<a href="https://dissonance.readthedocs.io/en/latest/" class="btn btn-link">More ...</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<div class="row section-header">
-  <div class="col-xs-12 text-center">
-    <h3 id="powerful">Powerful</h3>
-  </div>
-</div>
-
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-			<div class="col-sm-6 text-justify">
-                <h4>Kittens are cute</h4>
-
-				<img src="/images/flask.svg" class="hidden-sm hidden-md hidden-lg mini-graphic right">
-
-                <p>Bacon ipsum dolor amet et minim qui, leberkas mollit biltong do chicken nulla enim pork belly cow picanha boudin eu.
-                Shoulder landjaeger boudin, dolore pork chop tenderloin t-bone ullamco officia bacon. Dolor ut duis sausage,
-                tail jerky spare ribs cillum ground round nulla sirloin. Shank chuck landjaeger tongue in id consectetur sirloin anim shankle andouille quis.
-                Ex magna cupim strip steak tri-tip eiusmod beef ribs cillum pork loin landjaeger aliqua ribeye pastrami salami hamburger.</p>
-
-                <p>Venison pig meatloaf meatball, salami beef ribs officia. Bacon short loin sausage enim. Shank reprehenderit ribeye,
-                quis ham occaecat ea aute culpa chicken tenderloin. Pariatur ullamco culpa, ribeye in aute aliqua tongue.
-                Ham hock ea meatball est dolore meatloaf minim ut bresaola et pork chop ut boudin.</p>
-
-				<a href="todo:insert-link" class="btn btn-link">More ...</a>
-			</div>
-			<div class="col-sm-6 hidden-xs text-center">
-				<img src="/images/flask.svg" height="256px">
-			</div>
-		</div>
-	</div>
-</section>
-
-<div class="row section-header">
-  <div class="col-xs-12 text-center">
-    <h3 id="well-documentated">Well Documented</h3>
-  </div>
-</div>
-
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-            <div class="col-sm-6 hidden-xs text-center">
-                <img src="/images/book.svg" height="256px">
-            </div>
-			<div class="col-sm-6 text-justify">
-				<img src="/images/book.svg" class="hidden-sm hidden-md hidden-lg mini-graphic left">
-
-                <p>Dissonance has extensive and up to date reference documentation as well as tutorials covering everything from a basic 'getting started' guide up to more advanced scenarios with multiple independent chat rooms, positional audio and complex sound effects applied to voices. All tutorials are available both in text and video form.</p>
-
-                <p>If anything is not covered in the documentation we will consider that a <i>bug</i> - get in contact with us and we'll fix that as soon as possible.</p>
-
-				<a href="todo:insert-link" target="_blank" class="btn btn-link">More ...</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<div class="row section-header">
-  <div class="col-xs-12 text-center">
-    <h3 id="support">Great Support</h3>
-  </div>
-</div>
-
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-			<div class="col-sm-6 text-justify">
-                <h4>Discussion</h4>
-
-                <img src="/images/comments.svg" class="hidden-sm hidden-md hidden-lg mini-graphic right">
-
-                <p>We love talking about Dissonance! Join the <a href="https://www.reddit.com/r/dissonance_voip/">discussion</a>, ask qusations, seek advice,
-                suggest new features and discuss potential issues you have found with Dissonance. Or just talk about your game which uses Dissonance,
-                we love to hear your success stories!</p>
-
-                <h4>Issues</h4>
-                
-                <p>No software is perfect (but we try)! If you discover a bug with Dissonance report it to us on the <a href="https://github.com/Placeholder-Software/Dissonance">github</a>
-                repository and we shall respond quickly, suggest workarounds to get you back to developing your game as quickly as possible and alert you as soon as we have developed
-                and released a fix.</p>
-
-                <a href="https://www.reddit.com/r/dissonance_voip/" target="_blank" class="btn btn-link">More ...</a>
-            </div>
-            <div class="col-sm-6 hidden-xs text-center">
-                <img src="/images/comments.svg" height="256px">
-            </div>
-		</div>
-	</div>
-</section>
-
-<div class="row section-header">
-  <div class="col-xs-12 text-center">
-    <h3 id="get-started">Get Started</h3>
-  </div>
-</div>
-
-<section>
-    <div class="container">
-        <div class="row vertical-center-row">
+    {% call icon_section.left("/images/microphone.svg") -%}
+        <p>Dissonance makes it easy to add realtime voice chat to your multiplayer game with <strong>no scripting</strong> and
+        with <strong>any multiplayer backend</strong>. Just drag and drop prefabs in the unity editor, choose your audio quality,
+        select which multiplayer system you're using and dissonance will handle the rest!</p>
         
-            <div class="col-sm-10 text-justify">
-                <p><a href="todo:insert-link" target="_blank">Buy Dissonance From The Unity Store</a>. When you buy dissonance you get complete access to all the C# and C++ source
-                code, as well as precompiled binaries for all the major platforms.</p>
-            
-                <p><a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/" target="_blank">Follow The Tutorials</a>. The series of text and video
-                tutorials will walk you through the basics of setting up a simple team based voice chat system all the way up to a complex multi team, multi room positional chat system
-                with complex audio effects.</p>
-                
-                <p><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi". Get help
-                with Dissonance, discuss your voice chat setup, and join the conversation about new features and improvements coming to Dissonance.</p>
-                
-                <p><a href="https://github.com/Placeholder-Software/Dissonance" target="_blank">Report A Bug</a>. No software is perfect (but we try)! If you discover
-                a bug with Dissonance report it to us and we shall respond quickly, suggest workarounds to get you back to developing your game and alert you as soon as we have developed
-                and released a fix.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        <a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/" target="_blank" class="btn btn-link">More ...</a>
+    {%- endcall %}
+
+    {{ icon_section.header("Fast", "fast") }}
+
+    {% call icon_section.right("/images/rocket.svg") -%}
+        <p>Dissonance was built from the ground up with <strong>great performance</strong> in mind. Minimal allocations, recycling buffers, native C++ plugins and multiple
+        threads - we've used every trick in the book to make Dissonance as fast as possible so you can stay focused on what's important - making your game - and never
+        have to worry about performance on any platform.</p>
+
+        <p>The cutting edge <a href="https://www.opus-codec.org/" target="_blank">Opus Codec</a> is used to quickly and efficiently compress the voice
+        before it's transmitted across the network - using as little as <strong>6kb/s</strong>!</p>
+
+        <a href="todo:insert-link" class="btn btn-link">More ...</a>
+    {%- endcall %}
+
+    {{ icon_section.header("Powerful", "powerful") }}
+
+    {% call icon_section.left("/images/flask.svg") -%}
+        <p>Dissonance is a powerful and full featured voice chat solution. Setting up complex scenarios involving multiple independent chat rooms is simple and can be done entirely from within the unity editor - no scripting required! Of course if you would rather write code then you can do that too, all the features of Dissonance are completely open to to being configured and controlled from your scripts.</p>
+        
+        <p>Advanced features to improve the quality of the audio are built into Dissonance and work right out of the box. Positional audio, automatic gain control, noise cancellation, voice activation detection, packet loss correction and other features all require absolutely no work at all to use. Let us worry about audio quality while you stay focused on building your game.</p>
+
+        <a href="todo:insert-link" class="btn btn-link">More ...</a>
+    {%- endcall %}
+    
+    {{ icon_section.header("Well Documented", "well-documented") }}
+
+    {% call icon_section.right("/images/book.svg") -%}
+        <p>Dissonance has extensive and up to date reference documentation as well as tutorials covering everything from a basic 'getting started' guide up to more advanced scenarios with multiple independent chat rooms, positional audio and complex sound effects applied to voices. All tutorials are available both in text and video form.</p>
+
+        <p>If anything is not covered in the documentation we will consider that a <i>bug</i> - get in contact with us and we'll fix that as soon as possible.</p>
+
+        <a href="https://dissonance.readthedocs.io/en/latest/" target="_blank" class="btn btn-link">More ...</a>
+    {%- endcall %}
+
+    {{ icon_section.header("Great Support", "support") }}
+    
+    {% call icon_section.left("/images/comments.svg") -%}
+        <p>We love talking about Dissonance! Join the <a href="https://www.reddit.com/r/dissonance_voip/">discussion</a>, ask qusations, seek advice,
+        suggest new features and discuss potential issues you have found with Dissonance. Or just talk about your game which uses Dissonance,
+        we love to hear your success stories!</p>
+
+        <p>No software is perfect (but we try)! If you discover a bug with Dissonance report it to us on the <a href="https://github.com/Placeholder-Software/Dissonance">github</a>
+        repository and we shall respond quickly, suggest workarounds to get you back to developing your game as quickly as possible and alert you as soon as we have developed
+        and released a fix.</p>
+
+        <a href="https://www.reddit.com/r/dissonance_voip/" target="_blank" class="btn btn-link">More ...</a>
+    {%- endcall %}
+
+    {{ icon_section.header("Get Started", "get-started") }}
+    
+    {% call icon_section.center() -%}
+        <p><a href="todo:insert-link" target="_blank">Buy Dissonance From The Unity Store</a>. When you buy dissonance you get complete access to all the C# and C++ source
+        code, as well as precompiled binaries for all the major platforms.</p>
+    
+        <p><a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/" target="_blank">Follow The Tutorials</a>. The series of text and video
+        tutorials will walk you through the basics of setting up a simple team based voice chat system all the way up to a complex multi team, multi room positional chat system
+        with complex audio effects.</p>
+        
+        <p><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi". Get help
+        with Dissonance, discuss your voice chat setup, and join the conversation about new features and improvements coming to Dissonance.</p>
+        
+        <p><a href="https://github.com/Placeholder-Software/Dissonance" target="_blank">Report A Bug</a>. No software is perfect (but we try)! If you discover
+        a bug with Dissonance report it to us and we shall respond quickly, suggest workarounds to get you back to developing your game and alert you as soon as we have developed
+        and released a fix.</p>
+    {%- endcall %}
 
 {% endblock %}
