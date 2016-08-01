@@ -1,0 +1,37 @@
+{% extends "changelog.nunjucks" %}
+
+{% block features %}
+<ul>
+    <li>Features...</li>
+    <li>Features...</li>
+    <li>Features...</li>
+    <li>Features...</li>
+    <li>Features...</li>
+    <li>Features...</li>
+    <li>Features...</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>bugfixes...</li>
+    <li>bugfixes...</li>
+    <li>bugfixes...</li>
+    <li>bugfixes...</li>
+    <li>bugfixes...</li>
+    <li>bugfixes...</li>
+    <li>bugfixes...</li>
+</ul>
+{% endblock %}
+
+{% block regressions %}
+<ul>
+    <li>regressions...</li>
+    <li>regressions...</li>
+    <li>regressions...</li>
+    <li>regressions...</li>
+    <li>regressions...</li>
+    <li>regressions...</li>
+    <li>regressions...</li>
+</ul>
+{% endblock %}
