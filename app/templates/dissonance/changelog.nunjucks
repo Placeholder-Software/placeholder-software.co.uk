@@ -1,47 +1,30 @@
 {% extends "dissonance/layout.nunjucks" %}
+{% import "dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% block content %}
 
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-			<div class="col-sm-6 text-justify">
-                <h4>New Features</h4>                
-                {% block features %}No new features in this release :O{% endblock %}
-            </div>
-			<div class="col-sm-6 hidden-xs text-center">
-				<img src="/images/star.svg" height="256px">
-			</div>
-		</div>
-	</div>
-</section>
+{% call icon_section.header2("vn") -%}
+	Version {{ version_number }}
+{%- endcall %}
 
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-          <div class="col-sm-6 hidden-xs text-center">
-            <img src="/images/bug.svg" height="256px">
-          </div>
-			<div class="col-sm-6 text-justify">
-                <h4>Bug Fixes</h4>
-                {% block bugfixes %}No bugs fixed in this release...{% endblock %}
-			</div>
-		</div>
-	</div>
-</section>
 
-<section>
-	<div class="container">
-		<div class="row vertical-center-row">
-			<div class="col-sm-6 text-justify">
-                <h4>Known Issues</h4>                
-                {% block regressions %}No new known issues or regressions in this release :D{% endblock %}
-            </div>
-			<div class="col-sm-6 hidden-xs text-center">
-				<img src="/images/fire.svg" height="256px">
-			</div>
-		</div>
-	</div>
-</section>
+{% call icon_section.center() -%}
+	{% block blurb %}{% endblock %}
+{%- endcall %}
+
+{% call icon_section.left("/images/star.svg") -%}
+	<h4>New Features</h4>
+	{% block features %}No new features in this release :O{% endblock %}
+{%- endcall %}
+
+{% call icon_section.right("/images/bug.svg") -%}
+	<h4>Bug Fixes</h4>
+	{% block bugfixes %}No bugs fixed in this release...{% endblock %}
+{%- endcall %}
+
+{% call icon_section.left("/images/fire.svg") -%}
+	<h4>Known Issues</h4>
+	{% block known_issues %}No known issues or regressions in this release :D{% endblock %}
+{%- endcall %}
 
 {% endblock %}

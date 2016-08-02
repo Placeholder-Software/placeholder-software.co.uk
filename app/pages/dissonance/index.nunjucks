@@ -1,16 +1,17 @@
 {% extends "dissonance/layout.nunjucks" %}
 {% import "dissonance/macros/icon-section.nunjucks" as icon_section %}
+
 {% set alert_message = "Alert! Dissonance 1.0 Is Now Available!" %}
 
 {% block content %}
-    
+
     {{ icon_section.header("Simple", "simple") }}
 
     {% call icon_section.left("/images/microphone.svg") -%}
         <p>Dissonance is an asset for Unity which makes it easy to add voice chat to your multiplayer game with <strong>no scripting</strong> and
         with <strong>any multiplayer backend</strong>. Just drag and drop prefabs in the unity editor, choose your audio quality,
         select which multiplayer system you're using and dissonance will handle the rest!</p>
-        
+
         <a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/" target="_blank" class="btn btn-link">More ...</a>
     {%- endcall %}
 
@@ -24,19 +25,19 @@
         <p>The cutting edge <a href="https://www.opus-codec.org/" target="_blank">Opus Codec</a> is used to quickly and efficiently compress the voice
         before it's transmitted across the network - using as little as <strong>6kb/s</strong>!</p>
 
-        <a href="/comparison" class="btn btn-link">More ...</a>
+        <a href="/dissonance/comparison" class="btn btn-link">More ...</a>
     {%- endcall %}
 
     {{ icon_section.header("Powerful", "powerful") }}
 
     {% call icon_section.left("/images/flask.svg") -%}
         <p>Dissonance is a powerful and full featured voice chat solution. Setting up complex scenarios involving multiple independent chat rooms is simple and can be done entirely from within the unity editor - no scripting required! Of course if you would rather write code then you can do that too, all the features of Dissonance are completely open to to being configured and controlled from your scripts.</p>
-        
+
         <p>Advanced features to improve the quality of the audio are built into Dissonance and work right out of the box. Positional audio, automatic gain control, noise cancellation, voice activation detection, packet loss correction and other features all require absolutely no work at all to use. Let us worry about audio quality while you stay focused on building your game.</p>
 
-        <a href="/comparison" class="btn btn-link">More ...</a>
+        <a href="/dissonance/comparison" class="btn btn-link">More ...</a>
     {%- endcall %}
-    
+
     {{ icon_section.header("Well Documented", "well-documented") }}
 
     {% call icon_section.right("/images/book.svg") -%}
@@ -48,7 +49,7 @@
     {%- endcall %}
 
     {{ icon_section.header("Great Support", "support") }}
-    
+
     {% call icon_section.left("/images/comments.svg") -%}
         <p>We love talking about Dissonance! Join the <a href="https://www.reddit.com/r/dissonance_voip/">discussion</a>, ask qusations, seek advice,
         suggest new features and discuss potential issues you have found with Dissonance. Or just talk about your game which uses Dissonance,
@@ -62,18 +63,18 @@
     {%- endcall %}
 
     {{ icon_section.header("Get Started", "get-started") }}
-    
+
     {% call icon_section.center() -%}
         <p><a href="todo:insert-link" target="_blank">Buy Dissonance From The Unity Store</a>. When you buy dissonance you get complete access to all the C# and C++ source
         code, as well as precompiled binaries for all the major platforms.</p>
-    
+
         <p><a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/" target="_blank">Follow The Tutorials</a>. The series of text and video
         tutorials will walk you through the basics of setting up a simple team based voice chat system all the way up to a complex multi team, multi room positional chat system
         with complex audio effects.</p>
-        
+
         <p><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi". Get help
         with Dissonance, discuss your voice chat setup, and join the conversation about new features and improvements coming to Dissonance.</p>
-        
+
         <p><a href="https://github.com/Placeholder-Software/Dissonance" target="_blank">Report A Bug</a>. No software is perfect (but we try)! If you discover
         a bug with Dissonance report it to us and we shall respond quickly, suggest workarounds to get you back to developing your game and alert you as soon as we have developed
         and released a fix.</p>

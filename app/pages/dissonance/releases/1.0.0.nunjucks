@@ -1,5 +1,16 @@
 {% extends "dissonance/changelog.nunjucks" %}
 
+{% set version_number = "1.0.0" %}
+
+{% block blurb %}
+<p>We're very excited to release the very first version of Dissonance!</p>
+
+<p>This is by no means feature complete and this is a "minimum viable product" release which we're
+putting out primarily to get some feedback on what features people like, what people want to change and what
+new features we should support. Add your voice to the conversation over at the
+<a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>.</p>
+{% endblock %}
+
 {% block features %}
 <ul>
     <li>Features...</li>
@@ -24,7 +35,7 @@
 </ul>
 {% endblock %}
 
-{% block regressions %}
+{% block known_issues %}
 <ul>
     <li>regressions...</li>
     <li>regressions...</li>
