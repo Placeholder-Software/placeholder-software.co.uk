@@ -1,4 +1,4 @@
-{% extends "changelog.nunjucks" %}
+{% extends "dissonance/changelog.nunjucks" %}
 
 {% block features %}
 <ul>

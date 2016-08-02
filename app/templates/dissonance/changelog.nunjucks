@@ -1,4 +1,4 @@
-{% extends "layout.nunjucks" %}
+{% extends "dissonance/layout.nunjucks" %}
 
 {% block content %}
 

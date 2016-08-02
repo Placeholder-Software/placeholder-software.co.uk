@@ -1,0 +1,7 @@
+{% extends "dissonance/layout.nunjucks" %}
+
+{% block content %}
+
+Performance/Feature comparison
+
+{% endblock %}
