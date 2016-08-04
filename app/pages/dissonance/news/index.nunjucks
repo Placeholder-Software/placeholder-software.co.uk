@@ -1,5 +1,5 @@
 {% extends "dissonance/layout.nunjucks" %}
 
 {% block content %}
-<h1>{{ base_path }}</h1>
+<h1>{{ site | dump }}</h1>
 {% endblock %}

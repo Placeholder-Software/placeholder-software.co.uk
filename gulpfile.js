@@ -8,6 +8,8 @@ const nunjucksRender = require('gulp-nunjucks-render');
 const flatmap = require('gulp-flatmap');
 const path = require('path');
 const argv = require('yargs').argv;
+const data = require('gulp-data');
+const fs = require('fs');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -51,6 +53,7 @@ gulp.task('lint', () => {
   })
     .pipe(gulp.dest('app/scripts'));
 });
+
 gulp.task('lint:test', () => {
   return lint('test/spec/**/*.js', {
     fix: true,
@@ -68,20 +71,22 @@ gulp.task('html', ['styles', 'scripts'], () => {
 
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
     .pipe(flatmap((stream, file) => {
-      return stream.pipe(nunjucksRender({
-        path: ['app/templates'],
-        data: {
-          base_path: base_path
-        }
-      }))
-      .pipe($.useref({
-        searchPath: ['.tmp', '.'],
-      }))
-      .pipe($.if('*.js', $.uglify()))
-      .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-      .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-      .pipe(gulp.dest('.tmp'))
-      .pipe(gulp.dest('dist'));
+      return stream
+        .pipe(data(sitedata))
+        .pipe(nunjucksRender({
+          path: ['app/templates'],
+          data: {
+            base_path: base_path
+          }
+        }))
+        .pipe($.useref({
+          searchPath: ['.tmp', '.'],
+        }))
+        .pipe($.if('*.js', $.uglify()))
+        .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
+        .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+        .pipe(gulp.dest('.tmp'))
+        .pipe(gulp.dest('dist'));
     }))
 });
 
@@ -149,7 +154,6 @@ gulp.task('serve:test', ['scripts'], () => {
   gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
-// inject bower components
 gulp.task('wiredep', () => {
   gulp.src('app/styles/*.scss')
     .pipe(wiredep({
@@ -172,3 +176,47 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
+
+function sitedata() {
+    return {
+        site: {
+            pages: sitepages()
+        }
+    }
+}
+
+function sitepages() {
+
+  function getFilesRecursive (folder) {
+
+    function recursiveImpl(folder, parent, files) {
+      var fileContents = fs.readdirSync(folder);
+
+      fileContents.forEach(function (fileName) {
+          var stats = fs.lstatSync(folder + '/' + fileName);
+
+          if (stats.isDirectory()) {
+              recursiveImpl(folder + '/' + fileName, parent + "/" + fileName, files);
+          } else {
+              files.push({
+                  name: fileName,
+                  path: parent + '/' + fileName
+              });
+          }
+      });
+    }
+
+    var result = [];
+    recursiveImpl(folder, "", result)
+    return result;
+  };
+
+  return getFilesRecursive("./app/pages")
+    .map(function(f) {
+      return {
+        name: f.name,
+        path: f.path,
+        url: f.path.replace("nunjucks", "html").replace("index.html", "")
+      };
+    });
+}
