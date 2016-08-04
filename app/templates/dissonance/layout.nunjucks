@@ -14,6 +14,10 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <style>
+        {% block page_style %}{% endblock %}
+    </style>
+    
     <!-- build:css /styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->

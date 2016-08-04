@@ -1,0 +1,42 @@
+@import "variables.scss";
+
+.dissonance {
+  background-color: $primary-color;
+}
+
+.df-voice {
+  background-color: hsl(100, 100%, 42%);
+}
+
+.pun-voice {
+  background-color: hsl(43, 100%, 49%);
+}
+
+.comparison-table {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.comparison-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th.check-column {
+    width: 20%;
+}
+
+td > .glyphicon {
+    display:block;
+    text-align:center;
+}
+
+td > .glyphicon-ok {
+    color: $primary-color;
+}
+
+td > .glyphicon-remove {
+  color: $negative-color;
+}

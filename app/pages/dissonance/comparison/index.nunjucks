@@ -2,6 +2,37 @@
 
 {% block content %}
 
-Performance/Feature comparison
+<div class="table-responsive comparison-table">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="dissonance check-column">Dissonance</th>
+        <th class="df-voice check-column">DF Voice</th>
+        <th class="pun-voice check-column">Photon Voice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="text-nowrap" scope="row">Feature Name</th>
+        <td><span class="glyphicon glyphicon-ok" /></td>
+        <td><span class="glyphicon glyphicon-remove" /></td>
+        <td><span class="glyphicon glyphicon-remove" /></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Feature Name</th>
+        <td><span class="glyphicon glyphicon-ok" /></td>
+        <td><span class="glyphicon glyphicon-remove" /></td>
+        <td><span class="glyphicon glyphicon-remove" /></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Feature Name</th>
+        <td><span class="glyphicon glyphicon-ok" /></td>
+        <td><span class="glyphicon glyphicon-remove" /></td>
+        <td><span class="glyphicon glyphicon-remove" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% endblock %}
