@@ -4,7 +4,7 @@
 {% for page in site.pages %}
 
  <url>
-    <loc>{{ base_path }}{{ page.url }}</loc>
+    <loc>http:{{ base_path }}{{ page.url }}</loc>
  </url>
 
 {% endfor %}
