@@ -1,0 +1,8 @@
+{% extends "dissonance/layout.nunjucks" %}
+{% import "dissonance/macros/icon-section.nunjucks" as icon_section %}
+
+{% block content %}
+  {% call icon_section.center("Hello") -%}
+  	World
+  {%- endcall %}
+{% endblock %}

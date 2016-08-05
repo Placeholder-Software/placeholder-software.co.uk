@@ -10,6 +10,12 @@ const path = require('path');
 const argv = require('yargs').argv;
 const data = require('gulp-data');
 const fs = require('fs');
+const marked = require('gulp-marked');
+const nunjucksMarkdown = require('nunjucks-markdown');
+const frontMatter = require('front-matter');
+const debug = require('gulp-debug');
+const wrap = require('gulp-wrap');
+const through = require('through2');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -73,12 +79,12 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(flatmap((stream, file) => {
       return stream
         .pipe(data(sitedata))
-        .pipe(nunjucksRender({
+        .pipe($.if('*.nunjucks', nunjucksRender({
           path: ['app/templates'],
           data: {
-            base_path: base_path
+            base_path: base_path,
           }
-        }))
+        })))
         .pipe($.useref({
           searchPath: ['.tmp', '.'],
         }))
@@ -216,7 +222,7 @@ function sitepages() {
       return {
         name: f.name,
         path: f.path,
-        url: f.path.replace("nunjucks", "html").replace("index.html", "")
+        url: f.path.replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
       };
     });
 }
