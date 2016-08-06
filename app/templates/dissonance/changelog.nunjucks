@@ -3,7 +3,7 @@
 
 {% block content %}
 
-{% call icon_section.header2("vn") -%}
+{% call icon_section.header2("vn", "left") -%}
 	Version {{ version_number }}
 {%- endcall %}
 

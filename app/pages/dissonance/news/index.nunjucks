@@ -1,5 +1,9 @@
 {% extends "dissonance/layout.nunjucks" %}
 
 {% block content %}
-<h1>{{ site | dump }}</h1>
+
+{% for page in site.dissonance.children.news.children.pages | sort(reverse=true, attr="date") %}
+  {{ page.name }}
+{% endfor %}
+
 {% endblock %}

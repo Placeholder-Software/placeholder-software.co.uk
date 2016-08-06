@@ -75,15 +75,19 @@ gulp.task('html', ['styles', 'scripts'], () => {
   var base_path = argv.base_path || "";
   console.log("Base path is: '" + base_path + "'");
 
+  var data = {
+    base_path: base_path,
+    site: sitepages(),
+    all_pages: flatten(sitepages())
+  }
+  console.log(JSON.stringify(data));
+
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
     .pipe(flatmap((stream, file) => {
       return stream
-        .pipe(data(sitedata))
         .pipe($.if('*.nunjucks', nunjucksRender({
           path: ['app/templates'],
-          data: {
-            base_path: base_path,
-          }
+          data: data
         })))
         .pipe($.useref({
           searchPath: ['.tmp', '.'],
@@ -183,46 +187,75 @@ gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
 
-function sitedata() {
-    return {
-        site: {
-            pages: sitepages()
-        }
+function flatten(hierarchy, pages) {
+  if (!pages) {
+    pages = [];
+  }
+
+  for (var i in hierarchy.pages) {
+    var value = hierarchy.pages[i];
+    if (value.file) {
+      pages.push(value);
     }
+  }
+
+  for (var key in hierarchy) {
+    if (key === "pages" || !hierarchy.hasOwnProperty(key)) {
+      continue;
+    }
+
+    var value = hierarchy[key];
+    if (value.directory) {
+      pages.push(value);
+      flatten(value.children, pages)
+    }
+  }
+
+  return pages;
 }
 
 function sitepages() {
 
-  function getFilesRecursive (folder) {
-
-    function recursiveImpl(folder, parent, files) {
+    function getFilesRecursive(folder, parent) {
       var fileContents = fs.readdirSync(folder);
 
+      var files = { pages: [] };
       fileContents.forEach(function (fileName) {
           var stats = fs.lstatSync(folder + '/' + fileName);
+          var filePath = parent + '/' + fileName;
 
           if (stats.isDirectory()) {
-              recursiveImpl(folder + '/' + fileName, parent + "/" + fileName, files);
+            files[fileName] = {
+              file: false,
+              directory: true,
+              name: fileName,
+              url: fileName,
+              children: getFilesRecursive(folder + '/' + fileName, parent + '/' + fileName)
+            };
           } else {
-              files.push({
-                  name: fileName,
-                  path: parent + '/' + fileName
+            var name = path.parse(fileName).name;
+            if (name != "index") {
+
+              //Attempt to parse a date out of the title
+              var time = 0;
+              if (name.includes('-')) {
+                time = Date.parse(name.split('-').slice(0, 3).join('-'));
+              }
+
+              files.pages.push({
+                file: true,
+                directory: false,
+                name: name,
+                path: filePath,
+                date: time,
+                url: filePath.replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
               });
+            }
           }
       });
+
+      return files;
     }
 
-    var result = [];
-    recursiveImpl(folder, "", result)
-    return result;
-  };
-
-  return getFilesRecursive("./app/pages")
-    .map(function(f) {
-      return {
-        name: f.name,
-        path: f.path,
-        url: f.path.replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
-      };
-    });
+    return getFilesRecursive('./app/pages', '')
 }

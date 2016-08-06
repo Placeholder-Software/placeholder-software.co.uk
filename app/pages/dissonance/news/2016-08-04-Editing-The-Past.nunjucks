@@ -1,10 +1,10 @@
 {% extends "dissonance/news.nunjucks" %}
 {% import "dissonance/macros/icon-section.nunjucks" as icon_section %}
 
-{% set title = "Hello" %}
+{% set title = "Invoker" %}
 
 {% block article %}
   {% call icon_section.center() -%}
-  	World
+  	The world was not the same without him.
   {%- endcall %}
 {% endblock %}

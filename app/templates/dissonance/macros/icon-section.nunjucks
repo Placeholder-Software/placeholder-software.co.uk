@@ -6,9 +6,9 @@
     </div>
 {% endmacro %}
 
-{% macro header2(id) %}
+{% macro header2(id, side="center") %}
     <div class="row section-header">
-        <div class="col-xs-12 text-center">
+        <div class="col-xs-12 text-{{ side }}">
             <h3 id="{{ id }}">{{ caller() }}</h3>
         </div>
     </div>
