@@ -1,5 +1,5 @@
-{% extends "dissonance/news.nunjucks" %}
-{% import "dissonance/macros/icon-section.nunjucks" as icon_section %}
+{% extends "templates/dissonance/news.nunjucks" %}
+{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% set title = "Invoker" %}
 

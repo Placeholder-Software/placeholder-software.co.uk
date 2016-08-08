@@ -1,0 +1,21 @@
+<!--
+    1. Write news post
+        a. Title
+        b. Content
+    2. Mailing list: https://groups.google.com/forum/#!forum/dissonance-announce/new
+    3. Tweet: https://twitter.com/PlaceholderSoft
+    4. Reddit: https://www.reddit.com/r/dissonance_voip/
+-->
+
+{% extends "templates/dissonance/news.nunjucks" %}
+{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
+
+{% set title = "TODO: INSERT TITLE HERE" %}
+
+{% block article %}
+  {% call icon_section.center() -%}
+  
+  	TODO: INSERT POST CONTENT HERE
+    
+  {%- endcall %}
+{% endblock %}

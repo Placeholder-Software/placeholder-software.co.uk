@@ -80,13 +80,12 @@ gulp.task('html', ['styles', 'scripts'], () => {
     site: sitepages(),
     all_pages: flatten(sitepages())
   }
-  console.log(JSON.stringify(data));
 
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
     .pipe(flatmap((stream, file) => {
       return stream
         .pipe($.if('*.nunjucks', nunjucksRender({
-          path: ['app/templates'],
+          path: ['app'],
           data: data
         })))
         .pipe($.useref({
@@ -216,39 +215,47 @@ function flatten(hierarchy, pages) {
 
 function sitepages() {
 
-    function getFilesRecursive(folder, parent) {
-      var fileContents = fs.readdirSync(folder);
+    function getFilesRecursive(searchRoot, urlRoot, templateRoot) {
+      var fileContents = fs.readdirSync(searchRoot);
 
       var files = { pages: [] };
       fileContents.forEach(function (fileName) {
-          var stats = fs.lstatSync(folder + '/' + fileName);
-          var filePath = parent + '/' + fileName;
+          var filePath = searchRoot + '/' + fileName;
+          var stats = fs.lstatSync(filePath);
 
           if (stats.isDirectory()) {
             files[fileName] = {
               file: false,
               directory: true,
               name: fileName,
-              url: fileName,
-              children: getFilesRecursive(folder + '/' + fileName, parent + '/' + fileName)
+              url: (urlRoot + '/' + fileName),
+              children: getFilesRecursive(searchRoot + '/' + fileName, urlRoot + '/' + fileName, templateRoot + "/" + fileName)
             };
           } else {
             var name = path.parse(fileName).name;
             if (name != "index") {
 
               //Attempt to parse a date out of the title
-              var time = 0;
+              var date = new Date();
               if (name.includes('-')) {
-                time = Date.parse(name.split('-').slice(0, 3).join('-'));
+                var parts = name.split('-').slice(0, 3).map(function(a) { return parseInt(a); });
+                if (parts.length == 3 && parts[0] && parts[1] && parts[2]) {
+                  date = new Date(parts[0], parts[1] - 1, parts[2])
+                }
               }
 
               files.pages.push({
                 file: true,
                 directory: false,
                 name: name,
-                path: filePath,
-                date: time,
-                url: filePath.replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
+                path: templateRoot + '/' + fileName,
+                timestamp: date.getTime(),
+                date: {
+                  day: date.getDate(),
+                  month: date.toLocaleString("en-gb", { month: "long" }),
+                  year: date.getFullYear()
+                },
+                url: (urlRoot + '/' + fileName).replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
               });
             }
           }
@@ -257,5 +264,5 @@ function sitepages() {
       return files;
     }
 
-    return getFilesRecursive('./app/pages', '')
+    return getFilesRecursive('./app/pages', '', 'pages')
 }

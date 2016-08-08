@@ -1,5 +1,5 @@
-{% extends "dissonance/layout.nunjucks" %}
-{% import "dissonance/macros/icon-section.nunjucks" as icon_section %}
+{% extends "templates/dissonance/layout.nunjucks" %}
+{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% block content %}
 

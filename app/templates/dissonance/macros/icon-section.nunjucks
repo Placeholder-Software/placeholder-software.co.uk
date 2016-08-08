@@ -1,6 +1,6 @@
-{% macro header(title, id) %}
+{% macro header(title, id, side="center") %}
     <div class="row section-header">
-        <div class="col-xs-12 text-center">
+        <div class="col-xs-12 text-{{ side }}">
             <h3 id="{{ id }}">{{ title }}</h3>
         </div>
     </div>

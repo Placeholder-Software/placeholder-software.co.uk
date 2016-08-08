@@ -1,10 +1,10 @@
 {% extends "templates/dissonance/news.nunjucks" %}
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
-{% set title = "Luna" %}
+{% set title = "Hello" %}
 
 {% block article %}
   {% call icon_section.center() -%}
-  	She likes big moons and she cannot lie.
+  	World
   {%- endcall %}
 {% endblock %}

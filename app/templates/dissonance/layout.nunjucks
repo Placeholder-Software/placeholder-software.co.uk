@@ -17,7 +17,7 @@
     <style>
         {% block page_style %}{% endblock %}
     </style>
-    
+
     <!-- build:css /styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -128,7 +128,7 @@
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     -->
-    
+
     <!-- build:js /scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>

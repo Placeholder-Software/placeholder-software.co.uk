@@ -1,9 +1,70 @@
-{% extends "dissonance/layout.nunjucks" %}
+{% extends "templates/dissonance/layout.nunjucks" %}
+{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
+
+{% block page_style %}
+.main-content {
+  padding-top: 2em;
+}
+
+.date {
+  font-family: roboto;
+  font-size: 17px;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .date {
+    font-size: 12px;
+  }
+}
+
+.post-title {
+  margin-right: 1em;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .post-title {
+
+  }
+}
+
+.btn.btn-link.follow-prompt {
+  margin-right: 0.7em;
+  font-family: Roboto, sans-serif;
+}
+{% endblock %}
 
 {% block content %}
 
-{% for page in site.dissonance.children.news.children.pages | sort(reverse=true, attr="date") %}
-  {{ page.name }}
-{% endfor %}
+  <div class="row section-header" style="padding-bottom:1em">
+      <div class="col-sm-4 text-center">
+          <h3>News</h3>
+      </div>
+      <div class="col-sm-8 text-center">
+        <div class="row">
+          <a class="btn btn-link follow-prompt" href="https://groups.google.com/forum/#!forum/dissonance-announce">Get Email Updates</a>
+          <a class="btn btn-link follow-prompt" href="https://twitter.com/PlaceholderSoft">Follow on Twitter</a>
+        </div>
+      </div>
+  </div>
 
+  {% for meta in site.dissonance.children.news.children.pages | sort(reverse=true, attr="timestamp") %}
+
+    <!-- pull in the post defines (but not the block content) -->
+    {% import meta.path as post %}
+
+    <section>
+      <div class="row section-header">
+          <div class="col-xs-12 text-left news-title">
+              <a href="{{ base_url }}{{ meta.url }}"><div class="post-title">{{ post.title }}</div></a>
+              <div class="date">{{ meta.date.month }} {{ meta.date.day }}, {{ meta.date.year }}</div>
+          </div>
+      </div>
+      <p>
+        {{ meta | dump }}
+      </p>
+    </section>
+
+  {% endfor %}
 {% endblock %}

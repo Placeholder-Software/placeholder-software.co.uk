@@ -1,4 +1,4 @@
-{% extends "dissonance/changelog.nunjucks" %}
+{% extends "templates/dissonance/changelog.nunjucks" %}
 
 {% set version_number = "1.0.0" %}
 
