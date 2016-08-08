@@ -4,10 +4,11 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import url(https://fonts.googleapis.com/css?family=Roboto);      // Main font
-@import url(https://fonts.googleapis.com/css?family=Michroma);    // Placeholder Software branding
-@import url(https://fonts.googleapis.com/css?family=Inconsolata); // Footer and code
-@import url(https://fonts.googleapis.com/css?family=Bangers);     // Big title
+// Roboto: Main body font
+// Michroma: Placeholder Software branding
+// Inconsolata: Monospace (footer and code samples)
+// Bangers: Main "style" font (titles etc)
+@import url(https://fonts.googleapis.com/css?family=Roboto|Michroma|Inconsolata|Bangers);
 
 @import "variables.scss";
 

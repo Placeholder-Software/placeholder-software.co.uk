@@ -233,7 +233,8 @@ function sitepages() {
             };
           } else {
             var name = path.parse(fileName).name;
-            if (name != "index") {
+            var ext = path.extname(fileName)
+            if (name != "index" && (ext == ".html" || ext == ".nunjucks" )) {
 
               //Attempt to parse a date out of the title
               var date = new Date();
