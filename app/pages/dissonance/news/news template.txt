@@ -11,11 +11,10 @@
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% set title = "TODO: INSERT TITLE HERE" %}
-
-{% block article %}
-  {% call icon_section.center() -%}
+{% set body %}
+    {% call icon_section.center() -%}
   
-  	TODO: INSERT POST CONTENT HERE
+        TODO: INSERT POST CONTENT HERE
     
-  {%- endcall %}
-{% endblock %}
+    {%- endcall %}
+{% endset %}

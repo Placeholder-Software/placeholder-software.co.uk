@@ -57,12 +57,20 @@
     <section>
       <div class="row section-header">
           <div class="col-xs-12 text-left news-title">
-              <a href="{{ base_url }}{{ meta.url }}"><div class="post-title">{{ post.title }}</div></a>
-              <div class="date">{{ meta.date.month }} {{ meta.date.day }}, {{ meta.date.year }}</div>
+            <div class="row"><a href="{{ base_url }}{{ meta.url }}"><div class="post-title">{{ post.title }}</div></a></div>
+            <div class="row">
+                <div class="col-xs-3 text-left">
+                    <div class="date">{{ meta.date.month }} {{ meta.date.day }}, {{ meta.date.year }}</div>
+                </div>
+                <div class="col-xs-4 text-center">
+                </div>
+                <div class="col-xs-3 text-right">
+                </div>
+            </div>
           </div>
       </div>
       <p>
-        {{ meta | dump }}
+        {{ post.body | safe }}
       </p>
     </section>
 

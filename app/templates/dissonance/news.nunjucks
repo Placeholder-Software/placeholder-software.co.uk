@@ -7,5 +7,5 @@
     {{ title }}
   {%- endcall %}
 
-  {% block article %}{% endblock %}
+  {{ body | safe }}
 {% endblock %}
