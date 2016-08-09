@@ -4,10 +4,14 @@ footer.navbar {
   margin-top: auto;
   padding-bottom: 1em;
   color: $mid-color;
-  font-family: Roboto, sans-serif;
+  font-family: monospace;
 
   a {
     color: $mid-color;
+    
+    @media (max-width: 767px) {
+      line-height: 2.5em;
+    }
   }
 
   a:hover, a:focus {

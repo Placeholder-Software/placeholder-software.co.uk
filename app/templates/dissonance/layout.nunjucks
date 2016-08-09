@@ -5,9 +5,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dissonance</title>
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+    
+    <link rel='shortcut icon' href='/images/dissonance.png' type='image/x-icon' >
+    <link rel="apple-touch-icon" href="/images/dissonance.png">
 
     <!-- build:css /styles/vendor.css -->
     <!-- bower:css -->
@@ -18,6 +18,13 @@
         {% block page_style %}{% endblock %}
     </style>
 
+    <!--
+        Roboto: Main body font
+        Michroma: Placeholder Software branding
+        Bangers: Main "style" font (titles etc)
+    -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Michroma|Bangers' rel='stylesheet' type='text/css'>
+    
     <!-- build:css /styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
