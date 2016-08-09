@@ -1,7 +1,7 @@
 {% extends "templates/dissonance/layout.nunjucks" %}
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
-{% set alert_message = "Dissonance not yet release: It's currently in development!" %}
+{% set alert_message = "Dissonance not yet released: It's currently in development!" %}
 
 {% block content %}
 
