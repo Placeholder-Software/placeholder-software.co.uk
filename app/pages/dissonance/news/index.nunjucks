@@ -49,7 +49,7 @@
       </div>
   </div>
 
-  {% for meta in site.dissonance.children.news.children.pages | sort(reverse=true, attr="timestamp") %}
+  {% for meta in site.dissonance.children.news.children.pages | sort(true, false, "timestamp") %}
 
     <!-- pull in the post defines (but not the block content) -->
     {% import meta.path as post %}
