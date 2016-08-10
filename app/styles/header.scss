@@ -15,6 +15,7 @@
     font-family: Michroma, sans-serif;
     color: $bg-color;
     font-size: 1.7em;
+    letter-spacing: -1px;
   }
 
   .nav {
@@ -36,6 +37,10 @@
         font-size: 1.1em;
     }
   }
+}
+
+.navbar-social > img {
+  height: 1em;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -67,7 +72,12 @@
   z-index: 1;
   width: 100%;
   font-family: Bangers, sans-serif;
-  font-size: 4vw;
+  font-size: 5.5vw;
+
+  @media (min-width: 1164px) {
+    font-size: 67px;
+    text-align: center;
+  }
 }
 
 .site-title {

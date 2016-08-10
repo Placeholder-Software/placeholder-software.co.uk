@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dissonance</title>
-    
+
     <link rel='shortcut icon' href='/images/dissonance.png' type='image/x-icon' >
     <link rel="apple-touch-icon" href="/images/dissonance.png">
 
@@ -24,7 +24,7 @@
         Bangers: Main "style" font (titles etc)
     -->
     <link href='https://fonts.googleapis.com/css?family=Roboto|Michroma|Bangers' rel='stylesheet' type='text/css'>
-    
+
     <!-- build:css /styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -49,13 +49,22 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://dissonance.readthedocs.io/en/latest/" target="_blank">Docs</a></li>
             <li><a href="/dissonance/news">News</a></li>
             <li><a href="todo:insert-link" target="_blank">Store</a></li>
             <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Community</a></li>
             <li><a href="https://github.com/Placeholder-Software/Dissonance" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
           </ul>
+
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="navbar-social navbar-brand twitter hidden-xs" href="https://twitter.com/PlaceholderSoft" target="_blank"><img src="/images/twitter.svg"></img></a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </nav>
