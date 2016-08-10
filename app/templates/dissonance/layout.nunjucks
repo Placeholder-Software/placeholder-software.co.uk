@@ -18,6 +18,8 @@
         {% block page_style %}{% endblock %}
     </style>
 
+    {% block head %}{% endblock %}
+
     <!--
         Roboto: Main body font
         Michroma: Placeholder Software branding
@@ -29,7 +31,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="{{ body_class }}">
 
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -61,7 +63,9 @@
 
           <ul class="nav navbar-nav">
             <li>
-              <a class="navbar-social navbar-brand twitter hidden-xs" href="https://twitter.com/PlaceholderSoft" target="_blank"><img src="/images/twitter.svg"></img></a>
+              <a class="navbar-social navbar-brand twitter hidden-xs" href="https://twitter.com/PlaceholderSoft" target="_blank">
+                  {% include "images/twitter.svg" %}
+              </a>
             </li>
           </ul>
 
@@ -88,7 +92,7 @@
         <div class="row">
           <div class="column-xs-12" style="height: 0.5em">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" style="float:left">
-              <polyline points="0,0, 0,100 100,0" class="splash-color-polyline" />
+              <polyline points="0,0, 0,100, 100,0" class="fill-primary" />
             </svg>
           </div>
         </div>

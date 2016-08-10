@@ -39,8 +39,11 @@
   }
 }
 
-.navbar-social > img {
+.navbar-social {
   height: 1em;
+  width: 1em;
+  box-sizing: content-box;
+  fill: $bg-color;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -64,10 +67,6 @@
   font-size: 16px;
 }
 
-.splash-color-polyline {
-  fill: $primary-color;
-}
-
 .site-title-container {
   z-index: 1;
   width: 100%;
@@ -75,14 +74,14 @@
   font-size: 5.5vw;
 
   @media (min-width: 1164px) {
-    font-size: 67px;
+    font-size: 69px;
     text-align: center;
   }
 }
 
 .site-title {
     display: inline-block;
-    padding-left: 0.35em;
+    padding-right: 0.35em;
 
     @at-root h1#{&} {
       font-size: 2em;

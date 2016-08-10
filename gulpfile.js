@@ -77,6 +77,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
 
   var data = {
     base_path: base_path,
+    now: new Date().toISOString(),
     site: sitepages(),
     all_pages: flatten(sitepages())
   }
@@ -254,7 +255,8 @@ function sitepages() {
                 date: {
                   day: date.getDate(),
                   month: date.toLocaleString("en-gb", { month: "long" }),
-                  year: date.getFullYear()
+                  year: date.getFullYear(),
+                  iso: date.toISOString()
                 },
                 url: (urlRoot + '/' + fileName).replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
               });

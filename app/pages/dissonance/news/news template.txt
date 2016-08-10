@@ -12,9 +12,7 @@
 
 {% set title = "TODO: INSERT TITLE HERE" %}
 {% set body %}
-    {% call icon_section.center() -%}
-  
-        TODO: INSERT POST CONTENT HERE
-    
-    {%- endcall %}
+
+  TODO: INSERT POST CONTENT HERE
+
 {% endset %}
