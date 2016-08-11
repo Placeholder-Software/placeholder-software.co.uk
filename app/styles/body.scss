@@ -12,10 +12,8 @@ body {
 h3 {
   font-family: Bangers, sans-serif;
   font-size: 87px;
-}
 
-@media (max-width: 767px) {
-  h3 {
+  @media (max-width: 767px) {
     font-size: 55px;
   }
 }
@@ -23,10 +21,8 @@ h3 {
 h4 {
   font-family: Bangers, sans-serif;
   font-size: 54px;
-}
 
-@media (max-width: 767px) {
-  h4 {
+  @media (max-width: 767px) {
     font-size: 35px;
   }
 }
@@ -35,22 +31,33 @@ h4 {
   &.btn-link {
 
     &:hover {
-      background-color: $primary-color;
-      color: #fff;
+      background-color: transparent;
+      color: inherit;
       outline-offset: 10px;
-      outline-color: rgba($dark-color, 0.06);
+      outline-color: $primary-color;
     }
 
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
+    background-color: $primary-color;
+
+    font-size: 1em;
+    @media (min-width: 767px) {
+      font-size: 1.2em;
+    }
+    @media (min-width: 1900px) {
+      font-size: 2em;
+    }
+    color: $bg-color;
+
     outline: 1px solid;
     outline-offset: 1px;
-    outline-color: $primary-color;
-    margin: 20px 0 0 0;
+    outline-color: rgba($dark-color, 0.06);
+
+    margin: 13px;
+    border: 0;
+    border-radius: 0;
     padding: 8px 13px;
     text-decoration: none;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-out;
   }
 }
 
@@ -61,6 +68,7 @@ h4 {
 
 .main-content {
     padding-bottom: 3em;
+    padding-top: 2em;
 }
 
 .section-header {
