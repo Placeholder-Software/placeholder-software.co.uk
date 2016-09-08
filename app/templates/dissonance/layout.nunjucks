@@ -29,9 +29,10 @@
 
     <!-- build:css /styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/bower_components/jquery-eu-cookie-law-popup/css/jquery-eu-cookie-law-popup.css">
     <!-- endbuild -->
   </head>
-  <body class="{{ body_class }}">
+  <body class="{{ body_class }} eupopup">
 
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -136,18 +137,17 @@
         </div>
     </footer>
 
-    <!--
     <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', 'UA-46722926-1', 'auto');
     ga('send', 'pageview');
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
-    -->
 
     <!-- build:js /scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-eu-cookie-law-popup/js/jquery-eu-cookie-law-popup.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -167,7 +167,7 @@
     <!-- endbuild -->
 
     <!-- build:js /scripts/main.js -->
-    <script src="/scripts/main.js"></script>
+    <script src="/app/scripts/main.js"></script>
     <!-- endbuild -->
   </body>
 </html>
