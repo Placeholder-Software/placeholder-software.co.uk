@@ -5,7 +5,7 @@
 {% block blurb %}
 <p>We're very excited to release the very first version of Dissonance to our testers!</p>
 
-<p>Since this is the very first release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk>email</a>.</p>
+<p>Since this is the very first release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
 {% endblock %}
 
 {% block features %}
