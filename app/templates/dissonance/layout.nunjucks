@@ -54,7 +54,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://dissonance.readthedocs.io/en/latest/" target="_blank">Docs</a></li>
+            <li><a href="/dissonance/docs" target="_blank">Docs</a></li>
             <li><a href="/dissonance/news">News</a></li>
             <li><a href="todo:insert-link" target="_blank">Store</a></li>
             <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Community</a></li>
