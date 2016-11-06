@@ -22,10 +22,9 @@
 
     <!--
         Roboto: Main body font
-        Michroma: Placeholder Software branding
         Bangers: Main "style" font (titles etc)
     -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto|Michroma|Bangers' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Bangers' rel='stylesheet' type='text/css'>
 
     <!-- build:css /styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -47,7 +46,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Placeholder Software</a>
+          <a class="navbar-brand" href="/">
+            {% include "images/Placeholder Header.svg" %}
+          </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

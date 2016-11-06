@@ -12,8 +12,9 @@
   margin-bottom: 0;
 
   .navbar-brand {
-    font-family: Michroma, sans-serif;
     color: $bg-color;
+    stroke: $bg-color;
+    fill: $bg-color;
     font-size: 1.7em;
     letter-spacing: -1px;
   }
