@@ -1,6 +1,6 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 
-{% set version_number = "0.0.2" %}
+{% set version_number = "0.0.6" %}
 
 {% block blurb %}
 <p>This is the sixth round of testing for Dissonance. This version brings a variety of bug fixes and exposes the preprocessor settings for tweaking.</p>

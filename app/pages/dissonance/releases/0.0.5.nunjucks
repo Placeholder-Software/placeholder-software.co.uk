@@ -1,6 +1,6 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 
-{% set version_number = "0.0.2" %}
+{% set version_number = "0.0.5" %}
 
 {% block blurb %}
 <p>This is the fifth round of testing for Dissonance. This version brings a number of improvements to the voice detector.</p>

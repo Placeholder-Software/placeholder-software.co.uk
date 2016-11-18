@@ -1,6 +1,6 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 
-{% set version_number = "0.0.2" %}
+{% set version_number = "0.0.3" %}
 
 {% block blurb %}
 <p>This is the third round of testing for Dissonance. The big change in this version is the addition of access control tokens - allowing you to control who can join particular channels based on knowledge of a token. This makes setting up private channels (e.g. team chat) much easier.</p>

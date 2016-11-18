@@ -1,6 +1,6 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 
-{% set version_number = "0.0.2" %}
+{% set version_number = "0.0.4" %}
 
 {% block blurb %}
 <p>This is the fourth round of testing for Dissonance. This release brings a few small bugfixes.</p>
