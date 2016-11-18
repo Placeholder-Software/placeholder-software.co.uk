@@ -1,0 +1,28 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "0.0.2" %}
+
+{% block blurb %}
+<p>This is the fourth round of testing for Dissonance. This release brings a few small bugfixes.</p>
+
+<p>Since this is a testing release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Removed configuration settings from distribution (they will automatically be generated first time the asset is loaded in editor)</li>
+    <li>Fixed a possible null reference exception in the encoder pipeline</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>iOS</li>
+            <li>macOS</li>
+            <li>Android</li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
