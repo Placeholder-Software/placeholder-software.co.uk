@@ -1,38 +1,64 @@
 {% extends "templates/dissonance/layout.nunjucks" %}
 
-{% block content %}
+{% macro feature_row(name, diss, dfv, photon) %}
+  <tr>
+    <th class="text-nowrap" scope="row">{{ name }}</th>
+    <td class="check-column"><span class="glyphicon {% if diss %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
+    <td class="check-column"><span class="glyphicon {% if dfv %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
+    <td class="check-column"><span class="glyphicon {% if photon %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
+  </tr>
+{% endmacro %}
 
-<div class="table-responsive comparison-table">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th></th>
-        <th class="dissonance check-column">Dissonance</th>
-        <th class="df-voice check-column">DF Voice</th>
-        <th class="pun-voice check-column">Photon Voice</th>
-      </tr>
-    </thead>
+{% macro feature_table(name, glyph) %}
+  <div class="cmp-header">
+    <div class="glyphicon {{ glyph }}"></div>
+    <span>{{ name }}</span>
+  </div>
+  <table class="table table-hover comparison-table">
     <tbody>
-      <tr>
-        <th class="text-nowrap" scope="row">Feature Name</th>
-        <td><span class="glyphicon glyphicon-ok" /></td>
-        <td><span class="glyphicon glyphicon-remove" /></td>
-        <td><span class="glyphicon glyphicon-remove" /></td>
-      </tr>
-      <tr>
-        <th class="text-nowrap" scope="row">Feature Name</th>
-        <td><span class="glyphicon glyphicon-ok" /></td>
-        <td><span class="glyphicon glyphicon-remove" /></td>
-        <td><span class="glyphicon glyphicon-remove" /></td>
-      </tr>
-      <tr>
-        <th class="text-nowrap" scope="row">Feature Name</th>
-        <td><span class="glyphicon glyphicon-ok" /></td>
-        <td><span class="glyphicon glyphicon-remove" /></td>
-        <td><span class="glyphicon glyphicon-remove" /></td>
-      </tr>
+      {{ caller() }}
     </tbody>
   </table>
-</div>
+{% endmacro %}
+
+{% block content %}
+
+<div class="table-responsive comparison-table"></div>
+<table class="cmp-products">
+  <thead>
+    <tr>
+      <th></th>
+      <th class="dissonance check-column">Dissonance</th>
+      <th class="df-voice check-column">DF Voice</th>
+      <th class="pun-voice check-column">Photon Voice</th>
+    </tr>
+  </thead>
+</table>
+
+{% call feature_table("Platform Support", "glyphicon-qrcode") %}
+  {{ feature_row("Windows", true, false, false) }}
+  {{ feature_row("Baremetal", false, false, true) }}
+  {{ feature_row("Amiga", false, true, false) }}
+  {{ feature_row("Blackberry", true, true, true) }}
+{%- endcall %}
+
+{% call feature_table("Audio Quality Support", "glyphicon-headphones") %}
+  {{ feature_row("Opus", true, false, false) }}
+  {{ feature_row("Noise Reduction", false, true, true) }}
+  {{ feature_row("Packet Loss Concealment", true, true, false) }}
+  {{ feature_row("Automatic Gain Control", true, false, true) }}
+{%- endcall %}
+
+{% call feature_table("Control Features", "glyphicon-oil") %}
+  {{ feature_row("Multiple Channels", false, true, true) }}
+  {{ feature_row("Speaker Priority", true, true, false) }}
+  {{ feature_row("Access Tokens", false, false, true) }}
+  {{ feature_row("Per Speaker Volume", true, false, true) }}
+{%- endcall %}
+
+{% call feature_table("Networking", "glyphicon-ice-lolly") %}
+  {{ feature_row("Jitter Buffer", false, true, true) }}
+  {{ feature_row("IPoAC", true, true, false) }}
+{%- endcall %}
 
 {% endblock %}

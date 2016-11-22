@@ -1,42 +1,77 @@
 @import "variables.scss";
 
-.dissonance {
-  background-color: $primary-color;
+.cmp-products {
+  width: 100%;
+  max-width: 100%;
+
+  th {
+    padding: 8px;
+
+    &.dissonance {
+      background-color: $primary-color;
+      font-family: Bangers, sans-serif;
+      font-weight: normal;
+      font-size: 1.4em;
+    }
+
+    &.df-voice {
+      background-color: hsl(100, 100%, 32%);
+    }
+
+    &.pun-voice {
+      background-color: hsl(43, 90%, 49%);
+    }
+  }
 }
 
-.df-voice {
-  background-color: hsl(100, 100%, 42%);
-}
+.cmp-header {
 
-.pun-voice {
-  background-color: hsl(43, 100%, 49%);
+  font-size: 1.3em;
+  padding-bottom: 0.5em;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .glyphicon {
+    font-size: 2em;
+    vertical-align: middle;
+    padding-right: 0.4em;
+  }
+
 }
 
 .comparison-table {
     table-layout: fixed;
     width: 100%;
     white-space: nowrap;
+
+    td {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:nth-child(2) > .glyphicon-ok {
+          color: $primary-color;
+      }
+
+      .glyphicon {
+          display:block;
+          text-align:center;
+      }
+
+      .glyphicon-ok {
+          color: $mid-color;
+      }
+
+      .glyphicon-remove {
+        color: $light-color;
+      }
+    }
 }
 
-.comparison-table td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-th.check-column {
+.check-column {
     width: 20%;
-}
-
-td > .glyphicon {
-    display:block;
-    text-align:center;
-}
-
-td > .glyphicon-ok {
-    color: $primary-color;
-}
-
-td > .glyphicon-remove {
-  color: $negative-color;
+    text-align: center;
 }
