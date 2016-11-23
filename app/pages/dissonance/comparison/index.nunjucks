@@ -35,30 +35,52 @@
   </thead>
 </table>
 
+{#
+    Dissonance: Lacking mobile/Mac
+    DFVoice: Requires you to compile opus for any platform except windows!
+    Photon: Every platform
+#}
 {% call feature_table("Platform Support", "glyphicon-qrcode") %}
-  {{ feature_row("Windows", true, false, false) }}
-  {{ feature_row("Baremetal", false, false, true) }}
-  {{ feature_row("Amiga", false, true, false) }}
-  {{ feature_row("Blackberry", true, true, true) }}
+  {{ feature_row("Windows", true, true, true) }}
+  {{ feature_row("Linux", true, false, true) }}
+  {{ feature_row("Android", false, false, true) }}
+  {{ feature_row("iOS", false, false, true) }}
+  {{ feature_row("MacOS", false, false, true) }}
 {%- endcall %}
 
-{% call feature_table("Audio Quality Support", "glyphicon-headphones") %}
-  {{ feature_row("Opus", true, false, false) }}
-  {{ feature_row("Noise Reduction", false, true, true) }}
-  {{ feature_row("Packet Loss Concealment", true, true, false) }}
-  {{ feature_row("Automatic Gain Control", true, false, true) }}
+{#
+    Opus: Everyone uses opus! no much point including this...
+    Noise Attenuation: No mention I can find on DFVoice or Photon
+    AGC: DF mentions AGC in docs, can't find any mention on Photon
+    Soft Clip: No mention on DF, looked in Photon source and can't find it
+#}
+{% call feature_table("Audio Quality", "glyphicon-headphones") %}
+  {{ feature_row("Opus Codec", true, true, true) }}
+  {{ feature_row("Noise Attenuation", true, false, false) }}
+  {{ feature_row("Automatic Gain Control", true, true, false) }}
+  {{ feature_row("Soft Clipping", true, false, false) }}
 {%- endcall %}
 
-{% call feature_table("Control Features", "glyphicon-oil") %}
-  {{ feature_row("Multiple Channels", false, true, true) }}
-  {{ feature_row("Speaker Priority", true, true, false) }}
-  {{ feature_row("Access Tokens", false, false, true) }}
-  {{ feature_row("Per Speaker Volume", true, false, true) }}
+{#
+    Channels: DF docs don't mention channels, Photon has "audio rooms"
+    Priority: DF docs don't mention priority, Photon doesn't either
+    Tokens: DF doesn't have rooms (so no tokens), Photon doesn't mention any kind of access control
+#}
+{% call feature_table("Features", "glyphicon-oil") %}
+  {{ feature_row("Multiple Channels", true, false, true) }}
+  {{ feature_row("Positional Chat Room", true, false, false) }}
+  {{ feature_row("Speaker Priority", true, false, false) }}
+  {{ feature_row("Access Tokens", true, false, false) }}
 {%- endcall %}
 
+{#
+    Backend: DF doesn't appear to have any default networking integration. photon is photon exclusive
+#}
 {% call feature_table("Networking", "glyphicon-ice-lolly") %}
-  {{ feature_row("Jitter Buffer", false, true, true) }}
-  {{ feature_row("IPoAC", true, true, false) }}
+  {{ feature_row("Any Multiplayer System", true, true, false) }}
+  {{ feature_row("Built In UNet", true, false, false }}
+  {{ feature_row("Built In Forge", true, false, false }}
+  {{ feature_row("Built In Photon", false, false, true }}
 {%- endcall %}
 
 {% endblock %}
