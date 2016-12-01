@@ -77,8 +77,9 @@
 #}
 {% call feature_table("Platform Support", "glyphicon-hdd") %}
   {{ feature_row("Windows", true, true, true) }}
+  {{ feature_row("Windows Store Universal", false, false, true) }}
   {{ feature_row("Linux", true, false, true) }}
-  {{ feature_row("Android", false, false, true) }}
+  {{ feature_row("Android", true, false, true) }}
   {{ feature_row("iOS", false, false, true) }}
   {{ feature_row("MacOS", false, false, true) }}
 {%- endcall %}
