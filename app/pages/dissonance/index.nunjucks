@@ -1,7 +1,7 @@
 {% extends "templates/dissonance/layout.nunjucks" %}
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
-{% set alert_message = "Dissonance not yet released: It's currently in development!" %}
+{% set alert_message = "Dissonance is not yet released: It's currently in development!" %}
 
 {% macro feature(image) %}
   <div class="col-sm-2 hidden-xs">
@@ -24,6 +24,27 @@
   </div>
 {% endmacro %}
 
+{% macro feature_row(name, diss, dfv, photon) %}
+  <tr>
+    <th class="text-nowrap" scope="row">{{ name }}</th>
+    <td class="check-column"><span class="glyphicon {% if diss %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
+    <td class="check-column"><span class="glyphicon {% if dfv %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
+    <td class="check-column"><span class="glyphicon {% if photon %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
+  </tr>
+{% endmacro %}
+
+{% macro feature_table(name, glyph) %}
+  <div class="cmp-header">
+    <div class="glyphicon {{ glyph }}"></div>
+    <span>{{ name }}</span>
+  </div>
+  <table class="table table-hover comparison-table">
+    <tbody>
+      {{ caller() }}
+    </tbody>
+  </table>
+{% endmacro %}
+
 {% block content %}
 
   <div class="row">
@@ -35,17 +56,86 @@
     {% call feature("images/rocket.svg") -%}<b>Fantastic</b> multithreaded performance with minimal memory usage{%- endcall %}
   </div>
 
+  <div class="row extra-row-space">
+    <div class="col-xs-12">
+    
+      <div class="table-responsive comparison-table"></div>
+      <table class="cmp-products">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="dissonance check-column">Dissonance</th>
+            <th class="df-voice check-column">DF Voice</th>
+            <th class="pun-voice check-column">Photon Voice</th>
+          </tr>
+        </thead>
+      </table>
+
+      {#
+          Opus: Everyone uses opus! no much point including this...
+          Noise Attenuation: No mention I can find on DFVoice or Photon
+          AGC: DF mentions AGC in docs, can't find any mention on Photon
+          Soft Clip: No mention on DF, looked in Photon source and can't find it
+      #}
+      {% call feature_table("Audio Quality", "glyphicon-headphones") %}
+        {{ feature_row("Opus Codec", true, true, true) }}
+        {{ feature_row("Noise Attenuation", true, false, false) }}
+        {{ feature_row("Automatic Gain Control", true, true, false) }}
+        {{ feature_row("Soft Clipping", true, false, false) }}
+      {%- endcall %}
+      {#
+          Channels: DF docs don't mention channels, Photon has "audio rooms"
+          Priority: DF docs don't mention priority, Photon doesn't either
+          Tokens: DF doesn't have rooms (so no tokens), Photon doesn't mention any kind of access control
+      #}
+      {% call feature_table("Features", "glyphicon-flash") %}
+        {{ feature_row("Multiple Channels", true, false, true) }}
+        {{ feature_row("Positional Chat Rooms", true, false, false) }}
+        {{ feature_row("Speaker Priority", true, false, false) }}
+        {{ feature_row("Access Tokens", true, false, false) }}
+      {%- endcall %}
+
+      {#
+          Backend: DF doesn't appear to have any default networking integration. photon is photon exclusive
+      #}
+      {% call feature_table("Networking", "glyphicon-random") %}
+        {{ feature_row("Any Multiplayer System", true, true, false) }}
+        {{ feature_row("Built In UNet", true, false, false) }}
+        {{ feature_row("Built In Forge", true, false, false) }}
+        {{ feature_row("Built In Photon", false, false, true) }}
+      {%- endcall %}
+
+      {#
+          Dissonance: Lacking mobile/Mac
+          DFVoice: Requires you to compile opus for any platform except windows!
+          Photon: Every platform
+      #}
+      {% call feature_table("Platform Support", "glyphicon-hdd") %}
+        {{ feature_row("Windows", true, true, true) }}
+        {{ feature_row("Windows Store Universal", false, false, true) }}
+        {{ feature_row("Linux", true, false, true) }}
+        {{ feature_row("Android", true, false, true) }}
+        {{ feature_row("iOS", false, false, true) }}
+        {{ feature_row("MacOS", false, false, true) }}
+      {%- endcall %}
+    
+    </div>
+  </div>
+  
   <div class="row">
       <div class="col-xs-12 text-center">
-          <h3 id="get-started">Get Started</h3>
-
-          <a href="todo:insert-link" target="_blank" class="btn btn-link">Buy Dissonance On The Unity Store</a>
+        <h3 id="get-started">Get Started</h3>
+      </div>
+      <div class="col-xs-12 text-center">
+        <a href="todo:insert-link" target="_blank" class="btn btn-link">Buy Dissonance On The Unity Store</a>
       </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12 text-justify">
 
+<p><a href="todo:insert-link">Buy Dissonance</a> on the Unity Store to use it in your game. Get all future feature upgrades and bugfixes for free!</p>
+    
 <p><a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/" target="_blank" >Follow The Tutorials</a>. This series of text and
 video tutorials will walk you through the basics of setting up a simple team based voice chat system all the way up to a complex multi team, multi
 room, positional chat system with complex audio effects.</p>
