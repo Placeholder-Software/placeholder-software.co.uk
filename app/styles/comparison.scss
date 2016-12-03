@@ -3,6 +3,7 @@
 .cmp-products {
   width: 100%;
   max-width: 100%;
+  font-size: 1.2em;
 
   th {
     padding: 8px;
@@ -12,8 +13,9 @@
       font-family: Bangers, sans-serif;
       font-weight: normal;
       font-size: 1.4em;
+      letter-spacing: 0.65px;
     }
-
+    
     &.df-voice {
       background-color: hsl(100, 100%, 32%);
     }
@@ -59,6 +61,11 @@
       .glyphicon {
           display:block;
           text-align:center;
+          
+          font-size: 1.3em;
+          @media (min-width: 767px) {
+            font-size: 1.8em;
+          }
       }
 
       .glyphicon-ok {

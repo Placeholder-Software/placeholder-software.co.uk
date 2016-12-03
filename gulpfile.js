@@ -76,11 +76,12 @@ gulp.task('html', ['styles', 'scripts'], () => {
   var base_path = argv.base_path || "";
   console.log("Base path is: '" + base_path + "'");
 
+  var pages = sitepages();
   var data = {
     base_path: base_path,
     now: new Date().toISOString(),
-    site: sitepages(),
-    all_pages: flatten(sitepages())
+    site: pages,
+    all_pages: flatten(pages)
   }
 
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
