@@ -24,9 +24,11 @@
   </div>
 {% endmacro %}
 
-{% macro feature_row(name, diss, dfv, photon, diss_tip, dfv_tip, photon_tip) %}
+{% macro feature_row(name, tip, diss, dfv, photon, diss_tip, dfv_tip, photon_tip) %}
   <tr>
-    <th class="text-nowrap" scope="row">{{ name }}</th>
+    <th class="text-nowrap" scope="row"  data-toggle="tooltip" data-placement="left" title="{{ tip }}">
+        {{ name }}{% if tip|length %}<span class="tip-indicator glyphicon glyphicon-info-sign"></span>{% endif %}
+    </th>
     <td class="check-column"><span class="glyphicon {% if diss %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ diss_tip }}" /></td>
     <td class="check-column"><span class="glyphicon {% if dfv %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ dfv_tip }}" /></td>
     <td class="check-column"><span class="glyphicon {% if photon %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ photon_tip }}" /></td>
@@ -78,10 +80,10 @@
           Soft Clip: No mention on DF, looked in Photon source and can't find it
       #}
       {% call feature_table("Audio Quality", "glyphicon-headphones") %}
-        {{ feature_row("Opus Codec", true, true, true) }}
-        {{ feature_row("Noise Attenuation", true, false, false) }}
-        {{ feature_row("Automatic Gain Control", true, true, false) }}
-        {{ feature_row("Soft Clipping", true, false, false) }}
+        {{ feature_row("Opus Codec", "", true, true, true) }}
+        {{ feature_row("Noise Attenuation", "Reduces noise without reducing voice", true, false, false) }}
+        {{ feature_row("Automatic Gain Control", "All speakers sound the same volume", true, true, false) }}
+        {{ feature_row("Soft Clipping", "No clipped audio, ever", true, false, false) }}
       {%- endcall %}
       {#
           Channels: DF docs don't mention channels, Photon has "audio rooms"
@@ -89,20 +91,20 @@
           Tokens: DF doesn't have rooms (so no tokens), Photon doesn't mention any kind of access control
       #}
       {% call feature_table("Features", "glyphicon-flash") %}
-        {{ feature_row("Multiple Channels", true, false, true) }}
-        {{ feature_row("Collider Chat Rooms", true, false, false) }}
-        {{ feature_row("Speaker Priority", true, false, false) }}
-        {{ feature_row("Access Tokens", true, false, false) }}
+        {{ feature_row("Multiple Channels", "Multiple independent conversations", true, false, true) }}
+        {{ feature_row("Collider Chat Rooms", "Only hear people in the same collider volume", true, false, false) }}
+        {{ feature_row("Speaker Priority", "Automatically mute speakers based on their priority", true, false, false) }}
+        {{ feature_row("Access Tokens", "Restrict conversations based on secret tokens", true, false, false) }}
       {%- endcall %}
 
       {#
           Backend: DF doesn't appear to have any default networking integration. photon is photon exclusive
       #}
       {% call feature_table("Networking", "glyphicon-random") %}
-        {{ feature_row("Any Networking System", true, true, false) }}
-        {{ feature_row("Built In UNet", true, false, false) }}
-        {{ feature_row("Built In Forge", true, false, false) }}
-        {{ feature_row("Built In Photon",
+        {{ feature_row("Any Networking System", "", true, true, false) }}
+        {{ feature_row("Built In UNet", "", true, false, false) }}
+        {{ feature_row("Built In Forge", "", true, false, false) }}
+        {{ feature_row("Built In Photon", "", 
             false,                  false, true,
             ""
         ) }}
@@ -113,19 +115,19 @@
           DFVoice: Requires you to compile opus for any platform except windows!
           Photon: Every platform
       #}
-      {% call feature_table("Platform Support", "glyphicon-hdd") %}
-        {{ feature_row("Windows", true, true, true) }}
-        {{ feature_row("Windows Store",
+      {% call feature_table("Platform Support", "", "glyphicon-hdd") %}
+        {{ feature_row("Windows", "", true, true, true) }}
+        {{ feature_row("Windows Store", "PC, XBox One, Phone, Hololens", 
             false,          false, false,
             "Coming Soon!"
         ) }}
-        {{ feature_row("Linux", true, false, true) }}
-        {{ feature_row("Android", true, false, true) }}
-        {{ feature_row("iOS",
+        {{ feature_row("Linux", "", true, false, true) }}
+        {{ feature_row("Android", "", true, false, true) }}
+        {{ feature_row("iOS", "", 
             false,          false, true,
             "Coming Soon!"
         ) }}
-        {{ feature_row("MacOS",
+        {{ feature_row("MacOS", "", 
             false,          false, true,
             "Coming Soon!"
         ) }}

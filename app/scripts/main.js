@@ -16,5 +16,5 @@ $(function() {
 });
 
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip({container: 'body'})
 })
