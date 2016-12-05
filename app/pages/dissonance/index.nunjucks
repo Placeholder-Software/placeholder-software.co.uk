@@ -24,12 +24,12 @@
   </div>
 {% endmacro %}
 
-{% macro feature_row(name, diss, dfv, photon) %}
+{% macro feature_row(name, diss, dfv, photon, diss_tip, dfv_tip, photon_tip) %}
   <tr>
     <th class="text-nowrap" scope="row">{{ name }}</th>
-    <td class="check-column"><span class="glyphicon {% if diss %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
-    <td class="check-column"><span class="glyphicon {% if dfv %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
-    <td class="check-column"><span class="glyphicon {% if photon %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" /></td>
+    <td class="check-column"><span class="glyphicon {% if diss %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ diss_tip }}" /></td>
+    <td class="check-column"><span class="glyphicon {% if dfv %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ dfv_tip }}" /></td>
+    <td class="check-column"><span class="glyphicon {% if photon %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ photon_tip }}" /></td>
   </tr>
 {% endmacro %}
 
@@ -90,7 +90,7 @@
       #}
       {% call feature_table("Features", "glyphicon-flash") %}
         {{ feature_row("Multiple Channels", true, false, true) }}
-        {{ feature_row("Positional Chat Rooms", true, false, false) }}
+        {{ feature_row("Collider Chat Rooms", true, false, false) }}
         {{ feature_row("Speaker Priority", true, false, false) }}
         {{ feature_row("Access Tokens", true, false, false) }}
       {%- endcall %}
@@ -99,10 +99,13 @@
           Backend: DF doesn't appear to have any default networking integration. photon is photon exclusive
       #}
       {% call feature_table("Networking", "glyphicon-random") %}
-        {{ feature_row("Any Multiplayer System", true, true, false) }}
+        {{ feature_row("Any Networking System", true, true, false) }}
         {{ feature_row("Built In UNet", true, false, false) }}
         {{ feature_row("Built In Forge", true, false, false) }}
-        {{ feature_row("Built In Photon", false, false, true) }}
+        {{ feature_row("Built In Photon",
+            false,                  false, true,
+            "Experimental Support"
+        ) }}
       {%- endcall %}
 
       {#
@@ -112,11 +115,20 @@
       #}
       {% call feature_table("Platform Support", "glyphicon-hdd") %}
         {{ feature_row("Windows", true, true, true) }}
-        {{ feature_row("Windows Store Universal", false, false, true) }}
+        {{ feature_row("Windows Store",
+            false,          false, false,
+            "Coming Soon!"
+        ) }}
         {{ feature_row("Linux", true, false, true) }}
         {{ feature_row("Android", true, false, true) }}
-        {{ feature_row("iOS", false, false, true) }}
-        {{ feature_row("MacOS", false, false, true) }}
+        {{ feature_row("iOS",
+            false,          false, true,
+            "Coming Soon!"
+        ) }}
+        {{ feature_row("MacOS",
+            false,          false, true,
+            "Coming Soon!"
+        ) }}
       {%- endcall %}
     
     </div>

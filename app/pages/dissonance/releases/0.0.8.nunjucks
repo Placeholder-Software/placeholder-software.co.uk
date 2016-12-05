@@ -1,0 +1,39 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "0.0.8" %}
+
+{% block blurb %}
+<p>This is the sixth round of testing for Dissonance. This version brings a variety of bug fixes and exposes the preprocessor settings for tweaking.</p>
+
+<p>Since this is a testing release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>Android Support!</li>
+    <li>Custom Playback prefab audio sources may now use "doppler" and "bypassReverbZones" settings</li>
+    <li>Added live amplitude measure in VoicePlayerState class</li>
+    <li>Improved performance of spin locks (used to synchronise audio thread) on single core machines</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Removed Photon integration (it's always been experimental, we'll add it back when it's stable)</li>
+    <li>PlaybackPrefab and LocalPlayerName properties now throw an exception if changed at an unsafe time (after Dissonance has been started)</li>
+    <li>Fixed a minor networking race condition which could have caused multiple handshakes to be exchanged</li>
+    <li>Fixed occasional clicking in voice signal which would happen after sustained speech for approximately 30 seconds</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>iOS</li>
+            <li>macOS</li>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}

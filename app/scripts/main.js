@@ -14,3 +14,7 @@ $(function() {
 		htmlMarkup : null
 	});
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
