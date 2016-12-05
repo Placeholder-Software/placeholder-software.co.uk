@@ -104,7 +104,7 @@
         {{ feature_row("Built In Forge", true, false, false) }}
         {{ feature_row("Built In Photon",
             false,                  false, true,
-            "Experimental Support"
+            ""
         ) }}
       {%- endcall %}
 

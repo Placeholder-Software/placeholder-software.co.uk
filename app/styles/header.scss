@@ -23,6 +23,10 @@
     li {
       a {
         color: $mid-color;
+        
+        &.buy-link {
+            color: $primary-color;
+        }
       }
 
       a:hover, a:focus {
