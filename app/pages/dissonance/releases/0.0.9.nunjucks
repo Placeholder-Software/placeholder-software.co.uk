@@ -1,6 +1,6 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 
-{% set version_number = "0.0.8" %}
+{% set version_number = "0.0.9" %}
 
 {% block blurb %}
 <p>This is the ninth round of testing for Dissonance. This version fixes some bugs which were causing voice recording to cut out when certain quality settings were used (small frame sizes), these fixes should also make microphone recording generally be more robust.</p>
