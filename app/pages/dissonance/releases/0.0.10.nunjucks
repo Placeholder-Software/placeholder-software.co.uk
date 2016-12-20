@@ -1,0 +1,35 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "0.0.10 RC1" %}
+
+{% block blurb %}
+<p>This is the tenth round of testing for Dissonance and the first <b>Release Candidate</b>. This version brings an incredibly important feature; support for Photon Unity Networking!</p>
+
+<p>This is a Release Candidate, it should be ready for release with no bugs or awkward APIs. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
+{% endblock %}
+
+{% block feature %}
+<ul>
+    <li>Photon Unity Networking!</li>
+    <li>Removed automatic loopback of text messages</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed the underlying cause of the InvalidPacket exceptions</li>
+    <li>Fixed the network not properly unsubscribing from remote channels in certain circumstances</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>iOS</li>
+            <li>macOS</li>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
