@@ -104,10 +104,7 @@
         {{ feature_row("Any Networking System", "", true, true, false) }}
         {{ feature_row("Built In UNet", "", true, false, false) }}
         {{ feature_row("Built In Forge", "", true, false, false) }}
-        {{ feature_row("Built In Photon", "", 
-            false,                  false, true,
-            ""
-        ) }}
+        {{ feature_row("Built In Photon", "", true, false, true, "") }}
       {%- endcall %}
 
       {#
