@@ -1,4 +1,4 @@
-{% set redirect_url %}http:{{ base_path }}/dissonance/{% endset %}
+{% set redirect_url %}https:{{ base_path }}/dissonance/{% endset %}
 
 <!DOCTYPE HTML>
 <html lang="en-US">
