@@ -1,8 +1,8 @@
 {% extends "templates/dissonance/layout.nunjucks" %}
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
-<!-- Alert banner at the top of the site -->
-<!-- {% set alert_message = "Dissonance is not yet released: It's currently in development!" %} -->
+<!-- Alert banner at the top of the site. Set this to a string for that to be displayed -->
+<!-- {% set alert_message = false %} -->
 
 {% macro feature(image) %}
   <div class="col-sm-2 hidden-xs">
