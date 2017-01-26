@@ -1,7 +1,8 @@
 {% extends "templates/dissonance/layout.nunjucks" %}
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
-{% set alert_message = "Dissonance is not yet released: It's currently in development!" %}
+<!-- Alert banner at the top of the site -->
+<!-- {% set alert_message = "Dissonance is not yet released: It's currently in development!" %} -->
 
 {% macro feature(image) %}
   <div class="col-sm-2 hidden-xs">
@@ -108,7 +109,7 @@
       {%- endcall %}
 
       {#
-          Dissonance: Lacking mobile/Mac
+          Dissonance: Lacking UWP
           DFVoice: Requires you to compile opus for any platform except windows!
           Photon: Every platform
       #}
@@ -124,10 +125,7 @@
             false,          false, true,
             "Coming Soon!"
         ) }}
-        {{ feature_row("MacOS", "", 
-            false,          false, true,
-            "Coming Soon!"
-        ) }}
+        {{ feature_row("MacOS", "", true, false, true) }}
       {%- endcall %}
     
     </div>
@@ -138,14 +136,14 @@
         <h3 id="get-started">Get Started</h3>
       </div>
       <div class="col-xs-12 text-center">
-        <a href="todo:insert-link" target="_blank" class="btn btn-link">Buy Dissonance On The Unity Store</a>
+        <a href="https://www.assetstore.unity3d.com/en/#!/content/70078" target="_blank" class="btn btn-link">Buy Dissonance On The Unity Store</a>
       </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12 text-justify">
 
-<p><a href="todo:insert-link">Buy Dissonance</a> on the Unity Store to use it in your game. Get all future feature upgrades and bugfixes for free!</p>
+<p><a href="https://www.assetstore.unity3d.com/en/#!/content/70078">Buy Dissonance</a> on the Unity Store to use it in your game. Get all future feature upgrades and bugfixes for free!</p>
     
 <p><a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/" target="_blank" >Follow The Tutorials</a>. This series of text and
 video tutorials will walk you through the basics of setting up a simple team based voice chat system all the way up to a complex multi team, multi

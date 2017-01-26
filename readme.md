@@ -1,1 +1,1 @@
-See this page live at [placeholder-software.co.uk](http://placeholder-software.co.uk)
+This is the homepage for Placeholder software, see this page live at [placeholder-software.co.uk](http://placeholder-software.co.uk).

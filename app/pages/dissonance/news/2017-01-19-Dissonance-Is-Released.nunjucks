@@ -1,0 +1,13 @@
+{% extends "templates/dissonance/news.nunjucks" %}
+{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
+
+{% set title = "Dissonance Is Released" %}
+{% set body %}
+
+<p>Dissonance is a voice communications asset which makes it easy to add high quality, low latency voice communications to your multiplayer game. It's flexible enough to create complex setups with multiple chat channels, positional audio playback and collider based chat rooms with no scripting required. Conversely it has a simple but powerful API available to scripts which gives you complete control over the system.</p>
+
+<p>We're incredibly excited to announce that Dissonance is finally available for sale on the <a href="https://www.assetstore.unity3d.com/en/#!/content/70078">Unity Asset Store</a> for an initial price of $45 per seat. This price includes built in support for UNet, HLAPI and Photon as well as free access to patches to add more networking systems in the future (and of course you can write your own).</p>
+
+<p>This is just the start. We have several upgrades already in development and planned for release in the coming months (including Mac and iOS Support). Feel free to <a href="mailto://martin@placeholder-software.co.uk">contact us</a> if you'd like to know more, help out with testing or request a feature</p>
+
+{% endset %}
