@@ -121,10 +121,7 @@
         ) }}
         {{ feature_row("Linux", "", true, false, true) }}
         {{ feature_row("Android", "", true, false, true) }}
-        {{ feature_row("iOS", "", 
-            false,          false, true,
-            "Coming Soon!"
-        ) }}
+        {{ feature_row("iOS", "", true, false, true) }}
         {{ feature_row("MacOS", "", true, false, true) }}
       {%- endcall %}
     
@@ -136,7 +133,7 @@
         <h3 id="get-started">Get Started</h3>
       </div>
       <div class="col-xs-12 text-center">
-        <a href="https://www.assetstore.unity3d.com/en/#!/content/70078" target="_blank" class="btn btn-link">Buy Dissonance On The Unity Store</a>
+        <a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF" target="_blank" class="btn btn-link">Buy Dissonance On The Unity Store</a>
       </div>
   </div>
 
