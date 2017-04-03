@@ -10,8 +10,8 @@
 <ul>
     <li>Dedicated server support for LLAPI and HLAPI</li>
     <li>Added some extra properties to VoicePlayerState (references to IDissonancePlayer component and VoicePlayback component for this player)</li>
-    <li>Added some extra events to `VoicePlayerState` which are raised when a player starts/stops talking and leaves the session.</li>
-    <li>Added an option to choose the microphone to use (`MicrophoneName` property on DissonanceComms - currently may only be set before the component is enabled)</li>
+    <li>Added some extra events to <code>VoicePlayerState</code> which are raised when a player starts/stops talking and leaves the session.</li>
+    <li>Added an option to choose the microphone to use (<code>MicrophoneName</code> property on DissonanceComms - currently may only be set before the component is enabled)</li>
     <li>Added live traffic statistics to the comms network inspector (packet/bandwidth counts for different classes of traffic)</li>
 </ul>
 {% endblock %}
