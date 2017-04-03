@@ -1,0 +1,33 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "1.0.3" %}
+
+{% block blurb %}
+<p>This is a primarily a bugfixing release, patching a number of issues that have been reported by new users. This isn't to say we've stopped working on new features - rolled into this release is spport for iOS!</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>iOS support</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed logging system writing to the log file on worker threads (creating mangled logs)</li>
+    <li>Fixed text messages being sent to other players twice in some circumstances</li>
+    <li>Fixed voice playback not working when a new client joins a session and gets a recycled player object</li>
+    <li>Fixed voice playback not working when a new client joins a session and gets a recycled network connection ID</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+        <li>VAD does not always work well (particularly on mobile devices)</li>
+    </li>
+</ul>
+{% endblock %}

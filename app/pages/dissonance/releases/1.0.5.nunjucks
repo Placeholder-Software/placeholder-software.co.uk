@@ -1,0 +1,36 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "1.0.5" %}
+
+{% block blurb %}
+<p>This release is primarily a refactoring release - the system we use for compiling native dependencies has been totally rebuilt in preparation for adding a new and improved voice detector in a future release.</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>Added an inspector for the SamplePlaybackComponent which shows statistics on the playback pipeline</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed a multithreaded torn variable read on 32 bit systems</li>
+    <li>Fixed some serialization errors in the Forge demo scene</li>
+    <li>Included LLAPI demo scene in package</li>
+    <li>Fixed the `WaveFormat` property of the SpeechSession being wrong value</li>
+    <li>Fixed the playback system consuming samples at the wrong rate in some circumstances (causing serious desyncs)</li>
+    <li>Fixed the microphone capture pipeline losing samples when the pipeline is overloaded</li>
+    <li>Automatically resizing the buffers in the capture pipeline to make it harder to overload</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+    <li>VAD does not always work well (particularly on mobile devices)</li>
+</ul>
+{% endblock %}

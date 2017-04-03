@@ -1,0 +1,32 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "1.0.2" %}
+
+{% block blurb %}
+<p>Dissonance is live on the <a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF">unity asset store</a>!</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>MacOS Support</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed voice transmision being broken while VAD delay line is active</li>
+    <li>Removed a number of classes from the Dissonance public API</li>
+    <li>Fixed playback system will breaking when the game is paused</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>iOS</li>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}

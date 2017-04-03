@@ -1,0 +1,37 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "1.0.6" %}
+
+{% block blurb %}
+<p>This release brings a large number of minor features and improvements which were requested by users. This release also lays some more groundwork for the brand new voice detector which will be coming very soon.</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>Dedicated server support for LLAPI and HLAPI</li>
+    <li>Added some extra properties to VoicePlayerState (references to IDissonancePlayer component and VoicePlayback component for this player)</li>
+    <li>Added some extra events to `VoicePlayerState` which are raised when a player starts/stops talking and leaves the session.</li>
+    <li>Added an option to choose the microphone to use (`MicrophoneName` property on DissonanceComms - currently may only be set before the component is enabled)</li>
+    <li>Added live traffic statistics to the comms network inspector (packet/bandwidth counts for different classes of traffic)</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed the default spatial blend on a playback prefab being 0.0 (now it's 1.0)</li>
+    <li>Fixed positional audio playback when a spatializer is not in use (use the SpatializedPlaybackPrefab in Plugins/Dissonance/Resources if you are using a spatializer)</li>
+    <li>Fixed the jitter measurement from one player sometimes being applied to the next player to use that recycled playback instance for the first 1.2 seconds of speech</li>
+    <li>Fixed the playback pipeline being reset too eagerly (occasionally cutting off the first 2 frames of speech)</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+    <li>VAD does not always work well (particularly on mobile devices)</li>
+</ul>
+{% endblock %}

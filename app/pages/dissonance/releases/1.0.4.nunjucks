@@ -1,0 +1,35 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "1.0.4" %}
+
+{% block blurb %}
+<p>This release brings a large change to the playback system which should improve it's robustness in the face of a number of bad situations such as low frame rate, overloaded processor, incorrect playback speed and terrible network conditions.</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>Automatically adjusting playback speed to compensate for recording/playback clock skew.</li>
+    <li>Automatically adjusting the size of the playback buffer based on network jitter (more responsive voice in good conditions, less robot voice in bad conditions).</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed log system losing some message from non-main threads.</li>
+    <li>Fixed LLAPI integration not properly handling the disconnect event (leaving the session in an inconsistent state and preventing future reconnections).</li>
+    <li>Fixed microphone capture losing some data in extremely low framerate situations.</li>
+    <li>Refactored internals of BaseServer and BaseClient, this should not affect custom network integrations.</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+        <li>VAD does not always work well (particularly on mobile devices)</li>
+        <li>End users require a specific version of the C++ runtime installed</li>
+    </li>
+</ul>
+{% endblock %}
