@@ -1,11 +1,13 @@
+{% set body_class="news" %}
+
 {% extends "templates/dissonance/layout.nunjucks" %}
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% block content %}
-
-  {% call icon_section.header2("title", "left") -%}
-    {{ title }}
-  {%- endcall %}
-
-  {{ body | safe }}
+  <section class="article">
+    <h4 class="title">{{ title }}</h4>
+    <div class="content">
+      {{ body | safe }}
+    </div>
+  </section>
 {% endblock %}

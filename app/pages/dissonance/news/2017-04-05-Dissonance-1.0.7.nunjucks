@@ -1,0 +1,18 @@
+{% extends "templates/dissonance/news.nunjucks" %}
+{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
+
+{% set title = "Dissonance 1.0.7 With SALSA Lip Sync" %}
+{% set body %}
+
+<p>Dissonance has been out for nearly three months and in that time we've been working hard to release new versions with a variety of features and bugfixes. We've added support for MacOS and iOS, better latency compensation, support for dedicated servers and a variety of live inspectors. <a href="/dissonance/releases/1.0.2.html">Check </a> out <a href="/dissonance/releases/1.0.3.html">all</a> of <a href="/dissonance/releases/1.0.4.html">the</a> versions <a href="/dissonance/releases/1.0.5.html">we've</a>
+released <a href="/dissonance/releases/1.0.6.html">in that time</a>.</p>
+
+<p>With Dissonance 1.0.7 we're releasing the coolest new feature yet. We've been collaborating with <a href="http://crazyminnowstudio.com">Crazy Minnow Studio</a> to integrate Dissonance and <a href="http://crazyminnowstudio.com/unity-3d/lip-sync-salsa/">SALSA</a> to achieve real time lip synchronisation with live voice chat!</p>
+
+<img src="/images/Slide_SALSA.png" class="img-responsive center-block" />
+
+<p class="extra-row-space">The new integration is freely available to anyone who owns both Dissonance and SALSA. To use it you'll need to make sure you have <a href="https://www.assetstore.unity3d.com/en/#!/content/16944">SALSA v1.5.0+</a> and <a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF">Dissonance v1.0.6+</a>. Visit the SALSA website to <a href="https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/">download the integration</a> and for <a href="https://crazyminnowstudio.com/docs/salsa-lip-sync/addons/using-with-dissonance/">documentation</a> on how to use the integration.</p>
+
+<p>Please note that Dissonance 1.0.7 has been submitted to the store and is awaiting approval before being available for download. However the SALSA integration is perfectly compatible with Dissonance 1.0.6 which is available <a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF">on the asset store</a> right now.</a>
+
+{% endset %}
