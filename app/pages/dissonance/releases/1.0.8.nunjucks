@@ -1,0 +1,46 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "1.0.8" %}
+
+{% block blurb %}
+<p>This release brings the brand new voice detection algorithm, based on the world class Chromium WebRTC voice detector!</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>Completely new VAD! Based on the excellent voice detector created for the Chromium WebRTC project.</li>
+    <li>Showing live network traffic rates in the Dissonance network inspector (10 second moving average of traffic sent)</li>
+    <li>Improved calculation of microphone sample rate to do less unnecessary work when connected to a very high sample rate mic</li>
+    <li>Added 4 events to DissonanceComms:
+      <ul>
+        <li>OnPlayerJoinedSession</li>
+        <li>OnPlayerLeftSession</li>
+        <li>OnPlayerStartedSpeaking</li>
+        <li>OnPlayerStoppedSpeaking</li>
+      </ul>
+    </li>
+    <li>Updated all custom editors to properly push onto the undo/redo stack when Dissonance components are modified</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed a potential desync between capture and playback when the microphone preprocessor input queue is full</li>
+    <li>Made it significantly less likely that the microphone preprocessor input queue will ever fill up</li>
+    <li>Prevented erroneuous error being printed in some circumstances ("Attempted to stop a session, but there is no active session")</li>
+    <li>Fixed VUMeter not compiling on Unity 5.4</li>
+    <li>Fixed Unity editor loading the wrong DLLs when configured for iOS platform</li>
+    <li>Fixed the playback system failing to play audio if the capture system closes a channel and re-opens the same channel within 40ms</li>
+    <li>Changed PlaybackPrefab (the non spatialized version) to not be spatialized</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}

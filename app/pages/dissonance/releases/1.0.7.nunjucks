@@ -1,0 +1,13 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "1.0.7" %}
+
+{% block blurb %}
+<p>This release simply adds a note regarding the SALSA+Dissonance integration and how to download it.</p>
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>SALSA + Dissonance integration for real time lip sync!</li>
+</ul>
+{% endblock %}
