@@ -1,0 +1,15 @@
+@import "variables.scss";
+
+.integration {
+    background-color: darken($bg-color, 3);
+    
+    .description {
+        border-style: dotted;
+
+        border-color: rgba($primary-color, 0.4);
+        border-left-width: 0;
+        border-right-width: 0;
+        border-top-width: 1px;
+        border-bottom-width: 0;
+    }
+}

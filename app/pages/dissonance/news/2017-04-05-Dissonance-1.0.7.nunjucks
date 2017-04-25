@@ -9,7 +9,7 @@ released <a href="/dissonance/releases/1.0.6.html">in that time</a>.</p>
 
 <p>With Dissonance 1.0.7 we're releasing the coolest new feature yet. We've been collaborating with <a href="http://crazyminnowstudio.com">Crazy Minnow Studio</a> to integrate Dissonance and <a href="http://crazyminnowstudio.com/unity-3d/lip-sync-salsa/">SALSA</a> to achieve real time lip synchronisation with live voice chat!</p>
 
-<img src="/images/Slide_SALSA.png" class="img-responsive center-block" />
+<iframe style="width: 100%" height="720" src="https://www.youtube.com/embed/WndfDje75SU" frameborder="0" allowfullscreen></iframe>
 
 <p class="extra-row-space">The new integration is freely available to anyone who owns both Dissonance and SALSA. To use it you'll need to make sure you have <a href="https://www.assetstore.unity3d.com/en/#!/content/16944">SALSA v1.5.0+</a> and <a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF">Dissonance v1.0.6+</a>. Visit the SALSA website to <a href="https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/">download the integration</a> and for <a href="https://crazyminnowstudio.com/docs/salsa-lip-sync/addons/using-with-dissonance/">documentation</a> on how to use the integration.</p>
 

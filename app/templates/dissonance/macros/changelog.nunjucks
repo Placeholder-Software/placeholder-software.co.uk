@@ -1,0 +1,6 @@
+{% macro integration(title, id, description, url) %}
+  <div a="{{ id }}" class="integration">
+    <h5><a href="{{ url }}" title="Download Now">{{ title }}</a></h5>
+    <div class="description">{{ description }}</div>
+  </div>
+{% endmacro %}

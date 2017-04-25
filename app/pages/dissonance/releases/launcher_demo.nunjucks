@@ -1,0 +1,56 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "launcher_demo" %}
+
+{% block blurb %}
+<p>This is an internal test release</p>
+{% endblock %}
+
+{% block integrations %}
+  {% call changes.integration("SALSA Lip Sync", "salsa", "Adds support for realtime automatic lip sync using SALSA.", "Download URL") -%}{%- endcall %}
+  {% call changes.integration("Playmaker", "playmaker", "Adds support for controlling channels (who is speaking to whom) using Playmaker.", "Download URL") -%}{%- endcall %}
+  {% call changes.integration("Forge", "forge", "Adds support for using the Forge Networking system to host a Dissonance voice chat session. Please note this is for the legacy Forge Networking asset <i>not</i> for Forge Remastered.", "Download URL") -%}{%- endcall %}
+  {% call changes.integration("Photon Unity Networking", "pun", "Adds support for using the Photon Unity Networking system to host a Dissonance voice chat session.", "Download URL") -%}{%- endcall %}
+  {% call changes.integration("UNet HLAPI", "hlapi", "Adds support for using the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.", "Download URL") -%}{%- endcall %}
+  {% call changes.integration("UNet LLAPI", "llapi", "Adds support for using the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.", "Download URL") -%}{%- endcall %}  
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>Completely new VAD! Based on the excellent voice detector created for the Chromium WebRTC project.</li>
+    <li>Showing live network traffic rates in the Dissonance network inspector (10 second moving average of traffic sent)</li>
+    <li>Improved calculation of microphone sample rate to do less unnecessary work when connected to a very high sample rate mic</li>
+    <li>Added 4 events to DissonanceComms:
+      <ul>
+        <li>OnPlayerJoinedSession</li>
+        <li>OnPlayerLeftSession</li>
+        <li>OnPlayerStartedSpeaking</li>
+        <li>OnPlayerStoppedSpeaking</li>
+      </ul>
+    </li>
+    <li>Updated all custom editors to properly push onto the undo/redo stack when Dissonance components are modified</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed a potential desync between capture and playback when the microphone preprocessor input queue is full</li>
+    <li>Made it significantly less likely that the microphone preprocessor input queue will ever fill up</li>
+    <li>Prevented erroneuous error being printed in some circumstances ("Attempted to stop a session, but there is no active session")</li>
+    <li>Fixed VUMeter not compiling on Unity 5.4</li>
+    <li>Fixed Unity editor loading the wrong DLLs when configured for iOS platform</li>
+    <li>Fixed the playback system failing to play audio if the capture system closes a channel and re-opens the same channel within 40ms</li>
+    <li>Changed PlaybackPrefab (the non spatialized version) to not be spatialized</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
