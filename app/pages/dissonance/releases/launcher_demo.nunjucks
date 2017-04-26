@@ -8,12 +8,60 @@
 {% endblock %}
 
 {% block integrations %}
-  {% call changes.integration("SALSA Lip Sync", "salsa", "Adds support for realtime automatic lip sync using SALSA.", "Download URL", 1, "1.0.0") -%}{%- endcall %}
-  {% call changes.integration("Playmaker", "playmaker", "Adds support for controlling channels (who is speaking to whom) using Playmaker.", "Download URL", 0, "0.0.0") -%}{%- endcall %}
-  {% call changes.integration("Forge", "forge", "Adds support for using the Forge Networking system to host a Dissonance voice chat session. Please note this is for the legacy Forge Networking asset <i>not</i> for Forge Remastered.", "Download URL", 0, "0.0.0") -%}{%- endcall %}
-  {% call changes.integration("Photon Unity Networking", "pun", "Adds support for using the Photon Unity Networking system to host a Dissonance voice chat session.", "Download URL", 0, "0.0.0") -%}{%- endcall %}
-  {% call changes.integration("UNet HLAPI", "hlapi", "Adds support for using the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.", "Download URL", 0, "0.0.0") -%}{%- endcall %}
-  {% call changes.integration("UNet LLAPI", "llapi", "Adds support for using the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.", "Download URL", 0, "0.0.0") -%}{%- endcall %}  
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Adds support for realtime automatic lip sync using SALSA.",
+    "Download URL",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "Download URL",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge",
+    "ForgeNetworking",
+    "Adds support for using the Forge Networking system to host a Dissonance voice chat session. Please note this is for the legacy Forge Networking asset <i>not</i> for Forge Remastered.",
+    "Download URL",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Adds support for using the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "Download URL",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Adds support for using the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "Download URL",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Adds support for using the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "Download URL",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
 {% endblock %}
 
 {% block features %}
