@@ -1,5 +1,6 @@
 {% extends "templates/dissonance/layout.nunjucks" %}
 {% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
 
 {% block content %}
 
@@ -30,5 +31,9 @@
     <h4>Known Issues</h4>
     {% block known_issues %}No known issues or regressions in this release :D{% endblock %}
   {%- endcall %}
+  
+{% endblock %}
 
+{% block end_body_script %}
+  {% call changes.highlight_from_url_query() -%}{%- endcall %}
 {% endblock %}

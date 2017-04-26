@@ -3,6 +3,21 @@
 .integration {
     background-color: darken($bg-color, 3);
     
+    .title {
+      display: inline-block;
+    }
+    
+    .version-number {
+      display: inline-block;
+      padding-left: 1em;
+    }
+    
+    .upgrade-notification {
+      display: inline-block;
+      color: red;
+      padding-left: 1em;
+    }
+    
     .description {
         border-style: dotted;
 

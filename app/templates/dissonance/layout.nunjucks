@@ -170,5 +170,7 @@
     <!-- build:js /scripts/main.js -->
     <script src="/app/scripts/main.js"></script>
     <!-- endbuild -->
+    
+    {% block end_body_script %}{% endblock %}
   </body>
 </html>

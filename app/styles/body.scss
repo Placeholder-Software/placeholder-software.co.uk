@@ -37,6 +37,15 @@ h5 {
   }
 }
 
+h6 {
+  font-family: sans-serif;
+  font-size: 22px;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
 .extra-row-space { margin-top: 1em; }
 
 .btn {
