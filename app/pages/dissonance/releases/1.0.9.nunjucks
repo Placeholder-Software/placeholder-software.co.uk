@@ -1,0 +1,94 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "1.0.9" %}
+
+{% block blurb %}
+<p>If you're reading this you've probably already encountered the biggest new feature of Dissonance 1.0.9 - the Welcome Window. This new window pops up when you install a new version of Dissonance and offers to bring you to the changelog page for the version you have installed (such as this page). Integrations for the version you have isntalled will be available to download on the changelog page. This new system allows us to release much more rapid updates of integrations and also creates a much smoother first time installation process for Dissonance.</p>
+{% endblock %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-SALSA.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking system to host a Dissonance voice chat session. Please note this is for the legacy Forge Networking asset not for Forge Remastered.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-ForgeNetworking.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-PhotonUnityNetworking.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-UNet_HLAPI.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-UNet_LLAPI.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+    <li>New 'Welcome Window' pops up when you install a new version of Dissonance. Directs you to the online changelog and the integrations download site
+      <ul>
+        <li>Integration have been removed from the package, they are now all available online</li>
+      </ul>
+    </li>
+    <li>Added a VoicePlayerState object for the local player, provides events and live amplitude measurement for the local player</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+    <li>Fixed null reference exception being thrown if the VoiceBroadcastTrigger was misconfigured</li>
+    <li>Added a 4 byte session ID to the network layer (this can handle someone trying to run two Dissonance sessions on the same IP address)</li>
+    <li>Fixed PhotonCommsNetwork integration never properly shutting itself down (#25)</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
