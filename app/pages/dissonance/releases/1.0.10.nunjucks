@@ -1,10 +1,11 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 {% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
 
-{% set version_number = "1.0.9" %}
+{% set version_number = "1.0.10" %}
 
 {% block blurb %}
-<p>If you're reading this you've probably already encountered the biggest new feature of Dissonance 1.0.9 - the Welcome Window. This new window pops up when you install a new version of Dissonance and offers to bring you to the changelog page for the version you have installed (such as this page). Integrations for the version you have installed will be available to download on the changelog page. This new system allows us to release much more rapid updates of integrations and also creates a much smoother first time installation process for Dissonance.</p>
+<p>If you're reading this you've probably already encountered the biggest new feature of Dissonance 1.0.10 - the Welcome Window. This new window pops up when you install a new version of Dissonance and offers to bring you to the changelog page for the version you have installed (such as this page). Integrations for the version you have installed will be available to download on the changelog page. This new system allows us to release much more rapid updates of integrations and also creates a much smoother first time installation process for Dissonance.</p>
+<p>This is a hotfix to Dissonance 1.0.9 which included the welcome window but failed to show it to new users</p>
 {% endblock %}
 
 {% block integrations %}
@@ -64,22 +65,11 @@
   
 {% endblock %}
 
-{% block features %}
-<ul>
-    <li>New 'Welcome Window' pops up when you install a new version of Dissonance. Directs you to the online changelog and the integrations download site
-      <ul>
-        <li>Integration have been removed from the package, they are now all available online</li>
-      </ul>
-    </li>
-    <li>Added a VoicePlayerState object for the local player, provides events and live amplitude measurement for the local player</li>
-</ul>
-{% endblock %}
-
 {% block bugfixes %}
 <ul>
-    <li>Fixed null reference exception being thrown if the VoiceBroadcastTrigger was misconfigured</li>
-    <li>Added a 4 byte session ID to the network layer (this can handle someone trying to run two Dissonance sessions on the same IP address)</li>
-    <li>Fixed PhotonCommsNetwork integration never properly shutting itself down (#25)</li>
+    <li>Urgent fix for the welcome window introduced in 1.0.9 to ensure it pops up for all users on the first install</li>
+    <li>Fixed player disconnection tracking for HLAPI when running in dedicated server mode</li>
+    <li>Fixed voice not being received when no microphone is connected</li>
 </ul>
 {% endblock %}
 
