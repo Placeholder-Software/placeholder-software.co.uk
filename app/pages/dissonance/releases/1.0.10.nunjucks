@@ -15,7 +15,7 @@
     "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
     "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
     1,
-    "1.0.0"
+    "0.7.1"
   ) -%}{%- endcall %}
   
   {% call changes.integration(
