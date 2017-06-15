@@ -1,0 +1,109 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "1.1.0" %}
+
+{% block blurb %}
+<p>In this release we have two big new features. We've completely replaced all of the demo scenes - the new scenes show off many more of the features of Dissonance as well as best practices for how to use Dissonance. We've also added support for a new network integration - <a href="https://www.assetstore.unity3d.com/en/#!/content/83233">Photon BOLT</a>! Check out the integration list below to download it.</p>
+
+<p>There is a single <b>breaking change</b> in this release. The methods <code>StopClient</code> and <code>StopServer</code> have been replaced with a unified <code>Stop</code> method.</p>
+
+<p>There is a problem with the import settings with this release which affects Unity 5.5 and lower. If you are encountering <code>DllImportExceptions</code> ensure that the files for your platform in <code>Assets/Plugins/Dissonance/Plugins</code> are set to import for the editor. We will put out another release to fix this issue as soon as possible!</p>
+{% endblock %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking system to host a Dissonance voice chat session. Please note this is for the legacy Forge Networking asset not for Forge Remastered.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.1.0/Dissonance-ForgeNetworking.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.1.0/Dissonance-PhotonUnityNetworking.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.1.0/Dissonance-UNet_HLAPI.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.1.0/Dissonance-UNet_LLAPI.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "https://placeholder-software.co.uk/dissonance/integrations/1.1.0/Dissonance-PhotonBolt.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Photon BOLT support</li>
+  <li>Totally overhauled all demo scenes</li>
+  <li>Added a checkbox to the LLAPI to disable it's network management (to prevent it from interfering with other LLAPI sessions).
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Overhauled network disconnection logic to make it robustly handle a number of error cases</li>
+  <li>Fixed network simulation losing reliable packets</li>
+  <li>Fixed playback system throwing an overflow exception if a client disconnected while talking and then immediately reconnected</li>
+  <li>Fixed collider triggers sometimes not deactivating correctly when an entity leaves their volume</li>
+  <li>Fixed the HLAPI server writing a misleading (but harmless) error message when it is shutdown</li>
+  <li>Fixed trigger inspector showing the wrong room if the actual room no longer exists</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform</li>
+        </ul>
+    </li>
+    <li>No Acoustic Echo Cancellation</li>
+    <li>Disconnecting and reconnecting a headset can cause errors in some circumstances (possibly Mac only)</li>
+</ul>
+{% endblock %}
