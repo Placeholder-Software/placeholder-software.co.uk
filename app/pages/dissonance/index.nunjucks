@@ -25,13 +25,12 @@
   </div>
 {% endmacro %}
 
-{% macro feature_row(name, tip, diss, dfv, photon, diss_tip, dfv_tip, photon_tip) %}
+{% macro feature_row(name, tip, diss, photon, diss_tip, photon_tip) %}
   <tr>
     <th class="text-nowrap" scope="row"  data-toggle="tooltip" data-placement="left" title="{{ tip }}">
         {{ name }}{% if tip|length %}<span class="tip-indicator glyphicon glyphicon-info-sign"></span>{% endif %}
     </th>
     <td class="check-column"><span class="glyphicon {% if diss %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ diss_tip }}" /></td>
-    <td class="check-column"><span class="glyphicon {% if dfv %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ dfv_tip }}" /></td>
     <td class="check-column"><span class="glyphicon {% if photon %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ photon_tip }}" /></td>
   </tr>
 {% endmacro %}
@@ -68,7 +67,6 @@
           <tr>
             <th></th>
             <th class="dissonance check-column">Dissonance</th>
-            <th class="df-voice check-column">DF Voice</th>
             <th class="pun-voice check-column">Photon Voice</th>
           </tr>
         </thead>
@@ -81,10 +79,10 @@
           Soft Clip: No mention on DF, looked in Photon source and can't find it
       #}
       {% call feature_table("Audio Quality", "glyphicon-headphones") %}
-        {{ feature_row("Opus Codec", "", true, true, true) }}
-        {{ feature_row("Noise Attenuation", "Reduces noise without reducing voice", true, false, false) }}
-        {{ feature_row("Automatic Gain Control", "All speakers sound the same volume", true, true, false) }}
-        {{ feature_row("Soft Clipping", "No clipped audio, ever", true, false, false) }}
+        {{ feature_row("Opus Codec", "", true, true) }}
+        {{ feature_row("Noise Attenuation", "Reduces noise without reducing voice", true, false) }}
+        {{ feature_row("Automatic Gain Control", "All speakers sound the same volume", true, false) }}
+        {{ feature_row("Soft Clipping", "No clipped audio, ever", true, false) }}
       {%- endcall %}
       {#
           Channels: DF docs don't mention channels, Photon has "audio rooms"
@@ -92,20 +90,20 @@
           Tokens: DF doesn't have rooms (so no tokens), Photon doesn't mention any kind of access control
       #}
       {% call feature_table("Features", "glyphicon-flash") %}
-        {{ feature_row("Multiple Channels", "Multiple independent conversations", true, false, true) }}
-        {{ feature_row("Collider Chat Rooms", "Only hear people in the same collider volume", true, false, false) }}
-        {{ feature_row("Speaker Priority", "Automatically mute speakers based on their priority", true, false, false) }}
-        {{ feature_row("Access Tokens", "Restrict conversations based on secret tokens", true, false, false) }}
+        {{ feature_row("Multiple Channels", "Multiple independent conversations", true, true) }}
+        {{ feature_row("Collider Chat Rooms", "Only hear people in the same collider volume", true, false) }}
+        {{ feature_row("Speaker Priority", "Automatically mute speakers based on their priority", true, false) }}
+        {{ feature_row("Access Tokens", "Restrict conversations based on secret tokens", true, false) }}
       {%- endcall %}
 
       {#
           Backend: DF doesn't appear to have any default networking integration. photon is photon exclusive
       #}
       {% call feature_table("Networking", "glyphicon-random") %}
-        {{ feature_row("Any Networking System", "", true, true, false) }}
-        {{ feature_row("Built In UNet", "", true, false, false) }}
-        {{ feature_row("Built In Forge", "", true, false, false) }}
-        {{ feature_row("Built In Photon", "", true, false, true, "") }}
+        {{ feature_row("Any Networking System", "", true, false) }}
+        {{ feature_row("Built In UNet", "", true, false) }}
+        {{ feature_row("Built In Forge", "", true, false) }}
+        {{ feature_row("Built In Photon", "", true, true, "") }}
       {%- endcall %}
 
       {#
@@ -114,15 +112,15 @@
           Photon: Every platform
       #}
       {% call feature_table("Platform Support", "", "glyphicon-hdd") %}
-        {{ feature_row("Windows", "", true, true, true) }}
+        {{ feature_row("Windows", "", true, true) }}
         {{ feature_row("Windows Store", "PC, XBox One, Phone, Hololens", 
-            false,          false, false,
+            false,          false,
             "Coming Soon!"
         ) }}
-        {{ feature_row("Linux", "", true, false, true) }}
-        {{ feature_row("Android", "", true, false, true) }}
-        {{ feature_row("iOS", "", true, false, true) }}
-        {{ feature_row("MacOS", "", true, false, true) }}
+        {{ feature_row("Linux", "", true, true) }}
+        {{ feature_row("Android", "", true, true) }}
+        {{ feature_row("iOS", "", true, true) }}
+        {{ feature_row("MacOS", "", true, true) }}
       {%- endcall %}
     
     </div>
