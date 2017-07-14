@@ -1,0 +1,107 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "2.0.0" %}
+
+{% block blurb %}
+<p>This release includes two big new features; we've added support for host migration to all networking integrations as well as a totally new preprocessing pipeline which sounds better on all platforms and performs significantly better on mobiles! Check out the lists at the bottom of the page for a list of features, bugfixes and known issues.</p>
+
+<p>The host migration change leads to another quality-of-life change; Dissonance components can now be re-used. Previously you had to ensure that components were deleted when the network session changed; this was not very ergonomic and led to a lot of confusion amongst users. Now that the Dissonance network internally understands that sessions might change it's no longer necessary - feel free to use and re-use components as many times as you like.</p>
+
+The new error handling and host migration system is a <b>breaking change</b> to custom network integrations which use the <code>BaseCommsNetwork</code> class. Please see the <a href="https://placeholder-software.co.uk/dissonance/docs/Tutorials/Custom-Networking/">documentation for custom network</a> implementations for more detail. Pay particular attention to the generic parameters (<code>TServerParam</code> and <code>TClientParam</code> are new) and the section on the <code>Update</code> method.
+{% endblock %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking system to host a Dissonance voice chat session. Please note this is for the legacy Forge Networking asset not for Forge Remastered.",
+    "/dissonance/integrations/2.0.0/Dissonance-ForgeNetworking.unitypackage",
+    3,
+    "3.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-PhotonUnityNetworking.unitypackage",
+    3,
+    "3.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-UNet_HLAPI.unitypackage",
+    3,
+    "3.0.0"
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/2.0.0/Dissonance-UNet_LLAPI.unitypackage",
+    3,
+    "3.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-PhotonBolt.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Network restarts</li>
+  <li>Host migration</li>
+  <li>WebRTC based preprocessing pipeline</li>
+  <li>Added local mute with the <code>VoicePlayerState:IsLocallyMuted</code> property</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Prevented <code>VoicePlayerState:Priority</code> property throwing an exception if accessed while no voice audio is playing</li>
+  <li>Fixed a null reference exception in the Forge integration when a connection is compared with null</li>
+  <li>Refactored how local mute works so the VAD still processes data even when the player is muted</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>Lacking platform support for:
+        <ul>
+            <li>Windows Universal Platform (<a href="mailto://martin@placeholder-software.co.uk">Contact me</a> if you're interested in testing UWP support)</li>
+        </ul>
+    </li>
+    <li>No Acoustic Echo Cancellation</li>
+    <li>Disconnecting and reconnecting a headset can cause errors (believed to be a Mac specific error). Track <a href="https://github.com/Placeholder-Software/Dissonance/issues/33">Issue #33</a></li>
+</ul>
+{% endblock %}
