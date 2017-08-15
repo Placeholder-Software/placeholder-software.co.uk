@@ -8,7 +8,9 @@
 
 <p>The host migration change leads to another quality-of-life change; Dissonance components can now be re-used. Previously you had to ensure that components were deleted when the network session changed; this was not very ergonomic and led to a lot of confusion amongst users. Now that the Dissonance network internally understands that sessions might change it's no longer necessary - feel free to use and re-use components as many times as you like.</p>
 
-The new error handling and host migration system is a <b>breaking change</b> to custom network integrations which use the <code>BaseCommsNetwork</code> class. Please see the <a href="https://placeholder-software.co.uk/dissonance/docs/Tutorials/Custom-Networking/">documentation for custom network</a> implementations for more detail. Pay particular attention to the generic parameters (<code>TServerParam</code> and <code>TClientParam</code> are new) and the section on the <code>Update</code> method.
+<p>The new error handling and host migration system is a <b>breaking change</b> to custom network integrations which use the <code>BaseCommsNetwork</code> class. Please see the <a href="https://placeholder-software.co.uk/dissonance/docs/Tutorials/Custom-Networking/">documentation for custom network</a> implementations for more detail. Pay particular attention to the generic parameters (<code>TServerParam</code> and <code>TClientParam</code> are new) and the section on the <code>Update</code> method.</p>
+
+<p>With this release we have <b>not released a package for Unity 5.4.4</b> which is the usual minimum supported target. If you're still using Unity 5.4.4 please <a href="mailto:admin@placeholder-software.co.uk">Contact us</a> to get the latest update package (and we'll consider including 5.4.4 support in the next release).</p>
 {% endblock %}
 
 {% block integrations %}
