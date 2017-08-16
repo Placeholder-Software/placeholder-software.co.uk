@@ -1,0 +1,137 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "3.0.0" %}
+
+{% block blurb %}
+<p>This release is biggest one yet with <b>four</b> big new changes to Dissonance!</p>
+
+<p>First up is support for the Universal Windows Platform (also known as WSA). Now you can use Dissonance in apps targetting cool new platforms like the Windows mixed reality headsets and the Microsoft Hololens.</p>
+
+<p>A lot of people have been asking for this and it's finally here; we now have an integration available for the new <a href="https://www.assetstore.unity3d.com/en/#!/content/38344">Forge Networking Remastered</a> asset. Big thanks to the Forge developers and everyone in the Forge Discord chat who have helped to make this happen. Download the package below and read <a href="TODO">the tutorial</a> to get started.</p>
+
+<p>Thirdly we've added support for changing the volume of each individual channel you are broadcasting on - giving you more control over how others hear you. We've used this to add faders to the VoiceBroadcastTrigger component - by default all voice will now fade out over 0.15 seconds instead of cutting off instantly. You can configure this and some other fader settings in the revamped inspector for the component. See more about channel volumes in the <a href="TODO">documentation</a> or see more about the trigger fader settings <a href="TODO">here</a>.</p>
+
+<p>Finally, the largest change of all is the internal changes to how Dissonance networking works - it's now possible for voice packets to be sent directly from peer to peer when the undlerying network system supports it! This can significantly reduce latency and bandwidth usage. These changes involve one very small <b>breaking change</b> to custom network integrations which use the <code>BaseClient</code>, <code>BaseServer</code> and <code>BaseCommsNetwork</code>classes, the <code>TPeer</code> generic parameter must be a <code>struct</code>. Besides this the change is completely backwards compatible and will continue working with your custom networking - see the <a href="https://placeholder-software.co.uk/dissonance/docs/Tutorials/Custom-Networking/">documentation for custom network</a> implementations for more details on how to enhance your integration to enable p2p routing.</p>
+
+{% endblock %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworkingRemastered-1.0.0.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworking-3.0.0.unitypackage",
+    3,
+    "3.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-PhotonUnityNetworking-4.0.0.unitypackage",
+    4,
+    "4.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-UNet_HLAPI-4.0.0.unitypackage",
+    4,
+    "4.0.0"
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/3.0.0/Dissonance-UNet_LLAPI-4.0.0.unitypackage",
+    4,
+    "4.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-PhotonBolt.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>UWP Support
+    <ul>
+      <li>Supported Architectures: x86, x86_64</li>
+    </ul>
+  </li>
+  <li><a href="https://www.assetstore.unity3d.com/en/#!/content/38344">Forge Networking Remastered</a> integration</li>
+  <li>Volume can be set per channel
+    <ul>
+      <li>Added soft fade-in and fade-out to broadcast triggers</li>
+    </ul>
+  </li>
+  <li>Totally rewritten the internals of the networking system to support direct peer-to-peer routing of voice
+    <ul>
+      <li>Halves latency and slightly reduces bandwidth usage</li>
+      <li>Currently only takes effect on the Photon Unity Networking integration</li>
+      <li>Very small breaking change for custom network integration. Generic <code>TPeer</code> parameter must be a <code>struct</code></li>
+    </ul>
+  </li>
+  <li>Added the ability to change the Microphone at runtime <a href="https://github.com/Placeholder-Software/Dissonance/issues/45">(#45)</a>
+    <ul>
+      <li>Inspect the DissonanceComms component to see a list of available microphones</li>
+      <li>Or set the <code>DissonanceComms:MicrophoneName</code> property</li>
+    </ul>
+  </li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Fixed a Mac specific crash when (un)plugging a headset <a href="https://github.com/Placeholder-Software/Dissonance/issues/33">(#33)</a></li>
+  <li>Fixed unsafe multithreaded accesses to preprocessor and codec <a href="https://github.com/Placeholder-Software/Dissonance/issues/44">(#44)</a></li>
+  <li>Prevented volume based comms trigger from attemtping to access dead objects if object is destroyed while inside the trigger volume</li>
+  <li>Fixed a null reference exception in HLAPI integration if HLAPI unexpectedly becomes null (e.g. due to a timeout)</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+    <li>UWP does not support ARM architecture</li>
+    <li>No Acoustic Echo Cancellation</li>
+</ul>
+{% endblock %}
