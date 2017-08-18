@@ -2,11 +2,11 @@
 
 {% set version_number = "0.0.9" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This is the ninth round of testing for Dissonance. This version fixes some bugs which were causing voice recording to cut out when certain quality settings were used (small frame sizes), these fixes should also make microphone recording generally be more robust.</p>
 
 <p>Since this is a testing release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
-{% endblock %}
+{% endset %}
 
 {% block bugfixes %}
 <ul>

@@ -3,13 +3,13 @@
 
 {% set version_number = "1.1.0" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>In this release we have two big new features. We've completely replaced all of the demo scenes - the new scenes show off many more of the features of Dissonance as well as best practices for how to use Dissonance. We've also added support for a new network integration - <a href="https://www.assetstore.unity3d.com/en/#!/content/83233">Photon BOLT</a>! Check out the integration list below to download it.</p>
 
 <p>There is a single <b>breaking change</b> in this release. The methods <code>StopClient</code> and <code>StopServer</code> have been replaced with a unified <code>Stop</code> method.</p>
 
 <p>There is a problem with the import settings with this release which affects Unity 5.5 and lower. If you are encountering <code>DllImportExceptions</code> ensure that the files for your platform in <code>Assets/Plugins/Dissonance/Plugins</code> are set to import for the editor. We will put out another release to fix this issue as soon as possible!</p>
-{% endblock %}
+{% endset %}
 
 {% block integrations %}
   {% call changes.integration(

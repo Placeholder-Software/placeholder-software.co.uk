@@ -1,5 +1,4 @@
 {% extends "templates/dissonance/news.nunjucks" %}
-{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% set title = "Dissonance 1.0.7 With SALSA Lip Sync" %}
 {% set body %}

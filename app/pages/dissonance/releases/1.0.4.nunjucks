@@ -2,9 +2,9 @@
 
 {% set version_number = "1.0.4" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This release brings a large change to the playback system which should improve it's robustness in the face of a number of bad situations such as low frame rate, overloaded processor, incorrect playback speed and terrible network conditions.</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

@@ -2,9 +2,9 @@
 
 {% set version_number = "1.0.6" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This release brings a large number of minor features and improvements which were requested by users. This release also lays some more groundwork for the brand new voice detector which will be coming very soon.</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

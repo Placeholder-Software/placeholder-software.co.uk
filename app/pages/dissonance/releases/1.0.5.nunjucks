@@ -2,9 +2,9 @@
 
 {% set version_number = "1.0.5" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This release is primarily a refactoring release - the system we use for compiling native dependencies has been totally rebuilt in preparation for adding a new and improved voice detector in a future release.</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

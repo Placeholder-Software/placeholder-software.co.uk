@@ -3,7 +3,7 @@
 
 {% set version_number = "3.0.0" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This release is biggest one yet with <b>four</b> big new changes to Dissonance!</p>
 
 <h6>Universal Windows Platform</h6>
@@ -21,8 +21,7 @@
 <h6>Peer-to-Peer Voice Routing</h6>
 
 <p>Finally, the largest change of all is the internal changes to how Dissonance networking works - it's now possible for voice packets to be sent directly from peer to peer when the undlerying network system supports it! This can significantly reduce latency and bandwidth usage. These changes involve one very small <b>breaking change</b> to custom network integrations which use the <code>BaseClient</code>, <code>BaseServer</code> and <code>BaseCommsNetwork</code>classes, the <code>TPeer</code> generic parameter must be a <code>struct</code>. Besides this the change is completely backwards compatible and will continue working with your custom networking - see the <a href="https://placeholder-software.co.uk/dissonance/docs/Tutorials/Custom-Networking/">documentation for custom network</a> implementations for more details on how to enhance your integration to enable p2p routing.</p>
-
-{% endblock %}
+{% endset %}
 
 {% block integrations %}
   {% call changes.integration(

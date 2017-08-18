@@ -3,10 +3,10 @@
 
 {% set version_number = "1.0.10" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>If you're reading this you've probably already encountered the biggest new feature of Dissonance 1.0.10 - the Welcome Window. This new window pops up when you install a new version of Dissonance and offers to bring you to the changelog page for the version you have installed (such as this page). Integrations for the version you have installed will be available to download on the changelog page. This new system allows us to release much more rapid updates of integrations and also creates a much smoother first time installation process for Dissonance.</p>
 <p>This is a hotfix to Dissonance 1.0.9 which included the welcome window but failed to show it to new users</p>
-{% endblock %}
+{% endset %}
 
 {% block integrations %}
   {% call changes.integration(

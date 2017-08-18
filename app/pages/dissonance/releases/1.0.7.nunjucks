@@ -2,9 +2,9 @@
 
 {% set version_number = "1.0.7" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This release simply adds a note regarding the SALSA+Dissonance integration and how to download it.</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

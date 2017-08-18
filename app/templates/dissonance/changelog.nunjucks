@@ -9,7 +9,7 @@
   {%- endcall %}
 
   {% call icon_section.center() -%}
-    {% block blurb %}{% endblock %}
+    {{ blurb | safe }}
   {%- endcall %}
 
   {% call icon_section.left("/images/random.svg") -%}

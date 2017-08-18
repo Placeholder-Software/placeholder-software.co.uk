@@ -2,9 +2,9 @@
 
 {% set version_number = "1.0.3" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This is a primarily a bugfixing release, patching a number of issues that have been reported by new users. This isn't to say we've stopped working on new features - rolled into this release is spport for iOS!</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

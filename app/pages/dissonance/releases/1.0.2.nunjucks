@@ -2,9 +2,9 @@
 
 {% set version_number = "1.0.2" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>Dissonance is live on the <a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF">unity asset store</a>!</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

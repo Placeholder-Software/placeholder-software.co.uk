@@ -2,11 +2,11 @@
 
 {% set version_number = "0.0.3" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This is the third round of testing for Dissonance. The big change in this version is the addition of access control tokens - allowing you to control who can join particular channels based on knowledge of a token. This makes setting up private channels (e.g. team chat) much easier.</p>
 
 <p>Since this is a testing release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

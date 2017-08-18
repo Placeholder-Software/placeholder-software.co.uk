@@ -2,9 +2,9 @@
 
 {% set version_number = "1.0.8" %}
 
-{% block blurb %}
+{% set blurb %}
 <p>This release brings the brand new voice detection algorithm, based on the world class Chromium WebRTC voice detector!</p>
-{% endblock %}
+{% endset %}
 
 {% block features %}
 <ul>

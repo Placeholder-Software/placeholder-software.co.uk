@@ -1,0 +1,8 @@
+{% extends "templates/dissonance/news.nunjucks" %}
+{% import "pages/dissonance/releases/" + version_number + ".nunjucks" as release %}
+
+{% set title %}Dissonance {{ version_number }} Release{% endset %}
+{% set body %}
+  {{ release.blurb | safe }}
+  <p>See the full release notes for this version <a href="{{ base_path }}/dissonance/releases/{{ version_number }}.html">here</a>.</p>
+{% endset %}
