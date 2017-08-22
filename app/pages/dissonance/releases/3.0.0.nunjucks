@@ -10,6 +10,8 @@
 
 <p>First up is support for the Universal Windows Platform (also known as WSA). Now you can use Dissonance in apps targetting cool new platforms like the Windows mixed reality headsets and the Microsoft Hololens.</p>
 
+<p><b>Note</b>: Due to a mistake made during the release process you must delete the <code>Assets/Plugins/Dissonance/Plugins/ARM</code> directory before building for UWP</p>
+
 <h6>Forge Networking Remastered</h6>
 
 <p>A lot of people have been asking for this and it's finally here; we now have an integration available for the new <a href="https://www.assetstore.unity3d.com/en/#!/content/38344">Forge Networking Remastered</a> asset. Big thanks to the Forge developers and everyone in the Forge Discord chat who have helped to make this happen. Download the package below and read <a href="placeholder-software.co.uk/dissonance/docs/Basics/Quick-Start-Forge-Remastered/">the tutorial</a> to get started.</p>
