@@ -46,31 +46,6 @@ gulp.task('scripts', () => {
     .pipe(reload({stream: true}));
 });
 
-function lint(files, options) {
-  return gulp.src(files)
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.eslint(options))
-    .pipe($.eslint.format())
-    .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
-}
-
-gulp.task('lint', () => {
-  return lint('app/scripts/**/*.js', {
-    fix: true
-  })
-  .pipe(gulp.dest('app/scripts'));
-});
-
-gulp.task('lint:test', () => {
-  return lint('test/spec/**/*.js', {
-    fix: true,
-    env: {
-      mocha: true
-    }
-  })
-    .pipe(gulp.dest('test/spec/**/*.js'));
-});
-
 gulp.task('html', ['styles', 'scripts'], () => {
 
   var base_path = argv.base_path || "";
@@ -164,7 +139,6 @@ gulp.task('serve:test', ['scripts'], () => {
 
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('test/spec/**/*.js').on('change', reload);
-  gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
 gulp.task('wiredep', () => {
@@ -182,7 +156,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
@@ -237,7 +211,8 @@ function sitepages() {
             };
           } else {
             var name = path.parse(fileName).name;
-            var ext = path.extname(fileName)
+            var ext = path.extname(fileName);
+            var dir = path.basename(path.dirname(filePath));
             if (name != "index" && (ext == ".html" || ext == ".nunjucks" )) {
 
               //Attempt to parse a date out of the title
@@ -248,13 +223,27 @@ function sitepages() {
                   date = new Date(parts[0], parts[1] - 1, parts[2])
                 }
               }
+              
+              //Parse version out of title
+              var version = null;
+              if (dir == "releases") {
+                var parts = name.split('.').slice(0, 3).map(a => parseInt(a));
+                if (parts.length == 3 && !isNaN(parts[0]) && !isNaN(parts[1]) && !isNaN(parts[2])) {
+                  version = {
+                    major: parts[0],
+                    minor: parts[2],
+                    patch: parts[2],
+                  };
+                }
+              }
 
-              files.pages.push({
+              var d = {
                 file: true,
                 directory: false,
                 name: name,
                 path: templateRoot + '/' + fileName,
                 timestamp: date.getTime(),
+                version: version,
                 date: {
                   day: date.getDate(),
                   month: date.toLocaleString("en-gb", { month: "long" }),
@@ -262,7 +251,18 @@ function sitepages() {
                   iso: date.toISOString()
                 },
                 url: (urlRoot + '/' + fileName).replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
-              });
+              };
+              
+              if (version !== null) {
+                d.version_major = version.major;
+                d.version_minor = version.minor;
+                d.version_patch = version.patch;
+                d.has_version = true;
+              } else {
+                d.has_version = false;
+              }
+              
+              files.pages.push(d);
             }
           }
       });

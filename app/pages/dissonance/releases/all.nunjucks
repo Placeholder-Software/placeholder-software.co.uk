@@ -1,0 +1,16 @@
+[
+  {% block content %}
+    {% for item in site.dissonance.children.releases.children.pages %}
+      {% if item.has_version %}
+        {
+          "link": "{{ item.url }}",
+          "version": {
+            "major": "{{ item.version_major }}",
+            "minor": "{{ item.version_minor }}",
+            "patch": "{{ item.version_patch }}"
+          }
+        },
+      {% endif %}
+    {% endfor %}
+  {% endblock %}
+]
