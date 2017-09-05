@@ -61,6 +61,13 @@
 
 .site-title-row {
   background-color: $primary-color;
+  display: block;
+  color: inherit;
+  
+  &:hover, &:active, &:focus, &:visited {
+    outline: none;
+    color: inherit;
+  }
 }
 
 .site-alert-row {
