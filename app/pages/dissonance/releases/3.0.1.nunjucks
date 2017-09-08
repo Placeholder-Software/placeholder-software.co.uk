@@ -1,0 +1,123 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "3.0.1" %}
+
+{% set blurb %}
+<p>This release brings two large new features as well as an assortment of small fixes and improvents driven by user feedback.</p>
+
+<h6>Updater Check</h6>
+
+<p>The most important change with this release is a new update checker which will notify you about new versions of Dissonance. This window will only show up <i>once</i> for each new version of Dissonance released. If you don't want to allow this it is easy to disable it by making sure <code>Window > Dissonance > Check For Updates</code> is unchecked.</p>
+
+<h6>Dynamic Quality Adjustment</h6>
+
+<p>If you've been having problems with voice on very bad network connections with a lot of packet loss or latency jitter this will help. We've added automatic adjustment of the quality of voice based on packet loss - as the connection gets worse the encoder will trade off less quality for more resilience to packet loss which will reduce audio stutters.</p>
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworkingRemastered-1.0.0.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworking-3.0.0.unitypackage",
+    3,
+    "3.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-PhotonUnityNetworking-4.0.0.unitypackage",
+    4,
+    "4.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.1/Dissonance-UNet_HLAPI-4.0.1.unitypackage",
+    5,
+    "4.0.1"
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/3.0.1/Dissonance-UNet_LLAPI-4.0.1.unitypackage",
+    5,
+    "4.0.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-PhotonBolt.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Added an update window which will pop up when a new version of Dissonance is available (this can easily be disabled)</li>
+  <li>Added dynamic quality adjustment based on packet loss - encoder will dynamically trade off quality for packet loss resilience (<a href="https://github.com/Placeholder-Software/Dissonance/issues/47">#47</a>)</li>
+  <li>Upgraded to Opus 1.2.1, this will slightly improve the quality of high quality speech</li>
+  <li>Modified the encoder to more promptly close channels, this will slightly improve the last 250ms of speech</li>
+  <li>Added in a <code>BasePath</code> const which is used as the root of all direct filesystem access Dissonance does in the editor (<a href="https://github.com/Placeholder-Software/Dissonance/issues/51">#51</a>)</li>
+  <li>Added more items to the <code>Window > Dissonance</code> menu</li>
+  <li>Added a warning (printed into the log) if <code>Application.runInBackground</code> is not set</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Fixed the network system not properly removing clients when they left the session (this would cause the server to crash when the ~30th person joined the session.)</li>
+  <li>Fixed the <code>OnStartedSpeaking</code> event being invoked when a player had multiple channels open and closed one (but continued speaking)</li>
+  <li>Fixed noise suppressor level not being applied (it always used the <code>High</code> setting)</li>
+  <li>Fixed a rare case where the voice detector could stop receiving events when the capture pipeline was reset</li>
+  <li>Fixed a exception in the HLAPI integration when Dissonance tries to send a packet before the HLAPI is ready (<a href="https://github.com/Placeholder-Software/Dissonance/issues/48">#48</a>)</li>
+  <li>Fixed audio desync on clients if the editor is paused while someone is speaking</li>
+  <li>Fixed audio desync when the editor stutters e.g. due to editor GUI interaction (<a href="https://github.com/Placeholder-Software/Dissonance/issues/28">#28</a>)</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>UWP does not support ARM architecture (i.e. Windows Phone, <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in this)</li>
+  <li>No Acoustic Echo Cancellation (Work in progress)</li>
+  <li>iOS does not support bitcode (Work in progress)</li>
+</ul>
+{% endblock %}
