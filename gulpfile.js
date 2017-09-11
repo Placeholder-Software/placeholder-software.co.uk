@@ -231,8 +231,9 @@ function sitepages() {
                 if (parts.length == 3 && !isNaN(parts[0]) && !isNaN(parts[1]) && !isNaN(parts[2])) {
                   version = {
                     major: parts[0],
-                    minor: parts[2],
+                    minor: parts[1],
                     patch: parts[2],
+                    name: parts[0] + "." + parts[1] + "." + parts[2]
                   };
                 }
               }
@@ -265,6 +266,24 @@ function sitepages() {
               files.pages.push(d);
             }
           }
+      });
+      
+      files.pages.sort(function(a,b) {
+        
+        //Sort by version
+        if (a.has_version && b.has_version) {
+          var maj = a.version_major - b.version_major;
+          if (maj !== 0) { return maj; }
+          
+          var min = a.version_minor - b.version_minor;
+          if (min !== 0) { return min; }
+          
+          return a.version_patch - b.version_patch;
+        }
+        
+        //No version sorting, so sort by date
+        return a.timestamp - b.timestamp;
+        
       });
 
       return files;
