@@ -16,7 +16,7 @@
 
 <h5>Update 2017-09-11: Critical Bug Discovered</h5>
 
-<p>We discovered a critical bug in Dissonance 3.0.1 just a few hours after it became available on the asset store. We've already fixed this and submitted <a href="{{base_path}}/dissonance/releases/3.0.2.html">Dissonance 3.0.2</a> to the asset store, please upgrade as soon as 3.0.2 becomes available. Please <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> with your order number if you urgently need 3.0.2.</p>
+<p>We discovered a critical bug in Dissonance 3.0.1 just a few hours after it became available on the asset store. We've already fixed this and <a href="{{base_path}}/dissonance/releases/3.0.2.html">Dissonance 3.0.2</a> is now available on the asset store, please upgrade as soon as 3.0.2 possible.</p>
 {% endset %}
 
 {% block integrations %}
