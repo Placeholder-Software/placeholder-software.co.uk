@@ -4,7 +4,7 @@
 {% set version_number = "3.0.2" %}
 
 {% set blurb %}
-<p>This is an bug fix for a <b>critical bug</b> introduced in <a href="{{base_path}}/dissonance/releases/3.0.1.html">3.0.1</a>.</p>
+<p>This is a bug fix for a <b>critical bug</b> introduced in <a href="{{base_path}}/dissonance/releases/3.0.1.html">3.0.1</a>.</p>
 {% endset %}
 
 {% block integrations %}
