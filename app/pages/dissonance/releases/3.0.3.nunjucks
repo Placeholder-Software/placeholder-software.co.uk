@@ -1,0 +1,121 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "3.0.3" %}
+
+{% set blurb %}
+<p>This release brings two small new features and a large number of bug fixes.</p>
+
+<h6>iOS Bitcode</h6>
+
+<p>With the arrival of <a href="https://www.apple.com/ios/ios-11/" rel="nofollow">iOS 11</a> apps submitted to the store are required to contain "Bitcode" - this allows Apple to effectively recompile your app to apply new optimisations. We've recompiled the Dissonance binaries for iOS to contain bitcode. The binaries still contain all the architectures we previously supported: x86 (simulator), x86_64 (simulator), armv7 (iPhone 3GS/4s, iPad 1/2/3/mini) and arm64 (all devices since iPhone 5s).</p>
+
+<h6>Deafen</h6>
+
+<p>It's now easier to locally "deafen" a player - i.e. prevent them from hearing all remote voices. Previously you would have to mute every remote player - now you can simply set the <code>DissonanceComms:Deafen</code> property.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworkingRemastered-1.0.0.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworking-3.0.0.unitypackage",
+    3,
+    "3.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.3/Dissonance-PhotonUnityNetworking-4.0.1.unitypackage",
+    5,
+    "4.0.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.3/Dissonance-UNet_HLAPI-4.0.2.unitypackage",
+    5,
+    "4.0.2"
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/3.0.1/Dissonance-UNet_LLAPI-4.0.1.unitypackage",
+    5,
+    "4.0.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-PhotonBolt.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Added <code>DissonanceComms:Deafen</code> property which will prevent all remote voice from being heard locally</li>
+  <li>Added Bitcode support for iOS</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Fixed some state being left on the server when a player disconnects, potentially crashing the server if the player reconnects <a href="https://github.com/Placeholder-Software/Dissonance/issues/55">(#55)</a></li>
+  <li>Removed an error printed when a client leaves the session <a href="https://github.com/Placeholder-Software/Dissonance/issues/56">(#56)</a></li>
+  <li>Exponentially backing off the frame skip detector so that it does not detect multiple skips within a short period of time <a href="https://github.com/Placeholder-Software/Dissonance/issues/58">(#58)</a></li>
+  <li>Fixed the ErrorWrongSession packet which contained the wrong session number and caused endless log spam <a href="https://github.com/Placeholder-Software/Dissonance/issues/59">(#59)</a></li>
+  <li>Removed use of <code>Math.DivRem</code> function which is not available on UWP (hololens) <a href="https://github.com/Placeholder-Software/Dissonance/issues/61">(#61)</a></li>
+  <li>Fixed PUN integration throwing ErrorWrongSession errors if used in multiple sessions</li>
+  <li>Sending "User Left" events for all users in the session immediately before shutting down the session</li>
+  <li>Fixed the volume setting being ignored when opening a new channel (it was previously always initialised to <code>1</code>)</li>
+  <li>Fixed a potential crash in the server if a non Dissonance packet was passed to the server</li>
+  <li>Ensured that client always disconnects itself if any exception occurs when updating the client - it should instantly attempt to reconnect itself to recover from the error</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>UWP does not support ARM architecture (i.e. Windows Phone, <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in this)</li>
+  <li>No Acoustic Echo Cancellation (Work in progress - <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in testing this)</li>
+</ul>
+{% endblock %}
