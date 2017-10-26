@@ -61,6 +61,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
 
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
     .pipe(flatmap((stream, file) => {
+      console.log("stream " + file.path);
       return stream
         .pipe($.if('*.nunjucks', nunjucksRender({
           path: ['app'],
@@ -192,7 +193,6 @@ function flatten(hierarchy, pages) {
 }
 
 function sitepages() {
-
     function getFilesRecursive(searchRoot, urlRoot, templateRoot) {
       var fileContents = fs.readdirSync(searchRoot);
 
