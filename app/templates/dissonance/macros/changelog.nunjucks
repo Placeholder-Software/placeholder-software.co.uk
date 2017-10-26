@@ -7,24 +7,117 @@
   </div>
 {% endmacro %}
 
+{% macro integration_semver(title, id, description, url, major, minor, patch) %}
+  <div a="{{ id }}" class="integration" data-version-semver='{ "major":{{ major }}, "minor":{{ minor }}, "patch":{{ patch }} }' >
+    <h5 class="title"><a href="{{ url }}" title="Download {{ title }} integration">{{ title }}</a></h5>
+    <h6 class="upgrade-notification hidden">Upgrade Available!</h6>
+    <div class="description">{{ description }}</div>
+  </div>
+{% endmacro %}
+
 {% macro highlight_from_url_query() %}
 <script>
-  function urlParam(name) {
+  function get_url_param(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	  return (results == null || results.length < 2) ? null : results[1];
+  }
+  
+  function parse_semver(version) {
+    var results = new RegExp("^(\\d+)\\.(\\d+)\\.(\\d+)$").exec(version);
+    if (results != null && results.length == 4) {
+      return {
+        major: Number(results[1]),
+        minor: Number(results[2]),
+        patch: Number(results[3]),
+      };
+    }
+    
+    return null;
+  }
+  
+  function semver_is_greater(a, b) {
+  
+    //Null is greater than nothing
+    if (a == null) return false;
+    
+    //Everything is greater than null
+    if (b == null) return true;
+    
+    var maj = a.major - b.major;
+    if (maj !== 0) { return maj > 0; }
+          
+    var min = a.minor - b.minor;
+    if (min !== 0) { return min > 0; }
+          
+    return (a.patch - b.patch) > 0;
   }
   
   jQuery(".integration").each(function(a, b) {
     var $item = jQuery(b);
     var id = $item.attr("a");
     
+    // If there is no notification element then there's no point trying to check the version numbers...
+    // ...because we can't notify even if we do find a version mismatch!
     var $notification = $item.find(".upgrade-notification");
+    
+    //Hide the notification by default, we'll unhide it as necessary
     if (!$notification) return;
+    $notification.addClass("hidden");
     
-    var version_installed = urlParam(id);
-    var version_available = $item.attr("data-version-number");
+    // Get the version which the user has currently got installed from the URL parameters. This could be one of two things
+    // either a basic version number e.g.
+    //    &SALSA=1
+    // or a semantic version number e.g.
+    //    &SALSA=1.2.3
+    var version_installed = get_url_param(id);
+    if (!version_installed) return;
     
-    if (!version_installed || !version_available || version_installed >= version_available) $notification.addClass("hidden");
+    //Check what type of version number has been supplied
+    var installed_is_basic = !isNaN(Number(version_installed));
+    var installed_is_semver = parse_semver(version_installed) != null;
+    if (!installed_is_basic && !installed_is_semver) return;
+    
+    // Check the version currently available for this version of Dissonance. Either an integer, or a semantic version
+    var basic_version_available = Number($item.attr("data-version-number"));
+    var semantic_version_available = $item.attr("data-version-semver") ? JSON.parse($item.attr("data-version-semver")) : null;
+    
+    function is_upgrade_required() {
+      if (basic_version_available > 0) {
+      
+        // The version _available_ has a basic version. Upgrade iff:
+        // - user has basic version installed
+        // - there is a greater basic version available
+        return installed_is_basic && basic_version_available && basic_version_available > Number(version_installed);
+        
+      } else if (semantic_version_available != null) {
+      
+        // The version _available_ has a semantic version. Upgrade if:
+        //  - User has basic version installed
+        // - OR
+        //  - User has semantic version installed
+        //  - available semantic version is greater than installed semantic version
+        return installed_is_basic || (installed_is_semver && semver_is_greater(semantic_version_available, parse_semver(version_installed)));
+          
+      } else {
+      
+        // We don't understand what version is available, early exit
+        return false;
+        
+      }
+    }
+    
+    if (is_upgrade_required())
+      $notification.removeClass("hidden");
+    else
+      $notification.addClass("hidden");
   });
 </script>
 {% endmacro %}
+
+
+
+
+
+
+
+
