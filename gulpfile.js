@@ -1,24 +1,17 @@
 const gulp = require('gulp');
+require('gulp-stats')(gulp);
+
 const gulpLoadPlugins = require('gulp-load-plugins');
-const browserSync = require('browser-sync');
 const del = require('del');
-const wiredep = require('wiredep').stream;
-const template = require('gulp-template');
 const nunjucksRender = require('gulp-nunjucks-render');
 const flatmap = require('gulp-flatmap');
 const path = require('path');
 const argv = require('yargs').argv;
-const data = require('gulp-data');
 const fs = require('fs');
-const marked = require('gulp-marked');
-const nunjucksMarkdown = require('nunjucks-markdown');
-const frontMatter = require('front-matter');
 const debug = require('gulp-debug');
-const wrap = require('gulp-wrap');
-const through = require('through2');
+const cache = require('gulp-cached');
 
 const $ = gulpLoadPlugins();
-const reload = browserSync.reload;
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -32,7 +25,6 @@ gulp.task('styles', () => {
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(reload({stream: true}));
 });
 
 gulp.task('scripts', () => {
@@ -43,7 +35,6 @@ gulp.task('scripts', () => {
     .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
@@ -60,22 +51,20 @@ gulp.task('html', ['styles', 'scripts'], () => {
   }
 
   return gulp.src('app/pages/**/*.+(html|nunjucks)')
-    .pipe(flatmap((stream, file) => {
-      console.log("stream " + file.path);
-      return stream
-        .pipe($.if('*.nunjucks', nunjucksRender({
-          path: ['app'],
-          data: data
-        })))
-        .pipe($.useref({
-          searchPath: ['.tmp', '.'],
-        }))
-        .pipe($.if('*.js', $.uglify()))
-        .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-        .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-        .pipe(gulp.dest('.tmp'))
-        .pipe(gulp.dest('dist'));
+    .pipe(nunjucksRender({
+      path: 'app',
+      data: data
     }))
+    .pipe($.useref({
+      searchPath: ['.tmp', '.'],
+    }))
+    .pipe(cache('html_file_preprocessing'))
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
+    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe(flatmap((stream, file) => { console.log(file.path); return stream; }))
+    .pipe(gulp.dest('.tmp'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', () => {
@@ -99,63 +88,11 @@ gulp.task('fonts', () => {
 
 gulp.task('extras', () => {
   return gulp.src([
-    'app/**/*.unitypackage',
-    'app/*.*',
-    'app/*',
-    '!app/*.html'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
+    'app/**/*.unitypackage'
+  ]).pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
-
-gulp.task('reload', () => {
-    reload();
-});
-
-gulp.task('serve:dist', () => {
-  browserSync({
-    notify: false,
-    port: 9000,
-    server: {
-      baseDir: ['dist']
-    }
-  });
-});
-
-gulp.task('serve:test', ['scripts'], () => {
-  browserSync({
-    notify: false,
-    port: 9000,
-    ui: false,
-    server: {
-      baseDir: 'test',
-      routes: {
-        '/scripts': '.tmp/scripts',
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
-
-  gulp.watch('app/scripts/**/*.js', ['scripts']);
-  gulp.watch('test/spec/**/*.js').on('change', reload);
-});
-
-gulp.task('wiredep', () => {
-  gulp.src('app/styles/*.scss')
-    .pipe(wiredep({
-      ignorePath: /^(\.\.\/)+/
-    }))
-    .pipe(gulp.dest('app/styles'));
-
-  gulp.src('app/*.html')
-    .pipe(wiredep({
-      exclude: ['bootstrap-sass'],
-      ignorePath: /^(\.\.\/)*\.\./
-    }))
-    .pipe(gulp.dest('app'));
-});
 
 gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
