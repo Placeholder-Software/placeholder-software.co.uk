@@ -1,0 +1,10 @@
+{% extends "templates/wetsurfacedecals/layout.nunjucks" %}
+
+<!-- Alert banner at the top of the site. Set this to a string for that to be displayed -->
+<!-- {% set alert_message = false %} -->
+
+{% block content %}
+
+  Make stuff damp.
+
+{% endblock %}

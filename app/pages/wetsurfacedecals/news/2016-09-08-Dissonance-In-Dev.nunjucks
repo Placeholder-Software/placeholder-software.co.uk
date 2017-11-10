@@ -1,0 +1,21 @@
+{% extends "templates/dissonance/news.nunjucks" %}
+
+{% set title = "Dissonance Is In Development" %}
+{% set body %}
+
+<p>Dissonance is a voice communications asset for the <a href="https://unity3d.com/">Unity game engine</a>. Dissonance makes it easy to get high quality, low latency voice communication into your game no matter what network system you're using.</p>
+
+<p>Work on Dissonance began back in July. We noticed that despite integrated voice communication being an essential part of a modern multiplayer game there were only *two* assets on the unity store for voice chat! Voice communication can be a hard problem to tackle, and in that short time we've built:</p>
+
+<ul>
+ <li>Realtime audio decoding pipeline</li>
+ <li>Multithreaded mic capture and encoding</li>
+ <li>Custom voice activation detection filter</li>
+ <li>Low level networking system with integrations for four other popular unity networking systems</li>
+ <li>A powerful and flexible chat room system with support for trigger volumes</li>
+ <li>Documentation, documentation, documentation!</li>
+</ul>
+ 
+<p>We're not finished by a long way! But I'm excited to say that we are approaching a point where we can release the first version of Dissonance. Within the next few weeks we'll be looking for testers who would be willing to try adding Dissonance to their multiplayer game and giving us detailed feedback on what worked and what didn't. If that sounds like you, <a href="mailto://martin@placeholder-software.co.uk">contact us</a>!</p>
+
+{% endset %}

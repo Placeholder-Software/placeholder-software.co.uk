@@ -1,0 +1,21 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+
+{% set version_number = "0.0.1" %}
+
+{% set blurb %}
+<p>We're very excited to release the very first version of Dissonance to our testers!</p>
+
+<p>Since this is the very first release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
+{% endset %}
+
+{% block features %}
+<p>None!</p>
+{% endblock %}
+
+{% block bugfixes %}
+<p>None!</p>
+{% endblock %}
+
+{% block known_issues %}
+<p>None!</p>
+{% endblock %}
