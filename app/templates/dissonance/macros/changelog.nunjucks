@@ -1,7 +1,7 @@
 {% macro integration(title, id, description, url, versionNumber, versionString) %}
   <div a="{{ id }}" class="integration" data-version-number="{{ versionNumber }}" >
     <h5 class="title"><a href="{{ url }}" title="Download Now">{{ title }}</a></h5>
-    <h6 class="version-number">{{ versionString }}</h6>
+    <!-- <h6 class="version-number">{{ versionString }}</h6> -->
     <h6 class="upgrade-notification">Upgrade Available!</h6>
     <div class="description">{{ description }}</div>
   </div>

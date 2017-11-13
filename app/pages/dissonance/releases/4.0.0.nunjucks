@@ -1,0 +1,121 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "4.0.0" %}
+
+{% set blurb %}
+<p>This release brings two new features to Dissonance.</p>
+
+<h6>Custom Microphone Capture Scripts</h6>
+
+<p>With custom microphone capture scripts it's possible to write a new script which captures audio data and feeds it in to Dissonance. This allows platform specific microphone implementations which can access special features such as super low latency audio capture, special effects or acoustic echo cancellation. To write one of these scripts create a new MonoBehaviour which implements the <code>IMicrophoneCapture</code> interface and attach it to the same gameObject as the <code>DissonanceComms</code> component.</p>
+
+<h6>Remote Rooms API</h6>
+
+<p>We've added some new properties which expose which rooms remote players are listening to. There are several ways to acccess this data:</p>
+
+<ul>
+  <li>Access the <code>VoicePlayerState:Rooms</code> property for a list of which rooms that specific player is listening to</li>
+  <li>Subscribe to the <code>VoicePlayerState:OnEnteredRooms</code> and <code>VoicePlayerState:OnExitedRoom</code> events to receive an event when that specific player starts or stops listening to a room</li>
+  <li>Subscribe to the <code>DissonanceComms:OnEnteredRooms</code> and <code>DissonanceComms:OnExitedRoom</code> events to receive an event when any player starts or stops listening to a room</li>
+</ul>
+
+<p>These changes involve two very small <b>breaking changes</b> to custom network scripts using the <code>ICommsNetwork</code> interface. The events <code>Action<RoomEvent> PlayerEnteredRoom</code> and <code>Action<RoomEvent> PlayerExitedRoom</code> have been added to the interface, these events should fire when a player starts and stops listening to a room. If your custom network layer does not support rooms simply never raise the events.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworkingRemastered-1.0.0.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-ForgeNetworking-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-PhotonUnityNetworking-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-UNet_HLAPI-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/4.0.0/Dissonance-UNet_LLAPI-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-PhotonBolt.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>New Microphone API allows custom microphone capture scripts for interfacing with platform specific audio APIs</li>
+  <li>New remote Rooms API exposes which rooms remote players are listening to</li>
+  <li>Changed menu item from <code>Windows > Dissonance > Welcome Window</code> to <code>Windows > Dissonance > Integrations</code></li>
+  <li>Added a new method for custom network scripts to signal fatal errors</li>
+  <li>Added <code>VoicePlaybackState:SpeakerPriority</code> which fetches the current priority a player is speaking with</li>
+  <li>Compiled iOS binaries with bitcode</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Handling the case when a network client connects even when it is already connected with a different network connection</li>
+  <li>More robustly handling HLAPI clients timing out (preventing a potential server crash and restart)</li>
+  <li>Fixed UWP build not passing app store certification</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>No Acoustic Echo Cancellation (Work in progress - <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in testing this)</li>
+</ul>
+{% endblock %}
