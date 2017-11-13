@@ -20,7 +20,7 @@
   <li>Subscribe to the <code>DissonanceComms:OnEnteredRooms</code> and <code>DissonanceComms:OnExitedRoom</code> events to receive an event when any player starts or stops listening to a room</li>
 </ul>
 
-<p>These changes involve two very small <b>breaking changes</b> to custom network scripts using the <code>ICommsNetwork</code> interface. The events <code>Action<RoomEvent> PlayerEnteredRoom</code> and <code>Action<RoomEvent> PlayerExitedRoom</code> have been added to the interface, these events should fire when a player starts and stops listening to a room. If your custom network layer does not support rooms simply never raise the events.</p>
+<p>These changes involve two very small <b>breaking changes</b> to custom network scripts using the <code>ICommsNetwork</code> interface. The events <code>Action&lt;RoomEvent&gt; PlayerEnteredRoom</code> and <code>Action&lt;RoomEvent&gt; PlayerExitedRoom</code> have been added to the interface, these events should fire when a player starts and stops listening to a room. If your custom network layer does not support rooms simply never raise the events.</p>
 
 {% endset %}
 
