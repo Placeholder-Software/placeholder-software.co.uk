@@ -1,23 +1,2 @@
-[
-  {% block content %}
-  
-    {% set first = true %}
-  
-    {% for item in site.dissonance.children.releases.children.pages %}
-      {% if item.has_version %}
-      
-        {% if not first %},{% endif %}
-        {% set first = false %}
-      
-        {
-          "_link": "{{ base_path }}{{ item.url }}",
-          "_version": {
-            "_major": {{ item.version_major }},
-            "_minor": {{ item.version_minor }},
-            "_patch": {{ item.version_patch }}
-          }
-        }
-      {% endif %}
-    {% endfor %}
-  {% endblock %}
-]
+{% import "templates/common/macros/release-versions-json.nunjucks" as releases %}
+{{ releases.list_releases(site.dissonance.children.releases.children.pages) }}

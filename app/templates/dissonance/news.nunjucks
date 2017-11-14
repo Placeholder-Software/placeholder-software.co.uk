@@ -1,7 +1,6 @@
 {% set body_class="news" %}
 
 {% extends "templates/dissonance/layout.nunjucks" %}
-{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% block content %}
   <section class="article">
