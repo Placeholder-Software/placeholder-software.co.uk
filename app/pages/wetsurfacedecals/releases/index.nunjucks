@@ -1,22 +1,7 @@
 {% extends "templates/wetsurfacedecals/layout.nunjucks" %}
-
-{% macro version_block(version) %}
-  <div a="{{ version_number }}" data-version-number="{{ version_number }}" >
-    <h5 class="title"><a href="{{ base_path }}/wetsurfacedecals/releases/{{ version }}.html" title="WSD {{ version }}">Wet Surface Decals {{ version }}</a></h5>
-  </div>
-{% endmacro %}
+{% import "templates/common/macros/release-versions-html.nunjucks" as releases %}
 
 {% block content %}
-  
-  <ol reversed style="list-style:lower-roman">
-  
-    {% for item in site.wetsurfacedecals.children.releases.children.pages | reverse %}
-      {% if item.has_version %}
-        <li>{% call version_block(item.version.name) -%}{%- endcall %}</li>
-      {% endif %}
-    {% endfor %}
-    
-  </ol>
-  
+  {{ releases.list_releases(site.wetsurfacedecals.children.releases.children.pages, "Wet Surface Decals") }}
 {% endblock %}
   

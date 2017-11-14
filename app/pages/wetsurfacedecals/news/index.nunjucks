@@ -1,7 +1,7 @@
+
 {% set body_class="news" %}
 
 {% extends "templates/wetsurfacedecals/layout.nunjucks" %}
-{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
 
 {% block head %}
   <link href="{{ base_url }}/wetsurfacedecals/atom.html" type="application/atom+xml" rel="alternate" title="Wet Surface Decals atom feed" />

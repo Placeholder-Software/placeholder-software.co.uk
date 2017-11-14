@@ -1,0 +1,12 @@
+{% set body_class="news" %}
+
+{% extends "templates/wetsurfacedecals/layout.nunjucks" %}
+
+{% block content %}
+  <section class="article">
+    <h4 class="title">{{ title }}</h4>
+    <div class="content">
+      {{ body | safe }}
+    </div>
+  </section>
+{% endblock %}
