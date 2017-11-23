@@ -4,6 +4,13 @@
 {% set version_number = "4.0.0" %}
 
 {% set blurb %}
+
+<h6>Critical Bug Alert!</h6>
+
+<p>There is a <b><a href="https://github.com/Placeholder-Software/Dissonance/issues/68">critical bug</a></b> which prevents this version from working on <b>all non-Windows platforms</b>. We'll put out a fix for this as soon as possible. If you've already upgraded to Dissonance 4.0.0 and need a working copy of Dissonance for any of those platforms <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> for a copy of Dissonance 3.0.3.</p>
+<br />
+<br />
+
 <p>This release brings two new features to Dissonance.</p>
 
 <h6>Custom Microphone Capture Scripts</h6>
