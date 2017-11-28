@@ -88,6 +88,7 @@
     <li>iOS armv7, arm64, i386, x86_64</li>
     <li>Android x86, armv7</li>
   </ul>
+  <li>Updated Forge Remastered integration to v24 (latest available on the asset store)</li>
 </ul>
 {% endblock %}
 
