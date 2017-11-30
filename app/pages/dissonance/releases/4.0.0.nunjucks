@@ -7,7 +7,7 @@
 
 <h6>Critical Bug Alert!</h6>
 
-<p>There is a <b><a href="https://github.com/Placeholder-Software/Dissonance/issues/68">critical bug</a></b> which prevents this version from working on <b>all non-Windows platforms</b>. <a href="{{ base_path }}/dissonance/releases/4.0.1.html">Dissonance 4.0.1</a> has been submitted to the asset store (2017-11-28) with a fix for this issue, please upgrade as soon as it is available. The asset store submission process can take up to a week - if you need a working copy of Dissonance <i>right now</i> please <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> with your invoice number to get a copy of the fixed version.
+<p>There is a <b><a href="https://github.com/Placeholder-Software/Dissonance/issues/68">critical bug</a></b> which prevents this version from working on <b>all non-Windows platforms</b>. <a href="{{ base_path }}/dissonance/releases/4.0.1.html">Dissonance 4.0.1</a> is now available on the asset store with a fix for this issue, please upgrade as soon as possible.</p>
 <br />
 <br />
 
