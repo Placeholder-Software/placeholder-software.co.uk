@@ -1,0 +1,118 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "5.0.0" %}
+
+{% set blurb %}
+
+<p>This release brings two new features to Dissonance.</p>
+
+<h6>Steamworks P2P</h6>
+
+<p>We've release a brand new integration for Dissonance to run over Steamworks networking, sending voice data directly from peer to peer. If your game runs on steam, even if it uses a different network system for game data, this could potentially save you a lot of bandwidth usage fees! Check out the <a href="https://placeholder-software.co.uk/dissonance/docs/Basics/Quick-Start-Steamworks.Net-P2P/">documentation</a> for details on how to setup this integration.</p>
+
+<h6>Remote Channel API</h6>
+
+<p>If a remote client is speaking to you this new API gives you a list of which channels the client is speaking to you through. Call <code>VoicePlayerState:GetSpeakingChannels</code> to get a snapshot of the channels you are hearing them through. Check out the <a href="https://placeholder-software.co.uk/dissonance/docs/Reference/Other/VoicePlayerState/">documentation</a> for more details.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworkingRemastered-1.0.0.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-ForgeNetworking-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-PhotonUnityNetworking-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-UNet_HLAPI-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/5.0.0/Dissonance-UNet_LLAPI-5.0.0.unitypackage",
+    5, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/2.0.0/Dissonance-PhotonBolt.unitypackage",
+    2,
+    "2.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Steamworks.NET P2P",
+    "SteamworksP2P",
+    "Use Steamworks.NET to host a peer to peer voice chat session.",
+    "/dissonance/integrations/5.0.0/Dissonance-SteamworksP2P-5.0.0.unitypackage",
+    "5.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Steamworks.NET P2P networking integration</li>
+  <li>Remote Channels API. Get a list of channels which you are hearing remote voices through</li>
+  <li>Improved LLAPI integration error messages</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Fixed the transmission system sometimes getting stuck not sending voice packets even when channels are open. This could be triggered by very rapidly toggling speech on and off (which the voice detector can often do automatically).</li>
+  <li>Improved LLAPI handling of timeout errors. A timeout will cause a client to reset itself but will no longer cause the server to reset the entire session.</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>No Acoustic Echo Cancellation (Work in progress - <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in testing this)</li>
+</ul>
+{% endblock %}
