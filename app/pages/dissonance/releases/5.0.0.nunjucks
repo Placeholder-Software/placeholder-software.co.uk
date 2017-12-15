@@ -36,13 +36,12 @@
     "1.0.0"
   ) -%}{%- endcall %}
   
-  {% call changes.integration(
+  {% call changes.integration_semver(
     "Forge Remastered",
     "ForgeNetworkingRemastered",
     "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
-    "/dissonance/integrations/3.0.0/Dissonance-ForgeNetworkingRemastered-1.0.0.unitypackage",
-    1,
-    "1.0.0"
+    "/dissonance/integrations/5.0.0/Dissonance-ForgeNetworkingRemastered-5.0.0.unitypackage",
+    5, 0, 0
   ) -%}{%- endcall %}  
   
   {% call changes.integration_semver(
