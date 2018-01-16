@@ -1,0 +1,126 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.0.0" %}
+
+{% set blurb %}
+
+<p>This release brings two new features to Dissonance.</p>
+
+<h6>Acoustic Echo Cancellation</h6>
+
+<p>After many months of experimentation it's finally here! Acoustic Echo Cancellation (AEC) watches the audio coming out of the speakers and then removes that audio when it is recorded by the microphone a few milliseconds later. This prevents unbearable feedback loops, hearing your own voice sent back to you and even suppresses game sound effects from being transmitted.</p>
+
+<p>At the moment AEC is <b>experimental</b>. Quality on desktop computers has generally been excellent but it can vary with a large number of factors such as microphone quality, speaker quality, size of the room and even the amount of soft furnishing nearby! On mobile phones AEC is significantly less well tested because we only have access to a limited number of devices to test with and so it's crucial that we get feedback - if you use AEC please <a href="mailto://martin@placeholder-software.co.uk">contact us and tell us</a> what does and does not work.
+
+<h6>Flexible Encoding Settings</h6>
+
+<p>In previous version of Dissonance all clients in a session used the same audio encoding settings. With flexible encoding settings this is no longer required - each client transmits it's settings when it joins the session allowing you to choose the best settings for each platform.</p>
+
+<h6>Breaking Changes!</h6>
+
+<p>There are two breaking changes in this version.</p>
+
+<p>If you are implementing a completely custom network integration (using <code>ICommsNetwork</code>) a new parameter has been added to two methods. <code>Initialize</code> receives a <code>CodecSettings</code> which indicates the codec settings being used locally. The <code>PlayerJoined</code> event now emits a <code>CodecSettings</code> which indicates the codec settings being used by the new remote player.</p>
+
+<p>If you are bypassing Dissonance management of the voice playback <code>AudioSource</code> by accessing <code>VoicePlayerState.Playback.AudioSource</code> the return type of the <code>Playback</code> property has changed from <code>VoicePlayback</code> (which is tied specifically to Unity audio playback) to <code>IVoicePlayback</code> which generalises playback. You can still access the Unity <code>AudioSource</code> with: <code>((VoicePlayback)VoicePlayerState.Playback).AudioSource</code>.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-ForgeNetworkingRemastered-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-ForgeNetworking-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonUnityNetworking-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-UNet_HLAPI-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/5.0.0/Dissonance-UNet_LLAPI-5.0.0.unitypackage",
+    5, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonBolt.unitypackage",
+    6, 0 ,0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Steamworks.NET P2P",
+    "SteamworksP2P",
+    "Use Steamworks.NET to host a peer to peer voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-SteamworksP2P-6.0.0.unitypackage",
+    "6.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li><i>Experimental</i> Acoustic Echo Cancellation (AEC). Automatically removes speaker sounds from the microphone input; preventing feedback loops, echoing voices and transmitting game sound effects.</li>
+  <li>Each client may now use different encoding settings (quality, frame size, codec).</li>
+  <li>Added timestamps to Dissonance log messages.</li>
+  <li>Return <code>IVoicePlayback</code> from <code>VoicePlayerState:Playback</code> property. Removing a hard dependency on the Unity playback system.</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Fixed clients (particularly HLAPI) getting stuck in connect/disconnect loops, causing them to never send or receive any voice packets.</li>
+  <li>Fixed string hashing using <code>GetHashCode</code> which is not stable between runtimes. Now using an FNV-1a hash for all string hashing.</li>
+  <li>Fixed <code>GetSpeakingChannels</code> returning all channels as if they were `Player` channels.</li>
+  <li>Fixed buffered network packets potentially "leaking" from one session to the next when the comms network is shut down and restarted.</li>
+  <li>Fixed a potential <code>NullReferenceException</code> in HLAPI integration if <code>NetworkManager.singleton</code> returns null.</li>
+  <li>Fixed preprocessor thread waking up too frequently when there is no work to do. Significantly reducing CPU usage.</li>
+  <li>Prevented the <code>Lost NN samples in the preprocessor (buffer full), injecting silence to compensate</code> message appearing every frame when there are lost samples.</li>
+</ul>
+{% endblock %}
