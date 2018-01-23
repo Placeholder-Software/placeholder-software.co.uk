@@ -77,7 +77,7 @@
         {{ feature_row("Automatic Gain Control", "All speakers sound the same volume", true, false) }}
         {{ feature_row("Soft Clipping", "No clipped audio, ever", true, false) }}
         {{ feature_row("Adaptive Playback", "Automatically compensate small network desync", true, false) }}
-        {{ feature_row("Acoustic Echo Cancellation", "Prevents your microphone from recording your speakers", false, false, "Work In Progress!") }}
+        {{ feature_row("Acoustic Echo Cancellation", "Prevents your microphone from recording your speakers", true, false) }}
       {%- endcall %}
 
       {% call feature_table("Features", "glyphicon-flash") %}
@@ -90,12 +90,13 @@
 
       {% call feature_table("Networking", "glyphicon-random") %}
         {{ feature_row("Peer-To-Peer Voice", "Reduce latency by communicating peer to peer on networks which support it", true, false, "") }}
-        {{ feature_row("Any Networking System", "Use any custom network system with a little scripting", true, false) }}
+        {{ feature_row("Custom Networking System", "Use any custom network system with a little scripting", true, false) }}
         {{ feature_row("Built In UNet", "", true, false) }}
         {{ feature_row("Built In Forge Classic", "", true, false) }}
         {{ feature_row("Built In Forge Remastered", "", true, false) }}
         {{ feature_row("Built In Photon Unity Networking", "", true, true, "") }}
         {{ feature_row("Built In Photon BOLT", "", true, false, "") }}
+        {{ feature_row("Built In Steamworks.Net P2P", "", true, false, "") }}
       {%- endcall %}
 
       {% call feature_table("Platform Support", "", "glyphicon-hdd") %}
