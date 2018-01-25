@@ -1,6 +1,6 @@
 module.exports = {
     sass: {
-        src: "app/styles/*.scss"
+        src: "app/styles/**/*.scss"
     },
 
     js: {
