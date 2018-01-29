@@ -8,7 +8,14 @@
     Version {{ version_number }}
   {%- endcall %}
 
-  {% call icon_section.center() -%}
+  {% call icon_section.center() -%}  
+    {% if critical_bug_alert %}
+      <h6>Critical Alert!</h6>
+      {{ critical_bug_alert | safe }}
+      <br />
+      <br />
+    {% endif %}
+  
     {{ blurb | safe }}
   {%- endcall %}
 

@@ -3,14 +3,11 @@
 
 {% set version_number = "4.0.0" %}
 
-{% set blurb %}
-
-<h6>Critical Bug Alert!</h6>
-
+{% set critical_bug_alert %}
 <p>There is a <b><a href="https://github.com/Placeholder-Software/Dissonance/issues/68">critical bug</a></b> which prevents this version from working on <b>all non-Windows platforms</b>. <a href="{{ base_path }}/dissonance/releases/4.0.1.html">Dissonance 4.0.1</a> is now available on the asset store with a fix for this issue, please upgrade as soon as possible.</p>
-<br />
-<br />
+{% endset %}
 
+{% set blurb %}
 <p>This release brings two new features to Dissonance.</p>
 
 <h6>Custom Microphone Capture Scripts</h6>
@@ -28,7 +25,6 @@
 </ul>
 
 <p>These changes involve two very small <b>breaking changes</b> to custom network scripts using the <code>ICommsNetwork</code> interface. The events <code>Action&lt;RoomEvent&gt; PlayerEnteredRoom</code> and <code>Action&lt;RoomEvent&gt; PlayerExitedRoom</code> have been added to the interface, these events should fire when a player starts and stops listening to a room. If your custom network layer does not support rooms simply never raise the events.</p>
-
 {% endset %}
 
 {% block integrations %}

@@ -1,0 +1,2 @@
+{% extends "templates/dissonance/news-release.nunjucks" %}
+{% set version_number = "4.0.0" %}

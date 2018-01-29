@@ -1,0 +1,116 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.0.1" %}
+
+{% set blurb %}
+
+<p>This release includes two small fixes to the acoustic echo cancellation which was introduced in Dissonance 6.0.0.</p>
+
+<h6>Acoustic Echo Cancellation</h6>
+
+<p>After many months of experimentation it's finally here! Acoustic Echo Cancellation (AEC) watches the audio coming out of the speakers and then removes that audio when it is recorded by the microphone a few milliseconds later. This prevents unbearable feedback loops, hearing your own voice sent back to you and even suppresses game sound effects from being transmitted.</p>
+
+<p>At the moment AEC is <b>experimental</b>. Quality on desktop computers has generally been excellent but it can vary with a large number of factors such as microphone quality, speaker quality, size of the room and even the amount of soft furnishing nearby! On mobile phones AEC is significantly less well tested because we only have access to a limited number of devices to test with and so it's crucial that we get feedback - if you use AEC please <a href="mailto://martin@placeholder-software.co.uk">contact us and tell us</a> what does and does not work.
+
+<h6>Flexible Encoding Settings</h6>
+
+<p>In previous version of Dissonance all clients in a session used the same audio encoding settings. With flexible encoding settings this is no longer required - each client transmits it's settings when it joins the session allowing you to choose the best settings for each platform.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-ForgeNetworkingRemastered-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-ForgeNetworking-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonUnityNetworking-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-UNet_HLAPI-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/5.0.0/Dissonance-UNet_LLAPI-5.0.0.unitypackage",
+    5, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonBolt-6.0.0.unitypackage",
+    6, 0 ,0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Steamworks.NET P2P",
+    "SteamworksP2P",
+    "Use Steamworks.NET to host a peer to peer voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-SteamworksP2P-6.0.0.unitypackage",
+    "6.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Improved log messages when the microphone input device is changed.</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Fixed AEC running in the wrong platform mode (mobile AEC running on desktop and desktop AEC running on mobile).</li>
+  <li>Fixed AEC platform detection crashing when running under UWP with Unity 2017.1 or newer.</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>Changing the microphone device does not work with Unity 2017 and higher. This is a Unity regression. (<a href="https://github.com/Placeholder-Software/Dissonance/issues/74">#74</a>)</li>
+</ul>
+{% endblock %}
