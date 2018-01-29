@@ -26,7 +26,7 @@
     -->
     <link href='https://fonts.googleapis.com/css?family=Roboto|Bangers' rel='stylesheet' type='text/css'>
 
-    <!-- build:css /styles/main.css -->
+    <!-- build:css /styles/wetsurfacedecals/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="/bower_components/jquery-eu-cookie-law-popup/css/jquery-eu-cookie-law-popup.css">
     <!-- endbuild -->

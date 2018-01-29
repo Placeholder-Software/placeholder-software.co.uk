@@ -1,17 +1,7 @@
-{% set redirect_url %}https:{{ base_path }}/dissonance/{% endset %}
+{% extends "templates/root/layout.nunjucks" %}
 
-<!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1;url={{ redirect_url }}">
-        <script type="text/javascript">
-            window.location.href = "{{ redirect_url }}"
-        </script>
-        <title>Page Redirection</title>
-    </head>
-    <body>
-        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
-        If you are not redirected automatically, follow this <a href='{{ redirect_url }}'>link</a>.
-    </body>
-</html>
+{% block content %}
+
+  I am the senate.
+
+{% endblock %}
