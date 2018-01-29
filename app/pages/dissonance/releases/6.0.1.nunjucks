@@ -111,6 +111,6 @@
 
 {% block known_issues %}
 <ul>
-  <li>Changing the microphone device does not work with Unity 2017 and higher. This is a Unity regression. (<a href="https://github.com/Placeholder-Software/Dissonance/issues/74">#74</a>)</li>
+  <li>Changing the microphone device does not work with Unity 2017.2 and higher. This is a Unity regression. (<a href="https://github.com/Placeholder-Software/Dissonance/issues/74">#74</a>)</li>
 </ul>
 {% endblock %}
