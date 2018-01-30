@@ -1,11 +1,11 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 {% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
 
-{% set version_number = "6.0.1" %}
+{% set version_number = "6.0.2" %}
 
 {% set blurb %}
 
-<p>This release includes two small fixes to the acoustic echo cancellation which was introduced in Dissonance 6.0.0.</p>
+<p>This release includes several small fixes to the acoustic echo cancellation which was introduced in Dissonance 6.0.0.</p>
 
 <h6>Acoustic Echo Cancellation</h6>
 
@@ -106,6 +106,7 @@
 <ul>
   <li>Fixed AEC running in the wrong platform mode (mobile AEC running on desktop and desktop AEC running on mobile).</li>
   <li>Fixed AEC platform detection crashing when running under UWP with Unity 2017.1 or newer.</li>
+  <li>Fixed <code>Playback Prefab</code> field on DissonanceComms component crashing the inspector with an <code>InvalidCastException</code> when set.</li>
 </ul>
 {% endblock %}
 
