@@ -7,7 +7,6 @@
 -->
 
 {% extends "templates/wetsurfacedecals/news.nunjucks" %}
-{% import "templates/wetsurfacedecals/macros/icon-section.nunjucks" as icon_section %}
 
 {% set title = "TODO: INSERT TITLE HERE" %}
 {% set body %}

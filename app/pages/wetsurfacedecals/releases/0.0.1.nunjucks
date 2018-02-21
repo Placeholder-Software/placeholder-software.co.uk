@@ -1,7 +1,7 @@
 
-{% extends "templates/dissonance/changelog.nunjucks" %}
+{% extends "templates/wetsurfacedecals/changelog.nunjucks" %}
 
-{% set version_number = "0.0.0" %}
+{% set version_number = "0.0.1" %}
 
 {% set blurb %}
 <p>WSD Test Release Notes</p>

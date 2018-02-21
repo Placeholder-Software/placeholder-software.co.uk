@@ -1,0 +1,46 @@
+{% extends "templates/dissonance/layout.nunjucks" %}
+{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% block content %}
+
+  {% call icon_section.header2("vn", "left") -%}
+    Version {{ version_number }}
+  {%- endcall %}
+
+  {% call icon_section.center() -%}  
+    {% if critical_bug_alert %}
+      <h6>Critical Alert!</h6>
+      {{ critical_bug_alert | safe }}
+      <br />
+      <br />
+    {% endif %}
+  
+    {{ blurb | safe }}
+  {%- endcall %}
+
+  {% call icon_section.left("/images/random.svg") -%}
+    <h4>Integrations</h4>
+    {% block integrations %}No integrations are available for this version of Dissonance{% endblock %}
+  {%- endcall %}
+
+  {% call icon_section.right("/images/star.svg") -%}
+    <h4>New Features</h4>
+    {% block features %}No new features in this release :O{% endblock %}
+  {%- endcall %}
+
+  {% call icon_section.left("/images/bug.svg") -%}
+    <h4>Bug Fixes</h4>
+    {% block bugfixes %}No bugs fixed in this release...{% endblock %}
+  {%- endcall %}
+
+  {% call icon_section.right("/images/fire.svg") -%}
+    <h4>Known Issues</h4>
+    {% block known_issues %}No known issues or regressions in this release :D{% endblock %}
+  {%- endcall %}
+  
+{% endblock %}
+
+{% block end_body_script %}
+  {% call changes.highlight_from_url_query() -%}{%- endcall %}
+{% endblock %}
