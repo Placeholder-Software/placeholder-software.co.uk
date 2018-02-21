@@ -1,5 +1,5 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
-{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
 
 {% set version_number = "6.0.2" %}
 

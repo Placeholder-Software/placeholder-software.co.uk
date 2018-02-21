@@ -22,9 +22,9 @@
 
     <!--
         Roboto: Main body font
-        Bangers: Main "style" font (titles etc)
+        Nanum+Brush+Script: Main "style" font (titles etc)
     -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto|Bangers' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Roboto" rel="stylesheet">
 
     <!-- build:css /styles/wetsurfacedecals/main.css -->
     <link rel="stylesheet" href="styles/wetsurfacedecals/main.css">

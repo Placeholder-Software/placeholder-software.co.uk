@@ -8,7 +8,7 @@
 -->
 
 {% extends "templates/dissonance/news.nunjucks" %}
-{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
+{% import "templates/common/macros/icon-section.nunjucks" as icon_section %}
 
 {% set title = "TODO: INSERT TITLE HERE" %}
 {% set body %}

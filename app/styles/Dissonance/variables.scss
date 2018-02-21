@@ -21,3 +21,6 @@ $negative-color: complement($primary-color);
 .border-mid { border-color: $mid-color; }
 .border-light { border-color: $light-color; }
 .border-negative { border-color: $negative-color; }
+
+$title-font: Bangers, sans-serif;
+$bulk-font: Roboto, sans-serif;

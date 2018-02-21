@@ -2,7 +2,7 @@
 
 body {
   background-color: $bg-color;
-  font-family: Roboto, sans-serif;
+  font-family: $bulk-font;
   font-size: 15px;
   min-height: 100vh;
 
@@ -11,7 +11,7 @@ body {
 }
 
 h3 {
-  font-family: Bangers, sans-serif;
+  font-family: $title-font;
   font-size: 87px;
 
   @media (max-width: 767px) {
@@ -20,7 +20,7 @@ h3 {
 }
 
 h4 {
-  font-family: Bangers, sans-serif;
+  font-family: $title-font;
   font-size: 54px;
 
   @media (max-width: 767px) {
@@ -93,7 +93,7 @@ h6 {
 }
 
 .section-header {
-  font-family: Bangers, sans-serif;
+  font-family: $title-font;
   font-size: 3em;
 }
 

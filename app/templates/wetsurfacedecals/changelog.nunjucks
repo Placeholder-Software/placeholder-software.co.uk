@@ -1,6 +1,6 @@
-{% extends "templates/dissonance/layout.nunjucks" %}
-{% import "templates/dissonance/macros/icon-section.nunjucks" as icon_section %}
-{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+{% extends "templates/wetsurfacedecals/layout.nunjucks" %}
+{% import "templates/common/macros/icon-section.nunjucks" as icon_section %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
 
 {% block content %}
 
@@ -21,7 +21,7 @@
 
   {% call icon_section.left("/images/random.svg") -%}
     <h4>Integrations</h4>
-    {% block integrations %}No integrations are available for this version of Dissonance{% endblock %}
+    {% block integrations %}No integrations are available for this version.{% endblock %}
   {%- endcall %}
 
   {% call icon_section.right("/images/star.svg") -%}
