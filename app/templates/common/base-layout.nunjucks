@@ -1,0 +1,82 @@
+{#
+  Nunjucks base template for all pages on the site to handle a lot of boilerplate.
+  
+  Set these values (like this {% set key = value %}):
+   - head_title (value in <title>)
+   - favicon (path to favicon image)
+   - body_class (class of <body> tag)
+
+  Set these blocks (like this {% block key %}value{% endblock %}):
+   - head (block in the head)
+   - head_pre (block which goes before the page_style)
+   - page_style (content is placed directly inside a style block)
+   - head_post (block which goes after page_style)
+   - body_content (content of the body tag)
+   - end_body (anything to go at the very end of the body tag)
+   - vendor_scripts (extra scripts to place in vendor.js)
+#}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ head_title }}</title>
+
+    <link rel='shortcut icon' href="{{ favicon }}" type='image/x-icon' >
+    <link rel="apple-touch-icon" href="{{ favicon }}">
+
+    {% block head %}{% endblock %}
+
+    <!-- build:css /styles/common.css -->
+    <link rel="stylesheet" href="/bower_components/jquery-eu-cookie-law-popup/css/jquery-eu-cookie-law-popup.css">
+    <!-- endbuild -->
+
+    {% block head_pre %}{% endblock %}
+    <style>
+        {% block page_style %}{% endblock %}
+    </style>
+    {% block head_post %}{% endblock %}
+  </head>
+
+  <body class="{{ body_class }} eupopup">
+
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    {% block body_content %} {% endblock %}
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46722926-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- build:js /scripts/vendor.js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-eu-cookie-law-popup/js/jquery-eu-cookie-law-popup.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="app/scripts/cookie-consent.js"></script>
+    <!-- endbuild -->
+
+    {% block end_body %}{% endblock %}
+  </body>
+</html>
