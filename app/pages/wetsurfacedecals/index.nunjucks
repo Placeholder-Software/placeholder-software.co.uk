@@ -3,8 +3,18 @@
 <!-- Alert banner at the top of the site. Set this to a string for that to be displayed -->
 <!-- {% set alert_message = false %} -->
 
+{% block pre_content %}
+
+  <div class="video">
+    <iframe width="1920px" height="768px"
+            src="https://www.youtube.com/embed/NpEaa2P7qZI?autoplay=1&fs=0&modestbranding=1&showinfo=0&rel=0&autohide=1&controls=0&loop=1&playlist=NpEaa2P7qZI"
+            frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+  </div>
+
+{% endblock %}
+
 {% block content %}
-
-  Make stuff damp.
-
+Hello, World.
 {% endblock %}

@@ -39,7 +39,7 @@
             <li><a href="https://www.reddit.com/r/wetsurfacedecals/" target="_blank">Community</a></li>
             <li><a href="https://github.com/Placeholder-Software/wetsurfacedecals" target="_blank">Github</a></li>
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
-            <li><a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Wet Stuff</a></li>
+            <li><a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Wet Surface Decals</a></li>
           </ul>
 
           <ul class="nav navbar-nav">
@@ -67,23 +67,22 @@
           </div>
         {% endif %}
         <a href="/wetsurfacedecals" class="row site-title-row">
-          <h1 class="site-title">Wet Stuff</h1>
-          <h2 class="site-title">Surface Decals</h2>
+          <h1 class="site-title">Wet Surface Decals</h1>
         </a>
-        <div class="row">
-          <div class="column-xs-12">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" width="100%" height="0.5em" preserveAspectRatio="none" style="float:left">
-              <polyline points="0,0, 0,100, 100,0" class="fill-primary" />
-            </svg>
-          </div>
-        </div>
       </div>
     </header>
 
+    <div class="pre-main-content">
+
+      <!-- You write code for this content block in another file -->
+      {% block pre_content %} {% endblock %}
+
+    </div>
+
     <div class="container main-content">
 
-<!-- You write code for this content block in another file -->
-{% block content %} {% endblock %}
+      <!-- You write code for this content block in another file -->
+      {% block content %} {% endblock %}
 
     </div>
 
