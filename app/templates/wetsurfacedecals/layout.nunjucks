@@ -3,6 +3,12 @@
 {% set head_title = "Wet Surface Decals" %}
 {% set favicon = "/images/wetsurfacedecals.png" %}
 
+{% set docs_url = "/wetsurfacedecals/docs" %}
+{% set news_url = "/wetsurfacedecals/news" %}
+{% set discuss_url = "https://www.reddit.com/r/wetsurfacedecals/" %}
+{% set tracker_url = "https://github.com/Placeholder-Software/wetsurfacedecals" %}
+{% set store_url = "https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF" %}
+
 {% block head_post %}
   <!--
       Roboto: Main body font
@@ -34,12 +40,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/wetsurfacedecals/docs" target="_blank">Docs</a></li>
-            <li><a href="/wetsurfacedecals/news">News</a></li>
-            <li><a href="https://www.reddit.com/r/wetsurfacedecals/" target="_blank">Community</a></li>
-            <li><a href="https://github.com/Placeholder-Software/wetsurfacedecals" target="_blank">Github</a></li>
+            <li><a href="{{ docs_url }}" target="_blank">Docs</a></li>
+            <li><a href="{{ news_url }}">News</a></li>
+            <li><a href="{{ discuss_url }}" target="_blank">Community</a></li>
+            <li><a href="{{ tracker_url }}" target="_blank">Github</a></li>
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
-            <li><a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Wet Surface Decals</a></li>
+            <li><a href="{{ store_url }}" target="_blank" class="buy-link">Buy Wet Surface Decals</a></li>
           </ul>
 
           <ul class="nav navbar-nav">
@@ -66,9 +72,11 @@
             </div>
           </div>
         {% endif %}
+        {% if not hide_title_row %}
         <a href="/wetsurfacedecals" class="row site-title-row">
           <h1 class="site-title">Wet Surface Decals</h1>
         </a>
+        {% endif %}
       </div>
     </header>
 
@@ -92,18 +100,18 @@
           <div class="col-xs-6 col-sm-4">
             <h4>Connect</h4>
             <ul class="footer-list">
-              <li><a href="https://github.com/Placeholder-Software/WetSurfaceDecals/issues" target="_blank">Submit an Issue</a></li>
+              <li><a href="{{ tracker_url }}" target="_blank">Submit an Issue</a></li>
               <li><a href="mailto:admin@placeholder-software.co.uk">Contact Us</a></li>
-              <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Discuss</a></li>
+              <li><a href="{{ discuss_url }}" target="_blank">Discuss</a></li>
               <li><a href="https://twitter.com/placeholdersoft">Twitter</a></li>
             </ul>
           </div>
           <div class="col-xs-6 col-sm-4">
             <h4>Resources</h4>
             <ul class="footer-list">
-              <li><a href="https://dissonance.readthedocs.io/en/latest/" target="_blank">Documentation</a></li>
-              <li><a href="/wetsurfacedecals/news">News</a></li>
-              <li><a href="https://www.assetstore.unity3d.com/en/#!/content/70078" target="_blank">Store</a></li>
+              <li><a href="{{ docs_url }}" target="_blank">Documentation</a></li>
+              <li><a href="{{ news_url }}">News</a></li>
+              <li><a href="{{ store_url }}" target="_blank">Store</a></li>
               <li><a href="https://www.youtube.com/channel/UCZXN3n6Etm7wgwkSYiuP6jA">YouTube</a></li>
               <li><a href="/">Placeholder Software</a></li>
             </ul>

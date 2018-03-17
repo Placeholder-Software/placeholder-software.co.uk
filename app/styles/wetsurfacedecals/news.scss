@@ -26,6 +26,12 @@
     @media (max-width: 767px) {
       text-align: center;
     }
+
+    fill: $mid-color;
+
+    .twitter {
+      fill: $mid-color;
+    }
   }
 
   .article {

@@ -20,7 +20,7 @@
           <!-- <a class="news-cta mail" href="https://groups.google.com/forum/#!forum/dissonance-announce" title="Mailing List" target="_blank">
               {% include "images/envelope.svg" %}
           </a> -->
-          <a class="news-cta mail" href="{{ base_url }}/wetsurfacedecals/atom.html" title="News Feed" target="_blank">
+          <a class="news-cta rss" href="{{ base_url }}/wetsurfacedecals/atom.html" title="News Feed" target="_blank">
               {% include "images/rss.svg" %}
           </a>
         </div>

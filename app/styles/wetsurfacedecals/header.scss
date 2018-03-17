@@ -60,9 +60,8 @@
 }
 
 .site-title-row {
-  background-color: $primary-color;
   display: block;
-  color: inherit;
+  color: $primary-color;
   
   &:hover, &:active, &:focus, &:visited {
     outline: none;

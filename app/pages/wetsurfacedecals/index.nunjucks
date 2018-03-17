@@ -3,6 +3,8 @@
 <!-- Alert banner at the top of the site. Set this to a string for that to be displayed -->
 <!-- {% set alert_message = false %} -->
 
+{% set hide_title_row = true %}
+
 {% block pre_content %}
 
   <div class="video">
@@ -16,5 +18,17 @@
 {% endblock %}
 
 {% block content %}
-Hello, World.
+<p>Spicy jalapeno bacon ipsum dolor amet burgdoggen spare ribs tempor, in aliqua ham occaecat.
+Filet mignon esse ground round consectetur ball tip tenderloin proident kevin frankfurter tongue anim aliqua.
+Culpa chuck consequat dolor beef pastrami sed nulla. Laborum leberkas do eiusmod, consequat velit exercitation non capicola hamburger andouille ea sirloin cillum.
+Biltong cow eiusmod aliquip cupidatat. Duis meatball cillum eu culpa in aliqua chicken pariatur beef ribs exercitation strip steak brisket. Biltong cow dolore anim minim.</p>
+
+<p>Pancetta kevin irure, deserunt frankfurter ipsum ground round in. Prosciutto biltong ex, beef ribs veniam cupim in excepteur.
+Buffalo irure fatback cupidatat meatloaf, brisket chicken kielbasa. Picanha swine dolor, laborum voluptate fugiat pork loin pork belly venison chuck cupidatat.
+Rump picanha pork ipsum beef ribs.</p>
+
+<p>Lorem nisi chicken, bresaola spare ribs ut incididunt ribeye venison sed deserunt meatball ball tip. Ball tip lorem brisket dolore cillum.
+Burgdoggen leberkas est pastrami. Meatball pork loin sed ground round bresaola.
+In shoulder nisi prosciutto officia fatback capicola pork loin sirloin strip steak velit pig. Boudin ex kielbasa chicken, picanha adipisicing ea commodo ut.
+Cow veniam ex ut hamburger rump sint porchetta doner alcatra minim aliquip.</p>
 {% endblock %}
