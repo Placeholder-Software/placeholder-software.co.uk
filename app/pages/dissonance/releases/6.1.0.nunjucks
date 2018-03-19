@@ -1,0 +1,114 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/dissonance/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.1.0" %}
+
+{% set blurb %}
+
+<p>This release includes a number of features and fixes which we've accumulated while supporting people during the last couple of months.</p>
+
+<p>The biggest change is that Dissonance can now be placed anywhere in your project without any extra work! When you place Dissonance into a project it will automatically check where it has been installed and then rewrites a single line of code to include the path to itself.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-ForgeNetworkingRemastered-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/4.0.0/Dissonance-ForgeNetworking-4.0.0.unitypackage",
+    4, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonUnityNetworking-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-UNet_HLAPI-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/5.0.0/Dissonance-UNet_LLAPI-5.0.0.unitypackage",
+    5, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonBolt-6.0.0.unitypackage",
+    6, 0 ,0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Steamworks.NET P2P",
+    "SteamworksP2P",
+    "Use Steamworks.NET to host a peer to peer voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-SteamworksP2P-6.0.0.unitypackage",
+    "6.0.0"
+  ) -%}{%- endcall %}  
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>New installer process automatically locates Dissonance, allowing it to be installed anywhere in the project (<a href="https://github.com/Placeholder-Software/Dissonance/issues/75">#75</a>)</li>
+  <li>Showing an error message in the <code>VoiceReceiptTrigger</code>/<code>VoiceBroadcastTrigger</code> inspectors when no room is selected</li>
+  <li>Decoding channel data as soon as the first voice packet is received. This means that `GetSpeakingChannels` will return useful information when `PlayerStartedSpeaking` is called.</li>
+  <li>Additional sanity checks to ensure that the networking packet writer never writes out of bounds</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Prevented IsNetworkInitialized from throwing if checked before `Start` is called (<a href="https://github.com/Placeholder-Software/Dissonance/issues/76">#76</a>)</li>
+  <li>Relocated the MacOS binaries to fix the MacOS build process for 2017.3 and higher (<a href="https://github.com/Placeholder-Software/Dissonance/issues/79">#79</a>)</li>
+  <li>Always using network order (Big endian) for network packet headers</li>
+  <li>Prevented inspector throwing exception if inspecting a playback prefab when play mode is active</li>
+  <li>Fixed DissonanceComms inspector from refusing to accept custom playback prefabs</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>Changing the microphone device does not work with Unity 2017.2 and higher. This is a Unity regression. (<a href="https://github.com/Placeholder-Software/Dissonance/issues/74">#74</a>)</li>
+</ul>
+{% endblock %}
