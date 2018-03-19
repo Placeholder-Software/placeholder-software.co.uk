@@ -9,6 +9,8 @@
 
 <p>The biggest change is that Dissonance can now be placed anywhere in your project without any extra work! When you place Dissonance into a project it will automatically check where it has been installed and then rewrites a single line of code to include the path to itself.</p>
 
+<p>There is an issue preventing Android plugins for the x86 platform from properly compiling when using Unity 2017.2 or greater. This is due to an issue which has been reported to Unity (Android plugin CPU architecture cannot be set to x86, it always defaults back to ARMv7). Compiling for the vast majority of Android devices is unaffected! Due to this the Android/x86 binaries have been removed from the release package.</p>
+
 {% endset %}
 
 {% block integrations %}
