@@ -1,0 +1,31 @@
+@import "variables.scss";
+
+.gallery-item {
+    width: 150px;
+    height: 150px;
+    background-color: lightpink;
+    margin: auto;
+    margin-bottom: 10px;
+
+    outline-offset: 0px;
+    outline-color: none;
+    outline-width: 1px;
+
+    transition: 0.1s;
+    &:hover {
+        outline-offset: 3px;
+        outline-color: $primary-color;
+        outline-style: solid;
+        outline-width: 1px;
+    }
+}
+
+.gallery-row {
+    .table-responsive {
+        .table {
+            td {
+                border: none;
+            }
+        }
+    }
+}

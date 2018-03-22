@@ -17,6 +17,12 @@
     fill: $bg-color;
     font-size: 1.7em;
     letter-spacing: -1px;
+
+    &.placeholder {
+      @media (max-width: 910px) and (min-width: 767px) {
+        width: 190px;
+      }
+    }
   }
 
   .nav {

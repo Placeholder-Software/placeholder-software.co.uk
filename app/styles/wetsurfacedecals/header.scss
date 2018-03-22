@@ -17,6 +17,16 @@
     fill: $light-color;
     font-size: 1.7em;
     letter-spacing: -1px;
+
+    &.placeholder {
+      @media (max-width: 910px) and (min-width: 767px) {
+        width: 190px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      font-size: 1.1em;
+    }
   }
 
   .nav {
@@ -36,13 +46,7 @@
   }
 }
 
-@media (max-width: 767px) {
-  .navbar {
-    .navbar-brand {
-        font-size: 1.1em;
-    }
-  }
-}
+
 
 .navbar-social {
   height: 1em;
@@ -59,16 +63,6 @@
     border-color: inherit;
 }
 
-.site-title-row {
-  display: block;
-  color: $primary-color;
-  
-  &:hover, &:active, &:focus, &:visited {
-    outline: none;
-    color: inherit;
-  }
-}
-
 .site-alert-row {
   background-color: $bg-color;
   font-size: 0.75em;
@@ -83,23 +77,45 @@
   z-index: 1;
   width: 100%;
   font-family: $title-font;
-  font-size: 5.5vw;
+  position: relative;
+
+  .site-title {
+    color: $primary-color;
+    position: absolute;
+    left: 0.25em;
+    top: 0.1em;
+    margin: 0;
+
+    &:hover, &:active, &:focus, &:visited {
+      outline: none;
+    }
+
+    @media (max-width: 1920px) {
+      font-size: 15vw;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 288px;
+    }
+  }
+
+  .image-container {
+    
+    display: inline-block;
+    position: relative;
+
+    img {
+      max-width: 100%;
+
+      @media (min-width: 1920px) {
+        //When the image is 1920 wide or larger set the max height to be the correct aspect ratio of the image
+        max-height: 727px;
+      }
+    }
+  }
 
   @media (min-width: 1164px) {
     font-size: 69px;
     text-align: center;
   }
-}
-
-.site-title {
-    display: inline-block;
-    padding-right: 0.35em;
-
-    @at-root h1#{&} {
-      font-size: 2em;
-    }
-
-    @at-root h2#{&} {
-      font-size: 1.25em;
-    }
 }

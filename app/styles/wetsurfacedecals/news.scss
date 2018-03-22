@@ -11,6 +11,10 @@
     @media (max-width: 767px) {
       text-align: center;
     }
+
+    h3 {
+      margin-top: 0;
+    }
   }
 
   .news-cta {
@@ -46,6 +50,13 @@
       font-family: $title-font;
       line-height: 1;
       margin-bottom: 5px;
+
+      a {
+        &:hover, &:active, &:focus, &:visited {
+          outline: none;
+          color: $primary-color;
+        }
+      }
     }
 
     .date {

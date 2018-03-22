@@ -12,9 +12,9 @@
 {% block head_post %}
   <!--
       Roboto: Main body font
-      Caveat+Brush: Main "style" font (titles etc)
+      Permanent+Marker: Main "style" font (titles etc)
   -->
-  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
 
   <!-- build:css /styles/wetsurfacedecals/main.css -->
   <link rel="stylesheet" href="styles/wetsurfacedecals/main.css">
@@ -31,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand placeholder" href="/">
             {% include "images/Placeholder Header.svg" %}
           </a>
         </div>
@@ -61,23 +61,25 @@
     </nav>
 
     <header class="site-title-container">
-      <div class="container-fluid">
-        {% if alert_message %}
-          <div class="row site-alert-row collapse in" id="header-alert" data-toggle="collapse" data-target="#header-alert">
-            <div class="col-xs-11 text-center">
-              {{ alert_message }}
-            </div>
-            <div class="col-xs-1 text-center">
-              <span>&times;</span>
-            </div>
+
+      {% if alert_message %}
+        <div class="row site-alert-row collapse in" id="header-alert" data-toggle="collapse" data-target="#header-alert">
+          <div class="col-xs-11 text-center">
+            {{ alert_message }}
           </div>
-        {% endif %}
-        {% if not hide_title_row %}
-        <a href="/wetsurfacedecals" class="row site-title-row">
-          <h1 class="site-title">Wet Surface Decals</h1>
+          <div class="col-xs-1 text-center">
+            <span>&times;</span>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if not hide_title_row %}
+        <a href="/wetsurfacedecals" class="image-container">
+          <h1 class="site-title">Wet Stuff 水</h1>
+          <img src="/images/header_placeholder.jpg" />
         </a>
-        {% endif %}
-      </div>
+      {% endif %}
+
     </header>
 
     <div class="pre-main-content">
