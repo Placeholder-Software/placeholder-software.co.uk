@@ -19,6 +19,12 @@ module.exports = {
         browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
     },
 
+    copy: {
+        src: [
+            'app/**/*.unitypackage'
+        ]
+    },
+
     imagemin: {
         progressive: true,
         interlaced: true,

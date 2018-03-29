@@ -1,5 +1,1 @@
-module.exports = ($, gulp, config) => () => {
-    return gulp.src([
-        'app/**/*.unitypackage'
-    ]).pipe(gulp.dest('dist'));
-}
+module.exports = ($, gulp, config) => () => gulp.src(config.copy.src).pipe(gulp.dest('dist'));
