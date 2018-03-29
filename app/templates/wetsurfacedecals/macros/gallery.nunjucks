@@ -1,0 +1,104 @@
+{% macro gallery_carousel_internal(id, items) %}
+    <div id="{{ id }}" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        {% set gallery_carousel_items_counter = 0 %}
+        {% for lst in items %}
+            <li data-target="#{{ id }}" data-slide-to="{{ gallery_carousel_items_counter }}" {% if gallery_carousel_items_counter == 0 %}class="active"{% endif %}></li>
+            {% set gallery_carousel_items_counter = gallery_carousel_items_counter + 1 %}
+        {% endfor %}
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+        {% set gallery_carousel_items_counter = 0 %}
+        {% for item in items %}
+            <div class="item {% if gallery_carousel_items_counter == 0 %}active{% endif %}">
+                <img srcset="{{ item.huge }} 1920w,
+                             {{ item.large }} 768w,
+                             {{ item.medium }} 512w,
+                             {{ item.small }} 256w"
+                     sizes="95vw"
+                     src="{{ item.medium }}"
+                     alt="{{ item.alt }}"
+                />
+                <div class="carousel-caption">
+                    {{ item.alt }}
+                </div>
+            </div>
+
+            {% set gallery_carousel_items_counter = gallery_carousel_items_counter + 1 %}
+        {% endfor %}
+
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#{{ id }}" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#{{ id }}" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    </div>
+{% endmacro %}
+
+{% macro gallery_modal_internal() %}
+    
+{% endmacro %}
+
+{# Expects a list of lists. Each sublist will become a column of images #}
+{% macro gallery(gallery_name, items_lists) %}
+
+    <div class="row gallery-row">
+
+        {# count the total number of items in the gallery #}
+        {# also flatten items into a single list #}
+        {% set gallery_item_counter = 0 %}
+        {% set gallery_flat_items = [] %}
+        {% for lst in items_lists %}
+            {% set gallery_flat_items = gallery_flat_items.concat(lst) %}
+            {% for item in lst %}
+                {% set gallery_item_counter = gallery_item_counter + 1 %}
+            {% endfor %}
+        {% endfor %}
+
+        {# create a modal containing a carousel #}
+        <div class="gallery-modal modal fade" id="modal-{{ gallery_name }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog vertical-align-center modal-lg" role="document">
+                    <div class="modal-content">
+                        {% call gallery_carousel_internal(gallery_name, gallery_flat_items) %}{%- endcall %}
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>×</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# display the gallery thumbnails #}
+        {% set gallery_item_index = 0 %}
+        {% for lst in items_lists %}
+            <div class="column" >
+                {% for item in lst %}
+                    <img data-toggle="modal" data-target="#modal-{{ gallery_name }}" onclick="$('#{{ gallery_name }}').carousel({{ gallery_item_index }})"
+                        srcset="{{ item.huge }} 1920w,
+                                {{ item.large }} 768w,
+                                {{ item.medium }} 512w,
+                                {{ item.small }} 256w"
+                        sizes="(max-width: 600px) 100vw,
+                                (max-width: 800px) 50vw,
+                                (max-width: 1024px) 25vw,
+                                15vw"
+                        src="{{ item.medium }}"
+                        alt="{{ item.alt }}"
+                    />
+                    {% set gallery_item_index = gallery_item_index + 1 %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endmacro %}

@@ -1,5 +1,7 @@
 {% extends "templates/wetsurfacedecals/layout.nunjucks" %}
 
+{% import "templates/wetsurfacedecals/macros/gallery.nunjucks" as gallery %}
+
 <!-- Alert banner at the top of the site. Set this to a string for that to be displayed -->
 <!-- {% set alert_message = false %} -->
 
@@ -19,29 +21,23 @@
 
 {% block content %}
 
-<div class="row gallery-row">
-  <div class="table-responsive">          
-    <table class="table">
-      <tbody>
-        <tr>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-        </tr>
-        <tr>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-          <td><div class="gallery-item"></div></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-</div>
+{% call gallery.gallery("wetdecal-primary-gallery", [[
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 0" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 1" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 2" }
+], [
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 3" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 4" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 5" }
+], [
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 6" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 7" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 8" }
+], [
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 9" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 10" },
+  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 11" }
+]]) %}{%- endcall %}
 
 <div class="row">
   <p>Spicy jalapeno bacon ipsum dolor amet burgdoggen spare ribs tempor, in aliqua ham occaecat.
