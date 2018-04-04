@@ -2,15 +2,28 @@ const nunjucksRender = require('gulp-nunjucks-render');
 const cache = require('gulp-cached');
 const flatmap = require('gulp-flatmap');
 const site_data = require('./../site_data.js');
+const nunjucksMarkdown = require('nunjucks-markdown');
+const marked = require('marked');
+
+const data = site_data.site_data();
+
+marked.setOptions({
+    baseUrl: data.base_path,
+    gfm: true,
+    tables: true,
+    breaks: true,
+})
+
+function manageEnv(environment) {
+    nunjucksMarkdown.register(environment, marked);
+}
 
 module.exports = ($, gulp, config) => () => {
-
-    var data = site_data.site_data();
-
     return gulp.src(config.html.src)
         .pipe(nunjucksRender({
             path: 'app',
-            data: data
+            data: data,
+            manageEnv: manageEnv
         })).pipe($.useref({
             searchPath: ['.tmp', '.'],
         }))

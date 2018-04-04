@@ -28,10 +28,41 @@
             }
         }
     }
+}
+
+.carousel {
+
+    .carousel-indicators {
+        margin-bottom: 0px;
+
+        li {
+            border-color: $dark-color;
+            border-width: 2px;
+        }
+    }
+
+    .carousel-control {
+        width: 7.5%;
+    }
 
     .carousel-inner {
         img {
             margin: auto;
+            height: 25%;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .item {
+            .carousel-caption {
+                color: $light-color;
+                top: 0;
+                padding-top: 0;
+            }
+
+            iframe {
+                height: 85vh;
+            }
         }
     }
 }

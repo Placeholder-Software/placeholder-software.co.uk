@@ -21,8 +21,8 @@
 
 {% block content %}
 
-{% call gallery.gallery("wetdecal-primary-gallery", [[
-  { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 0" },
+{% call gallery.gallery("wetdecal-primary-gallery", base_path, [[
+  { video: "https://www.youtube.com/embed/gaJMEgf31c4", huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 0" },
   { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 1" },
   { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 2" }
 ], [
@@ -40,6 +40,17 @@
 ]]) %}{%- endcall %}
 
 <div class="row">
+
+  {% markdown %}
+  Hello World
+  ===========
+  # Do stuff
+
+  Some block text!
+  {% endmarkdown %}
+
+  <p>{{base_path}}</p>
+
   <p>Spicy jalapeno bacon ipsum dolor amet burgdoggen spare ribs tempor, in aliqua ham occaecat.
   Filet mignon esse ground round consectetur ball tip tenderloin proident kevin frankfurter tongue anim aliqua.
   Culpa chuck consequat dolor beef pastrami sed nulla. Laborum leberkas do eiusmod, consequat velit exercitation non capicola hamburger andouille ea sirloin cillum.
