@@ -43,17 +43,33 @@
 
     .carousel-control {
         width: 7.5%;
+
+        height: 25%;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        .glyphicon-chevron-right, .glyphicon-chevron-left {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            right: 0;
+            left: 0;
+        }
     }
 
     .carousel-inner {
         img {
             margin: auto;
-            height: 25%;
-            margin-top: auto;
-            margin-bottom: auto;
         }
 
         .item {
+
+            display: none;
+
+            &.active {
+                display: inherit;
+            }
+
             .carousel-caption {
                 color: $light-color;
                 top: 0;
@@ -93,6 +109,8 @@
         right: 0.25em;
         top: 0.1em;
         font-size: 90px;
+
+        text-shadow: -2px 0 $light-color, 0 2px $light-color, 2px 0 $light-color, 0 -2px $light-color
     }
 }
   

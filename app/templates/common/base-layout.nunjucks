@@ -13,7 +13,6 @@
    - head_post (block which goes after page_style)
    - body_content (content of the body tag)
    - end_body (anything to go at the very end of the body tag)
-   - vendor_scripts (extra scripts to place in vendor.js)
 #}
 
 <!doctype html>

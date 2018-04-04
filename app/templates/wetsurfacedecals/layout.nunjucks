@@ -127,6 +127,12 @@
           </div>
         </div>
     </footer>
+{% endblock %}
+
+{% block end_body %}
+  <!-- build:js /scripts/wetsurfacedecals/main.js -->
+  <script src="app/scripts/wetsurfacedecals/gallery.js"></script>
+  <!-- endbuild -->
 
   {% block end_body_script %}{% endblock %}
 {% endblock %}

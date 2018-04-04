@@ -1,5 +1,5 @@
 {% macro gallery_carousel_internal(id, base_path, items) %}
-    <div id="{{ id }}" class="carousel slide" data-ride="carousel" data-interval="0">
+    <div id="{{ id }}" class="carousel slide" data-ride="carousel" data-interval="0" data-carousel-video-container="true">
 
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -18,10 +18,15 @@
 
             <div class="item {% if gallery_carousel_items_counter == 0 %}active{% endif %}">
                 {% if item.video %}
-                    <iframe width="100%" height="100%"
-                            src="{{ item.video }}?{{ "modestbranding=1&rel=0&enablejsapi=1&origin=" | safe}}{{base_path}}"
+                    <iframe id="{{ id }}-video-tab-{{ gallery_carousel_items_counter }}"
+                            data-carousel-video="true"
+                            width="100%" height="100%"
+                            data-carousel-src="{{ item.video }}?{{ "modestbranding=1&rel=0&enablejsapi=1&origin=" | safe}}{{base_path}}"
+                            data-carousel-index="{{ gallery_carousel_items_counter }}"
+                            src=""
                             frameborder="0"
                             allow="encrypted-media"
+                            enablejsapi="true"
                             allowfullscreen>
                     </iframe>
                 {% else %}
@@ -88,7 +93,7 @@
         {% endfor %}
 
         {# create a modal containing a carousel #}
-        <div class="gallery-modal modal fade" id="modal-{{ gallery_name }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="gallery-modal modal fade" id="modal-{{ gallery_name }}" tabindex="-1" role="dialog">
             <div class="vertical-alignment-helper">
                 <div class="modal-dialog vertical-align-center modal-lg" role="document">
                     <div class="modal-content">
