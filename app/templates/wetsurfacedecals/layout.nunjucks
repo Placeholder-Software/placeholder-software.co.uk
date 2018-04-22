@@ -75,7 +75,6 @@
 
       {% if not hide_title_row %}
         <a href="/wetsurfacedecals" class="image-container">
-          <h1 class="site-title">Wet Stuff 水</h1>
           <img src="/images/header_placeholder.jpg" />
         </a>
       {% endif %}

@@ -79,26 +79,6 @@
   font-family: $title-font;
   position: relative;
 
-  .site-title {
-    color: $primary-color;
-    position: absolute;
-    left: 0.25em;
-    top: 0.1em;
-    margin: 0;
-
-    &:hover, &:active, &:focus, &:visited {
-      outline: none;
-    }
-
-    @media (max-width: 1920px) {
-      font-size: 15vw;
-    }
-
-    @media (min-width: 1920px) {
-      font-size: 288px;
-    }
-  }
-
   .image-container {
     
     display: inline-block;
