@@ -9,7 +9,7 @@
 
 <h6>Dark🗲Rift 2</h6>
 
-<p>We've added a brans new network integration bringing Dissonance to the the <a href="https://darkriftnetworking.com/DarkRift2">Dark Rift 2</a> networking system! Dark Rift 2 is a fast and highly optimised networking system which made it perfect for transmitting voice data.</p>
+<p>We've added a brand new network integration bringing Dissonance to the the <a href="https://darkriftnetworking.com/DarkRift2">Dark Rift 2</a> networking system! Dark Rift 2 is a fast and highly optimised networking system which made it perfect for transmitting voice data.</p>
 
 <p>The Dark Rift integration features a standalone (non-Unity) project for running the server. If you're trying to host Dissonance with a custom network integration and a non-Unity server this can server as a great reference to help you out.
 
