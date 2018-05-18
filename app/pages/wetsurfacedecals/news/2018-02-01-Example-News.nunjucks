@@ -1,8 +1,0 @@
-{% extends "templates/wetsurfacedecals/news.nunjucks" %}
-
-{% set title = "Example News Article" %}
-{% set body %}
-
-<p>Remove this before release!</p>
-
-{% endset %}

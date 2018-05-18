@@ -1,0 +1,25 @@
+@import "variables.scss";
+
+footer.navbar {
+  margin-top: auto;
+  padding-bottom: 1em;
+  color: $mid-color;
+  font-family: monospace;
+
+  a {
+    color: $mid-color;
+    
+    @media (max-width: 767px) {
+      line-height: 2.5em;
+    }
+  }
+
+  a:hover, a:focus {
+    color: $light-color;
+  }
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 1em;
+}

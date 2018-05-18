@@ -1,0 +1,26 @@
+$icon-font-path: '../../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "variables.scss";
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.underline-links {
+  a {
+      text-decoration: underline;
+  }
+}
+
+@import "header.scss";
+@import "body.scss";
+@import "gallery.scss";
+@import "footer.scss";
+
+@import "news.scss";

@@ -1,0 +1,135 @@
+@import "variables.scss";
+
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 3em;
+
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+
+        img, picture {
+            width: 100%;
+            margin-top: 8px;
+            vertical-align: middle;
+
+            outline-offset: 0px;
+            outline-color: none;
+            outline-width: 1px;
+
+            transition: 0.1s;
+            &:hover {
+                outline-offset: 3px;
+                outline-color: $primary-color;
+                outline-style: solid;
+                outline-width: 1px;
+            }
+        }
+    }
+}
+
+.carousel {
+
+    .carousel-indicators {
+        margin-bottom: 0px;
+
+        li {
+            border-color: $dark-color;
+            border-width: 2px;
+        }
+    }
+
+    .carousel-control {
+        width: 7.5%;
+
+        height: 25%;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        .glyphicon-chevron-right, .glyphicon-chevron-left {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .carousel-inner {
+        img {
+            margin: auto;
+        }
+
+        .item {
+
+            display: none;
+
+            &.active {
+                display: inherit;
+            }
+
+            .carousel-caption {
+                color: $light-color;
+                top: 0;
+                padding-top: 0;
+            }
+
+            iframe {
+                height: 85vh;
+            }
+        }
+    }
+}
+
+.gallery-modal {
+    .vertical-alignment-helper {
+        display: table;
+        height: 100%;
+        width: 100%;
+        pointer-events: none; /* This makes sure that we can still click outside of the modal to close it */
+    }
+
+    .vertical-align-center {
+        display: table-cell;
+        vertical-align: middle;
+        pointer-events: none;
+    }
+
+    .modal-content {
+        width: inherit;
+        height: inherit;
+        margin: 0 auto;
+        pointer-events: all;
+    }
+
+    .close {
+        position: absolute;
+        right: 0.25em;
+        top: 0.1em;
+        font-size: 90px;
+
+        text-shadow: -2px 0 $light-color, 0 2px $light-color, 2px 0 $light-color, 0 -2px $light-color
+    }
+}
+  
+// Snap to two column layout
+@media screen and (max-width: 800px) {
+    .gallery-row {
+        .column {
+            flex: 50%;
+            max-width: 50%;
+        }
+    }
+}
+  
+// Snap to single column layout
+@media screen and (max-width: 600px) {
+    .gallery-row {
+        .column {
+            flex: 100%;
+            max-width: 100%;
+        }
+    }
+}

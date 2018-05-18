@@ -1,0 +1,2 @@
+{% import "templates/common/macros/release-versions-json.nunjucks" as releases %}
+{{ releases.list_releases(site.wetstuff.children.releases.children.pages) }}

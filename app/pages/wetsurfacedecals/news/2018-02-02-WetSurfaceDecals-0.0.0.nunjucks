@@ -1,8 +1,0 @@
-{% extends "templates/wetsurfacedecals/news-release.nunjucks" %}
-{% set version_number = "0.0.1" %}
-
-{% set release_intro %}{% markdown %}
-
-Example news article for a release. Adds an intro (this line), then the blurb from the notes (next line) and automatically links out to some release notes (last line).
-
-{% endmarkdown %}{% endset %}

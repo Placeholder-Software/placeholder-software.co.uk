@@ -1,0 +1,10 @@
+{% extends "templates/wetstuff/news.nunjucks" %}
+{% import "pages/wetstuff/releases/" + version_number + ".nunjucks" as release %}
+
+{% if title %}{% else %}{% set title %}Wet Surface Decals {{ version_number }} Release{% endset %}{% endif %}
+
+{% set body %}
+  {{ release_intro | safe }}
+  {{ release.blurb | safe }}
+  <p>See the full release notes for this version <a href="{{ base_path }}/wetstuff/releases/{{ version_number }}.html">here</a>.</p>
+{% endset %}

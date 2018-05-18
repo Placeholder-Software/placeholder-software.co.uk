@@ -1,0 +1,108 @@
+{% extends "templates/wetstuff/layout.nunjucks" %}
+
+{% import "templates/wetstuff/macros/gallery.nunjucks" as gallery %}
+
+<!-- Alert banner at the top of the site. Set this to a string for that to be displayed -->
+<!-- {% set alert_message = false %} -->
+
+{% set hide_title_row = true %}
+
+{% block pre_content %}
+
+  <div class="video">
+    <div class="video">
+      <img id="video_img" src="https://i.ytimg.com/vi/-9zrrXtgD0M/maxresdefault.jpg" />
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="row blurb">
+    <h3 id="Instantly-Make-Any-Surface-Appear-Wet" style="text-align:center">Instantly Make Any Surface Appear Wet</h4>
+
+    <p>A powerful set of layered and animated decals to simulate rain, puddles, damp, leaking pipes, and more - all without making modifications to any of your texture or shaders. Allow your artists to drastically change the atmosphere of your scene in seconds with decals placed in the editor, or generate decals automatically by attaching them to particle systems.</p>
+  </div>
+
+  {% call gallery.gallery("wetdecal-primary-gallery", base_path, [[
+    { video: "https://www.youtube.com/embed/gaJMEgf31c4", huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 0" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 1" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 2" }
+  ], [
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 3" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 4" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 5" }
+  ], [
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 6" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 7" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 8" }
+  ], [
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 9" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 10" },
+    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 11" }
+  ]]) %}{%- endcall %}
+
+  <div class="row">
+      <div class="col-xs-12 text-center">
+        <h3 id="get-started">Get Started</h3>
+      </div>
+      <div class="col-xs-12 text-center">
+        <!-- TODO: Link store https://www.assetstore.unity3d.com/en/#!/content/_____?aid=1100lJDF -->
+        <a href="" target="_blank" class="btn btn-link">Buy Wet Stuff On The Unity Store</a>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 text-justify">
+
+      <!-- TODO: Link store https://www.assetstore.unity3d.com/en/#!/content/_____?aid=1100lJDF -->
+      <p><a href="">Buy Wet Stuff</a> on the Unity Store to use it in your game. Get all future feature upgrades and bugfixes for free!</p>
+    
+      <p><a href="https://placeholder-software.co.uk/wetstuff/docs/#getting-started" target="_blank" >Follow The Tutorials</a>. This series tutorials will walk you through the basics of setting up your first puddle, all the way up to complex particle based rain systems.</p>
+
+      <p><a href="https://placeholder-software.co.uk/wetstuff/community" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi". Get help with Wet Stuff, discuss your rendering setup, and join the conversation about new features and improvements coming to Wet Stuff.</p>
+
+      <p><a href="https://github.com/Placeholder-Software/WetSurfaceDecals" target="_blank">Report A Bug</a>. If you discover a bug with Wet Stuff report it to us and we shall respond quickly, suggest workarounds to get you back to developing your game and alert you as soon as we have developed and released a fix.</p>
+  </div>
+
+{% endblock %}
+
+{% block end_body %}
+  <script>
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Replace the 'ytplayer' element with an <iframe> and
+    // YouTube player after the API code downloads.
+    var player;
+    function onYouTubePlayerAPIReady() {
+      player = new YT.Player('video_img', {
+        height: '360',
+        width: '640',
+        videoId: '-9zrrXtgD0M',
+        playerVars: {
+          autoplay: 0,
+          modestbranding: 1,
+          showinfo: 0,
+          rel: 0,
+          autohide: 1,
+          controls: 0,
+          loop: 0
+        },
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.ENDED) {
+        player.destroy();
+        $("#video_img").attr("src", "/images/DemoReelEndCard.png");
+      }
+    }
+  </script>
+{% endblock %}

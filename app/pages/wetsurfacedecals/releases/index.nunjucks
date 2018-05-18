@@ -1,7 +1,0 @@
-{% extends "templates/wetsurfacedecals/layout.nunjucks" %}
-{% import "templates/common/macros/release-versions-html.nunjucks" as releases %}
-
-{% block content %}
-  {{ releases.list_releases(site.wetsurfacedecals.children.releases.children.pages, "Wet Surface Decals") }}
-{% endblock %}
-  

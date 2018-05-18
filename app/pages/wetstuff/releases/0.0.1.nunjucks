@@ -1,0 +1,20 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "0.0.1" %}
+
+{% set blurb %}
+<p>WSD Test Release Notes</p>
+{% endset %}
+
+{% block features %}
+<p>None!</p>
+{% endblock %}
+
+{% block bugfixes %}
+<p>None!</p>
+{% endblock %}
+
+{% block known_issues %}
+<p>None!</p>
+{% endblock %}
