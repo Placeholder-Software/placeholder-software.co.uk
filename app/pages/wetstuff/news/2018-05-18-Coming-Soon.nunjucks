@@ -1,6 +1,6 @@
 {% extends "templates/wetstuff/news.nunjucks" %}
 
-{% set title = "Coming Soon: Looking For Testers" %}
+{% set title = "Help Us Test Wet Stuff" %}
 {% set body %}
 
 <p>Wet Stuff makes it easy to instantly make any surface appear wet. It's our second asset after <a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF">Dissonance Voice Chat</a> over a year ago!</p>

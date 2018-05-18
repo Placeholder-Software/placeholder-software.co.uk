@@ -90,23 +90,7 @@
     font-family: $title-font;
     color: $light-color;
 
-    @media (min-width: 1600px) {
-      font-size: 11vh;
-      margin-top: -2vh
-    }
-
-    @media (min-width: 1000px) and (max-width: 1600px) {
-      font-size: 8vh;
-      margin-top: 0vh;
-    }
-
-    @media (min-width: 500px) and (max-width: 1000px) {
-      font-size: 4vh;
-      margin-top: 2vh;
-    }
-
-    @media (max-width: 500px) {
-      font-size: 1vh;
-    }
+    font-size: 14vmin;
+    margin-top: -2.5vmin;
   }
 }
