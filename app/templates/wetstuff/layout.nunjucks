@@ -75,7 +75,7 @@
 
       {% if not hide_title_row %}
         <a href="/wetstuff" class="image-container">
-          <img src="/images/header_placeholder.jpg" />
+          <img src="/images/WetStuffBanner.png" />
         </a>
       {% endif %}
 

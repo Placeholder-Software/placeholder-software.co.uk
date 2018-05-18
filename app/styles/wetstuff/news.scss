@@ -52,7 +52,7 @@
       margin-bottom: 5px;
 
       a {
-        &:hover, &:active, &:focus, &:visited {
+        &:link, &:hover, &:active, &:focus, &:visited {
           outline: none;
           color: $primary-color;
         }

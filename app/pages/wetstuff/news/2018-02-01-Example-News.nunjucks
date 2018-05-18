@@ -1,8 +1,0 @@
-{% extends "templates/wetstuff/news.nunjucks" %}
-
-{% set title = "Example News Article" %}
-{% set body %}
-
-<p>Remove this before release!</p>
-
-{% endset %}

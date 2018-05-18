@@ -25,7 +25,7 @@
   </div>
 
   {% call gallery.gallery("wetdecal-primary-gallery", base_path, [[
-    { video: "https://www.youtube.com/embed/gaJMEgf31c4", huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 0" },
+    { video: "https://www.youtube.com/embed/-9zrrXtgD0M", huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 0" },
     { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 1" },
     { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 2" }
   ], [
@@ -63,6 +63,7 @@
       <p><a href="https://placeholder-software.co.uk/wetstuff/community" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi". Get help with Wet Stuff, discuss your rendering setup, and join the conversation about new features and improvements coming to Wet Stuff.</p>
 
       <p><a href="https://github.com/Placeholder-Software/WetSurfaceDecals" target="_blank">Report A Bug</a>. If you discover a bug with Wet Stuff report it to us and we shall respond quickly, suggest workarounds to get you back to developing your game and alert you as soon as we have developed and released a fix.</p>
+    </div>
   </div>
 
 {% endblock %}
