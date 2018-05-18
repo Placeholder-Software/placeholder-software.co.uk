@@ -74,8 +74,8 @@
       {% endif %}
 
       {% if not hide_title_row %}
-        <a href="/wetstuff" class="image-container">
-          <img src="/images/WetStuffBanner.png" />
+        <a href="http://localhost:8080/wetstuff" class="image-container">
+          <div class="main-title">Wet Stuff</div>
         </a>
       {% endif %}
 
