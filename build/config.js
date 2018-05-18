@@ -21,7 +21,8 @@ module.exports = {
 
     copy: {
         src: [
-            'app/**/*.unitypackage'
+            'app/**/*.unitypackage',
+            'app/**/*.zip'
         ]
     },
 
