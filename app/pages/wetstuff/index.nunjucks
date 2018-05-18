@@ -10,9 +10,7 @@
 {% block pre_content %}
 
   <div class="video">
-    <div class="video">
-      <img id="video_img" src="https://i.ytimg.com/vi/-9zrrXtgD0M/maxresdefault.jpg" />
-    </div>
+    <img id="video_img" src="https://i.ytimg.com/vi/-9zrrXtgD0M/maxresdefault.jpg" />
   </div>
 
 {% endblock %}

@@ -85,12 +85,15 @@
   width: 100%;
   min-height: 200px;
 
-  .main-title {
-    text-align: center;
-    font-family: $title-font;
-    color: $light-color;
+  .image-container {
 
-    font-size: 14vmin;
-    margin-top: -2.5vmin;
+    .main-title {
+      text-align: center;
+      font-family: $title-font;
+      color: $light-color;
+
+      font-size: 14vmin;
+      margin-top: -2.5vmin;
+    }
   }
 }

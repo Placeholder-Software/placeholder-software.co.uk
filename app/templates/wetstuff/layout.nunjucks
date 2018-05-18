@@ -60,26 +60,13 @@
       </div>
     </nav>
 
-    <header class="site-title-container">
-
-      {% if alert_message %}
-        <div class="row site-alert-row collapse in" id="header-alert" data-toggle="collapse" data-target="#header-alert">
-          <div class="col-xs-11 text-center">
-            {{ alert_message }}
-          </div>
-          <div class="col-xs-1 text-center">
-            <span>&times;</span>
-          </div>
-        </div>
-      {% endif %}
-
-      {% if not hide_title_row %}
-        <a href="http://localhost:8080/wetstuff" class="image-container">
+    {% if not hide_title_row %}
+      <header class="site-title-container">
+        <a href="{{ base_path }}/wetstuff" class="image-container">
           <div class="main-title">Wet Stuff</div>
         </a>
-      {% endif %}
-
-    </header>
+      </header>
+    {% endif %}
 
     <div class="pre-main-content">
 
