@@ -23,21 +23,21 @@
   </div>
 
   {% call gallery.gallery("wetdecal-primary-gallery", base_path, [[
-    { video: "https://www.youtube.com/embed/-9zrrXtgD0M", huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 0" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 1" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 2" }
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Make Any Surface Appear Wet" },
+    { huge: "/images/WS/2/Decal_1920.png", large: "/images/WS/2/Decal_1024.png", medium: "/images/WS/2/Decal_768.png", small: "/images/WS/2/Decal_512.png", alt: "Instant Raindrop Effect" },
+    { huge: "/images/WS/3/Decal_1920.png", large: "/images/WS/3/Decal_1024.png", medium: "/images/WS/3/Decal_768.png", small: "/images/WS/3/Decal_512.png", alt: "Easy Particle System Splashes" }
   ], [
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 3" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 4" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 5" }
+    { huge: "/images/WS/4/Decal_1920.png", large: "/images/WS/4/Decal_1024.png", medium: "/images/WS/4/Decal_768.png", small: "/images/WS/4/Decal_512.png", alt: "Beautiful Screen Space Reflections" },
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 4" },
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 5" }
   ], [
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 6" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 7" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 8" }
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 6" },
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 7" },
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 8" }
   ], [
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 9" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 10" },
-    { huge: "/images/testimg_1024x1024.png", large: "/images/testimg_1024x1024.png", medium: "/images/testimg_512x512.png", small: "/images/testimg_256x256.png", alt: "Alt Text 11" }
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 9" },
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 10" },
+    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 11" }
   ]]) %}{%- endcall %}
 
   <div class="row">
@@ -88,7 +88,7 @@
           showinfo: 0,
           rel: 0,
           autohide: 1,
-          controls: 0,
+          controls: 1,
           loop: 0
         },
         events: {

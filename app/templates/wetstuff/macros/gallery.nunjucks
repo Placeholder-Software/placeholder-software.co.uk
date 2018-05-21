@@ -70,9 +70,9 @@
         A list of lists. Each sublist will become a column of images.
         Each item in the sublists should contain the following elements:
             - huge: A 1920px wide image
-            - large: A 768px wide image
-            - medium: A 512px wide image
-            - small: A 256px wide image
+            - large: A 1024px wide image
+            - medium: A 768px wide image
+            - small: A 512px wide image
             - video: [Optional] The URL of a youtube video to show when the item is selected
             - alt: Text to use as both title and alt text for images (no title shown for videos)
         The best image (based on size on screen) will be selected for both the thumbnail and the expanded gallery view
@@ -111,9 +111,9 @@
                 {% for item in lst %}
                     <img data-toggle="modal" data-target="#modal-{{ gallery_name }}" onclick="$('#{{ gallery_name }}').carousel({{ gallery_item_index }})"
                         srcset="{{ item.huge }} 1920w,
-                                {{ item.large }} 768w,
-                                {{ item.medium }} 512w,
-                                {{ item.small }} 256w"
+                                {{ item.large }} 1024w,
+                                {{ item.medium }} 768w,
+                                {{ item.small }} 512w"
                         sizes="(max-width: 600px) 100vw,
                                 (max-width: 800px) 50vw,
                                 (max-width: 1024px) 25vw,
