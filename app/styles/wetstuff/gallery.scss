@@ -68,10 +68,43 @@
                 top: 0;
                 padding-top: 0;
                 font-variant: small-caps;
+                user-select: none;
             }
 
             iframe {
                 height: 85vh;
+            }
+
+            .cd-resize-img {
+
+                background-size: auto 100%;
+                background-image: url(/images/WS/5/NoDecal_1024.png);
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 50%;
+                overflow: hidden;
+                transform: translateZ(0);
+                backface-visibility: hidden;
+            }
+
+            .cd-handle
+            {
+                z-index: 20;
+                position: absolute;
+                height: 44px;
+                width: 44px;
+                left: 50%;
+                top: 50%;
+                margin-left: -22px;
+                margin-top: -22px;
+                border-radius: 50%;
+                background: $primary-color;
+                cursor: move;
+                box-shadow: 0 0 0 6px rgba(0,0,0,.2), 0 0 10px rgba(0,0,0,.6), inset 0 1px 0 hsla(0,0%,100%,.3);
+                opacity: 1;
             }
         }
     }

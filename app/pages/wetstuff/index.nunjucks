@@ -28,7 +28,10 @@
     { huge: "/images/WS/3/Decal_1920.png", large: "/images/WS/3/Decal_1024.png", medium: "/images/WS/3/Decal_768.png", small: "/images/WS/3/Decal_512.png", alt: "Easy Particle System Splashes" }
   ], [
     { huge: "/images/WS/4/Decal_1920.png", large: "/images/WS/4/Decal_1024.png", medium: "/images/WS/4/Decal_768.png", small: "/images/WS/4/Decal_512.png", alt: "Beautiful Screen Space Reflections" },
-    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 4" },
+    { 
+      huge: "/images/WS/5/Decal_1920.png", large: "/images/WS/5/Decal_1024.png", medium: "/images/WS/5/Decal_768.png", small: "/images/WS/5/Decal_512.png", alt: "Dramatically Alter A Scene In Seconds",
+      swipe: { huge: "/images/WS/5/NoDecal_1920.png", large: "/images/WS/5/NoDecal_1024.png", medium: "/images/WS/5/NoDecal_768.png", small: "/images/WS/5/NoDecal_512.png" }
+    },
     { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 5" }
   ], [
     { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 6" },
@@ -66,7 +69,7 @@
 
 {% endblock %}
 
-{% block end_body %}
+{% block end_body_script %}
   <script>
     // Load the IFrame Player API code asynchronously.
     var tag = document.createElement('script');

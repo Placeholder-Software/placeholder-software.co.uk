@@ -1,3 +1,14 @@
+{% macro gallery_pic_internal(item, alt) %}
+     <img srcset="{{ item.huge }} 1920w,
+                {{ item.large }} 768w,
+                {{ item.medium }} 512w,
+                {{ item.small }} 256w"
+        sizes="95vw"
+        src="{{ item.medium }}"
+        alt="{{ item.alt }}"
+    />
+{% endmacro %}
+
 {% macro gallery_carousel_internal(id, base_path, items) %}
     <div id="{{ id }}" class="carousel slide" data-ride="carousel" data-interval="0" data-carousel-video-container="true">
 
@@ -16,7 +27,7 @@
         {% set gallery_carousel_items_counter = 0 %}
         {% for item in items %}
 
-            <div class="item {% if gallery_carousel_items_counter == 0 %}active{% endif %}">
+            <div class="item {% if gallery_carousel_items_counter == 0 %}active{% endif %} {% if item.swipe %}cd-image-container{% endif %}">
                 {% if item.video %}
                     <iframe id="{{ id }}-video-tab-{{ gallery_carousel_items_counter }}"
                             data-carousel-video="true"
@@ -29,16 +40,16 @@
                             enablejsapi="true"
                             allowfullscreen>
                     </iframe>
+                {% elif item.swipe %}
+                    {% call gallery_pic_internal(item, item.alt) %}{%- endcall %}
+                    <div class="cd-resize-img" style="background-image: url({{ item.swipe.large }});"></div>
+                    <span class="cd-handle"></span>
+                    <h2 class="carousel-caption">
+                        {{ item.alt }}
+                    </h2>
                 {% else %}
                     {# A static image, selected from a set of possible images (in various sizes) #}
-                    <img srcset="{{ item.huge }} 1920w,
-                                {{ item.large }} 768w,
-                                {{ item.medium }} 512w,
-                                {{ item.small }} 256w"
-                        sizes="95vw"
-                        src="{{ item.medium }}"
-                        alt="{{ item.alt }}"
-                    />
+                    {% call gallery_pic_internal(item, item.alt) %}{%- endcall %}
                     <h2 class="carousel-caption">
                         {{ item.alt }}
                     </h2>
@@ -75,6 +86,7 @@
             - small: A 512px wide image
             - video: [Optional] The URL of a youtube video to show when the item is selected
             - alt: Text to use as both title and alt text for images (no title shown for videos)
+            - swipe: { huge, large, medium, small}: A image which can be swiped to for comparison
         The best image (based on size on screen) will be selected for both the thumbnail and the expanded gallery view
  #}
 {% macro gallery(gallery_name, base_path, items_lists) %}
