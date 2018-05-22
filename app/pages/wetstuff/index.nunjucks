@@ -19,7 +19,7 @@
   <div class="row blurb">
     <h3 id="Instantly-Make-Any-Surface-Appear-Wet" style="text-align:center">Instantly Make Any Surface Appear Wet</h4>
 
-    <p>A powerful set of layered and animated decals to simulate rain, puddles, damp, leaking pipes, and more - all without making modifications to any of your texture or shaders. Allow your artists to drastically change the atmosphere of your scene in seconds with decals placed in the editor, or generate decals automatically by attaching them to particle systems.</p>
+    <p>A powerful set of layered and animated decals to simulate rain, puddles, damp, leaking pipes, and more - all without making modifications to any of your texture or shaders. Allow your artists to dramatically change the atmosphere of your scene in seconds with decals placed in the editor, or generate decals automatically by attaching them to particle systems.</p>
   </div>
 
   {% call gallery.gallery("wetdecal-primary-gallery", base_path, [[
@@ -29,13 +29,19 @@
   ], [
     { huge: "/images/WS/4/Decal_1920.png", large: "/images/WS/4/Decal_1024.png", medium: "/images/WS/4/Decal_768.png", small: "/images/WS/4/Decal_512.png", alt: "Beautiful Screen Space Reflections" },
     { 
-      huge: "/images/WS/5/Decal_1920.png", large: "/images/WS/5/Decal_1024.png", medium: "/images/WS/5/Decal_768.png", small: "/images/WS/5/Decal_512.png", alt: "Dramatically Alter A Scene In Seconds",
+      huge: "/images/WS/5/Decal_1920.png", large: "/images/WS/5/Decal_1024.png", medium: "/images/WS/5/Decal_768.png", small: "/images/WS/5/Decal_512.png", alt: "Transform A Scene In Seconds",
       swipe: { huge: "/images/WS/5/NoDecal_1920.png", large: "/images/WS/5/NoDecal_1024.png", medium: "/images/WS/5/NoDecal_768.png", small: "/images/WS/5/NoDecal_512.png" }
     },
-    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 5" }
+    { huge: "/images/WS/6/Decal_1920.png", large: "/images/WS/6/Decal_1024.png", medium: "/images/WS/6/Decal_768.png", small: "/images/WS/6/Decal_512.png", alt: "Enhance Lighting",
+      swipe: { huge: "/images/WS/6/NoDecal_1920.png", large: "/images/WS/6/NoDecal_1024.png", medium: "/images/WS/6/NoDecal_768.png", small: "/images/WS/6/NoDecal_512.png" }
+    }
   ], [
-    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 6" },
-    { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 7" },
+    { huge: "/images/WS/7/Decal_1920.png", large: "/images/WS/7/Decal_1024.png", medium: "/images/WS/7/Decal_768.png", small: "/images/WS/7/Decal_512.png", alt: "",
+      swipe: { huge: "/images/WS/7/NoDecal_1920.png", large: "/images/WS/7/NoDecal_1024.png", medium: "/images/WS/7/NoDecal_768.png", small: "/images/WS/7/NoDecal_512.png" }
+    },
+    { huge: "/images/WS/8/Decal_1920.png", large: "/images/WS/8/Decal_1024.png", medium: "/images/WS/8/Decal_768.png", small: "/images/WS/8/Decal_512.png", alt: "",
+      swipe: { huge: "/images/WS/8/NoDecal_1920.png", large: "/images/WS/8/NoDecal_1024.png", medium: "/images/WS/8/NoDecal_768.png", small: "/images/WS/8/NoDecal_512.png" }
+    },
     { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 8" }
   ], [
     { huge: "/images/WS/1/Decal_1920.png", large: "/images/WS/1/Decal_1024.png", medium: "/images/WS/1/Decal_768.png", small: "/images/WS/1/Decal_512.png", alt: "Alt Text 9" },
