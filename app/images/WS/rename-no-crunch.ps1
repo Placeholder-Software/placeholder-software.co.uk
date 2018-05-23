@@ -1,0 +1,1 @@
+get-childitem *.png -Recurse | foreach { rename-item $_ $_.Name.Replace("-crunch", "") }

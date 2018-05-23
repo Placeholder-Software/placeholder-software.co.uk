@@ -46,14 +46,14 @@
       swipe: { huge: "/images/WS/9/NoDecal_1920.jpg", large: "/images/WS/9/NoDecal_1024.jpg", medium: "/images/WS/9/NoDecal_768.jpg", small: "/images/WS/9/NoDecal_512.jpg" }
     }
   ], [
-    { huge: "/images/WS/7/Decal_1920.jpg", large: "/images/WS/7/Decal_1024.jpg", medium: "/images/WS/7/Decal_768.jpg", small: "/images/WS/7/Decal_512.jpg", alt: "",
-      swipe: { huge: "/images/WS/7/NoDecal_1920.jpg", large: "/images/WS/7/NoDecal_1024.jpg", medium: "/images/WS/7/NoDecal_768.jpg", small: "/images/WS/7/NoDecal_512.jpg" }
+    { huge: "/images/WS/10/Decal_1920.jpg", large: "/images/WS/10/Decal_1024.jpg", medium: "/images/WS/10/Decal_768.jpg", small: "/images/WS/10/Decal_512.jpg", alt: "",
+      swipe: { huge: "/images/WS/10/NoDecal_1920.jpg", large: "/images/WS/10/NoDecal_1024.jpg", medium: "/images/WS/10/NoDecal_768.jpg", small: "/images/WS/10/NoDecal_512.jpg" }
     },
-    { huge: "/images/WS/8/Decal_1920.jpg", large: "/images/WS/8/Decal_1024.jpg", medium: "/images/WS/8/Decal_768.jpg", small: "/images/WS/8/Decal_512.jpg", alt: "",
-      swipe: { huge: "/images/WS/8/NoDecal_1920.jpg", large: "/images/WS/8/NoDecal_1024.jpg", medium: "/images/WS/8/NoDecal_768.jpg", small: "/images/WS/8/NoDecal_512.jpg" }
+    { huge: "/images/WS/11/Decal_1920.jpg", large: "/images/WS/11/Decal_1024.jpg", medium: "/images/WS/11/Decal_768.jpg", small: "/images/WS/11/Decal_512.jpg", alt: "",
+      swipe: { huge: "/images/WS/11/NoDecal_1920.jpg", large: "/images/WS/11/NoDecal_1024.jpg", medium: "/images/WS/11/NoDecal_768.jpg", small: "/images/WS/11/NoDecal_512.jpg" }
     },
-    { huge: "/images/WS/9/Decal_1920.jpg", large: "/images/WS/9/Decal_1024.jpg", medium: "/images/WS/9/Decal_768.jpg", small: "/images/WS/9/Decal_512.jpg", alt: "",
-      swipe: { huge: "/images/WS/9/NoDecal_1920.jpg", large: "/images/WS/9/NoDecal_1024.jpg", medium: "/images/WS/9/NoDecal_768.jpg", small: "/images/WS/9/NoDecal_512.jpg" }
+    { huge: "/images/WS/12/Decal_1920.jpg", large: "/images/WS/12/Decal_1024.jpg", medium: "/images/WS/12/Decal_768.jpg", small: "/images/WS/12/Decal_512.jpg", alt: "",
+      swipe: { huge: "/images/WS/12/NoDecal_1920.jpg", large: "/images/WS/12/NoDecal_1024.jpg", medium: "/images/WS/12/NoDecal_768.jpg", small: "/images/WS/12/NoDecal_512.jpg" }
     }
   ]]) %}{%- endcall %}
 
