@@ -1,0 +1,120 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.2.1" %}
+
+{% set blurb %}
+
+<p>This release includes a number of fixes and tweaks to improve voice quality.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-ForgeNetworkingRemastered-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.0/Dissonance-ForgeNetworking-6.2.0.unitypackage",
+    6, 2, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.0/Dissonance-PhotonUnityNetworking-6.2.0.unitypackage",
+    6, 2, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.0/Dissonance-UNet_HLAPI-6.2.0.unitypackage",
+    6, 2, 0
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/6.2.0/Dissonance-UNet_LLAPI-6.2.0.unitypackage",
+    6, 2, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonBolt-6.0.0.unitypackage",
+    6, 0 ,0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Steamworks.NET P2P",
+    "SteamworksP2P",
+    "Use Steamworks.NET to host a peer to peer voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-SteamworksP2P-6.0.0.unitypackage",
+    "6.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Dark🗲Rift 2",
+    "DarkRift2",
+    "Use Dark🗲Rift 2 to host a voice chat session.",
+    "/dissonance/integrations/6.2.0/Dissonance-DarkRift2-6.2.0.unitypackage",
+    "6.2.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Dark🗲Rift 2 (Server Source)",
+    "DarkRift2-ServerSource",
+    "Source code for the DR2 server plugins (precompiled plugins included in basic DR2 download).",
+    "/dissonance/integrations/6.2.0/Dissonance-DarkRift2-ServerSource-6.2.0.zip",
+    "6.2.0"
+  ) -%}{%- endcall %}
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Expanded voice session timeout to 1.5 seconds. Increasing tolerance for very bad network conditions.</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Changed documentation to include fix for issue with iOS loading the AEC plugin <a href="https://github.com/Placeholder-Software/Dissonance/issues/80">(#80)</a></li>
+  <li>Fixed native audio plugins for Hololens with Spatializer plugins <a href="https://github.com/Placeholder-Software/Dissonance/issues/91">(#91)</a></li>
+  <li>Removed large allocations in some error handling paths</li>
+  <li>Ensured network mode is set before client/server are initialized</li>
+  <li>Reduced size of temporary packet buffer and ensured it is flushed sooner. Removing a potential source of buffer bloat</li>
+  <li>Significantly increased playback oversize detection threshold. This will reduce instances of the <code>Detected oversized buffer before playback started</code> error appearing</li>
+</ul>
+{% endblock %}
