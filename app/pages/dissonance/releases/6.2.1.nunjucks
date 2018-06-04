@@ -118,3 +118,10 @@
   <li>Significantly increased playback oversize detection threshold. This will reduce instances of the <code>Detected oversized buffer before playback started</code> error appearing</li>
 </ul>
 {% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>It has been reported that some frames take a very long time (25ms+), please comment on this issue if you have encountered this: <a href="https://github.com/Placeholder-Software/Dissonance/issues/92">(#92)</a></li>
+  <li>It has been reported that voice is sometimes discarded, please comment on this issue if you have encountered this: <a href="https://github.com/Placeholder-Software/Dissonance/issues/94">(#94)</a></li>
+</ul>
+{% endblock %}
