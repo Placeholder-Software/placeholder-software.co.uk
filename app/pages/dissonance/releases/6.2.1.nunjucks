@@ -56,8 +56,8 @@
     "UNet (HLAPI)",
     "UNet_HLAPI",
     "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
-    "/dissonance/integrations/6.2.0/Dissonance-UNet_HLAPI-6.2.0.unitypackage",
-    6, 2, 0
+    "/dissonance/integrations/6.2.1/Dissonance-UNet_HLAPI-6.2.1.unitypackage",
+    6, 2, 1
   ) -%}{%- endcall %}
     
   {% call changes.integration_semver(
@@ -96,8 +96,8 @@
     "Dark🗲Rift 2 (Server Source)",
     "DarkRift2-ServerSource",
     "Source code for the DR2 server plugins (precompiled plugins included in basic DR2 download).",
-    "/dissonance/integrations/6.2.0/Dissonance-DarkRift2-ServerSource-6.2.0.zip",
-    "6.2.0"
+    "/dissonance/integrations/6.2.1/Dissonance-DarkRift2-ServerSource-6.2.1.zip",
+    "6.2.1"
   ) -%}{%- endcall %}
   
 {% endblock %}
