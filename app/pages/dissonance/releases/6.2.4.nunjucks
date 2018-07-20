@@ -1,0 +1,127 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.2.4" %}
+
+{% set blurb %}
+
+<p>This release brings a large number of fixes driven by user feedback.</p>
+
+{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.4/Dissonance-ForgeNetworkingRemastered-6.2.4.unitypackage",
+    6, 2, 4
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.4/Dissonance-ForgeNetworking-6.2.4.unitypackage",
+    6, 2, 4
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.3/Dissonance-PhotonUnityNetworking-6.2.3.unitypackage",
+    6, 2, 3
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.4/Dissonance-UNet_HLAPI-6.2.4.unitypackage",
+    6, 2, 4
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/6.2.0/Dissonance-UNet_LLAPI-6.2.0.unitypackage",
+    6, 2, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonBolt-6.0.0.unitypackage",
+    6, 0 ,0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Steamworks.NET P2P",
+    "SteamworksP2P",
+    "Use Steamworks.NET to host a peer to peer voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-SteamworksP2P-6.0.0.unitypackage",
+    "6.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Dark🗲Rift 2",
+    "DarkRift2",
+    "Use Dark🗲Rift 2 to host a voice chat session.",
+    "/dissonance/integrations/6.2.0/Dissonance-DarkRift2-6.2.0.unitypackage",
+    "6.2.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Dark🗲Rift 2 (Server Source)",
+    "DarkRift2-ServerSource",
+    "Source code for the DR2 server plugins (precompiled plugins included in basic DR2 download).",
+    "/dissonance/integrations/6.2.1/Dissonance-DarkRift2-ServerSource-6.2.1.zip",
+    "6.2.1"
+  ) -%}{%- endcall %}
+  
+{% endblock %}
+
+{% block features %}
+<ul>
+  <li>Showing live audio attenuation applied by faders in  by trigger fades in VoiceBroadcastTrigger inspector at play mode</li>
+  <li>Added additional details to the `DissonanceComms` profiler</li>
+</ul>
+{% endblock %}
+
+{% block bugfixes %}
+<ul>
+  <li>Fixed an issue causing voice activated speech to frequently cut out mid sentence (<a href="https://github.com/Placeholder-Software/Dissonance/issues/104">#104</a>)</li>
+  <li>Fixed a data race (potentially leaving datastructure in an inconsistent state) when the audio preprocessor resets</li>
+  <li>Prevented audio ducking system ducking remote speakers when the local player is muted</li>
+  <li>Reduced the number of audio capture system resets performed when the network mode changes</li>
+  <li>Modified how `Forge` and `Forge Networking Remastered` integrations perform loopback (local server -&gt; local client) to prevent potential bugs caused by buffer re-use</li>
+  <li>Fixed oversize playback buffer detection triggering too frequently</li>
+</ul>
+{% endblock %}
+
+{% block known_issues %}
+<ul>
+  <li>It has been reported that Dissonance 6.2.3 suffered from a bug causing lost audio and this message shown in the log: <code>BasePreprocessingPipeline: Lost 480 samples in the preprocessor (buffer full), injecting silence to compensate</code>. Please comment on <a href="https://github.com/Placeholder-Software/Dissonance/issues/106">this issue</a> if you encounter this error with Dissonance 6.2.4.
+</ul>
+{% endblock %}
