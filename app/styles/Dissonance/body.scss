@@ -101,17 +101,6 @@ h6 {
   font-size: 3em;
 }
 
-.mini-graphic {
-  &.left {
-    float: left;
-  }
-
-  &.right {
-    float: right;
-  }
-
-  width: 96px;
-  height: 96px;
-
-  margin: 1em;
+.icon-section-icon svg {
+  height: 256px;
 }
