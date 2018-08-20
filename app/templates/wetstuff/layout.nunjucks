@@ -7,7 +7,7 @@
 {% set news_url = "/wetstuff/news" %}
 {% set discuss_url = "/wetstuff/community" %}
 {% set tracker_url = "https://github.com/Placeholder-Software/WetSurfaceDecals" %}
-{% set store_url = "" %} <!-- todo: Set store URL -->
+{% set store_url = "https://assetstore.unity.com/packages/tools/particles-effects/wet-stuff-118969?aid=1100lJDF" %}
 
 {% block head_post %}
   <!--
