@@ -97,6 +97,7 @@
         {{ feature_row("Built In Photon Unity Networking", "", true, true, "") }}
         {{ feature_row("Built In Photon BOLT", "", true, false, "") }}
         {{ feature_row("Built In Steamworks.Net P2P", "", true, false, "") }}
+        {{ feature_row("Built In DarkRift2", "", true, false, "") }}
       {%- endcall %}
 
       {% call feature_table("Platform Support", "", "glyphicon-hdd") %}
