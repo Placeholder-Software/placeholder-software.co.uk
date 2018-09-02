@@ -19,8 +19,8 @@
     letter-spacing: -1px;
 
     &.placeholder {
-      @media (max-width: 910px) and (min-width: 767px) {
-        width: 190px;
+      @media (max-width: 393px) {
+        width: 75%;
       }
     }
   }

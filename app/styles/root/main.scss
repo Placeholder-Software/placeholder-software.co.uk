@@ -1,0 +1,17 @@
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@import "header.scss";
+@import "body.scss";
+@import "footer.scss";
+
+//@import "news.scss";
+//@import "comparison.scss";
+//@import "changelog.scss";

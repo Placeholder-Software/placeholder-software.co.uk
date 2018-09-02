@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>Wet Surface Decals News</title>
+	<title>Wet Stuff News</title>
   <id>urn:uuid:ac5b550a-e8f2-438e-88a8-dcb0be5450ee</id>
   <updated>{{ now }}</updated>
   <author>

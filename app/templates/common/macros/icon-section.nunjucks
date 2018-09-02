@@ -14,11 +14,11 @@
     </div>
 {% endmacro %}
 
-{% macro left(icon, subtitle='') %}
-    <section class="icon-section icon-section-left">
+{% macro left(icon, subtitle='', left=6, right=6, class="", element="section", attrs="") %}
+    <{{element}} class="icon-section icon-section-left {{ class }}" {{ attrs }}>
         <div class="container">
             <div class="row vertical-center-row">
-                <div class="col-sm-6 text-justify">
+                <div class="col-sm-{{left}} text-justify">
 
                     {% if subtitle %}
                         <h4>{{ subtitle }}</h4>
@@ -26,22 +26,22 @@
 
                     {{ caller() }}
                 </div>
-                <div class="col-sm-6 hidden-xs text-center icon-section-icon">
+                <div class="col-sm-{{right}} hidden-xs text-center icon-section-icon">
                     {% include icon %}
                 </div>
             </div>
         </div>
-    </section>
+    </{{element}}>
 {% endmacro %}
 
-{% macro right(icon, subtitle='') %}
-    <section class="icon-section icon-section-right">
+{% macro right(icon, subtitle='', left=6, right=6, class="", element="section", attrs="") %}
+    <{{element}} class="icon-section icon-section-right {{ class }}" {{ attrs }}>
         <div class="container">
             <div class="row vertical-center-row">
-                <div class="col-sm-6 hidden-xs text-center icon-section-icon">
+                <div class="col-sm-{{left}} hidden-xs text-center icon-section-icon">
                     {% include icon %}
                 </div>
-                <div class="col-sm-6 text-justify">
+                <div class="col-sm-{{right}} text-justify">
 
                     {% if subtitle %}
                         <h4>{{ subtitle }}</h4>
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </{{element}}>
 {% endmacro %}
 
 {% macro center(subtitle='') %}

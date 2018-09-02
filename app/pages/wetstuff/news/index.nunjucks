@@ -4,7 +4,7 @@
 {% extends "templates/wetstuff/layout.nunjucks" %}
 
 {% block head %}
-  <link href="{{ base_url }}/wetstuff/atom.html" type="application/atom+xml" rel="alternate" title="Wet Surface Decals atom feed" />
+  <link href="{{ base_url }}/wetstuff/atom.html" type="application/atom+xml" rel="alternate" title="Wet Stuff atom feed" />
 {% endblock %}
 
 {% block content %}

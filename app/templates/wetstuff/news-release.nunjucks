@@ -1,7 +1,7 @@
 {% extends "templates/wetstuff/news.nunjucks" %}
 {% import "pages/wetstuff/releases/" + version_number + ".nunjucks" as release %}
 
-{% if title %}{% else %}{% set title %}Wet Surface Decals {{ version_number }} Release{% endset %}{% endif %}
+{% if title %}{% else %}{% set title %}Wet Stuff {{ version_number }} Release{% endset %}{% endif %}
 
 {% set body %}
   {{ release_intro | safe }}

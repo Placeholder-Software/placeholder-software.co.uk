@@ -1,0 +1,94 @@
+@import "variables.scss";
+
+body {
+  background-color: $bg-color;
+  font-family: $bulk-font;
+  font-size: 15px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-row-space { margin-top: 1em; }
+
+
+.vertical-center-row {
+  display: flex;
+  align-items: center;
+}
+
+.main-content {
+    padding-bottom: 3em;
+    padding-top: 2em;
+
+    @media (max-width: 1164px) {
+      margin-left: 0;
+      padding-left: 0;
+    }
+}
+
+.section-header {
+  font-family: $title-font;
+  font-size: 7em;
+  color: $dark-color;
+
+  &.dissonance {
+    font-family: Bangers, sans-serif
+  }
+  &.wetstuff {
+    font-family: 'Permanent Marker', cursive
+  }
+
+  @media (max-width: 992px) {
+    font-size: 5.8em;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 5em;
+  }
+
+  @media (max-width: 393px) {
+    font-size: 3em;
+  }
+}
+
+.icon-section {
+  
+  color: $dark-color;
+  display: block;
+
+  padding: 10px;
+  margin: 10px;
+  margin-left: 0;
+  
+  background: $mid-color;
+  border: $mid-color 3px solid;
+  border-radius: 0px 35px 35px 0px;
+
+  transition: border-radius 0.175s, border-color 0.175s, background-color 0.175s;
+  &:hover {
+    border-radius: 0px 6px 6px 0px;
+    background: $light-color;
+    border-color: $primary-color;
+  }
+
+  @media (max-width: 767px) {
+    border-radius: 0px 15px 15px 0px;
+  }
+
+  .container {
+    width: 100%
+  }
+
+  .icon-section-icon {
+    padding-top: 20px;
+
+    
+  }
+}
+
+.icon-section-icon svg {
+  height: 256px;
+  width: 100%;
+}

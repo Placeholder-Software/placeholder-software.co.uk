@@ -12,9 +12,9 @@
   margin-bottom: 0;
 
   .navbar-brand {
-    color: $light-color;
-    stroke: $light-color;
-    fill: $light-color;
+    color: $bg-color;
+    stroke: $bg-color;
+    fill: $bg-color;
     font-size: 1.7em;
     letter-spacing: -1px;
 
@@ -42,6 +42,14 @@
   }
 }
 
+@media (max-width: 767px) {
+  .navbar {
+    .navbar-brand {
+        font-size: 1.1em;
+    }
+  }
+}
+
 .navbar-social {
   height: 1em;
   width: 1em;
@@ -57,37 +65,38 @@
     border-color: inherit;
 }
 
-.site-alert-row {
-  background-color: $bg-color;
-  font-size: 0.75em;
-  line-height: 2em;
-  vertical-align: middle;
-  font-family: $bulk-font;
-  font-size: 16px;
-  cursor: pointer;
+.site-title-row {
+  background-color: $primary-color;
+  display: block;
+  color: inherit;
+  
+  &:hover, &:active, &:focus, &:visited {
+    outline: none;
+    color: inherit;
+  }
 }
 
 .site-title-container {
   z-index: 1;
   width: 100%;
-  position: relative;
+  font-family: $title-font;
+  font-size: 5.5vw;
 
-  background-image: url(/images/WetStuffBanner.png);
-  background-size: cover;
-
-  height: 14vh;
-  width: 100%;
-  min-height: 200px;
-
-  .image-container {
-
-    .main-title {
-      text-align: center;
-      font-family: $title-font;
-      color: $light-color;
-
-      font-size: 14vmin;
-      margin-top: -2.5vmin;
-    }
+  @media (min-width: 1164px) {
+    font-size: 69px;
+    text-align: center;
   }
+}
+
+.site-title {
+    display: inline-block;
+    padding-right: 0.35em;
+
+    @at-root h1#{&} {
+      font-size: 2em;
+    }
+
+    @at-root h2#{&} {
+      font-size: 1.25em;
+    }
 }

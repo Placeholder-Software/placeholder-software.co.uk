@@ -1,15 +1,15 @@
 {% extends "templates/root/layout.nunjucks" %}
 
-{% set redirect_url %}https:{{ base_path }}/dissonance/{% endset %}
+{% import "templates/common/macros/icon-section.nunjucks" as icon_section %}
 
-{% block head_post %}
-    <meta http-equiv="refresh" content="1;url={{ redirect_url }}">
-    <script type="text/javascript">
-        window.location.href = "{{ redirect_url }}"
-    </script>
-{% endblock %}
+{% block content %}
+    {% call icon_section.right("images/microphone.svg", left=4, right=8, element="a", attrs='href=/dissonance') -%}
+        <span class="section-header dissonance">Dissonance</span>
+        <h3>Easy Voice Chat For Any Networking System.</h3>
+    {%- endcall %}
 
-{% block body_content %}
-    <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
-    If you are not redirected automatically, follow this <a href='{{ redirect_url }}'>link</a>.
+    {% call icon_section.right("images/tint.svg", left=4, right=8, element="a", attrs='href=/wetstuff') -%}
+        <span class="section-header wetstuff">Wet Stuff</span>
+        <h3>Instantly Make Any Surface Appear Wet.</h3>
+    {%- endcall %}
 {% endblock %}
