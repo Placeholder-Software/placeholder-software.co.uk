@@ -81,15 +81,15 @@
     "SteamworksP2P",
     "Use Steamworks.NET to host a peer to peer voice chat session.",
     "/dissonance/integrations/6.0.0/Dissonance-SteamworksP2P-6.0.0.unitypackage",
-    "6.0.0"
+    6, 0, 0
   ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
     "Dark🗲Rift 2",
     "DarkRift2",
     "Use Dark🗲Rift 2 to host a voice chat session.",
-    "/dissonance/integrations/6.2.0/Dissonance-DarkRift2-6.2.0.unitypackage",
-    "6.2.0"
+    "/dissonance/integrations/6.2.4/Dissonance-DarkRift2-6.2.4.unitypackage",
+    6, 2, 4
   ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
@@ -97,7 +97,7 @@
     "DarkRift2-ServerSource",
     "Source code for the DR2 server plugins (precompiled plugins included in basic DR2 download).",
     "/dissonance/integrations/6.2.1/Dissonance-DarkRift2-ServerSource-6.2.1.zip",
-    "6.2.1"
+    6, 2, 1
   ) -%}{%- endcall %}
   
 {% endblock %}

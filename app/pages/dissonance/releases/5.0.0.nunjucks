@@ -90,7 +90,7 @@
     "SteamworksP2P",
     "Use Steamworks.NET to host a peer to peer voice chat session.",
     "/dissonance/integrations/5.0.0/Dissonance-SteamworksP2P-5.0.0.unitypackage",
-    "5.0.0"
+    5, 0, 0
   ) -%}{%- endcall %}  
   
 {% endblock %}
