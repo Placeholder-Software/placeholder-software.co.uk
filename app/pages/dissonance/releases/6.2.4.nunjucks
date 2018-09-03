@@ -109,17 +109,15 @@
 </ul>
 {% endblock %}
 
-{% block bugfixes %}
-<ul>
-  <li>Rebuilt DarkRift2 plugin binaries against the latest version of DarkRift2 (`v2.2.0`)</li>
-  <li>Fixed an issue causing voice activated speech to frequently cut out mid sentence (<a href="https://github.com/Placeholder-Software/Dissonance/issues/104">#104</a>)</li>
-  <li>Fixed a data race (potentially leaving datastructure in an inconsistent state) when the audio preprocessor resets</li>
-  <li>Prevented audio ducking system ducking remote speakers when the local player is muted</li>
-  <li>Reduced the number of audio capture system resets performed when the network mode changes</li>
-  <li>Modified how `Forge` and `Forge Networking Remastered` integrations perform loopback (local server -&gt; local client) to prevent potential bugs caused by buffer re-use</li>
-  <li>Fixed oversize playback buffer detection triggering too frequently</li>
-</ul>
-{% endblock %}
+{% block bugfixes %}{% markdown %}
+ - Rebuilt DarkRift2 plugin binaries against the latest version of DarkRift2 (`v2.2.0`)
+ - Fixed an issue causing voice activated speech to frequently cut out mid sentence [#104](https://github.com/Placeholder-Software/Dissonance/issues/104)
+ - Fixed a data race (potentially leaving datastructure in an inconsistent state) when the audio preprocessor resets
+ - Prevented audio ducking system ducking remote speakers when the local player is muted
+ - Reduced the number of audio capture system resets performed when the network mode changes
+ - Modified how `Forge` and `Forge Networking Remastered` integrations perform loopback (local server -> local client) to prevent potential bugs caused by buffer re-use
+ - Fixed oversize playback buffer detection triggering too frequently
+{% endmarkdown %}{% endblock %}
 
 {% block known_issues %}
 <ul>
