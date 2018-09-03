@@ -111,6 +111,7 @@
 
 {% block bugfixes %}
 <ul>
+  <li>Rebuilt DarkRift2 plugin binaries against the latest version of DarkRift2 (`v2.2.0`)</li>
   <li>Fixed an issue causing voice activated speech to frequently cut out mid sentence (<a href="https://github.com/Placeholder-Software/Dissonance/issues/104">#104</a>)</li>
   <li>Fixed a data race (potentially leaving datastructure in an inconsistent state) when the audio preprocessor resets</li>
   <li>Prevented audio ducking system ducking remote speakers when the local player is muted</li>
