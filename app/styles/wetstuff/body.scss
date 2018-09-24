@@ -11,6 +11,19 @@ body {
   color: $light-color;
 }
 
+code {
+  background-color: hsl(180, 21%, 15%);
+  color: hsl(8, 90%, 54%);
+}
+
+a {
+  color: hsl(211, 65%, 55%);
+
+  &:focus, &:hover {
+    color: hsl(211, 85%, 65%);
+  }
+}
+
 h3 {
   font-family: $title-font;
   font-size: 87px;

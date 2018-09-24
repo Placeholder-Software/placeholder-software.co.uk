@@ -1,0 +1,18 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "1.0.1" %}
+
+{% set blurb %}{% markdown %}
+A number of bugfixes for issues reported since the initial release.
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed `RenderSettings` failing to load when accessed through the inspector
+ - Fixed `DebugSettings` failing to load when accessed through the inspector
+ - Fixed flickering of decals on MacOS ([#8](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/8))
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+{% endmarkdown %}{% endblock %}
