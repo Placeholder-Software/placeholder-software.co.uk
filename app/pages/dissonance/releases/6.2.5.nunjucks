@@ -1,0 +1,115 @@
+{% extends "templates/dissonance/changelog.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.2.5" %}
+
+{% set blurb %}{% markdown %}
+This release brings a brand new network integration to Dissonance - using the fantastic [WebRTC Network](https://assetstore.unity.com/packages/tools/network/webrtc-network-47846?aid=1100lJDF) Dissonance can now run completely peer to peer sessions. All that's needed is a central "signalling server" (which uses very small amounts of bandwidth) to setup the session. Check out the WebRTC Network [FAQ](https://www.because-why-not.com/webrtc/faq/) for more information or read the [quickstart guide](https://placeholder-software.co.uk/dissonance/docs/Basics/Quick-Start-PureP2P/) to get started with Dissonance.
+{% endmarkdown %}{% endset %}
+
+{% block integrations %}
+  {% call changes.integration(
+    "SALSA Lip Sync",
+    "SALSA",
+    "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+    "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/",
+    1,
+    "0.7.1"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration(
+    "Playmaker",
+    "PlayMaker",
+    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
+    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    1,
+    "1.0.0"
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Forge Remastered",
+    "ForgeNetworkingRemastered",
+    "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.4/Dissonance-ForgeNetworkingRemastered-6.2.4.unitypackage",
+    6, 2, 4
+  ) -%}{%- endcall %}  
+  
+  {% call changes.integration_semver(
+    "Forge",
+    "ForgeNetworking",
+    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.4/Dissonance-ForgeNetworking-6.2.4.unitypackage",
+    6, 2, 4
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Unity Networking",
+    "PhotonUnityNetworking",
+    "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.3/Dissonance-PhotonUnityNetworking-6.2.3.unitypackage",
+    6, 2, 3
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "UNet (HLAPI)",
+    "UNet_HLAPI",
+    "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.2.4/Dissonance-UNet_HLAPI-6.2.4.unitypackage",
+    6, 2, 4
+  ) -%}{%- endcall %}
+    
+  {% call changes.integration_semver(
+    "UNet (LLAPI)",
+    "UNet_LLAPI",
+    "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+    "/dissonance/integrations/6.2.0/Dissonance-UNet_LLAPI-6.2.0.unitypackage",
+    6, 2, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Photon Bolt",
+    "PhotonBolt",
+    "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-PhotonBolt-6.0.0.unitypackage",
+    6, 0 ,0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Steamworks.NET P2P",
+    "SteamworksP2P",
+    "Use Steamworks.NET to host a peer to peer voice chat session.",
+    "/dissonance/integrations/6.0.0/Dissonance-SteamworksP2P-6.0.0.unitypackage",
+    6, 0, 0
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Dark🗲Rift 2",
+    "DarkRift2",
+    "Use Dark🗲Rift 2 to host a voice chat session.",
+    "/dissonance/integrations/6.2.4/Dissonance-DarkRift2-6.2.4.unitypackage",
+    6, 2, 4
+  ) -%}{%- endcall %}
+  
+  {% call changes.integration_semver(
+    "Dark🗲Rift 2 (Server Source)",
+    "DarkRift2-ServerSource",
+    "Source code for the DR2 server plugins (precompiled plugins included in basic DR2 download).",
+    "/dissonance/integrations/6.2.1/Dissonance-DarkRift2-ServerSource-6.2.1.zip",
+    6, 2, 1
+  ) -%}{%- endcall %}
+
+  {% call changes.integration_semver(
+    "PureP2P WebRTC",
+    "PureP2P",
+    "Peer to Peer voice what using WebRTC Network",
+    "/dissonance/integrations/6.2.5/Dissonance-PureP2P-6.2.5.unitypackage",
+    6, 2, 5
+  ) -%}{%- endcall %}
+  
+{% endblock %}
+
+{% block features %}{% markdown %}
+ - Added WebRTC Network integration (Pure P2P voice chat).
+ - Setup everything required to add assembly definitions to Dissonance ([#101](https://github.com/Placeholder-Software/Dissonance/issues/101)).
+ - Added `PacketLoss` property to player objects which exposes the estimated voice packet loss value for that player. ([#112](https://github.com/Placeholder-Software/Dissonance/issues/101)).
+{% endmarkdown %}{% endblock %}
