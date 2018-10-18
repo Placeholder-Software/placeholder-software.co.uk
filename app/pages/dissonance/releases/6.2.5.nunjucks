@@ -70,8 +70,8 @@ This release brings a brand new network integration to Dissonance - using the fa
     "Photon Bolt",
     "PhotonBolt",
     "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
-    "/dissonance/integrations/6.0.0/Dissonance-PhotonBolt-6.0.0.unitypackage",
-    6, 0 ,0
+    "/dissonance/integrations/6.2.5/Dissonance-PhotonBolt-6.2.5.unitypackage",
+    6, 2, 5
   ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
