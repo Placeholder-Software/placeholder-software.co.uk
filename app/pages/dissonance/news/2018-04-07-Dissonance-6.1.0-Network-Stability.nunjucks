@@ -1,0 +1,35 @@
+{% extends "templates/dissonance/news.nunjucks" %}
+
+{% set title = "Network Stability After Dissonance 6.1.0" %}
+{% set body %}{% markdown %}
+Dissonance follows a standard called [semver](https://semver.org/) for versioning. This defines exactly what the three numbers in the version mean:
+
+```
+Version `MAJOR.MINOR.PATCH`
+ - Increment MAJOR version when you make incompatible API changes.
+ - Increment MINOR version when you add functionality in a backwards-compatible manner.
+ - Increment PATCH version when you make backwards-compatible bug fixes.
+```
+
+A `MAJOR` change means that a change to Dissonance might _break_ your code which interfaces with Dissonance. Naturally we try to keep such changes to a minimum. When they do happen we make sure to draw attention to it in the release notes and explain how best to handle it.
+
+With Dissonance [6.1.0](/dissonance/releases/6.1.0.html) we included what we considered a very minor bugfix:
+
+> Always using network order (Big endian) for network packet headers
+
+One number in the network protocol used "little endian" encoding instead of the more standard "big endian" encoding used on networks. We didn't consider this a `MAJOR` or even a `MINOR` change because the network protocol is an implementation detail; your code never reads or writes packets so therefore a change to the protocol can't possibly break your code.
+
+However, after talking to users about the consequences of this tiny change we've realised that this wasn't the correct way to think about it. Although a change to the network protocol does not break any _code_ it can lead to a very difficult deployment which forces end users of your application to either upgrade or be unable to communicate.
+
+We have decided that in the future we will include changes to the network protocol in the version number - i.e. an incompatible change to the network will result in the `MAJOR` version number increasing. Furthermore since an incompatible change to the network protocol is very difficult for you to deploy to your users we consider a network protocol change to be one of the worst kind of changes we can make.
+
+From this point forwards **we don't anticipate _ever_ needing to make an incompatible change to the protocol**. Upgrading to a new version of Dissonance should always be completely painless - even when you release the application to end users there will be no problems with any mix of old clients/servers in a session with new clients/servers.
+
+## Update Regarding `Dissonance 6.2.3`
+
+With Dissonance [6.2.3](/dissonance/releases/6.2.3.html) we made a large improvement to the protocol:
+
+> Improved network handshake protocol to support an unlimited number of players in a Dissonance session (previously limited to approximately 20).
+
+This was the first new feature added at the network level since making the network protocol guarantee. We implemented it with both backwards and forwards compatibility in mind. This means that it doesn't matter if clients or server have upgraded or not, both will handle the change. In fact as long as the server has upgraded you will be able to host more than 20 clients even if none of the clients have upgraded yet!
+{% endmarkdown %}{% endset %}
