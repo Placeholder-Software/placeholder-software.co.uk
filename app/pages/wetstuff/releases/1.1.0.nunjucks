@@ -1,7 +1,7 @@
 
 {% extends "templates/wetstuff/changelog.nunjucks" %}
 
-{% set version_number = "1.0.3" %}
+{% set version_number = "1.1.0" %}
 
 {% set blurb %}{% markdown %}
 We've added two new components intended to make Wet Stuff easy to integrate with a weather system. The new `Puddle` component will animate a puddle to realistically accumulate water as it is raining and then animate the puddle to slowly dry out once the rain stops. The new `Drip Line` component will automatically configure a particle system to drip from an edge such as a roofline when it's raining, creating tiny wet splashes where the particles impact.
