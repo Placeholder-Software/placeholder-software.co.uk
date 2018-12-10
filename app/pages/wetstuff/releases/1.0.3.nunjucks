@@ -1,0 +1,26 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "1.0.3" %}
+
+{% set blurb %}{% markdown %}
+We've added two new components intended to make Wet Stuff easy to integrate with a weather system. The new `Puddle` component will animate a puddle to realistically accumulate water as it is raining and then animate the puddle to slowly dry out once the rain stops. The new `Drip Line` component will automatically configure a particle system to drip from an edge such as a roofline when it's raining, creating tiny wet splashes where the particles impact.
+
+To control these components we've released a free new package on the asset store which connects together [Enviro - Sky and Weather](https://assetstore.unity.com/packages/tools/particles-effects/enviro-sky-and-weather-33963?aid=1100lJDF) with [Wet Stuff](https://assetstore.unity.com/packages/tools/particles-effects/wet-stuff-118969?aid=1100lJDF). The puddle and drip line components will automatically react to the Enviro weather as it changes between rain and sun.
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added DripLine component
+ - Added RainPuddle and AutoRainPuddle components
+ - Added [Enviro - Sky and Weather](https://assetstore.unity.com/packages/tools/particles-effects/enviro-sky-and-weather-33963?aid=1100lJDF) to automatically control weather related components
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed copy+paste not working for `Wet Decal` layer settings
+ - Fixed wet particle splatter not spawning enough splatters when recycling them
+ - Removed references to `UnityEditor` in some components, preventing projects which used them from building
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+{% endmarkdown %}{% endblock %}
