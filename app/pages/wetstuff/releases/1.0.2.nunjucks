@@ -1,7 +1,7 @@
 
 {% extends "templates/wetstuff/changelog.nunjucks" %}
 
-{% set version_number = "1.0.1" %}
+{% set version_number = "1.0.2" %}
 
 {% set blurb %}{% markdown %}
 A number of bugfixes for issues reported since the initial release.
