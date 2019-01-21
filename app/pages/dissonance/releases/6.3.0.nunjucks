@@ -1,16 +1,22 @@
 {% extends "templates/dissonance/changelog.nunjucks" %}
 {% import "templates/common/macros/changelog.nunjucks" as changes %}
 
-{% set version_number = "6.2.6" %}
+{% set version_number = "6.3.0" %}
 
 {% set blurb %}{% markdown %}
-With this release we've added support for the new <a href="https://assetstore.unity.com/packages/tools/network/pun-2-free-119922?aid=1100lJDF">PUN2</a> networking system.
+This brings a large number of fixes and small improvements, driven by user feedback.
 
-## Important Note for Unity 2017.3 Users!
+The most significant fix is in regards to the `Audio effect Dissonance Echo Cancellation could not be found` error often encountered on Android. This has been a very long standing issue which has affected users try to use Acoustic Echo Cancellation (AEC) on Android platforms. We have received feedback from Unity about a potential fix for this problem - if you have encountered it in the past please see [this issue](https://github.com/Placeholder-Software/Dissonance/issues/110#issuecomment-450366709) for details on how to fix it.
 
-Due to a bug in the 2017.3 version of the Unity editor Dissonance will break all Android builds. Dissonance includes two sets of files for Android for two different CPU architectures (x86 and ARM) - the editor bug deploys _both_ of these files for ARM builds and neither of these files for x86 builds!
+## Ongoing Support for Outdated Unity Versions
+At GDC 2018 Unity introduced [a new plan](https://blogs.unity3d.com/2018/04/09/new-plans-for-unity-releases-introducing-the-tech-and-long-term-support-lts-streams/) for release streams; The TECH stream and the Long Term Support (LTS) Stream. The TECH stream consists of three cutting edge releases a year, the LTS stream consists of the final TECH version each year and is supported for two years after that. Support for TECH versions is very short - as soon as the next TECH version goes live the previous TECH version is no longer supported. We've decided to update our version support to be more similar to how Unity operates.
 
-This issue has been fixed in Unity 2017.4 LTS, so the best fix is simply to upgrade your editor version. If you cannot do this simply go into `Assets/Plugins/Dissonance/Plugins/Android/x86` and _disable_ or _delete_ `libopus.so` and `libAudioPluginsDissonance.so`.
+We will support:
+ - All LTS versions currently supported by Unity.
+ - All TECH versions after the latest LTS version (note that this is slightly more than Unity supports).
+
+This means that Dissonance `6.3.0` will be the final version of Dissonance submitted to the asset store for `Unity 5.6`, `Unity 2017.1`, `Unity 2017.2` and `Unity 2017.3`.
+
 {% endmarkdown %}{% endset %}
 
 {% block integrations %}
@@ -123,12 +129,20 @@ This issue has been fixed in Unity 2017.4 LTS, so the best fix is simply to upgr
 {% endblock %}
 
 {% block features %}{% markdown %}
- - Added PUN2 networking integration.
- - `AudioQuality` and `FrameSize` can now be set at any time (although changed will not take place until you disconnect and reconnect).
- - Added extra monitoring on network receiver for terrible network conditions (bad enough to disrupt voice). ([#122](https://github.com/Placeholder-Software/Dissonance/issues/122)).
+ - `VoiceBroadcastTrigger` searches up all ancestor gameObjects for `IDissonancePlayer` components, instead of just the current gameObject.
+ - Added support for using the `HlapiPlayerTracker` with server authority.
+ - Added a warning to the `VoiceBroadcastTrigger` inspector that the trigger is disabled if using `Self` broadcast mode and the associated `IDissonancePlayer` is not yet tracking.
+ - Added an `IsMuted` property to `VoiceBroadcastTrigger`.
+ - Added `SubcribeToRecordedAudio` and `UnsubscribeFromRecordedAudio` methods to `DissonanceComms`. These supply preprocessed voice audio to subscribers.
+ - Added `Tiny` option for frame size. This is for low latency voice on **LAN ONLY**, it is not suitable for internet use.
+ - Made some methods in `BasicMicCapture` `virtual` to enable custom mic device setup/teardown. ([#131](https://github.com/Placeholder-Software/Dissonance/issues/131#issuecomment-440685811)).
 {% endmarkdown %}{% endblock %}
 
 {% block bugfixes %}{% markdown %}
- - Fixed losing all voice from a single speaker in some circumstances (most often when they have muted and unmuted themselves). ([#121](https://github.com/Placeholder-Software/Dissonance/issues/121)).
- - Updated Photon BOLT integration to work with latest version of BOLT.
+ - Added a Global `VoiceBroadcastTrigger` that can be toggled on in demo scenes, this makes the demo scenes usable when deployed to a phone.
+ - Fixed AEC not loading on UWP platforms (e.g. hololens). ([#135](https://github.com/Placeholder-Software/Dissonance/issues/135)).
+ - Fixed `HlapiCommsNetwork` inspector sometimes not updating values and consequently displaying misleading values. ([#134](https://github.com/Placeholder-Software/Dissonance/issues/134)).
+ - Fixed Tokens sometimes not being removed.
+ - Clarified UI around room configuration. ([#128](https://github.com/Placeholder-Software/Dissonance/issues/128)).
+ - Fixed Android `Audio effect Dissonance Echo Cancellation could not be found.` Error. See [#110](https://github.com/Placeholder-Software/Dissonance/issues/110#issuecomment-450366709) for details.
 {% endmarkdown %}{% endblock %}
