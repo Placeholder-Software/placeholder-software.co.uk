@@ -6,7 +6,8 @@
 {% set blurb %}{% markdown %}
 This brings a large number of fixes and small improvements, driven by user feedback.
 
-The most significant fix is in regards to the `Audio effect Dissonance Echo Cancellation could not be found` error often encountered on Android. This has been a very long standing issue which has affected users try to use Acoustic Echo Cancellation (AEC) on Android platforms. We have received feedback from Unity about a potential fix for this problem - if you have encountered it in the past please see [this issue](https://github.com/Placeholder-Software/Dissonance/issues/110#issuecomment-450366709) for details on how to fix it.
+## Android AEC Plugin Fix
+The most significant fix is in regards to the `Audio effect Dissonance Echo Cancellation could not be found` error often encountered by developers for Android applications using Acoustic Echo Cancellation (AEC). We have received feedback from Unity about a potential fix for this problem - if you have encountered it in the past please see [this issue](https://github.com/Placeholder-Software/Dissonance/issues/110#issuecomment-450366709) for details on how to fix it.
 
 ## Ongoing Support for Outdated Unity Versions
 At GDC 2018 Unity introduced [a new plan](https://blogs.unity3d.com/2018/04/09/new-plans-for-unity-releases-introducing-the-tech-and-long-term-support-lts-streams/) for release streams; The TECH stream and the Long Term Support (LTS) Stream. The TECH stream consists of three cutting edge releases a year, the LTS stream consists of the final TECH version each year and is supported for two years after that. Support for TECH versions is very short - as soon as the next TECH version goes live the previous TECH version is no longer supported. We've decided to update our version support to be more similar to how Unity operates.
