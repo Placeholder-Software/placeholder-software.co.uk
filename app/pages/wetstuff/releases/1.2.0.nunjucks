@@ -1,0 +1,20 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "1.2.0" %}
+
+{% set blurb %}{% markdown %}
+With this release we've added "normal smoothing", this smooths very wet surfaces to make them look even wetter. This can also help reduce the shimmering as you move around a puddle caused by specular aliasing
+
+<img src="/images/WS/NormalSmoothingToggle.gif" style="width:70%; margin-left:15%;margin-right:15%;"></img>
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added Normal Smoothing
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+ - Single Pass Stereoscopic Rendering (VR) is not fully supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/10).
+{% endmarkdown %}{% endblock %}
