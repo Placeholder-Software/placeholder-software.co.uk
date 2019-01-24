@@ -4,17 +4,21 @@
 {% set version_number = "1.2.0" %}
 
 {% set blurb %}{% markdown %}
-With this release we've added "normal smoothing", this smooths very wet surfaces to make them look even wetter. This can also help reduce the shimmering as you move around a puddle caused by specular aliasing
+With this release we've added two exciting new features: Single Pass Stereo Rendering and Normal Smoothing.
+
+[Single Pass Stereo Rendering](https://docs.unity3d.com/Manual/SinglePassStereoRendering.html) is a rendering feature which Unity supports to speed up rendering on XR applications, when it is enabled Unity renders both left and right eye images at the same time into one single render texture. This is much faster than traditional stereo rendering which renders each eye separately. Wet Stuff now supports rendering in games with this setting turned on. However, there are a lot of different VR SDKs out there with different methods of camera setup and we can't possibly test them all - if you encounter problems with setup on a specific one please open an issue on the [issue tracker](https://github.com/Placeholder-Software/WetSurfaceDecals/issues).
+
+Normal smoothing modifies the "normals" on surfaces which are very wet to make them look smoother, this makes wet surfaces look even wetter. It also acts as a form of anti-aliasing and reduces the shimmering effect you can see as you move around very wet puddles. This is turned on by default, if you want to keep the same look as before you can turn it off in the RenderSettings (accessed through any `Wet Stuff` component).
 
 <img src="/images/WS/NormalSmoothingToggle.gif" style="width:70%; margin-left:15%;margin-right:15%;"></img>
 
 {% endmarkdown %}{% endset %}
 
 {% block features %}{% markdown %}
+ - Added SPSR support for XR Rendering
  - Added Normal Smoothing
 {% endmarkdown %}{% endblock %}
 
 {% block known_issues %}{% markdown %}
  - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
- - Single Pass Stereoscopic Rendering (VR) is not fully supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/10).
 {% endmarkdown %}{% endblock %}
