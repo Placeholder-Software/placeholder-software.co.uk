@@ -20,22 +20,22 @@
   {%- endcall %}
 
   {% call icon_section.left("images/random.svg") -%}
-    <h4>Integrations</h4>
+    <h4 id="integrations">Integrations</h4>
     {% block integrations %}No integrations are available for this version of Dissonance{% endblock %}
   {%- endcall %}
 
   {% call icon_section.right("images/star.svg") -%}
-    <h4>New Features</h4>
+    <h4 id="features">New Features</h4>
     {% block features %}No new features in this release :O{% endblock %}
   {%- endcall %}
 
   {% call icon_section.left("images/bug.svg") -%}
-    <h4>Bug Fixes</h4>
+    <h4 id="bugfixes">Bug Fixes</h4>
     {% block bugfixes %}No bugs fixed in this release...{% endblock %}
   {%- endcall %}
 
   {% call icon_section.right("images/fire.svg") -%}
-    <h4>Known Issues</h4>
+    <h4 id="knownissues">Known Issues</h4>
     {% block known_issues %}No known issues or regressions in this release :D{% endblock %}
   {%- endcall %}
   
