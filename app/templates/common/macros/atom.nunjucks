@@ -1,0 +1,33 @@
+{% macro atom(title, uuid, product_path, news_collection) %}
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+        <title>{{ title }}</title>
+    <id>urn:uuid:{{ uuid }}</id>
+    <updated>{{ now }}</updated>
+    <author>
+        <name>Martin Evans</name>
+        <email>martin@placeholder-software.co.uk</email>
+        <uri>http://martindevans.me</uri>
+    </author>
+        <link href="{{ base_url }}/{{ product_path }}/atom.html" rel="self" />
+        <link href="{{ base_url }}/{{ product_path }}" />
+
+    {% for meta in news_collection | sort(true, false, "timestamp") %}
+        {% import meta.path as post %}
+
+        <entry>
+        <id>{{ base_url }}{{ meta.url }}</id>
+        <title>{{ post.title }}</title>
+        <updated>{{ meta.date.iso }}</updated>
+        <link rel="alternate" href="{{ base_url }}{{ meta.url }}"/>
+        <content>
+            {{ post.body }}
+        </content>
+        </entry>
+
+    {% endfor %}
+
+    </feed>
+
+{% endmacro %}

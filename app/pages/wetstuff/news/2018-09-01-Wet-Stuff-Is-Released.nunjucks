@@ -1,0 +1,10 @@
+{% extends "templates/wetstuff/news.nunjucks" %}
+
+{% set title = "Wet Stuff Is Released" %}
+{% set body %}
+
+<p>We're excited to announce that Wet Stuff is now available on the <a href="https://assetstore.unity.com/packages/tools/particles-effects/wet-stuff-118969?aid=1100lJDF">Unity Asset Store</a> for $18. This price includes all future bugfixes and feature upgrades. Over the next few months we're going to be working on several packages which integrate Wet Stuff with various weather assets which will be available for free to all existing Wet Stuff owners!</p>
+
+<img src="/images/WindridgeOn.jpg" style="width:100%" />
+
+{% endset %}

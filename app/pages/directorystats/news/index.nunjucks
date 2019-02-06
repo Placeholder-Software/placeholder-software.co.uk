@@ -1,0 +1,12 @@
+{% set body_class="news" %}
+{% extends "templates/dissonance/layout.nunjucks" %}
+
+{% import "templates/common/macros/news-index.nunjucks" as news %}
+
+{% block head %}
+  {% call news.news_header("Directory Stats", "directorystats") -%}{%- endcall %}
+{% endblock %}
+
+{% block content %}
+  {% call news.news_body("directorystats", site.directorystats.children.news.children.pages) -%}{%- endcall %}
+{% endblock %}
