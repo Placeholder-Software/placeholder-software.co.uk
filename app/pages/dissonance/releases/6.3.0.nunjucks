@@ -30,15 +30,6 @@ This means that Dissonance `6.3.0` will be the final version of Dissonance submi
     "0.7.1"
   ) -%}{%- endcall %}
   
-  {% call changes.integration(
-    "Playmaker",
-    "PlayMaker",
-    "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
-    "/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
-    1,
-    "1.0.0"
-  ) -%}{%- endcall %}
-  
   {% call changes.integration_semver(
     "Forge Remastered",
     "ForgeNetworkingRemastered",
@@ -46,14 +37,6 @@ This means that Dissonance `6.3.0` will be the final version of Dissonance submi
     "/dissonance/integrations/6.2.4/Dissonance-ForgeNetworkingRemastered-6.2.4.unitypackage",
     6, 2, 4
   ) -%}{%- endcall %}  
-  
-  {% call changes.integration_semver(
-    "Forge",
-    "ForgeNetworking",
-    "Use the Forge Networking (Classic) system to host a Dissonance voice chat session.",
-    "/dissonance/integrations/6.2.4/Dissonance-ForgeNetworking-6.2.4.unitypackage",
-    6, 2, 4
-  ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
     "Photon Unity Networking",
@@ -75,8 +58,8 @@ This means that Dissonance `6.3.0` will be the final version of Dissonance submi
     "UNet (HLAPI)",
     "UNet_HLAPI",
     "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
-    "/dissonance/integrations/6.2.4/Dissonance-UNet_HLAPI-6.2.4.unitypackage",
-    6, 2, 4
+    "/dissonance/integrations/6.3.0/Dissonance-UNet_HLAPI-6.3.0.unitypackage",
+    6, 3, 0
   ) -%}{%- endcall %}
     
   {% call changes.integration_semver(
