@@ -90,8 +90,8 @@ This means that Dissonance `6.3.0` will be the final version of Dissonance submi
     "Dark🗲Rift 2",
     "DarkRift2",
     "Use Dark🗲Rift 2 to host a voice chat session.",
-    "/dissonance/integrations/6.2.4/Dissonance-DarkRift2-6.2.4.unitypackage",
-    6, 2, 4
+    "/dissonance/integrations/6.3.0/Dissonance-DarkRift2-6.3.0.unitypackage",
+    6, 3, 0
   ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
@@ -120,6 +120,7 @@ This means that Dissonance `6.3.0` will be the final version of Dissonance submi
  - Added `SubcribeToRecordedAudio` and `UnsubscribeFromRecordedAudio` methods to `DissonanceComms`. These supply preprocessed voice audio to subscribers.
  - Added `Tiny` option for frame size. This is for low latency voice on **LAN ONLY**, it is not suitable for internet use.
  - Made some methods in `BasicMicCapture` `virtual` to enable custom mic device setup/teardown. ([#131](https://github.com/Placeholder-Software/Dissonance/issues/131#issuecomment-440685811)).
+ - Rebuilt Dark Rift 2 server plugins with Dark Rift 2 `2.3.1`
 {% endmarkdown %}{% endblock %}
 
 {% block bugfixes %}{% markdown %}
