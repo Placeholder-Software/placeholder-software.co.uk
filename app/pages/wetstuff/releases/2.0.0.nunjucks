@@ -1,0 +1,27 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "2.0.0" %}
+
+{% set blurb %}{% markdown %}
+With this release we've updated how the weather components are integrated with third party weather systems to simplify the implementation of new weather integrations in the future. We've also added a new integration for the [Unistorm Dynamic Modular Weather system](https://assetstore.unity.com/packages/tools/particles-effects/unistorm-dynamic-modular-weather-2714?aid=1100lJDF).
+
+##### Breaking Change
+
+Because the internals of the weather integration system have changed this is a breaking change to existing weather integrations. If you are already using the Enviro integration please make sure to install the [new Enviro Package](https://assetstore.unity.com/packages/tools/particles-effects/wet-stuff-for-enviro-133615?aid=1100lJDF) (version 2.0.0) from the asset store.
+
+<img src="/images/WindridgeOn.jpg" style="width:70%; margin-left:15%;margin-right:15%;"></img>
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - New 'UniStorm' weather integration [available on the asset store](https://assetstore.unity.com/packages/slug/139760?aid=1100lJDF).
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed incorrect specular buffer on OpenGL.
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+{% endmarkdown %}{% endblock %}
