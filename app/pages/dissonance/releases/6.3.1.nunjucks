@@ -123,7 +123,7 @@ This has been one of the [most requested features](https://github.com/Placeholde
 {% block features %}{% markdown %}
  - Added support for Magic Leap.
  - Added Mirror networking integration.
- - Added ARM64 binaries for Android (not used by default).
+ - Added ARM64 binaries for Android.
  - Improved menu structure (Window > Dissonance)
 {% endmarkdown %}{% endblock %}
 
