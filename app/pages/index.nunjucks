@@ -19,6 +19,6 @@
         <svg class="section-header directorystats" viewBox="0 0 125 20">
             <text x="0" y="15" style="font-family: Roboto; width: 100%;">Directory Stats</text>
         </svg>
-        <h3>Enhance The Unity Project Browser.</h3>
+        <h3>Enhance The Unity File Browser.</h3>
     {%- endcall %} #}
 {% endblock %}

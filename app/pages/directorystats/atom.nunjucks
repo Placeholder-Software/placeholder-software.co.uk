@@ -1,2 +1,0 @@
-{% import "templates/common/macros/atom.nunjucks" as atom %}
-{% call atom.atom("DirectoryStats", "00e5b950-eb7c-4c9e-82e1-d37d60b2d378", "directorystats", site.directorystats.children.news.children.pages) -%}{%- endcall %}
