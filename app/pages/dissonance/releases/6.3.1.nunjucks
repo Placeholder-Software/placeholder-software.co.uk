@@ -74,8 +74,8 @@ This has been one of the [most requested features](https://github.com/Placeholde
     "Mirror Networking",
     "MirrorIgnorance",
     "Use Mirror Networking with the Ignorance backend to host a voice chat session.",
-    "/dissonance/integrations/6.3.1/Dissonance-MirrorIgnorance-6.3.1.unitypackage",
-    6, 3, 1
+    "/dissonance/integrations/6.3.1/Dissonance-MirrorIgnorance-6.3.2.unitypackage",
+    6, 3, 2
   ) -%}{%- endcall %}
 
   {% call changes.integration_semver(
