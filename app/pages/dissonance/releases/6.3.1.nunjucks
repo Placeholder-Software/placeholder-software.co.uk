@@ -58,7 +58,7 @@ This has been one of the [most requested features](https://github.com/Placeholde
     "UNet (HLAPI)",
     "UNet_HLAPI",
     "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
-    "/dissonance/integrations/6.3.0/Dissonance-UNet_HLAPI-6.3.0.unitypackage",
+    "/dissonance/integrations/6.3.1/Dissonance-UNet_HLAPI-6.3.1.unitypackage",
     6, 3, 0
   ) -%}{%- endcall %}
     
