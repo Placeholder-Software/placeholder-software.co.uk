@@ -98,8 +98,8 @@ This has been one of the [most requested features](https://github.com/Placeholde
     "Dark🗲Rift 2",
     "DarkRift2",
     "Use Dark🗲Rift 2 to host a voice chat session.",
-    "/dissonance/integrations/6.3.0/Dissonance-DarkRift2-6.3.0.unitypackage",
-    6, 3, 0
+    "/dissonance/integrations/6.3.1/Dissonance-DarkRift2-6.3.1.unitypackage",
+    6, 3, 1
   ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
