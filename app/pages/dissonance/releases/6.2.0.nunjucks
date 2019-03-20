@@ -7,7 +7,7 @@
 
 <p>This release includes a new network integration for Dark Rift2 as well as some improvements to audio quality in the face of poor network conditions.</p>
 
-<h6>Dark🗲Rift 2</h6>
+<h6>Dark Rift 2</h6>
 
 <p>We've added a brand new network integration bringing Dissonance to the the <a href="https://darkriftnetworking.com/DarkRift2">Dark Rift 2</a> networking system! Dark Rift 2 is a fast and highly optimised networking system which made it perfect for transmitting voice data.</p>
 
@@ -99,15 +99,15 @@
   ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
-    "Dark🗲Rift 2",
+    "Dark Rift 2",
     "DarkRift2",
-    "Use Dark🗲Rift 2 to host a voice chat session.",
+    "Use Dark Rift 2 to host a voice chat session.",
     "/dissonance/integrations/6.2.0/Dissonance-DarkRift2-6.2.0.unitypackage",
     6, 2, 0
   ) -%}{%- endcall %}
   
   {% call changes.integration_semver(
-    "Dark🗲Rift 2 (Server Source)",
+    "Dark Rift 2 (Server Source)",
     "DarkRift2-ServerSource",
     "Source code for the DR2 server plugins (precompiled plugins included in basic DR2 download).",
     "/dissonance/integrations/6.2.0/Dissonance-DarkRift2-ServerSource-6.2.0.zip",
