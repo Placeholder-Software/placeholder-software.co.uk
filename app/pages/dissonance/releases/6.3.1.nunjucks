@@ -16,7 +16,7 @@ This has been a big effort involving magic leap engineers helping us develop the
 
 We've added support for [Mirror Networking](https://github.com/vis2k/Mirror) - a community replacement for the deprecated Unity HLAPI. Thankyou to [BigBoxVR](https://www.bigboxvr.com/) for sponsoring the development of this integration.
 
-This has been one of the [most requested features](https://github.com/Placeholder-Software/Dissonance/issues/138) in recent months. We first looked a this [back in October](https://github.com/Placeholder-Software/Dissonance/issues/124) and determined that this wasn't possible because Mirror only supported TCP, which is unsuitable for voice comms. However since then the [Ignorance UDP backend](https://github.com/SoftwareGuy/Ignorance/) for Mirror has been developed, this adds support for unreliable packets over UDP and is perfect for voice comms. **Using this integration requires the use of the Ignorance backend**.
+This has been one of the [most requested features](https://github.com/Placeholder-Software/Dissonance/issues/138) in recent months. We first looked a this [back in October](https://github.com/Placeholder-Software/Dissonance/issues/124) and determined that this wasn't possible because Mirror only supported TCP, which is unsuitable for voice comms. However since then the [Ignorance UDP backend](https://github.com/SoftwareGuy/Ignorance/) and [LiteNetLib4Mirror](https://github.com/MichalPetryka/LiteNetLib4Mirror) backend have been released, these add support for unreliable packets over UDP and are perfect for voice comms. **Using this integration requires the use of a UDP backend**.
 
 {% endmarkdown %}{% endset %}
 
