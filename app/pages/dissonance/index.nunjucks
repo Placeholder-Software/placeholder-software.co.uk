@@ -73,11 +73,12 @@
       </table>
 
       {% call feature_table("Audio Quality", "glyphicon-headphones") %}
-        {{ feature_row("Noise Attenuation", "Reduces noise without reducing voice", true, false) }}
-        {{ feature_row("Automatic Gain Control", "All speakers sound the same volume", true, false) }}
+        {{ feature_row("Noise Attenuation", "Reduces noise without reducing voice", true, true) }}
+        {{ feature_row("Automatic Gain Control", "All speakers sound the same volume", true, true) }}
         {{ feature_row("Soft Clipping", "No clipped audio, ever", true, false) }}
         {{ feature_row("Adaptive Playback", "Automatically compensate small network desync", true, false) }}
-        {{ feature_row("Acoustic Echo Cancellation", "Prevents your microphone from recording your speakers", true, false) }}
+        {{ feature_row("Acoustic Echo Cancellation", "Prevents your microphone from recording your speakers", true, true) }}
+        {{ feature_row("Forward Error Correction", "Improve voice quality in bad network conditions", true, false) }}
       {%- endcall %}
 
       {% call feature_table("Features", "glyphicon-flash") %}
@@ -89,15 +90,18 @@
       {%- endcall %}
 
       {% call feature_table("Networking", "glyphicon-random") %}
-        {{ feature_row("Peer-To-Peer Voice", "Reduce latency by communicating peer to peer on networks which support it", true, false, "") }}
+        {{ feature_row("Peer-To-Peer Voice", "Reduce latency by communicating peer to peer on networks which support it", true, true, "") }}
         {{ feature_row("Custom Networking System", "Use any custom network system with a little scripting", true, false) }}
-        {{ feature_row("Built In UNet", "", true, false) }}
-        {{ feature_row("Built In Forge Classic", "", true, false) }}
+        {{ feature_row("Built In UNet HLAPI", "", true, false) }}
+        {{ feature_row("Built In UNet LLAPI", "", true, false) }}
         {{ feature_row("Built In Forge Remastered", "", true, false) }}
-        {{ feature_row("Built In Photon Unity Networking", "", true, true, "") }}
-        {{ feature_row("Built In Photon BOLT", "", true, false, "") }}
+        {{ feature_row("Built In Photon Unity Networking (Classic)", "", true, true, "") }}
+        {{ feature_row("Built In Photon Unity Networking 2", "", true, true, "") }}
+        {{ feature_row("Built In Photon BOLT", "", true, true, "") }}
         {{ feature_row("Built In Steamworks.Net P2P", "", true, false, "") }}
         {{ feature_row("Built In DarkRift2", "", true, false, "") }}
+        {{ feature_row("Built In Mirror", "", true, false, "") }}
+        {{ feature_row("Built In WebRTC Network", "", true, false, "") }}
       {%- endcall %}
 
       {% call feature_table("Platform Support", "", "glyphicon-hdd") %}
@@ -106,6 +110,7 @@
         {{ feature_row("Android", "", true, true) }}
         {{ feature_row("iOS", "", true, true) }}
         {{ feature_row("MacOS", "", true, true) }}
+        {{ feature_row("Magic Leap", "", true, false) }}
       {%- endcall %}
     
     </div>
