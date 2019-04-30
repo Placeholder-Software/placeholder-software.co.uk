@@ -15,6 +15,13 @@
   </div>
 {% endmacro %}
 
+{% macro integration_store(title, id, description, url) %}
+  <div a="{{ id }}" class="integration">
+    <h5 class="title"><a href="{{ url }}" title="Download {{ title }} integration">{{ title }}</a></h5>
+    <div class="description">{{ description }}</div>
+  </div>
+{% endmacro %}
+
 {% macro highlight_from_url_query() %}
 <script>
   function get_url_param(name) {

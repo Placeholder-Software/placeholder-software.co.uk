@@ -1,0 +1,40 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.4.0" %}
+
+{% set blurb %}{% markdown %}
+
+With this release we've made a major change to the way the Dissonance network integrations are distributed - there's now a separate store page for each different integration. We hope that this will make the various integrations more discoverable than hiding them away on the release notes! Check out the new store pages:
+ * <a href="https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF">UNet HLAPI</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143289?aid=1100lJDF">UNet LLAPI</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF">Mirror</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF">Dark Rift 2</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF">Forge Remastered</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF">Photon Unity Networking (Classic)</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF">Photon Unity Networking 2</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF">Photon BOLT</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143292?aid=1100lJDF">Steamworks.NET (P2P)</a>
+ * <a href="https://assetstore.unity.com/packages/slug/143294?aid=1100lJDF">WebRTC Network (P2P)</a>
+ * <a href="https://dissonance.readthedocs.io/en/latest/Tutorials/Custom-Networking/index.html">Custom scripted network backend</a>
+ * <a href="https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/">SALSA Lip Sync</a>
+
+Of course that's not the only change in this version! We've made a lot of small tweaks and fixes to Dissonance over the last two months; including a reduction to the minimum size of the jitter buffer which will reduce the latency of voice chat in perfect network conditions for everyone, improvements to how Dissonance handles missing DLLs (due to incorrect installation) and a way to detect if the DLLs are missing at runtime.
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added an archive with a complete copy of the online documentation (usable offline).
+ - New welcome window which links directly to the integration store pages.
+ - Reduced the minimum size of the jitter buffer, improving latency of voice chat in perfect network conditions.
+ - Improved handling of missing or incorrectly installed DLLs (Dissonance will no longer crash, but some functionality will be disabled).
+ - Added `DissonanceComms.TestDependencies` method, checks if DLLs are loaded at runtime.
+ - Added a warning if a Dissonance playback `AudioSource` is muted.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Properly resetting voice capture system when microphone/speakers are unplugged and then plugged back in.
+ - Fixed forced resetting (`DissonanceComms.ResetMicrophoneCapture`) of the voice capture pipeline so that it can recover from unhandled exceptions.
+ - Fixed `VoiceBroadcastTrigger`/`VoiceReceiptTrigger` inspector UI being drawn off screen when an invalid room was selected.
+ - Fixed `VoicePlayerState:IsConnected` to return correct value for local player (instead of always returning `true`).
+{% endmarkdown %}{% endblock %}

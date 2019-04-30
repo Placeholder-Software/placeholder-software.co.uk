@@ -1,0 +1,121 @@
+{% extends "templates/dissonance/layout.nunjucks" %}
+{% import "templates/common/macros/icon-section.nunjucks" as icon_section %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% block content %}
+
+  {% call icon_section.header2("vn", "left") -%}
+    Version {{ version_number }}
+  {%- endcall %}
+
+  {% call icon_section.center() -%}  
+    {% if critical_bug_alert %}
+      <h6>Critical Alert!</h6>
+      {{ critical_bug_alert | safe }}
+      <br />
+      <br />
+    {% endif %}
+  
+    {{ blurb | safe }}
+  {%- endcall %}
+
+  {% call icon_section.left("images/random.svg") -%}
+    <h4 id="integrations">Integrations</h4>
+    {% block integrations %}
+      
+      {% call changes.integration_store(
+        "UNet (HLAPI)",
+        "UNet_HLAPI",
+        "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "UNet (LLAPI)",
+        "UNet_LLAPI",
+        "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
+        "https://assetstore.unity.com/packages/slug/143289?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Mirror Networking",
+        "MirrorIgnorance",
+        "Use Mirror Networking with a UDP backend to host a voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Dark Rift 2",
+        "DarkRift2",
+        "Use Dark Rift 2 to host a voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Forge Remastered",
+        "ForgeNetworkingRemastered",
+        "Use the Forge Remastered Networking system to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF"
+      ) -%}{%- endcall %}  
+
+      {% call changes.integration_store(
+        "Photon Unity Networking",
+        "PhotonUnityNetworking",
+        "Use PUN to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Photon Unity Networking 2",
+        "PhotonUnityNetworking2",
+        "Use PUN2 to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Photon Bolt",
+        "PhotonBolt",
+        "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Steamworks.NET P2P",
+        "SteamworksP2P",
+        "Use Steamworks.NET to host a peer to peer voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143292?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "WebRTC Network",
+        "PureP2P",
+        "Peer to Peer voice what using WebRTC Network asset",
+        "https://assetstore.unity.com/packages/slug/143294?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "SALSA Lip Sync",
+        "SALSA",
+        "Realtime automatic lip synchronisation for Dissonance speaking using SALSA.",
+        "https://crazyminnowstudio.com/unity-3d/lip-sync-salsa/downloads/"
+      ) -%}{%- endcall %}
+
+    {% endblock %}
+  {%- endcall %}
+
+  {% call icon_section.right("images/star.svg") -%}
+    <h4 id="features">New Features</h4>
+    {% block features %}No new features in this release :O{% endblock %}
+  {%- endcall %}
+
+  {% call icon_section.left("images/bug.svg") -%}
+    <h4 id="bugfixes">Bug Fixes</h4>
+    {% block bugfixes %}No bugs fixed in this release...{% endblock %}
+  {%- endcall %}
+
+  {% call icon_section.right("images/fire.svg") -%}
+    <h4 id="knownissues">Known Issues</h4>
+    {% block known_issues %}No known issues or regressions in this release :D{% endblock %}
+  {%- endcall %}
+  
+{% endblock %}
