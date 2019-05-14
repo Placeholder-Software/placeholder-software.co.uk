@@ -1,0 +1,20 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.4.1" %}
+
+{% set blurb %}{% markdown %}
+
+With this release we've fixed a critical issue in Dissonance which caused native dependencies (opus.dll) to intermittently fail to load in player builds (about 10% of the time). If you have Dissonance 6.4.0 installed please update immediately.
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added additional detail to profiler inside Dissonance.
+ - Slightly reduced startup time of Dissonance.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Added a workaround for a Unity bug which was causing opus not to load in player builds about 10% of the time.
+ - Fixed obsoletion warning in Unity 2018.3 and higher caused by using an obsolete method in an inspector.
+{% endmarkdown %}{% endblock %}
