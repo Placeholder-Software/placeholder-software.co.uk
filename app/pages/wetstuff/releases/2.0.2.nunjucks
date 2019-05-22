@@ -1,0 +1,17 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "2.0.2" %}
+
+{% set blurb %}{% markdown %}
+This release includes two small fixes to bugs reported by users. If you've encountered issues with Wet Stuff please tell us on the issue tracker and we'll fix them as quickly as possible!
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed normal smoothing blur kernel Y-axis scaling. Very slight improvement in appearance of very wet surfaces.
+ - Fixed Enviro integration demo scenes to support `Enviro 2.1.2`.
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+{% endmarkdown %}{% endblock %}

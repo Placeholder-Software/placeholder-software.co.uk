@@ -34,8 +34,8 @@
     </{{element}}>
 {% endmacro %}
 
-{% macro right(icon, subtitle='', left=6, right=6, class="", element="section", attrs="") %}
-    <{{element}} class="icon-section icon-section-right {{ class }}" {{ attrs }}>
+{% macro right(icon, subtitle='', left=6, right=6, class="", element="section", attrs="", href="") %}
+    <{{element}} class="icon-section icon-section-right {{ class }}" {{ attrs }} href="{{ href }}">
         <div class="container">
             <div class="row vertical-center-row">
                 <div class="col-sm-{{left}} hidden-xs text-center icon-section-icon">

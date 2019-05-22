@@ -13,12 +13,11 @@
         <h3>Instantly Make Any Surface Appear Wet.</h3>
     {%- endcall %}
 
-    {# {% call icon_section.right("images/folder-plus.svg", left=4, right=8, element="a", attrs='href=/directorystats') -%}
-
-        <!-- This SVG needs to be scaled by hand to ensure it fits the text into the area correctly. The advantage of this is the text auto scales as the container changes size -->
-        <svg class="section-header directorystats" viewBox="0 0 125 20">
-            <text x="0" y="15" style="font-family: Roboto; width: 100%;">Directory Stats</text>
+    {% call icon_section.right("images/fancy-icon.svg", left=4, right=8, element="a", href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF") -%}
+        {# This SVG needs to be scaled by hand to ensure it fits the text into the area correctly. The advantage of this is the text auto scales as the container changes size #}
+        <svg class="section-header fancyfolders" viewBox="0 0 125 20">
+            <text x="0" y="15" style="font-family: Roboto; width: 100%;">Fancy Folders</text>
         </svg>
         <h3>Enhance The Unity File Browser.</h3>
-    {%- endcall %} #}
+    {%- endcall %}
 {% endblock %}
