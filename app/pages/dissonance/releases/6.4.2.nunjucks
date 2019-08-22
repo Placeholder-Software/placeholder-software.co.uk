@@ -1,0 +1,19 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.4.2" %}
+
+{% set blurb %}{% markdown %}
+
+This release brings some minor bugfixes and makes the microphone more convenient to use with the Android permission system.
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added a runtime check for microphone permissions on Android.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed PUN2 integration sometimes not correctly starting player tracking.
+ - Expanded capacity of collider trigger (preventing some allocations in scenes with many players).
+{% endmarkdown %}{% endblock %}
