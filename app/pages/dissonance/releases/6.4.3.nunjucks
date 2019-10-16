@@ -1,0 +1,26 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.4.3" %}
+
+{% set blurb %}{% markdown %}
+
+This release completes some long standing feature requests such as support for assembly definitions and the ability to change the voice detector sensitivity.
+
+We're also launching our new [Placeholder Software Discord Server](https://discord.gg/8dKpP5W)! Hop in and chat to us about Dissonance or any of our other assets.
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added support for changing the sensitivity of the Voice Activation Detector.
+ - Added assembly definitions ([#161](https://github.com/Placeholder-Software/Dissonance/issues/161)).
+ - Added support for [TNet3](https://assetstore.unity.com/packages/slug/154374?aid=1100lJDF) networking backend.
+ - Added a [Discord Server](https://discord.gg/bBr4Ze) link to the Dissonance menu.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed a potential multithreading issue in network send queue.
+ - Suppressed excessive log messages from audio preprocessor ([#147](https://github.com/Placeholder-Software/Dissonance/issues/147)).
+ - Fixed a misleading error message from PUN2 player tracking.
+ - Added a check for the microphone stopping due to another application taking exclusive  control ([#165](https://github.com/Placeholder-Software/Dissonance/issues/165)).
+{% endmarkdown %}{% endblock %}

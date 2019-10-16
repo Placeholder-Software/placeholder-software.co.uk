@@ -59,6 +59,13 @@
       ) -%}{%- endcall %}  
 
       {% call changes.integration_store(
+        "TNet 3",
+        "TNet3",
+        "Use the TNet3 networking system to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/154374?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
         "Photon Unity Networking",
         "PhotonUnityNetworking",
         "Use PUN to host a Dissonance voice chat session.",
