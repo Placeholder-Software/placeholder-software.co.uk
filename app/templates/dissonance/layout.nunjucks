@@ -37,9 +37,10 @@
             <li><a href="/dissonance/docs" target="_blank">Docs</a></li>
             <li><a href="/dissonance/news">News</a></li>
             <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Community</a></li>
+            <li><a href="https://placeholder-software.co.uk/discord" target="_blank">Discord Chat</a></li>
             <li><a href="https://github.com/Placeholder-Software/Dissonance" target="_blank">Github</a></li>
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
-            <li><a href="https://assetstore.unity.com/packages/tools/audio/dissonance-voice-chat-70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Dissonance</a></li>
+            <li><a href="https://assetstore.unity.com/packages/slug/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Dissonance</a></li>
           </ul>
 
           <ul class="nav navbar-nav">
@@ -95,6 +96,7 @@
             <ul class="footer-list">
               <li><a href="https://github.com/Placeholder-Software/Dissonance/issues" target="_blank">Submit an Issue</a></li>
               <li><a href="mailto:admin@placeholder-software.co.uk">Contact Us</a></li>
+              <li><a href="https://placeholder-software.co.uk/discord" target="_blank">Discord Chat</a></li>
               <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Discuss</a></li>
               <li><a href="https://twitter.com/placeholdersoft">Twitter</a></li>
             </ul>

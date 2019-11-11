@@ -36,8 +36,10 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
-            <li><a href="https://www.assetstore.unity3d.com/#!/content/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Dissonance</a></li>
-            <li><a href="https://assetstore.unity.com/packages/tools/particles-effects/wet-stuff-118969?aid=1100lJDF" target="_blank" class="buy-link">Buy Wet Stuff</a></li>
+            <li><a href="https://placeholder-software.co.uk/discord" target="_blank" class="visible-xs">Chat on Discord</a></li>
+            <li><a href="https://assetstore.unity.com/packages/slug/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Dissonance</a></li>
+            <li><a href="https://assetstore.unity.com/packages/slug/118969?aid=1100lJDF" target="_blank" class="buy-link">Buy Wet Stuff</a></li>
+            <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF" target="_blank" class="buy-link">Buy Fancy Folders</a></li>
           </ul>
 
           <ul class="nav navbar-nav">
@@ -66,6 +68,7 @@
             <h4>Connect</h4>
             <ul class="footer-list">
               <li><a href="mailto:admin@placeholder-software.co.uk">Contact Us</a></li>
+              <li><a href="https://placeholder-software.co.uk/discord">Discord</a></li>
               <li><a href="https://twitter.com/placeholdersoft">Twitter</a></li>
               <li><a href="https://www.youtube.com/channel/UCZXN3n6Etm7wgwkSYiuP6jA">YouTube</a></li>
               <li><a href="/">Placeholder Software</a></li>
@@ -76,6 +79,7 @@
             <ul class="footer-list">
               <li><a href="/dissonance">Dissonance</a></li>
               <li><a href="/wetstuff">Wet Stuff</a></li>
+              <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF">Fancy Folders</a></li>
             </ul>
           </div>
           <div class="col-xs-12 col-sm-4">
