@@ -3,7 +3,7 @@
 {% set head_title = "Wet Stuff" %}
 {% set favicon = "/images/wetstuff.png" %}
 
-{% set docs_url = "/wetstuff/docs" %}
+{% set docs_url = "/wetstuff/docs/" %}
 {% set news_url = "/wetstuff/news" %}
 {% set discuss_url = "/wetstuff/community" %}
 {% set tracker_url = "https://github.com/Placeholder-Software/WetSurfaceDecals" %}

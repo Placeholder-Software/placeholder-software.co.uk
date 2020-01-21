@@ -1,0 +1,22 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.4.4" %}
+
+{% set blurb %}{% markdown %}
+
+This release fixes some issues which have been reported by users of Dissonance.
+
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Improved live VU meter in inspectors.
+ - Improved channel listing for local/remote players in `DissonanceComms` inspector.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed flickering cursor when `DissonanceComms` inspector is open.
+ - Removed support for i386 from MacOS binaries (this platform is no longer supported by Apple).
+{% endmarkdown %}{% endblock %}
