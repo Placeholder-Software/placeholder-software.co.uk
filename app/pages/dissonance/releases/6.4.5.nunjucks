@@ -1,0 +1,22 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.4.5" %}
+
+{% set blurb %}{% markdown %}
+
+This release fixes some issues which have been reported by users of Dissonance.
+
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Updated Photon BOLT integration to latest asset store version.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed some inspectors not working when editing an unopened prefab. ([#179](https://github.com/Placeholder-Software/Dissonance/issues/179))
+ - Fixed editor crashing on MacOS when inspecting the AEC filter (Unity Regression). ([#177](https://github.com/Placeholder-Software/Dissonance/issues/177))
+ - Fixed room selection (`VoiceBroadcastTrigger`/`VoiceReceiptTrigger`) not working as expected when a room is deleted.
+{% endmarkdown %}{% endblock %}
