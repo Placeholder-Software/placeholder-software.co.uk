@@ -1,0 +1,16 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "6.4.6" %}
+
+{% set blurb %}{% markdown %}
+
+This is a hotfix for an issue reported in version `6.4.5`.
+
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed a null reference exception in the DissonanceComms inspector. ([#180](https://github.com/Placeholder-Software/Dissonance/issues/180))
+{% endmarkdown %}{% endblock %}
