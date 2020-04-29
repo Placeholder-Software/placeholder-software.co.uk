@@ -12,7 +12,7 @@ If you find an issue in Dissonance or want to request a new feature please repor
 {% block features %}{% markdown %}
  - Improved VU meter used in inspectors.
  - Upgraded `Dark Rift 2` integration to use the latest version of `Dark Rift 2`.
-{% endmarkdown %}{% endblock }
+{% endmarkdown %}{% endblock %}
 
 {% block bugfixes %}{% markdown %}
  - Fixed `DllImport` of native plugins on MacOS in Unity `2019.x`.
