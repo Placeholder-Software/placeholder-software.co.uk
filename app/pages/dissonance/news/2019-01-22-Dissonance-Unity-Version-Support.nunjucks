@@ -12,7 +12,7 @@ Right now that means we support:
  - `Unity 2018.2`
  - `Unity 2018.3` (latest TECH)
 
-Consequently this means that Dissonance [6.3.0]({{ base_path }}/Dissonance/Releases/6.3.0.html) is the final release to be submitted to the asset store for:
+Consequently this means that Dissonance [6.3.0]({{ base_path }}/dissonance/releases/6.3.0.html) is the final release to be submitted to the asset store for:
  - `Unity 5.6`
  - `Unity 2017.1`
  - `Unity 2017.2`
