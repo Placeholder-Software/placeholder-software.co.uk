@@ -111,7 +111,7 @@
     function onPlayerStateChange(event) {
       if (event.data == YT.PlayerState.ENDED) {
         player.destroy();
-        $("#video_img").attr("src", "/images/DemoReelEndCard.png");
+        $("#video_img").attr("src", "/images/DemoReelEndCard.jpg");
       }
     }
   </script>
