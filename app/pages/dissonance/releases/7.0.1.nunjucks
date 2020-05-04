@@ -1,7 +1,7 @@
 {% extends "templates/dissonance/changelog2.nunjucks" %}
 {% import "templates/common/macros/changelog.nunjucks" as changes %}
 
-{% set version_number = "7.0.0" %}
+{% set version_number = "7.0.1" %}
 
 {% set blurb %}{% markdown %}
 As of [April 20th 2020](https://blogs.unity3d.com/2020/04/08/the-2-year-support-for-the-first-lts-release-2017-4-ends-in-april-2020/) `Unity 2017.4 LTS` has reached the end of it's support lifetime. This release of Dissonance removes support for `Unity 2017.4 LTS`, the minimum supported version is now `Unity 2018.4 LTS`.
@@ -17,6 +17,7 @@ If you find an issue in Dissonance or want to request a new feature please repor
 {% block bugfixes %}{% markdown %}
  - Fixed `DllImport` of native plugins on MacOS in Unity `2019.x`.
  - Fixed a spelling error in `DissonanceComms.SubcribeToRecordedAudio` method, use `DissonanceComms.SubscribeToRecordedAudio` instead.
+ - Fixed an issue with `DissonanceComms.IsMuted = false` not applying instantly.
  - Removed `#if UNITY_EDITOR` blocks around some serialized state which would cause warnings to be spammed in player builds.
 {% endmarkdown %}{% endblock %}
 
