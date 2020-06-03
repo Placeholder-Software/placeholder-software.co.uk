@@ -1,0 +1,23 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "7.0.2" %}
+
+{% set blurb %}{% markdown %}
+Due to a regression in how Unity applies spatializers this release has **removed** support for external spatialization plugins such as the Oculus Spatializer. Voice audio will still be spatialized, but it will always use the built in spatialization. Please see [this issue](https://github.com/Placeholder-Software/Dissonance/issues/188) for details. This issue has been acknowledged by Unity, if it's fixed in a future version of the Editor we will enable support for spatialization again in compatible Editor versions.
+
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Using a higher precision timer for playback jitter compensation.
+ - Reduced playback latency in very stable network conditions.
+ - Slightly improved quality of audio in unstable network conditions.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed import problems with plugins on MacOS [#193](https://github.com/Placeholder-Software/Dissonance/issues/193).
+ - Resolved issue with spatialized playback [#188](https://github.com/Placeholder-Software/Dissonance/issues/188).
+ - Fixed poor audio quality in two person chat caused by occasional packet loss.
+{% endmarkdown %}{% endblock %}
+
