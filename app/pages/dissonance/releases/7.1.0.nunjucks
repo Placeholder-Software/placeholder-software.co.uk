@@ -1,0 +1,19 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "7.1.0" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Improved Automatic Gain Control handling of long periods of silence.
+ - Softly applying audio duck attenuation over a short period of time.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed microphone inspector not being easily extensible for new microphone systems.
+ - Fixed a rare issue where sent voice packets could be discarded. Resulting in no speech being heard.
+{% endmarkdown %}{% endblock %}
+
