@@ -31,13 +31,6 @@
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(
-        "UNet (LLAPI)",
-        "UNet_LLAPI",
-        "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
-        "https://assetstore.unity.com/packages/slug/143289?aid=1100lJDF"
-      ) -%}{%- endcall %}
-
-      {% call changes.integration_store(
         "Mirror Networking",
         "MirrorIgnorance",
         "Use Mirror Networking with a UDP backend to host a voice chat session.",
