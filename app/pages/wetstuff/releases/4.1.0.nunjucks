@@ -1,0 +1,22 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "4.1.0" %}
+
+{% set blurb %}{% markdown %}
+As of [April 20th 2020](https://blogs.unity3d.com/2020/04/08/the-2-year-support-for-the-first-lts-release-2017-4-ends-in-april-2020/) `Unity 2017.4 LTS` has reached the end of it's support lifetime. This release of Wet Stuff removes support for `Unity 2017.4 LTS`, the minimum supported version is now `Unity 2018.4 LTS`.
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added `Mesh` mode to decals which allows you to use any mesh as the base shape of a decal.
+ - Added additional warnings when camera is misconfigured.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed demo scene 4 not emitting any particles.
+ - Fixed potential null reference error in decal culling system
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+{% endmarkdown %}{% endblock %}
