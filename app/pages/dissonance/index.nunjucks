@@ -94,7 +94,6 @@
         {{ feature_row("Peer-To-Peer Voice", "Reduce latency by communicating peer to peer on networks which support it", true, false, "") }}
         {{ feature_row("Custom Networking System", "Use any custom network system with a little scripting", true, false) }}
         {{ feature_row("Built In UNet HLAPI", "", true, false) }}
-        {{ feature_row("Built In UNet LLAPI", "", true, false) }}
         {{ feature_row("Built In Forge Remastered", "", true, false) }}
         {{ feature_row("Built In Photon Unity Networking (Classic)", "", true, true, "") }}
         {{ feature_row("Built In Photon Unity Networking 2", "", true, true, "") }}
