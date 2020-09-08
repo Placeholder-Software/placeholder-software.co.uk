@@ -16,7 +16,7 @@ module.exports = {
     },
 
     autoprefixer: {
-        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
+        overrideBrowserslist: ['> 1%', 'last 2 versions', 'Firefox ESR']
     },
 
     copy: {

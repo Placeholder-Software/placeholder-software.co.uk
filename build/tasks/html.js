@@ -28,7 +28,7 @@ module.exports = ($, gulp, config) => () => {
             searchPath: ['.tmp', '.'],
         }))
         .pipe(cache('html_file_preprocessing'))
-        .pipe($.if('*.js', $.uglify()))
+        //.pipe($.if('*.js', $.uglify()))
         .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
         .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
         .pipe(flatmap((stream, file) => { console.log(file.path); return stream; }))

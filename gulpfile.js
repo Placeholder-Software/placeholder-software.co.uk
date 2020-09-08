@@ -14,14 +14,19 @@ gulp.task('styles', require("./build/tasks/styles.js")($, gulp, config));
 gulp.task('scripts', require("./build/tasks/scripts.js")($, gulp, config));
 
 //Create a pre-html task which runs the HTML task depenedencies in parallel. Then depend on that in the HTML task
-gulp.task('pre-html', (cb) => $.multiProcess(['styles', 'scripts'], cb, true));
-gulp.task('html', ['pre-html'], require("./build/tasks/html.js")($, gulp, config));
-
-//Default action runs the build after cleaning the output directory. Once completed print out summary information about the build result.
-gulp.task('default', ['clean', 'build']);
-
-//Clean deletes the output and .tmp directories
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('pre-html', gulp.series(['styles', 'scripts']));
+gulp.task('html', gulp.series('pre-html', require("./build/tasks/html.js")($, gulp, config)));
 
 //Run all the work of the build (each task in parallel)
-gulp.task('build', (cb) => $.multiProcess(['html', 'images', 'fonts', 'copy'], cb, true));
+gulp.task('build', gulp.series('html', 'images', 'fonts', 'copy'));
+
+//Clean deletes the output and .tmp directories
+gulp.task('clean', function(done) {
+    del('.tmp');
+    del('dist');
+    done();
+});
+
+//Default action runs the build after cleaning the output directory. Once completed print out summary information about the build result.
+gulp.task('default', gulp.series('clean', 'build'));
+
