@@ -1,0 +1,13 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "7.1.1" %}
+
+{% set blurb %}{% markdown %}
+This is a hotfix for a critical bug in Dissonance `7.1.0`.
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed voice packets being dropped after 128 speech sessions.
+{% endmarkdown %}{% endblock %}
+
