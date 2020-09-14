@@ -1,0 +1,17 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "4.1.1" %}
+
+{% set blurb %}{% markdown %}
+This release of Wet Stuff fixes two bugs that have been reported by users. If you find an issue in Wet Stuff or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/WetSurfaceDecals/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed a loading loop caused by the AutoPuddlePrefab inspector which could crash the editor.
+ - Fixed rare (and harmless) error when loading a scene in the editor.
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+{% endmarkdown %}{% endblock %}
