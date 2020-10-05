@@ -59,13 +59,6 @@
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(
-        "Photon Unity Networking",
-        "PhotonUnityNetworking",
-        "Use PUN to host a Dissonance voice chat session.",
-        "https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF"
-      ) -%}{%- endcall %}
-
-      {% call changes.integration_store(
         "Photon Unity Networking 2",
         "PhotonUnityNetworking2",
         "Use PUN2 to host a Dissonance voice chat session.",

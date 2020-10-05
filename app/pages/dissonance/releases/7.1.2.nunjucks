@@ -1,0 +1,18 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "7.1.2" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added automatic handling for app suspension (e.g. on mobiles).
+ - Added new native plugins suitable for Windows+ARM64 (e.g. Hololens2).
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed a bug that could cause clients connecting to a long running session to lose voice packets.
+{% endmarkdown %}{% endblock %}
+
