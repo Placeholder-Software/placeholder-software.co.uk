@@ -8,7 +8,7 @@ If you find an issue in Dissonance or want to request a new feature please repor
 {% endmarkdown %}{% endset %}
 
 {% block features %}{% markdown %}
- - Added the IMicrophoneDeviceList which may be implemented on custom microphone scripts to supply a list of valid devices.
+ - Added the `IMicrophoneDeviceList` interface which may be implemented on custom microphone scripts to supply a list of valid devices.
 {% endmarkdown %}{% endblock %}
 
 {% block bugfixes %}{% markdown %}
