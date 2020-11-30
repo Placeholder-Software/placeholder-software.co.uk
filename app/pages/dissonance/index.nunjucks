@@ -25,10 +25,15 @@
   </div>
 {% endmacro %}
 
-{% macro feature_row(name, tip, diss, photon, diss_tip, photon_tip) %}
+{% macro feature_row(name, tip, diss, photon, diss_tip, photon_tip, linkurl) %}
   <tr>
     <th class="text-nowrap" scope="row"  data-toggle="tooltip" data-placement="left" title="{{ tip }}">
-        {{ name }}{% if tip|length %}<span class="tip-indicator glyphicon glyphicon-info-sign"></span>{% endif %}
+      {% if linkurl|length %}
+        <a href="{{ linkurl }}">{{ name }}</a>
+      {% else %}
+        {{ name }}
+      {% endif %}
+      {% if tip|length %}<span class="tip-indicator glyphicon glyphicon-info-sign"></span>{% endif %}
     </th>
     <td class="check-column"><span class="glyphicon {% if diss %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ diss_tip }}" /></td>
     <td class="check-column"><span class="glyphicon {% if photon %}glyphicon-ok{% else %}glyphicon-remove{% endif %}" data-toggle="tooltip" data-placement="top" title="{{ photon_tip }}" /></td>
@@ -93,22 +98,22 @@
       {% call feature_table("Networking", "glyphicon-random") %}
         {{ feature_row("Peer-To-Peer Voice", "Reduce latency by communicating peer to peer on networks which support it", true, false, "") }}
         {{ feature_row("Custom Networking System", "Use any custom network system with a little scripting", true, false) }}
-        {{ feature_row("Built In UNet HLAPI", "", true, false) }}
-        {{ feature_row("Built In Forge Remastered", "", true, false) }}
-        {{ feature_row("Built In Photon Unity Networking (Classic)", "", true, true, "") }}
-        {{ feature_row("Built In Photon Unity Networking 2", "", true, true, "") }}
-        {{ feature_row("Built In Photon BOLT", "", true, true, "") }}
-        {{ feature_row("Built In TNet3", "", true, false, "") }}
-        {{ feature_row("Built In Steamworks.Net P2P", "", true, false, "") }}
-        {{ feature_row("Built In DarkRift2", "", true, false, "") }}
-        {{ feature_row("Built In Mirror", "", true, false, "") }}
-        {{ feature_row("Built In WebRTC Network", "", true, false, "") }}
+        {{ feature_row("Built In UNet HLAPI", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF") }}
+        {{ feature_row("Built In Forge Remastered", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF") }}
+        {{ feature_row("Built In Photon Unity Networking (Classic)", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF") }}
+        {{ feature_row("Built In Photon Unity Networking 2", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF") }}
+        {{ feature_row("Built In Photon BOLT", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF") }}
+        {{ feature_row("Built In TNet3", "", true, false, "", "", "https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF") }}
+        {{ feature_row("Built In Steamworks.Net P2P", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143292?aid=1100lJD") }}
+        {{ feature_row("Built In DarkRift2", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF") }}
+        {{ feature_row("Built In Mirror", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF") }}
+        {{ feature_row("Built In WebRTC Network", "", true, false, "", "", "https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF") }}
       {%- endcall %}
 
       {% call feature_table("Platform Support", "", "glyphicon-hdd") %}
         {{ feature_row("Windows", "Including Windows Store Apps", true, true) }}
         {{ feature_row("Linux", "", true, true) }}
-        {{ feature_row("Android", "", true, true) }}
+        {{ feature_row("Android", "Including Oculus Quest", true, true) }}
         {{ feature_row("iOS", "", true, true) }}
         {{ feature_row("MacOS", "", true, true) }}
         {{ feature_row("Magic Leap", "", true, false) }}

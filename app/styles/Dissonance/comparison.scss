@@ -82,6 +82,15 @@
         color: $light-color;
       }
     }
+
+    tr {
+      th {
+        a {
+          color: inherit;
+          text-decoration: inherit;
+        }
+      }
+    }
 }
 
 .check-column {
