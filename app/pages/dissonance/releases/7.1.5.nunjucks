@@ -1,0 +1,21 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "7.1.5" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added additional details to log messages regarding fatal network exceptions.
+ - Changed `IsUserActivated` method in `VoiceBroadcastTrigger` to be `protected virtual` instead of `private`.
+ - Pooling more playback objects, reducing allocation churn in very large sessions.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed an issue that could cause players to be muted when another player left the session.
+ - Fixed a potential null reference exception triggered by the microphone failing to start.
+ - Fixed a small leak of AudioClip objects.
+{% endmarkdown %}{% endblock %}
+
