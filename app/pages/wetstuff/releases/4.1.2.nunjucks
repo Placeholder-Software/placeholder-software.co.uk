@@ -1,0 +1,18 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "4.1.2" %}
+
+{% set blurb %}{% markdown %}
+This release of Wet Stuff fixes two bugs that have been reported by users. If you find an issue in Wet Stuff or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/WetSurfaceDecals/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed a small allocation every frame (Wet Stuff should now allocate nothing every frame). ([#28](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/28))
+ - Fixed a workaround for a Unity editor bug sometimes running multiple times. ([#27](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/27))
+ - Fixed a null reference exception in the Enviro integration.
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - HDRP is not supported. Please track progress [here](https://github.com/Placeholder-Software/WetSurfaceDecals/issues/7).
+{% endmarkdown %}{% endblock %}

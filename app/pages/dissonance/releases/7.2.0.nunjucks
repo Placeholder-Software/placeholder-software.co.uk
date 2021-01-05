@@ -1,0 +1,21 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "7.2.0" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added `Dissonance.Audio.AecDiagnostics` script which exposes realtime statistics about Acoustic Echo Cancellation (AEC).
+ - Added a warning when a script domain reload is detected (Dissonance does not support this).
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed the preprocessor failing to start on Magic Leap. (Regression introduced in 7.1.0).
+ - Fixed forced resetting (e.g. after app suspension) failing in some circumstances.
+ - Fixed `Cannot associate preprocessor with Playback filter` error happening when a script domain reload happens.
+ - Removed dynamic buffer size correction (it wasn't very effective).
+ - Removed some warnings which confused users by warning about very minor things.
+{% endmarkdown %}{% endblock %}
