@@ -2,6 +2,13 @@
 {% import "templates/common/macros/icon-section.nunjucks" as icon_section %}
 {% import "templates/common/macros/changelog.nunjucks" as changes %}
 
+{% block head %}
+  {{ super() }}
+  <meta content="Release Notes v{{ version_number }})" property="og:title">
+  <meta content="Dissonance Voice Chat" property="og:site_name">
+  <meta content="{{ blurb | safe }}" property="og:description">
+{% endblock %}
+
 {% block content %}
 
   {% call icon_section.header2("vn", "left") -%}
