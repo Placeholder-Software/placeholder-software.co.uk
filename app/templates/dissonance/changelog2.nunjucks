@@ -4,9 +4,8 @@
 
 {% block head %}
   {{ super() }}
-  <meta content="Release Notes v{{ version_number }})" property="og:title">
+  <meta content="Release Notes {{ version_number }}" property="og:title">
   <meta content="Dissonance Voice Chat" property="og:site_name">
-  <meta content="{{ blurb | safe }}" property="og:description">
 {% endblock %}
 
 {% block content %}
