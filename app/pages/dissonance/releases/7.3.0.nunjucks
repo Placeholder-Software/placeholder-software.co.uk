@@ -1,0 +1,22 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "7.3.0" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added a new system for capturing realtime metrics data and sending it to a metrics service (e.g. Unity Reporting). Disabled by default.
+ - Redesigned some confusing warnings on `VoiceBroadcastTrigger`.
+ - Added `VoiceSettings.Reset` method which resets all voice settings back to default values.
+ - Stopping playback (instead of playing silence) when a user is not speaking. This Significantly reduces the number of Unity audio mixer voices used by Dissonance.
+
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed playback synchronisation system getting confused by certain badly behaved network backends.
+ - Fixed playback synchronisation system measuring the wrong sample rate.
+ - Fixed access violation exception caused by `AecDiagnostics` script.
+{% endmarkdown %}{% endblock %}
