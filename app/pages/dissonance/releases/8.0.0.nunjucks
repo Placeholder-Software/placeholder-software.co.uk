@@ -1,0 +1,30 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "8.0.0" %}
+
+{% set blurb %}{% markdown %}
+This release adds a new property (`string Device { get; }`) to the `IMicrophoneCapture` class which makes this release a **breaking change** for anyone who is implementing a custom microphone input system. All other changes are backwards compatible.
+
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added a property to get the active microphone device.
+ - Showing decibels (dBFS) instead of vmul on `VoiceBroadcastTrigger` faders.
+ - Showing decibels (dBFS) on the mic input and audio playback components.
+ - Changed "Audio Duck Attenuation" slider to show decibels instead of vmul.
+ - Modified handling of reconnecting clients to reset their state even if not strictly necessary. This allows clients which encounter network issues to to disconnect and instantly reconnect and flush the network server state.
+ - Improved AEC filter inspector to clarify the meaning of some of the measured statistics.
+ - Added support for 2D collider trigger to `VoiceBroadcastTrigger` and `VoiceReceiptTrigger`.
+ - Added a **prototype** server side API allowing dedicated servers to collect information about which players are talking/listening to which channels.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Changed all Dissonance AudioSource components to maximum priority. This makes it very unlikely that voices will disappear due to virtualisation.
+ - Fixed AEC filter not loading correctly on Linux.
+ - Fixed PhotonPlayer causing an `ArgumentNullException` in some circumstances.
+ - Fixed `VoiceBroadcastTrigger` fader volume being ignored (it was always `1.0`).
+ - Using `Time.unscaledDeltaTime` instead of `Time.deltaTime`.
+ - Fixed `AecDiagnostics` script failing on iOS.
+{% endmarkdown %}{% endblock %}
