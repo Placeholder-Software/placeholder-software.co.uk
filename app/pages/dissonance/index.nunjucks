@@ -29,7 +29,7 @@
   <tr>
     <th class="text-nowrap" scope="row"  data-toggle="tooltip" data-placement="left" title="{{ tip }}">
       {% if linkurl|length %}
-        <a href="{{ linkurl }}">{{ name }}</a>
+        <a target="_blank" href="{{ linkurl }}">{{ name }}</a>
       {% else %}
         {{ name }}
       {% endif %}
@@ -79,6 +79,7 @@
 
       {% call feature_table("Audio Quality", "glyphicon-headphones") %}
         {{ feature_row("Noise Attenuation", "Reduces background noise without reducing voice volume", true, true) }}
+        {{ feature_row("Rnnoise", "ML powered background sound removal", true, false, "", "", "https://jmvalin.ca/demo/rnnoise/") }}
         {{ feature_row("Automatic Gain Control", "All speakers sound the same volume", true, true) }}
         {{ feature_row("Soft Clipping", "No clipped audio, ever", true, false) }}
         {{ feature_row("Adaptive Playback", "Automatically compensate for small network desync", true, false) }}
