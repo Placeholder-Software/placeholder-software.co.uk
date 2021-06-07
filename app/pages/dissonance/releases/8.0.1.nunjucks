@@ -1,0 +1,23 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "8.0.1" %}
+
+{% set blurb %}{% markdown %}
+This release adds a major new feature, **RNNoise**. RNNoise is a noise suppression system, developed by Jean-Marc Valin, which uses machine learning to learn separate useful signal (human speech) from noise (e.g. barking dogs). RNNoise splits the audio up into 22 frequency bands, decides how noisy each band is, and then attenuates the band based on this. This process repeats again every 10 milliseconds, adjusting the volume of each frequency band to minimise noise. To find out more technical details of the algorithm see [here](https://jmvalin.ca/demo/rnnoise/). It is inevitable that RNNoise _will_ distort speech while reducing background sounds. However in a noisy environment this can still be an overall improvement in the quality of voice communication.
+
+RNNoise is disabled by default and can be enabled from the Dissonance [settings menu](https://placeholder-software.co.uk/dissonance/docs/Reference/Other/VoiceSettings.html) (Window > Dissonance > Quality Settings).
+
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added support for [RNNoise](https://jmvalin.ca/demo/rnnoise/) to the audio preprocessor (disabled by default). RNNoise uses machine learning to detect and remove annoying background sounds from speech.
+ - Improved the inspector for the AEC filter to give some tips on specific failure cases.
+ - Using the Desktop AEC algorithm instead of the mobile AEC algorithm for the Oculus Quest instead of the mobiles AEC. This significantly improves quality of AEC.
+ - No longer setting `spatialBlend=1` when creating Dissonance playback sources. This allows custom playback prefabs to set a custom spatial blend amount.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Using the correct microphone device list provider in the mic capture inspector instead of always using the default Unity `Microphone.devices`.
+{% endmarkdown %}{% endblock %}

@@ -11,7 +11,7 @@
 
 <h1>What Is RNNoise?</h1>
 
-<p>RNNoise is a noise suppression system, developed by Jean-Marc Valin, which uses machine learning to learn separate useful signal (human speech) from noise. RNNoise splits the audio up into 22 frequency bands, decides how noisy each band is, and then attenuates the band based on this. This process repeats again every 10 milliseconds, adjusting the volume of each frequency band to minimise noise. To find out more technical details of the algorithm see <a href="https://jmvalin.dreamwidth.org/15210.html">here</a>.</p>
+<p>RNNoise is a noise suppression system, developed by Jean-Marc Valin, which uses machine learning to learn separate useful signal (human speech) from noise. RNNoise splits the audio up into 22 frequency bands, decides how noisy each band is, and then attenuates the band based on this. This process repeats again every 10 milliseconds, adjusting the volume of each frequency band to minimise noise. To find out more technical details of the algorithm see <a href="https://jmvalin.ca/demo/rnnoise/">here</a>.</p>
 
 <p>It is inevitable that some speech will be in the same frequency band as some noise, and so in the process of removing noise this process unavoidably distorts the speech. However in a noisy environment this can still be an overall improvement in the quality of voice communication.</p>
 
