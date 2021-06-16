@@ -1,0 +1,18 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "99.99.99-dev" %}
+
+{% set blurb %}{% markdown %}
+This is the version number used internally during development, before the package is released.
+
+**If you are seeing this it is likely an error**! Please report it on the [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Who knows? This is a dev version.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Who knows? This is a dev version.
+{% endmarkdown %}{% endblock %}

@@ -1,9 +1,11 @@
 {% macro list_releases(items, product_name) %}
 
     {% macro version_block(url, version, product_name) %}
-        <div a="{{ version }}" data-version-number="{{ version }}" >
-            <h5 class="title"><a href="{{ base_path }}{{ url }}" title="{{ product_name }} {{ version }}">{{ product_name }} {{ version }}</a></h5>
-        </div>
+        {% if version != "99.99.99-dev" %}
+            <div a="{{ version }}" data-version-number="{{ version }}" >
+                <h5 class="title"><a href="{{ base_path }}{{ url }}" title="{{ product_name }} {{ version }}">{{ product_name }} {{ version }}</a></h5>
+            </div>
+        {% endif %}
     {% endmacro %}
 
     <ol reversed style="list-style:lower-roman">
