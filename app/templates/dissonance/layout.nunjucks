@@ -11,7 +11,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto|Bangers' rel='stylesheet' type='text/css'>
 
   <!-- build:css /styles/dissonance/main.css -->
-  <link rel="stylesheet" href="styles/Dissonance/main.css">
+  <link rel="stylesheet" href="styles/dissonance/main.css">
   <!-- endbuild -->
 {% endblock %}
 

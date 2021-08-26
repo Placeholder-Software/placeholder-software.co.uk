@@ -1,0 +1,19 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "8.0.2" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added a low pass filter to the default playback prefab to attenuate sounds above the range of normal human speech.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Renamed `CopyTo` extension method to `CopyToSegment` to prevent a naming collision with a new method added in Unity 2021.
+ - Fixed `Dissonance_SetAgcIsOutputMutedState` being private on some platforms, causing build errors.
+{% endmarkdown %}{% endblock %}
+    
+
