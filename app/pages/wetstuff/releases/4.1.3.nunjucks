@@ -1,0 +1,14 @@
+
+{% extends "templates/wetstuff/changelog.nunjucks" %}
+
+{% set version_number = "4.1.3" %}
+
+{% set blurb %}{% markdown %}
+This release of Wet Stuff fixes two bugs that have been reported by users. If you find an issue in Wet Stuff or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/WetSurfaceDecals/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed the dripline effect spawning particles at the wrong transform if not placed at the origin.
+ - Removed mentions of Unistorm in the Enviro integration readme.
+ - Suppressed some false positive compiler warnings.
+{% endmarkdown %}{% endblock %}

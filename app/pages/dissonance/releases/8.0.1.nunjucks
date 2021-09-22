@@ -14,7 +14,7 @@ If you find an issue in Dissonance or want to request a new feature please repor
 {% block features %}{% markdown %}
  - Added support for [RNNoise](https://jmvalin.ca/demo/rnnoise/) to the audio preprocessor (disabled by default). RNNoise uses machine learning to detect and remove annoying background sounds from speech.
  - Improved the inspector for the AEC filter to give some tips on specific failure cases.
- - Using the Desktop AEC algorithm instead of the mobile AEC algorithm for the Oculus Quest instead of the mobiles AEC. This significantly improves quality of AEC.
+ - Using the Desktop AEC algorithm instead of the mobile AEC algorithm for the Oculus Quest. This significantly improves quality of AEC.
  - No longer setting `spatialBlend=1` when creating Dissonance playback sources. This allows custom playback prefabs to set a custom spatial blend amount.
 {% endmarkdown %}{% endblock %}
 
