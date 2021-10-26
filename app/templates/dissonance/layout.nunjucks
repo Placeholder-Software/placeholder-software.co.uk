@@ -36,7 +36,6 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/dissonance/docs/" target="_blank">Docs</a></li>
             <li><a href="/dissonance/news">News</a></li>
-            <li><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Community</a></li>
             <li><a href="https://placeholder-software.co.uk/discord" target="_blank">Discord Chat</a></li>
             <li><a href="https://github.com/Placeholder-Software/Dissonance" target="_blank">Github</a></li>
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>

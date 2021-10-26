@@ -6,7 +6,7 @@
 {% set blurb %}{% markdown %}
 This is the version number used internally during development, before the package is released.
 
-**If you have been linked here you are using an unstable/unrelease version**! Please report it on the [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+**If you have been linked here you are using an unstable/unreleased version**! Please report it on the [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
 {% endmarkdown %}{% endset %}
 
 {% block features %}{% markdown %}
@@ -14,5 +14,9 @@ This is the version number used internally during development, before the packag
 {% endmarkdown %}{% endblock %}
 
 {% block bugfixes %}{% markdown %}
+ - Who knows? This is a dev version.
+{% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
  - Who knows? This is a dev version.
 {% endmarkdown %}{% endblock %}

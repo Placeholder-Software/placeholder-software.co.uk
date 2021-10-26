@@ -42,7 +42,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ docs_url }}" target="_blank">Docs</a></li>
             <li><a href="{{ news_url }}">News</a></li>
-            <li><a href="{{ discuss_url }}" target="_blank">Community</a></li>
+            <li><a href="https://placeholder-software.co.uk/discord" target="_blank">Discord Chat</a></li>
             <li><a href="{{ tracker_url }}" target="_blank">Github</a></li>
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
             <li><a href="{{ store_url }}" target="_blank" class="buy-link">Buy Wet Stuff</a></li>

@@ -4,8 +4,10 @@
 
 {% block head %}
   {{ super() }}
-  <meta content="Release Notes {{ version_number }}" property="og:title">
+  <meta content="Dissonance Release Notes {{ version_number }}" property="og:title">
   <meta content="Dissonance Voice Chat" property="og:site_name">
+  <meta content="#38B3FF" name="theme-color" />
+  <meta content="{{ base_path }}/images/dissonance.png" property="og:image" />
 {% endblock %}
 
 {% block content %}
