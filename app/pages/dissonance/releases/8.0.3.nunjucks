@@ -1,0 +1,17 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "8.0.3" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed a Unity linker bug which caused logging to fail in some locales (e.g. Thailand/Argentina).
+ - Fixed the voice receiver discarding voice packets in certain very rare circumstances in very long lived sessions with many rooms.
+ - Fixed MacOS Unity Editor attempting to access RNNoise if targeting non-MacOS platforms.
+ - Removed `Lumin` from the list of supported RNNoise platforms (RNNoise can conflict with the built in audio processing on `Magic Leap`).
+{% endmarkdown %}{% endblock %}
+    
+
