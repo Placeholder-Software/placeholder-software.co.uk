@@ -99,9 +99,9 @@
       {% call feature_table("Networking", "glyphicon-random") %}
         {{ feature_row("Peer-To-Peer Voice", "Reduce latency by communicating peer to peer on networks which support it", true, false, "") }}
         {{ feature_row("Custom Networking System", "Use any custom network system with a little scripting", true, false) }}
+        {{ feature_row("Built In Unity Netcode For GameObjects", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/206514?aid=1100lJDF") }}
         {{ feature_row("Built In UNet HLAPI", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF") }}
         {{ feature_row("Built In Forge Remastered", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF") }}
-        {{ feature_row("Built In Photon Unity Networking (Classic)", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143287?aid=1100lJDF") }}
         {{ feature_row("Built In Photon Unity Networking 2", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF") }}
         {{ feature_row("Built In Photon BOLT", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF") }}
         {{ feature_row("Built In TNet3", "", true, false, "", "", "https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF") }}
