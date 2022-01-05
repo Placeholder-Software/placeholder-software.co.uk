@@ -2,7 +2,14 @@ const gulp = require('gulp');
 require('gulp-stats')(gulp);
 
 const del = require('del');
-const $ = require('gulp-load-plugins')();
+
+const $ = require('gulp-load-plugins')({
+    postRequireTransforms: {
+        sass: function(sass) {
+            return sass(require('sass'));
+        }
+    }
+});
 
 const config = require('./build/config.js');
 
@@ -13,17 +20,17 @@ gulp.task('copy', require("./build/tasks/copy.js")($, gulp, config));
 gulp.task('styles', require("./build/tasks/styles.js")($, gulp, config));
 gulp.task('scripts', require("./build/tasks/scripts.js")($, gulp, config));
 
-//Create a pre-html task which runs the HTML task depenedencies in parallel. Then depend on that in the HTML task
-gulp.task('pre-html', gulp.series(['styles', 'scripts']));
+//Create a pre-html task which runs the HTML task depenedencies. Then depend on that in the HTML task
+gulp.task('pre-html', gulp.parallel(['styles', 'scripts']));
 gulp.task('html', gulp.series('pre-html', require("./build/tasks/html.js")($, gulp, config)));
 
 //Run all the work of the build (each task in parallel)
 gulp.task('build', gulp.series('html', 'images', 'fonts', 'copy'));
 
 //Clean deletes the output and .tmp directories
-gulp.task('clean', function(done) {
-    del('.tmp');
-    del('dist');
+gulp.task('clean', async function(done) {
+    await del('.tmp');
+    await del('dist');
     done();
 });
 

@@ -27,8 +27,8 @@
     "gulp-load-plugins": "^2.0.0",
     "gulp-marked": "^1.0.0",
     "gulp-nunjucks-render": "^2.0.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.0.0",
     "gulp-stats": "^1.0.1",
@@ -38,6 +38,7 @@
     "gulp-wrap": "^0.15.0",
     "main-bower-files": "^2.5.0",
     "nunjucks-markdown": "^2.0.0",
+    "sass": "1.32.13",
     "through2": "^4.0.0",
     "wiredep": "^4.0.0",
     "yargs": "^15.0.0"
