@@ -98,14 +98,14 @@
         "FMOD Recording",
         "FMOD_Recording",
         "Use the FMOD audio engine to record speech for higher quality, lower latency and better compatibility.",
-        "https://assetstore.unity.com/preview/213412/676367?aid=1100lJDF"
+        "https://assetstore.unity.com/packages/tools/integration/dissonance-for-fmod-recording-213412?aid=1100lJDF"
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(
         "FMOD Playback",
         "FMOD_Playback",
         "Play speech through the FMOD audio engine, for more powerful and flexible audio mixing.",
-        "https://assetstore.unity.com/preview/213412/676367?aid=1100lJDF"
+        "https://assetstore.unity.com/packages/tools/integration/dissonance-for-fmod-playback-213415?aid=1100lJDF"
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(

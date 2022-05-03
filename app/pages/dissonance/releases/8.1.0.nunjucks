@@ -6,14 +6,14 @@
 {% set blurb %}{% markdown %}
 This release brings two new packages for Dissonance which integrate with the [FMOD audio engine](https://fmod.com/) for Recording and Playback.
 
-[**FMOD Recording**](https://assetstore.unity.com/preview/213412/676367?aid=1100lJDF) replaces the Unity `Microphone` class with FMOD. This is higher quality, much lower latency and is compatible with a wider range of devices. [**FMOD Playback**](https://assetstore.unity.com/preview/213415/676382?aid=1100lJDF) replaces the Unity `AudioSource` component with FMOD. This allows you to mix voice audio through the FMOD studio in a much more flexible and powerful way than the Unity audio mixer. If you use both of these packages together you can completely disable the Unity audio engine while using Dissonance, replacing it entirely with FMOD.
+[**FMOD Recording**](https://assetstore.unity.com/packages/tools/integration/dissonance-for-fmod-recording-213412?aid=1100lJDF) replaces the Unity `Microphone` class with FMOD. This is higher quality, much lower latency and is compatible with a wider range of devices. [**FMOD Playback**](https://assetstore.unity.com/packages/tools/integration/dissonance-for-fmod-playback-213415?aid=1100lJDF) replaces the Unity `AudioSource` component with FMOD. This allows you to mix voice audio through the FMOD studio in a much more flexible and powerful way than the Unity audio mixer. If you use both of these packages together you can completely disable the Unity audio engine while using Dissonance, replacing it entirely with FMOD.
 
 If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
 {% endmarkdown %}{% endset %}
 
 {% block features %}{% markdown %}
- - New [FMOD Recording](https://assetstore.unity.com/preview/213412/676367?aid=1100lJDF) Integration - significantly reduce audio recording latency!
- - New [FMOD Playback](https://assetstore.unity.com/preview/213415/676382?aid=1100lJDF) Integration - bypass the Unity audio engine and play voice through FMOD!
+ - New [FMOD Recording](https://assetstore.unity.com/packages/tools/integration/dissonance-for-fmod-recording-213412?aid=1100lJDF) Integration - significantly reduce audio recording latency!
+ - New [FMOD Playback](https://assetstore.unity.com/packages/tools/integration/dissonance-for-fmod-playback-213415?aid=1100lJDF) Integration - bypass the Unity audio engine and play voice through FMOD!
  - Marked custom inspector as child inspectors so that scripts derived from Dissonance scripts will have the correct inspector.
 {% endmarkdown %}{% endblock %}
 
