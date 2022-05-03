@@ -1,0 +1,19 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "8.1.0" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - New [FMOD Recording](https://assetstore.unity.com/preview/213412/676367?aid=1100lJDF) Integration - significantly reduce audio recording latency!
+ - New [FMOD Playback](https://assetstore.unity.com/preview/213415/676382?aid=1100lJDF) Integration - bypass the Unity audio engine and play voice through FMOD!
+ - Marked custom inspector as child inspectors so that scripts derived from Dissonance scripts will have the correct inspector.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed VoicePlayback editor not saving changes in some circumstances.
+ - Fixed VoiceBroadcastTrigger collider fader to apply properly when exiting the collider volume.
+{% endmarkdown %}{% endblock %}
