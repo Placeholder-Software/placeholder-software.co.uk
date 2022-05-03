@@ -30,19 +30,19 @@
   {% call icon_section.left("images/random.svg") -%}
     <h4 id="integrations">Integrations</h4>
     {% block integrations %}
-      
-      {% call changes.integration_store(
-        "UNet (HLAPI)",
-        "UNet_HLAPI",
-        "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
-        "https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF"
-      ) -%}{%- endcall %}
 
       {% call changes.integration_store(
         "Mirror Networking",
         "MirrorIgnorance",
         "Use Mirror Networking with a UDP backend to host a voice chat session.",
         "https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Photon Unity Networking 2",
+        "PhotonUnityNetworking2",
+        "Use PUN2 to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF"
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(
@@ -67,13 +67,6 @@
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(
-        "Photon Unity Networking 2",
-        "PhotonUnityNetworking2",
-        "Use PUN2 to host a Dissonance voice chat session.",
-        "https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF"
-      ) -%}{%- endcall %}
-
-      {% call changes.integration_store(
         "Photon Bolt",
         "PhotonBolt",
         "Use the Photon Bolt Networking system to host a Dissonance voice chat session.",
@@ -92,6 +85,27 @@
         "PureP2P",
         "Peer to Peer voice what using WebRTC Network asset",
         "https://assetstore.unity.com/packages/slug/143294?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "UNet (HLAPI)",
+        "UNet_HLAPI",
+        "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
+        "https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "FMOD Recording",
+        "FMOD_Recording",
+        "Use the FMOD audio engine to record speech for higher quality, lower latency and better compatibility.",
+        "https://assetstore.unity.com/preview/213412/676367?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "FMOD Playback",
+        "FMOD_Playback",
+        "Play speech through the FMOD audio engine, for more powerful and flexible audio mixing.",
+        "https://assetstore.unity.com/preview/213412/676367?aid=1100lJDF"
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(
