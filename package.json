@@ -25,6 +25,7 @@
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.0.0",
     "gulp-load-plugins": "^2.0.0",
+    "gulp-markdown": "^7.0.0",
     "gulp-marked": "^1.0.0",
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-plumber": "^1.2.1",

@@ -9,6 +9,10 @@ This release adds a major new feature, **RNNoise**. RNNoise is a noise suppressi
 RNNoise is disabled by default and can be enabled from the Dissonance [settings menu]({{ dissonance_docs_path }}/Reference/Other/VoiceSettings.html) (Window > Dissonance > Quality Settings).
 
 If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+
+{{ dissonance_docs_path }}
+{{ base_path }}
+
 {% endmarkdown %}{% endset %}
 
 {% block features %}{% markdown %}

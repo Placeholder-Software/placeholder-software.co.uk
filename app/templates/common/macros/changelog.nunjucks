@@ -10,7 +10,7 @@
 {% macro integration_semver(title, id, description, url, major, minor, patch) %}
   <div a="{{ id }}" class="integration" data-version-semver='{ "major":{{ major }}, "minor":{{ minor }}, "patch":{{ patch }} }' >
     <h5 class="title"><a href="{{ url }}" title="Download {{ title }} integration">{{ title }}</a></h5>
-    <h6 class="upgrade-notification hidden">Upgrade Available!</h6>
+    <!-- <h6 class="upgrade-notification hidden">Upgrade Available!</h6> -->
     <div class="description">{{ description }}</div>
   </div>
 {% endmacro %}
