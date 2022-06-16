@@ -24,9 +24,9 @@
         <section class="article">
             <h4 class="title"><a href="{{ base_url }}{{ meta.url }}">{{ post.title }}</a></h4>
             <div class="date">{{ meta.date.month }} {{ meta.date.day }}, {{ meta.date.year }}</div>
-            {# <div class="content">
+            <div class="content">
             {{ post.body | safe }}
-            </div> #}
+            </div>
         </section>
     {% endfor %}
 {% endmacro %}

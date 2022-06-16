@@ -137,7 +137,7 @@
 
 <p><a href="https://www.assetstore.unity3d.com/en/#!/content/70078?aid=1100lJDF">Buy Dissonance</a> on the Unity Store to use it in your game. Get all future feature upgrades and bugfixes for free!</p>
     
-<p><a href="{{ dissonance_docs_path }}/#getting-started" target="_blank" >Follow The Tutorials</a>. This series of tutorials will walk you through the basics of setting up a simple team based voice chat system all the way up to a complex multi team, multi
+<p><a href="https://placeholder-software.co.uk/dissonance/docs/#getting-started" target="_blank" >Follow The Tutorials</a>. This series of tutorials will walk you through the basics of setting up a simple team based voice chat system all the way up to a complex multi team, multi
 room, positional chat system with complex audio effects.</p>
 
 <p><a href="https://www.reddit.com/r/dissonance_voip/" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi".

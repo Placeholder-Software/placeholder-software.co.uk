@@ -4,7 +4,7 @@
 {% set version_number = "6.2.5" %}
 
 {% set blurb %}{% markdown %}
-This release brings a brand new network integration to Dissonance - using the fantastic [WebRTC Network](https://assetstore.unity.com/packages/tools/network/webrtc-network-47846?aid=1100lJDF) Dissonance can now run completely peer to peer sessions. All that's needed is a central "signalling server" (which uses very small amounts of bandwidth) to setup the session. Check out the WebRTC Network [FAQ](https://www.because-why-not.com/webrtc/faq/) for more information or read the [quickstart guide]({{ dissonance_docs_path }}/Basics/Quick-Start-PureP2P/) to get started with Dissonance.
+This release brings a brand new network integration to Dissonance - using the fantastic [WebRTC Network](https://assetstore.unity.com/packages/tools/network/webrtc-network-47846?aid=1100lJDF) Dissonance can now run completely peer to peer sessions. All that's needed is a central "signalling server" (which uses very small amounts of bandwidth) to setup the session. Check out the WebRTC Network [FAQ](https://www.because-why-not.com/webrtc/faq/) for more information or read the [quickstart guide](https://placeholder-software.co.uk/dissonance/docs/Basics/Quick-Start-PureP2P/) to get started with Dissonance.
 {% endmarkdown %}{% endset %}
 
 {% block integrations %}

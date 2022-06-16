@@ -12,7 +12,6 @@ module.exports = {
         return {
           base_path: base_path,
           discord_path: "https://placeholder-software.co.uk/discord",
-          dissonance_docs_path: "https://placeholder-software.co.uk/dissonance/docs",
           wetstuff_docs_path: "https://wetsurfacedecals.readthedocs.io/en/latest/",
           wetstuff_community_path: "https://placeholder-software.co.uk/wetstuff/community",
 
@@ -47,7 +46,7 @@ function flatten(hierarchy, into) {
         var value = hierarchy[key];
         if (value.directory) {
             into.push(value);
-        flatten(value.children, into)
+            flatten(value.children, into)
         }
     }
 

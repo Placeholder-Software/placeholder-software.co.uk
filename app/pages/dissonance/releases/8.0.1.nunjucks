@@ -6,13 +6,9 @@
 {% set blurb %}{% markdown %}
 This release adds a major new feature, **RNNoise**. RNNoise is a noise suppression system, developed by Jean-Marc Valin, which uses machine learning to learn separate useful signal (human speech) from noise (e.g. barking dogs). RNNoise splits the audio up into 22 frequency bands, decides how noisy each band is, and then attenuates the band based on this. This process repeats again every 10 milliseconds, adjusting the volume of each frequency band to minimise noise. To find out more technical details of the algorithm see [here](https://jmvalin.ca/demo/rnnoise/). It is inevitable that RNNoise _will_ distort speech while reducing background sounds. However in a noisy environment this can still be an overall improvement in the quality of voice communication.
 
-RNNoise is disabled by default and can be enabled from the Dissonance [settings menu]({{ dissonance_docs_path }}/Reference/Other/VoiceSettings.html) (Window > Dissonance > Quality Settings).
+RNNoise is disabled by default and can be enabled from the Dissonance [settings menu](https://placeholder-software.co.uk/dissonance/docs/Reference/Other/VoiceSettings.html) (Window > Dissonance > Quality Settings).
 
 If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
-
-{{ dissonance_docs_path }}
-{{ base_path }}
-
 {% endmarkdown %}{% endset %}
 
 {% block features %}{% markdown %}
