@@ -4,7 +4,7 @@
 {% set body %}{% markdown %}
 At GDC 2018 Unity introduced [a new plan](https://blogs.unity3d.com/2018/04/09/new-plans-for-unity-releases-introducing-the-tech-and-long-term-support-lts-streams/) for two release streams; TECH and LTS. In [a recent blog post](https://blogs.unity3d.com/2020/04/08/the-2-year-support-for-the-first-lts-release-2017-4-ends-in-april-2020/) they announced the end-of-life of `Unity 2017.4 LTS` in accordance with this plan. `Unity 2018.4` is now the oldest supported LTS version.
 
-With the release of Dissonance [7.0.0]({{ base_path }}/dissonance/releases/7.0.0.html) we have ended support for `Unity 2017.4`. Dissonance [6.4.6]({{ base_path }}/dissonance/releases/6.4.6.html) was the last version of Dissonance released with support for `Unity 2017.4` - we will no longer provide support for using Dissonance on `Unity 2017.4` with `Dissonance 7.0.0` and onwards.
+With the release of Dissonance <a href="{{ base_path }}/dissonance/releases/7.0.1.html">7.0.1</a> we have ended support for `Unity 2017.4`. Dissonance <a href="{{ base_path }}/dissonance/releases/6.4.6.html">6.4.6</a> was the last version of Dissonance released with support for `Unity 2017.4` - we will no longer provide support for using Dissonance on `Unity 2017.4` with `Dissonance 7.0.0` and onwards.
 
 As of 2020-04-29 this means the supported Unity editor versions for Dissonance are:
  - `Unity 2018.4` (latest LTS)

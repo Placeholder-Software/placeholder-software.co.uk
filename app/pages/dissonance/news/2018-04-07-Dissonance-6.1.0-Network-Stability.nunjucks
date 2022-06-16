@@ -13,7 +13,7 @@ Version `MAJOR.MINOR.PATCH`
 
 A `MAJOR` change means that a change to Dissonance might _break_ your code which interfaces with Dissonance. Naturally we try to keep such changes to a minimum. When they do happen we make sure to draw attention to it in the release notes and explain how best to handle it.
 
-With <a href="{{ base_path }}/dissonance/releases/6.1.0.html">Dissonance 6.1.0</a> we included what we considered a very minor bugfix:
+With <a href="{{ base_path }}/dissonance/releases/6.1.0.html">6.1.0</a> we included what we considered a very minor bugfix:
 
 > Always using network order (Big endian) for network packet headers
 

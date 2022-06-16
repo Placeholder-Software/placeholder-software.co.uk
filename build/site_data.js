@@ -64,67 +64,69 @@ function sitepages() {
 
         if (stats.isDirectory()) {
             files[fileName] = {
-            file: false,
-            directory: true,
-            name: fileName,
-            url: (urlRoot + '/' + fileName),
-            children: getFilesRecursive(searchRoot + '/' + fileName, urlRoot + '/' + fileName, templateRoot + "/" + fileName)
+                file: false,
+                directory: true,
+                name: fileName,
+                url: (urlRoot + '/' + fileName),
+                children: getFilesRecursive(searchRoot + '/' + fileName, urlRoot + '/' + fileName, templateRoot + "/" + fileName)
             };
         } else {
             var name = path.parse(fileName).name;
             var ext = path.extname(fileName);
             var dir = path.basename(path.dirname(filePath));
-            if (name != "index" && (ext == ".html" || ext == ".nunjucks" )) {
+            if (name != "index" && (ext == ".html" || ext == ".nunjucks" ))
+            {
 
-            //Attempt to parse a date out of the title
-            var date = new Date();
-            if (name.includes('-')) {
-                var parts = name.split('-').slice(0, 3).map(function(a) { return parseInt(a); });
-                if (parts.length == 3 && parts[0] && parts[1] && parts[2]) {
-                date = new Date(parts[0], parts[1] - 1, parts[2])
+                //Attempt to parse a date out of the title
+                var date = new Date();
+                if (name.includes('-'))
+                {
+                    var parts = name.split('-').slice(0, 3).map(function(a) { return parseInt(a); });
+                    if (parts.length == 3 && parts[0] && parts[1] && parts[2]) {
+                        date = new Date(parts[0], parts[1] - 1, parts[2])
+                    }
                 }
-            }
-            
-            //Parse version out of title
-            var version = null;
-            if (dir == "releases") {
-                var parts = name.split('.').slice(0, 3).map(a => parseInt(a));
-                if (parts.length == 3 && !isNaN(parts[0]) && !isNaN(parts[1]) && !isNaN(parts[2])) {
-                version = {
-                    major: parts[0],
-                    minor: parts[1],
-                    patch: parts[2],
-                    name: parts[0] + "." + parts[1] + "." + parts[2]
+                
+                //Parse version out of title
+                var version = null;
+                if (dir == "releases") {
+                    var parts = name.split('.').slice(0, 3).map(a => parseInt(a));
+                    if (parts.length == 3 && !isNaN(parts[0]) && !isNaN(parts[1]) && !isNaN(parts[2])) {
+                        version = {
+                            major: parts[0],
+                            minor: parts[1],
+                            patch: parts[2],
+                            name: parts[0] + "." + parts[1] + "." + parts[2]
+                        };
+                    }
+                }
+
+                var d = {
+                    file: true,
+                    directory: false,
+                    name: name,
+                    path: templateRoot + '/' + fileName,
+                    timestamp: date.getTime(),
+                    version: version,
+                    date: {
+                        day: date.getDate(),
+                        month: date.toLocaleString("en-gb", { month: "long" }),
+                        year: date.getFullYear(),
+                        iso: date.toISOString()
+                    },
+                    url: (urlRoot + '/' + fileName).replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
                 };
+                
+                if (version !== null) {
+                    d.version_major = version.major;
+                    d.version_minor = version.minor;
+                    d.version_patch = version.patch;
+                    d.has_version = true;
+                } else {
+                    d.has_version = false;
                 }
-            }
-
-            var d = {
-                file: true,
-                directory: false,
-                name: name,
-                path: templateRoot + '/' + fileName,
-                timestamp: date.getTime(),
-                version: version,
-                date: {
-                day: date.getDate(),
-                month: date.toLocaleString("en-gb", { month: "long" }),
-                year: date.getFullYear(),
-                iso: date.toISOString()
-                },
-                url: (urlRoot + '/' + fileName).replace("nunjucks", "html").replace("md", "html").replace("index.html", "")
-            };
-            
-            if (version !== null) {
-                d.version_major = version.major;
-                d.version_minor = version.minor;
-                d.version_patch = version.patch;
-                d.has_version = true;
-            } else {
-                d.has_version = false;
-            }
-            
-            files.pages.push(d);
+                
+                files.pages.push(d);
             }
         }
     });

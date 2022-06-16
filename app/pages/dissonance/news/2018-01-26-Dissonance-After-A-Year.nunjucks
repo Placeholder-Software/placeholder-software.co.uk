@@ -4,5 +4,5 @@
 {% set title = "Dissonance After A Year" %}
 
 {% set release_intro %}
-<p>One year ago today Dissonance released onto the asset store after six months of development. Since then we have released <b>29 new versions</b> with lots of exciting new features (and a lot of bugfixes too!). As this is published the 30th update, <a href="{{base_path}}/dissonance/releases/6.0.2">Dissonance 6.0.2</a>, has just been submitted to the asset store and will be available shortly.</p>
+<p>One year ago today Dissonance released onto the asset store after six months of development. Since then we have released <b>29 new versions</b> with lots of exciting new features (and a lot of bugfixes too!). As this is published the 30th update, <a href="{{ base_path }}/dissonance/releases/6.0.2.html">Dissonance 6.0.2</a>, has just been submitted to the asset store and will be available shortly.</p>
 {% endset %}

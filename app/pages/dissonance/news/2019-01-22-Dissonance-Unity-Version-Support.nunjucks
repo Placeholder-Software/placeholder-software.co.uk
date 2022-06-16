@@ -4,7 +4,7 @@
 {% set body %}{% markdown %}
 At GDC 2018 Unity introduced [a new plan](https://blogs.unity3d.com/2018/04/09/new-plans-for-unity-releases-introducing-the-tech-and-long-term-support-lts-streams/) for two release streams; The TECH stream and the Long Term Support (LTS) Stream. The TECH stream consists of three cutting edge releases a year, the LTS stream consists of the final TECH version each year with extra bugfixes. LTS versions are supported for two years after their initial release. Support for TECH versions is much shorter - only the latest TECH version is supported. Unity also offer preview versions which are not included in either of these streams (e.g. `2019.1 Alpha`).
 
-Dissonance was originally developed using `Unity 5.6` when that was the cutting edge of Unity development and since then we've supported every single version of the Unity editor released after `Unity 5.6`. With the release of Dissonance [6.3.0](/Dissonance/Releases/6.3.0.html) we have decided to change our support policy to be closer to what Unity themselves support. We will support all LTS versions supported by Unity and all TECH versions _after_ the latest LTS. We will not support preview versions until they are promoted into the TECH stream.
+Dissonance was originally developed using `Unity 5.6` when that was the cutting edge of Unity development and since then we've supported every single version of the Unity editor released after `Unity 5.6`. With the release of Dissonance <a href="{{ base_path }}/dissonance/releases/6.3.0.html">6.3.0</a> we have decided to change our support policy to be closer to what Unity themselves support. We will support all LTS versions supported by Unity and all TECH versions _after_ the latest LTS. We will not support preview versions until they are promoted into the TECH stream.
 
 Right now that means we support:
  - `Unity 2017.4` (latest LTS)
@@ -12,7 +12,7 @@ Right now that means we support:
  - `Unity 2018.2`
  - `Unity 2018.3` (latest TECH)
 
-Consequently this means that Dissonance [6.3.0]({{ base_path }}/dissonance/releases/6.3.0.html) is the final release to be submitted to the asset store for:
+Consequently this means that Dissonance <a href="{{ base_path }}/dissonance/releases/6.3.0.html">6.3.0</a> is the final release to be submitted to the asset store for:
  - `Unity 5.6`
  - `Unity 2017.1`
  - `Unity 2017.2`
