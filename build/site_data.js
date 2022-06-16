@@ -11,6 +11,15 @@ module.exports = {
         var pages = sitepages();
         return {
           base_path: base_path,
+          discord_path: "https://placeholder-software.co.uk/discord",
+          dissonance_docs_path: "https://placeholder-software.co.uk/dissonance/docs",
+          wetstuff_docs_path: "https://wetsurfacedecals.readthedocs.io/en/latest/",
+          wetstuff_community_path: "https://placeholder-software.co.uk/wetstuff/community",
+
+          admin_email: "admin@placeholder-software.co.uk",
+          martin_email: "martin@placeholder-software.co.uk",
+          tom_email: "tom@placeholder-software.co.uk",
+
           now: new Date().toISOString(),
           site: pages,
           all_pages: flatten(pages)

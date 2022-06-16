@@ -22,7 +22,7 @@
     "Playmaker",
     "PlayMaker",
     "Adds support for controlling channels (who is speaking to whom) using Playmaker.",
-    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
+    "{{ base_path }}/dissonance/integrations/1.0.9/Dissonance-PlayMaker.unitypackage",
     1,
     "1.0.0"
   ) -%}{%- endcall %}
@@ -31,7 +31,7 @@
     "Forge",
     "ForgeNetworking",
     "Use the Forge Networking system to host a Dissonance voice chat session. Please note this is for the legacy Forge Networking asset not for Forge Remastered.",
-    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-ForgeNetworking.unitypackage",
+    "{{ base_path }}/dissonance/integrations/1.0.9/Dissonance-ForgeNetworking.unitypackage",
     1,
     "1.0.0"
   ) -%}{%- endcall %}
@@ -40,7 +40,7 @@
     "Photon Unity Networking",
     "PhotonUnityNetworking",
     "Use the Photon Unity Networking system to host a Dissonance voice chat session.",
-    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-PhotonUnityNetworking.unitypackage",
+    "{{ base_path }}/dissonance/integrations/1.0.9/Dissonance-PhotonUnityNetworking.unitypackage",
     1,
     "1.0.0"
   ) -%}{%- endcall %}
@@ -49,7 +49,7 @@
     "UNet (HLAPI)",
     "UNet_HLAPI",
     "Use the Unity (UNet) High Level API Networking system to host a Dissonance voice chat session.",
-    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-UNet_HLAPI.unitypackage",
+    "{{ base_path }}/dissonance/integrations/1.0.9/Dissonance-UNet_HLAPI.unitypackage",
     1,
     "1.0.0"
   ) -%}{%- endcall %}
@@ -58,7 +58,7 @@
     "UNet (LLAPI)",
     "UNet_LLAPI",
     "Use the Unity (UNet) Low Level API Networking system. This hosts it's own LLAPI session and could potentially be used in conjunction with most other networking systems.",
-    "https://placeholder-software.co.uk/dissonance/integrations/1.0.9/Dissonance-UNet_LLAPI.unitypackage",
+    "{{ base_path }}/dissonance/integrations/1.0.9/Dissonance-UNet_LLAPI.unitypackage",
     1,
     "1.0.0"
   ) -%}{%- endcall %}  

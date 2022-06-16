@@ -5,7 +5,7 @@
 {% set blurb %}
 <p>This is the tenth round of testing for Dissonance and the first <b>Release Candidate</b>. This version brings an incredibly important feature; support for Photon Unity Networking!</p>
 
-<p>This is a Release Candidate, it should be ready for release with no bugs or awkward APIs. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
+<p>This is a Release Candidate, it should be ready for release with no bugs or awkward APIs. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:{{ martin_email }}">email</a>.</p>
 {% endset %}
 
 {% block features %}

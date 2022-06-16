@@ -5,7 +5,7 @@
 
 {% set docs_url = "/wetstuff/docs/" %}
 {% set news_url = "/wetstuff/news" %}
-{% set discuss_url = "/wetstuff/community" %}
+{% set discuss_url = "{{ wetstuff_community_path }}" %}
 {% set tracker_url = "https://github.com/Placeholder-Software/WetSurfaceDecals" %}
 {% set store_url = "https://assetstore.unity.com/packages/tools/particles-effects/wet-stuff-118969?aid=1100lJDF" %}
 
@@ -42,7 +42,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ docs_url }}" target="_blank">Docs</a></li>
             <li><a href="{{ news_url }}">News</a></li>
-            <li><a href="https://placeholder-software.co.uk/discord" target="_blank">Discord Chat</a></li>
+            <li><a href="{{ discord_path }}" target="_blank">Discord Chat</a></li>
             <li><a href="{{ tracker_url }}" target="_blank">Github</a></li>
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
             <li><a href="{{ store_url }}" target="_blank" class="buy-link">Buy Wet Stuff</a></li>
@@ -89,7 +89,7 @@
             <h4>Connect</h4>
             <ul class="footer-list">
               <li><a href="{{ tracker_url }}" target="_blank">Submit an Issue</a></li>
-              <li><a href="mailto:admin@placeholder-software.co.uk">Contact Us</a></li>
+              <li><a href="mailto:{{ admin_email }}">Contact Us</a></li>
               <li><a href="{{ discuss_url }}" target="_blank">Discuss</a></li>
               <li><a href="https://twitter.com/placeholdersoft">Twitter</a></li>
             </ul>

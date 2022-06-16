@@ -115,7 +115,7 @@
 
 {% block known_issues %}
 <ul>
-  <li>UWP does not support ARM architecture (i.e. Windows Phone, <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in this)</li>
-  <li>No Acoustic Echo Cancellation (Work in progress - <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in testing this)</li>
+  <li>UWP does not support ARM architecture (i.e. Windows Phone, <a href="mailto:{{ admin_email }}">Contact us</a> if you're interested in this)</li>
+  <li>No Acoustic Echo Cancellation (Work in progress - <a href="mailto:{{ admin_email }}">Contact us</a> if you're interested in testing this)</li>
 </ul>
 {% endblock %}

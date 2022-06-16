@@ -9,11 +9,11 @@
 
 <h6>Steamworks P2P</h6>
 
-<p>We've release a brand new integration for Dissonance to run over Steamworks networking, sending voice data directly from peer to peer. If your game runs on steam, even if it uses a different network system for game data, this could potentially save you a lot of bandwidth usage fees! Check out the <a href="https://placeholder-software.co.uk/dissonance/docs/Basics/Quick-Start-Steamworks.Net-P2P/">documentation</a> for details on how to setup this integration.</p>
+<p>We've release a brand new integration for Dissonance to run over Steamworks networking, sending voice data directly from peer to peer. If your game runs on steam, even if it uses a different network system for game data, this could potentially save you a lot of bandwidth usage fees! Check out the <a href="{{ dissonance_docs_path }}/Basics/Quick-Start-Steamworks.Net-P2P/">documentation</a> for details on how to setup this integration.</p>
 
 <h6>Remote Channel API</h6>
 
-<p>If a remote client is speaking to you this new API gives you a list of which channels the client is speaking to you through. Call <code>VoicePlayerState:GetSpeakingChannels</code> to get a snapshot of the channels you are hearing them through. Check out the <a href="https://placeholder-software.co.uk/dissonance/docs/Reference/Other/VoicePlayerState/">documentation</a> for more details.</p>
+<p>If a remote client is speaking to you this new API gives you a list of which channels the client is speaking to you through. Call <code>VoicePlayerState:GetSpeakingChannels</code> to get a snapshot of the channels you are hearing them through. Check out the <a href="{{ dissonance_docs_path }}/Reference/Other/VoicePlayerState/">documentation</a> for more details.</p>
 
 {% endset %}
 
@@ -112,6 +112,6 @@
 
 {% block known_issues %}
 <ul>
-  <li>No Acoustic Echo Cancellation (Work in progress - <a href="mailto://admin@placeholder-software.co.uk">Contact us</a> if you're interested in testing this)</li>
+  <li>No Acoustic Echo Cancellation (Work in progress - <a href="mailto:{{ admin_email }}">Contact us</a> if you're interested in testing this)</li>
 </ul>
 {% endblock %}

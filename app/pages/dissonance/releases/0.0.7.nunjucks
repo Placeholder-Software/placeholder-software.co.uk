@@ -5,7 +5,7 @@
 {% set blurb %}
 <p>This is the seventh round of testing for Dissonance. This version brings a variety of bug fixes and exposes the preprocessor settings for tweaking.</p>
 
-<p>Since this is a testing release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:martin@placeholder-software.co.uk">email</a>.</p>
+<p>Since this is a testing release it's likely that you will encounter bugs, awkward to use APIs and missing features. Please direct your feedback to us either on the <a href="https://www.reddit.com/r/dissonance_voip/">discussion forum</a>, the <a href="https://github.com/Placeholder-Software/Dissonance/issues">issue tracker</a> or by <a href="mailto:{{ martin_email }}">email</a>.</p>
 {% endset %}
 
 {% block features %}

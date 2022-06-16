@@ -7,7 +7,7 @@
     <updated>{{ now }}</updated>
     <author>
         <name>Martin Evans</name>
-        <email>martin@placeholder-software.co.uk</email>
+        <email>{{ martin_email }}</email>
         <uri>http://martindevans.me</uri>
     </author>
         <link href="{{ base_url }}/{{ product_path }}/atom.html" rel="self" />

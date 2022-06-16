@@ -25,7 +25,7 @@
 
 <h1>RNNoise In Dissonance</h1>
 
-<p>Dissonance supports RNNoise as an <i>optional</i> audio preprocessing stage to remove background noise before sending audio to others. This is applied <i>before</i> the normal noise suppressor. The <a href="https://placeholder-software.co.uk/dissonance/docs/Reference/Other/VoiceSettings.html">Quality Settings</a> inspector allows you to choose how much noise RNNoise can remove - setting a lower value on this slider intentionally mixes some of the noisy signal back in after RNNoise has done it's work. This means that even if RNNoise has seriously distorted voice there is some of the original audio mixed in and the speaker can be understood.</p>
+<p>Dissonance supports RNNoise as an <i>optional</i> audio preprocessing stage to remove background noise before sending audio to others. This is applied <i>before</i> the normal noise suppressor. The <a href="{{ dissonance_docs_path }}/Reference/Other/VoiceSettings.html">Quality Settings</a> inspector allows you to choose how much noise RNNoise can remove - setting a lower value on this slider intentionally mixes some of the noisy signal back in after RNNoise has done it's work. This means that even if RNNoise has seriously distorted voice there is some of the original audio mixed in and the speaker can be understood.</p>
 {% endblock %}
 
 {% block end_body_script %}

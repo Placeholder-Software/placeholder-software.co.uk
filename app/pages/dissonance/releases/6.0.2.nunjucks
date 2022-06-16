@@ -11,7 +11,7 @@
 
 <p>After many months of experimentation it's finally here! Acoustic Echo Cancellation (AEC) watches the audio coming out of the speakers and then removes that audio when it is recorded by the microphone a few milliseconds later. This prevents unbearable feedback loops, hearing your own voice sent back to you and even suppresses game sound effects from being transmitted.</p>
 
-<p>At the moment AEC is <b>experimental</b>. Quality on desktop computers has generally been excellent but it can vary with a large number of factors such as microphone quality, speaker quality, size of the room and even the amount of soft furnishing nearby! On mobile phones AEC is significantly less well tested because we only have access to a limited number of devices to test with and so it's crucial that we get feedback - if you use AEC please <a href="mailto://martin@placeholder-software.co.uk">contact us and tell us</a> what does and does not work.
+<p>At the moment AEC is <b>experimental</b>. Quality on desktop computers has generally been excellent but it can vary with a large number of factors such as microphone quality, speaker quality, size of the room and even the amount of soft furnishing nearby! On mobile phones AEC is significantly less well tested because we only have access to a limited number of devices to test with and so it's crucial that we get feedback - if you use AEC please <a href="mailto:{{ martin_email }}">contact us and tell us</a> what does and does not work.
 
 <h6>Flexible Encoding Settings</h6>
 

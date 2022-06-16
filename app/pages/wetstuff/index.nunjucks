@@ -69,8 +69,8 @@
   <div class="row">
     <div class="col-xs-12 text-justify">
       <p><a href="https://assetstore.unity.com/packages/tools/particles-effects/wet-stuff-118969">Buy Wet Stuff</a> on the Unity Store to use it in your game. Get all future feature upgrades and bugfixes for free!</p>
-      <p><a href="https://placeholder-software.co.uk/wetstuff/docs/#getting-started" target="_blank" >Follow The Tutorials</a>. This series tutorials will walk you through the basics of setting up your first puddle, all the way up to complex particle based rain systems.</p>
-      <p><a href="https://placeholder-software.co.uk/wetstuff/community" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi". Get help with Wet Stuff, discuss your rendering setup, and join the conversation about new features and improvements coming to Wet Stuff.</p>
+      <p><a href="{{ base_path }}/wetstuff/docs/#getting-started" target="_blank" >Follow The Tutorials</a>. This series tutorials will walk you through the basics of setting up your first puddle, all the way up to complex particle based rain systems.</p>
+      <p><a href="{{ discuss_url }}" target="_blank">Join The Community</a>. Come onto the discussion forum and say "hi". Get help with Wet Stuff, discuss your rendering setup, and join the conversation about new features and improvements coming to Wet Stuff.</p>
       <p><a href="https://github.com/Placeholder-Software/WetSurfaceDecals" target="_blank">Report A Bug</a>. If you discover a bug with Wet Stuff report it to us and we shall respond quickly, suggest workarounds to get you back to developing your game and alert you as soon as we have developed and released a fix.</p>
     </div>
   </div>

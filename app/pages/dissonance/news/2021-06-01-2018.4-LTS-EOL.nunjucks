@@ -2,7 +2,7 @@
 
 {% set title = "Unity 2018.4 End Of Support" %}
 {% set body %}{% markdown %}
-`Unity 2019.4` is now the legacy LTS version, this means the `Unity 2018.4` is no longer supported by Unity. In accordance with our [version support plan](https://placeholder-software.co.uk/dissonance/news/2019-01-22-Dissonance-Unity-Version-Support.html) this means that [Dissonance 8.0.0](https://placeholder-software.co.uk/dissonance/releases/8.0.0.html) is the last version of Dissonance which will be released for `Unity 2018.4`.
+`Unity 2019.4` is now the legacy LTS version, this means the `Unity 2018.4` is no longer supported by Unity. In accordance with our [version support plan]({{ base_path }}/dissonance/news/2019-01-22-Dissonance-Unity-Version-Support.html) this means that [Dissonance 8.0.0]({{ base_path }}/dissonance/releases/8.0.0.html) is the last version of Dissonance which will be released for `Unity 2018.4`.
 
 `Dissonance 8.0.0` supports:
  - `2018.4` (legacy LTS)

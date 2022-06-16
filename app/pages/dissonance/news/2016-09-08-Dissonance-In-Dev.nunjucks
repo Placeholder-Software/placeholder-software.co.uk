@@ -16,6 +16,6 @@
  <li>Documentation, documentation, documentation!</li>
 </ul>
  
-<p>We're not finished by a long way! But I'm excited to say that we are approaching a point where we can release the first version of Dissonance. Within the next few weeks we'll be looking for testers who would be willing to try adding Dissonance to their multiplayer game and giving us detailed feedback on what worked and what didn't. If that sounds like you, <a href="mailto://martin@placeholder-software.co.uk">contact us</a>!</p>
+<p>We're not finished by a long way! But I'm excited to say that we are approaching a point where we can release the first version of Dissonance. Within the next few weeks we'll be looking for testers who would be willing to try adding Dissonance to their multiplayer game and giving us detailed feedback on what worked and what didn't. If that sounds like you, <a href="mailto:{{ martin_email }}">contact us</a>!</p>
 
 {% endset %}
