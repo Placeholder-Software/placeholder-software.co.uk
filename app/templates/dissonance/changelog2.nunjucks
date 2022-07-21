@@ -2,6 +2,8 @@
 {% import "templates/common/macros/icon-section.nunjucks" as icon_section %}
 {% import "templates/common/macros/changelog.nunjucks" as changes %}
 
+{% set head_title = "Dissonance {{ version_number }}" %}
+
 {% block head %}
   {{ super() }}
   <meta content="Dissonance Release Notes {{ version_number }}" property="og:title">
@@ -36,6 +38,13 @@
         "MirrorIgnorance",
         "Use Mirror Networking with a UDP backend to host a voice chat session.",
         "https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF"
+      ) -%}{%- endcall %}
+
+      {% call changes.integration_store(
+        "Unity Netcode For GameObjects",
+        "NFGO",
+        "Use Unity Netcode For GameObjects to host a voice chat session.",
+        "https://assetstore.unity.com/packages/slug/206514?aid=1100lJDF"
       ) -%}{%- endcall %}
 
       {% call changes.integration_store(
