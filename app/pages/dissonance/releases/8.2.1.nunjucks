@@ -1,0 +1,48 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "8.2.1" %}
+
+{% set blurb %}{% markdown %}
+This release brings a number of new feartures to Dissonance. Better support for Apple M1, improved ease-of-use for raw audio stream access, better RNNoise background sound removal and support for using Dissonance offline!
+
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+
+## Better Support For Apple M1
+
+In this release we've finally compiled the opus codec and audio preprocessor plugins with native support for Apple M1 processors - Rosetta is no longer needed for Dissonance! We've also enabled support for RNNoise on MacOS devices (both Intel and M1).
+
+## Offline Comms Network
+
+Included in the main package for Dissonance is a new "network integration" (`Assets/Dissonance/Integrations/Offline`) which fakes being online, even when there is no network connection. This is useful for any scenario where you want to run the Dissonance audio pipeline without an actual chat session. For example hearing yourself while tweaking audio settings or simply using Dissonance as an advanced microphone system and capturing the audio stream to file.
+
+To use this system, simply create a `DissonanceComms` behaviour and add the new `OfflineCommsNetwork` behaviour next to it, when you run the scene Dissonance will start running the audio pipeline as if you are connected to a chat session. To hear yourself (a.k.a. loopback) create a `VoiceBroadcastTrigger` sending to a room named "Loopback" and a "VoiceReceiptTrigger" listening to a room named "Loopback".
+
+## Raw Audio Stream Access
+
+Dissonance has had a method to access the raw mic audio stream for a very long time ([docs](https://placeholder-software.co.uk/dissonance/docs/Tutorials/UsingIMicrophoneSubscriber.html)) but it has always been quite difficult to use - audio is delivered on the audio preprocessing thread (i.e. not the main thread) and you must be extremely careful what you do on this thread (latency is critical in audio processing). This system is still available for those who need it.
+
+With this release we have added a new `BaseMicrophoneSubscriber` class which extends the `IMicrophoneSubscriber` interface. This class does all of the work necessary to capture the audio, buffer it and pass it across to the main thread which significantly simplifies most use cases.
+
+## Better RNNoise
+
+In Dissonance [8.0.1](https://placeholder-software.co.uk/dissonance/releases/8.0.1.html) we added experimental support for "Background Sound Removal" (based on [RNNoise](https://github.com/xiph/rnnoise)) which removes background sounds such as dogs barking, keyboard clattering or heavy breathing (useful in VR games!). This is distinct from "Noise Suppression" (NS) which is intended for removing constant noise (e.g. fans) and is less effective for things which happen occasionally (e.g. a single key click).
+
+One drawback of this system is that it is very aggressive at removing sounds even if it distorts speech e.g. speech with loud background noise can be processed to sound like slightly "robotic" speech with no background noise. Dissonance has a slider ([docs](https://placeholder-software.co.uk/dissonance/docs/Reference/Other/VoiceSettings.html)) which allows you to control the maximum amount of effect RNNoise can have, simultaneously setting a hard limit on the maximum amount of distortion and the maximum amount of sound removal. In previous versions of Dissonance this limiting system could cause a slight echo effect if the slider was not set to exactly `1.0`, the limiting effect now works in a completely different way which produces a much higher audio quality.
+
+
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - New `BaseMicrophoneSubscriber` base class to make subscribing to the raw microphone audio stream easier.
+ - Experimental support for **Magic Leap 2**.
+ - Experimental support for Apple M1 processors.
+ - Added support for RNNoise (Background Sound Removal) audio preprocessor for MacOS (disabled by default).
+ - Improved RNNoise (Background Sound Removal) audio quality, removing a slight echo effect.
+ - Added new `OfflineCommsNetwork` which enables Dissonance when not connected to any network session. For example for tweaking voice settings in a settings menu.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed FMOD Microphone Input polling the incorrect device, resulting in no audio recorded in some circumstances.
+ - Hotfix for issue [#256](https://github.com/Placeholder-Software/Dissonance/issues/256) in Dissonance 8.2.0 (MacOS build error).
+{% endmarkdown %}{% endblock %}
