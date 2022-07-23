@@ -45,3 +45,7 @@ One drawback of this system is that it is very aggressive at removing sounds eve
 {% block bugfixes %}{% markdown %}
  - Fixed FMOD Microphone Input polling the incorrect device, resulting in no audio recorded in some circumstances.
 {% endmarkdown %}{% endblock %}
+
+{% block known_issues %}{% markdown %}
+ - Build error in MacOS. See issue [#256](https://github.com/Placeholder-Software/Dissonance/issues/256).
+{% endmarkdown %}{% endblock %}
