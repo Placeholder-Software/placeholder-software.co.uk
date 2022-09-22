@@ -6,7 +6,7 @@
 {% set blurb %}{% markdown %}
 This release brings an entirely new way to do proximity voice chat to Dissonance. The previous system offers very precise control (proximity is activated _exactly_ when the player hits a collider, which you can dynamically change the shape and size of) it can be difficult to properly setup collider triggers on every player. The new proximity system takes a more "approximate" approach and uses spatial hashing to place players into a room with other players who are nearby. This removes the requirement to attach a collider to every player and is much simpler to setup. This new system also scales better than the old one - previously each new person who could hear your voice would require an extra 4 bytes to encode into outgoing packets - whereas the new system uses 32 bytes no matter how many listeners there are. [Get started using the new system](https://placeholder-software.co.uk/dissonance/docs/Tutorials/Proximity-Chat.html).
 
-As of 16-Jun-2022 `Unity 2019.4 LTS` has reached the end of it's support lifetime. This is the last release of Dissonance that will be published for `Unity 2019.4 LTS`.
+As of 16-Jun-2022 `Unity 2019.4 LTS` has reached the end of it's support lifetime. This minimum supported version for Dissonance is now `Unity 2020.3 LTS`.
 {% endmarkdown %}{% endset %}
 
 {% block features %}{% markdown %}
