@@ -14,7 +14,6 @@ As of 16-Jun-2022 `Unity 2019.4 LTS` has reached the end of it's support lifetim
  - More informative error message when a hash collision occurs in the network system.
  - Increased the size of the preprocessor input buffer, slightly improving how Dissonance handles terrible frame times (less than 6 fps).
  - Added an option to the server admin system to intercept all voice packets passing through the server.
-
 {% endmarkdown %}{% endblock %}
 
 {% block bugfixes %}{% markdown %}
