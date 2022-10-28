@@ -1,0 +1,17 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "8.3.1" %}
+
+{% set blurb %}{% markdown %}
+This release brings a support for Android on the x86_64 platform, this can be useful for example for certain Chromebooks and the MagicLeap2.
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added support for Android on the x86_64 architecture
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed a potential application crash when plugging in a microphone on MacOS
+ - Fixed Voice Activity Detector always returning true on MacOS
+{% endmarkdown %}{% endblock %}
