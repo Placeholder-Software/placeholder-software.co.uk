@@ -1,0 +1,23 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "9.0.0" %}
+
+{% set blurb %}{% markdown %}
+Dissonance `9.0.0` is a **breaking change** from Dissonance `8.3.1`. However these changes are very minor and should not effect most users.
+ - Introduced new `RoomName` struct to identify rooms. `string` implicitly casts to `RoomName`.
+ - `Rooms.Join(string)` method changed to `Rooms.Join(RoomName)`.
+ - `RoomChannel` struct no longer implements `IChannel<string>`, now implements `IChannel<RoomName>`.
+ - `RoomChannels` class no longer implements `Channels<RoomChannel, string>`, now implements `Channels<RoomChannel, RoomName>`
+
+We have also introduced a new synchronisation system intended to handle terrible network conditions (packets delayed by hundreds of milliseconds). It detects if many packets in a row are lost/delayed and will temporarily pause playback to give the packets more time to arrive. Without this system audio could constantly stutter until the network recovered or even be completely muted if every packet arrived too late. With this system there should be one large stutter (approximately 500ms) when it resyncs.
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Introduced a new sync system which temporarily pauses playback when extreme packet loss is detected.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed `(Use System Default)` option disappearing when using certain microphone backends (e.g. FMOD)
+ - Fixed the new "Grid Proximity Chat" system from triggering lots of false positive "hash collision" warnings.
+{% endmarkdown %}{% endblock %}
