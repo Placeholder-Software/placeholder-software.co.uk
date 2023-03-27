@@ -47,6 +47,11 @@ body {
     font-size: 1em;
     font-variant-caps: small-caps;
   }
+  &.wasmbox {
+    font-family: 'Open Sans', 'sans-serif';
+    font-variant-caps: small-caps;
+    font-weight: 800;
+  }
 
   @media (max-width: 992px) {
     font-size: 5.8em;
@@ -63,6 +68,34 @@ body {
 
 .icon-section {
   
+  --bgradialcol1: #{$mid-color};
+  --bgradialcol2: #{darken($mid-color, 5%)};
+  --asset-bg-color: #{$light-color};
+  --asset-border-color: #{$primary-color};
+
+  &.dissonance {
+    --asset-bg-color: #4DB5FF;
+    --asset-border-color: #2b8cd2;
+  }
+  &.wetstuff {
+    --asset-bg-color: #4DB5FF;
+    --asset-border-color: #2b8cd2;
+  }
+  &.fancyfolders {
+    --asset-bg-color: #23F15D;
+    --asset-border-color: #14ca47;
+  }
+  &.wasmbox {
+    --asset-bg-color: #654ff0;
+    --asset-border-color: #4431c5;
+
+    font-weight: 800;
+
+    &:hover {
+      color: $light-color;
+    }
+  }
+
   color: $dark-color;
   display: block;
 
@@ -74,11 +107,20 @@ body {
   border: $mid-color 3px solid;
   border-radius: 0px 35px 35px 0px;
 
-  transition: border-radius 0.175s, border-color 0.175s, background-color 0.175s;
+  transition:
+    border-radius 0.175s,
+    border-color 0.175s;
+
+  background: radial-gradient(circle at 15% center, var(--bgradialcol1) 40%, var(--bgradialcol2) 90%);
+
   &:hover {
+    --bgradialcol1: var(--asset-bg-color);
+    --bgradialcol2: var(--asset-border-color);
+
     border-radius: 0px 6px 6px 0px;
-    background: $light-color;
-    border-color: $primary-color;
+    color: inherit;
+
+    border-color: var(--asset-border-color);
   }
 
   @media (max-width: 767px) {
@@ -91,8 +133,6 @@ body {
 
   .icon-section-icon {
     padding-top: 20px;
-
-    
   }
 }
 

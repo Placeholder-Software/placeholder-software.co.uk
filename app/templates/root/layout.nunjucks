@@ -9,7 +9,7 @@
       Bangers: Dissonance "style" font
       Permanent Marker: Wet Stuff "style" font
   #}
-  <link href='https://fonts.googleapis.com/css?family=Roboto|Bangers|Permanent+Marker' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto|Bangers|Permanent+Marker|Open+Sans:wght@800' rel='stylesheet' type='text/css'>
 
   <!-- build:css /styles/root/main.css -->
   <link rel="stylesheet" href="styles/root/main.css">
@@ -38,6 +38,7 @@
             <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
             <li><a href="{{ discord_path }}" target="_blank" class="visible-xs">Chat on Discord</a></li>
             <li><a href="https://assetstore.unity.com/packages/slug/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Dissonance</a></li>
+            <li><a href="https://assetstore.unity.com/packages/slug/248818?aid=1100lJDF" target="_blank" class="buy-link">Buy Wasmbox</a></li>
             <li><a href="https://assetstore.unity.com/packages/slug/118969?aid=1100lJDF" target="_blank" class="buy-link">Buy Wet Stuff</a></li>
             <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF" target="_blank" class="buy-link">Buy Fancy Folders</a></li>
           </ul>
@@ -78,6 +79,7 @@
             <h4>Products</h4>
             <ul class="footer-list">
               <li><a href="/dissonance">Dissonance</a></li>
+              <li><a href="https://assetstore.unity.com/packages/slug/248818?aid=1100lJDF" class="buy-link">Wasmbox</a></li>
               <li><a href="/wetstuff">Wet Stuff</a></li>
               <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF">Fancy Folders</a></li>
             </ul>
