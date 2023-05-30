@@ -10,7 +10,7 @@ If you find an issue in Dissonance or want to request a new feature please repor
 {% block features %}{% markdown %}
  - Added server side packet loss statistics.
  - Added additional realtime metrics which can be used to diagnose the cause of lag in voice.
- - Added a special "always send" room (id:FEE5233F-185F-4C73-AC6F-EE325998D526) which always sends to the server even if no one is listening.
+ - Added a special "always send" room (id:`FEE5233F-185F-4C73-AC6F-EE325998D526`) which always sends to the server even if no one is listening.
 {% endmarkdown %}{% endblock %}
 
 {% block bugfixes %}{% markdown %}
