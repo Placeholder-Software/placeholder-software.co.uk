@@ -1,0 +1,20 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "9.0.2" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added server side packet loss statistics.
+ - Added additional realtime metrics which can be used to diagnose the cause of lag in voice.
+ - Added a special "always send" room (id:FEE5233F-185F-4C73-AC6F-EE325998D526) which always sends to the server even if no one is listening.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed `VoiceBroadcastTrigger` transmission mode not applying when disabled and re-enabled.
+ - Not checking if "Run In Background" is enabled when running on an Android device (not supported by Unity).
+ - Very small reduction in allocation during Dissonance initialisation.
+{% endmarkdown %}{% endblock %}
