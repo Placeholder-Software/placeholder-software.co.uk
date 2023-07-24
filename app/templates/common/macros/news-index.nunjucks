@@ -9,9 +9,6 @@
         </div>
         <div class="col-sm-8 ctas">
             <div class="row">
-            <a class="news-cta twitter" href="https://twitter.com/PlaceholderSoft" title="Follow on Twitter" target="_blank">
-                {% include "images/twitter.svg" %}
-            </a>
             <a class="news-cta rss" href="{{ base_url }}/{{ product_path }}/atom.html" title="News Feed" target="_blank">
                 {% include "images/rss.svg" %}
             </a>

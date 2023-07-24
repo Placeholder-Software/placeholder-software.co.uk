@@ -44,16 +44,7 @@
             <li><a href="{{ news_url }}">News</a></li>
             <li><a href="{{ discord_path }}" target="_blank">Discord Chat</a></li>
             <li><a href="{{ tracker_url }}" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/PlaceholderSoft" target="_blank" class="visible-xs">Follow on Twitter</a></li>
             <li><a href="{{ store_url }}" target="_blank" class="buy-link">Buy Wet Stuff</a></li>
-          </ul>
-
-          <ul class="nav navbar-nav">
-            <li>
-              <a class="navbar-social navbar-brand twitter hidden-xs" href="https://twitter.com/PlaceholderSoft" target="_blank">
-                  {% include "images/twitter.svg" %}
-              </a>
-            </li>
           </ul>
 
         </div>
@@ -91,7 +82,6 @@
               <li><a href="{{ tracker_url }}" target="_blank">Submit an Issue</a></li>
               <li><a href="mailto:{{ admin_email }}">Contact Us</a></li>
               <li><a href="{{ discuss_url }}" target="_blank">Discuss</a></li>
-              <li><a href="https://twitter.com/placeholdersoft">Twitter</a></li>
             </ul>
           </div>
           <div class="col-xs-6 col-sm-4">
