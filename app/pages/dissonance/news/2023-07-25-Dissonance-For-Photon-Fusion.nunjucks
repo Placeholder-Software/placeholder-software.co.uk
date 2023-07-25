@@ -1,0 +1,12 @@
+{% extends "templates/dissonance/news.nunjucks" %}
+
+{% set title = "Introducing Dissonance For Photon Fusion" %}
+{% set body %}{% markdown %}
+[Photon Unity Networking](https://assetstore.unity.com/packages/tools/network/pun-2-free-119922?aid=1100lJDF) has long held its reputation as one of Unity's most renowned networking frameworks, powering countless successful multiplayer experiences. Since its release in 2017 the [Dissonance For PUN2](https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF) package has consistently been one of the most popular network backends for [Dissonance Voice Chat](https://assetstore.unity.com/packages/slug/70078?aid=1100lJDF).
+
+Today, we are excited to announce that Dissonance now has support for the new network framework: **[Photon Fusion](https://www.photonengine.com/fusion)**, available for free from the [Unity Asset Store](https://assetstore.unity.com/packages/slug/260898?aid=1100lJDF).
+
+**Want to get started? Check out the [Photon Fusion quick start tutorial](https://placeholder-software.co.uk/Dissonance/docs/Basics/Quick-Start-Fusion.html) to learn more about using Dissonance and Photon Fusion in your project.**
+
+Development of this new package was sponsored by Jim Kincaid. Check out his game **Nights of Yore** [On Instragram](https://instagram.com/nightsofyoregame?igshid=MzRlODBiNWFlZA==). Thanks Jim!
+{% endmarkdown %}{% endset %}
