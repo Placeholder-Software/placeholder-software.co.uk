@@ -16,9 +16,9 @@ If you find an issue in Dissonance or want to request a new feature please repor
 
 {% block bugfixes %}{% markdown %}
  - Various fixes related to pausing the application:
-  - Disconnecting from the network session and rejoining when resuming.
-  - Forcing a complete reset of the playback system.
-  - Resetting jitter/packet loss measurements.
+   - Disconnecting from the network session and rejoining when resuming.
+   - Forcing a complete reset of the playback system.
+   - Resetting jitter/packet loss measurements.
  - Fixed spelling of `SubcribeToVoiceActivation` method.
  - Stripped symbols from "opus.a" for iOS (reduces chance of conflicts with other assets).
 {% endmarkdown %}{% endblock %}
