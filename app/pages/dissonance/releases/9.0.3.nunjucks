@@ -1,0 +1,24 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "9.0.3" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added a static `GetDevices` method to `FMODMicrophoneInput` which can be used as a replacement for `Microphone.devices`.
+ - Added `IAudioOutputSubscriber` which provides direct access to the audio stream just before playback.
+ - Modified `VoicePlayerState.Amplitude` for the local player to measure amplitude _after_ audio preprocessing has been applied.
+ - large number of syntax changes, to modernise C# language usage.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Various fixes related to pausing the application:
+  - Disconnecting from the network session and rejoining when resuming.
+  - Forcing a complete reset of the playback system.
+  - Resetting jitter/packet loss measurements.
+ - Fixed spelling of `SubcribeToVoiceActivation` method.
+ - Stripped symbols from "opus.a" for iOS (reduces chance of conflicts with other assets).
+{% endmarkdown %}{% endblock %}
