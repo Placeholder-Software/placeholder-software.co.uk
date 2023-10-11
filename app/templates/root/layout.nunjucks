@@ -37,9 +37,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ discord_path }}" target="_blank" class="visible-xs">Chat on Discord</a></li>
             <li><a href="https://assetstore.unity.com/packages/slug/70078?aid=1100lJDF" target="_blank" class="buy-link">Buy Dissonance</a></li>
-            <li><a href="https://assetstore.unity.com/packages/slug/248818?aid=1100lJDF" target="_blank" class="buy-link">Buy Wasmbox</a></li>
+            <!-- <li><a href="https://assetstore.unity.com/packages/slug/248818?aid=1100lJDF" target="_blank" class="buy-link">Buy Wasmbox</a></li> -->
             <li><a href="https://assetstore.unity.com/packages/slug/118969?aid=1100lJDF" target="_blank" class="buy-link">Buy Wet Stuff</a></li>
-            <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF" target="_blank" class="buy-link">Buy Fancy Folders</a></li>
+            <!-- <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF" target="_blank" class="buy-link">Buy Fancy Folders</a></li> -->
           </ul>
 
         </div>
@@ -69,9 +69,9 @@
             <h4>Products</h4>
             <ul class="footer-list">
               <li><a href="/dissonance">Dissonance</a></li>
-              <li><a href="https://assetstore.unity.com/packages/slug/248818?aid=1100lJDF" class="buy-link">Wasmbox</a></li>
+              <!-- <li><a href="https://assetstore.unity.com/packages/slug/248818?aid=1100lJDF" class="buy-link">Wasmbox</a></li> -->
               <li><a href="/wetstuff">Wet Stuff</a></li>
-              <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF">Fancy Folders</a></li>
+              <!-- <li><a href="https://assetstore.unity.com/packages/slug/143763?aid=1100lJDF">Fancy Folders</a></li> -->
             </ul>
           </div>
           <div class="col-xs-12 col-sm-4">
