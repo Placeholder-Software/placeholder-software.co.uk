@@ -29,6 +29,7 @@
     {{ blurb | safe }}
   {%- endcall %}
 
+  {#
   {% call icon_section.left("images/random.svg") -%}
     <h4 id="integrations">Integrations</h4>
     {% block integrations %}
@@ -126,6 +127,7 @@
 
     {% endblock %}
   {%- endcall %}
+  #}
 
   {% call icon_section.right("images/star.svg") -%}
     <h4 id="features">New Features</h4>

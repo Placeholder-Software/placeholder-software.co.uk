@@ -4,6 +4,8 @@
 {% set version_number = "9.0.4" %}
 
 {% set blurb %}{% markdown %}
+Dissonance 9.0.4 fixes an issue with audio playback after app suspension. Once the app resumes it would be left in a state where **sending** voice was possible, but receiving voice was not possible. This was an issue for Android, Oculus Quest and iOS.
+
 If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
 {% endmarkdown %}{% endset %}
 
