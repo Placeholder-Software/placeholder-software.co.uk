@@ -1,0 +1,12 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "9.0.6" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added `DissonanceComms.GetSingleton()` method
+{% endmarkdown %}{% endblock %}

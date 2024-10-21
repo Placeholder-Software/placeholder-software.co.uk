@@ -1,0 +1,24 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "9.0.5" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Extra validation on `GetSpeakingChannels` parameters.
+ - `ToString` implementation for `RoomName` struct.
+ - Packet relaying can now relay to an unlimited number of destinations, no longer capped at 255.
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Using `Marshal.SizeOf<T>` instead of `Marshal.SizeOf(typeof(T))`, this works better with AOT compilation.
+ - Fixed missing method definition in DarkRift2 server script.
+ - Fixed allocation in `PeerVoiceReceiver` call to `Sort`.
+ - Fixed issue with invalid `GCHandle` in FMOD Voice Playback.
+ - Fixed issue with possible null-reference exception in FMOD Voice Playback.
+ - Fixed issue with possible null-reference exception in Unity Voice Playback.
+ - Fixed `VoiceProximityBroadcastTrigger` and `VoiceProximityReceiptTrigger` using incorrect room name after name is changed.
+{% endmarkdown %}{% endblock %}
