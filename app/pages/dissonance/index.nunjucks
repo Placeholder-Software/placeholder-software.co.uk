@@ -103,13 +103,13 @@
         {{ feature_row("Built In UNet HLAPI", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143285?aid=1100lJDF") }}
         {{ feature_row("Built In Forge Remastered", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143286?aid=1100lJDF") }}
         {{ feature_row("Built In Photon Unity Networking 2", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143288?aid=1100lJDF") }}
-        {# {{ feature_row("Built In Photon BOLT", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/143291?aid=1100lJDF") }} #}
         {{ feature_row("Built In Photon Fusion", "", true, true, "", "", "https://assetstore.unity.com/packages/slug/260898?aid=1100lJDF") }}
         {{ feature_row("Built In TNet3", "", true, false, "", "", "https://assetstore.unity.com/packages/tools/integration/dissonance-for-tnet3-154374?aid=1100lJDF") }}
-        {# {{ feature_row("Built In Steamworks.Net P2P", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143292?aid=1100lJD") }} #}
         {{ feature_row("Built In DarkRift2", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143293?aid=1100lJDF") }}
         {{ feature_row("Built In Mirror", "", true, false, "", "", "https://assetstore.unity.com/packages/slug/143290?aid=1100lJDF") }}
         {{ feature_row("Built In WebRTC Network", "", true, false, "", "", "https://assetstore.unity.com/packages/tools/network/webrtc-video-chat-68030?aid=1100lJDF") }}
+        {{ feature_row("Community Built Fish Networking", "", true, false, "", "", "https://github.com/LambdaTheDev/DissonanceVoiceForFishNet") }}
+        {{ feature_row("Community Built PurrNet", "", true, false, "", "", "https://github.com/BobsiUnity/PurrNet-VoiceChat") }}
       {%- endcall %}
 
       {% call feature_table("Platform Support", "", "glyphicon-hdd") %}
