@@ -55,11 +55,11 @@
 {% block content %}
 
   <div class="row">
-    {% call feature("images/microphone.svg") -%}<b><a href="https://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Getting%20Started/">Simple</a></b> drag and drop setup{%- endcall %}
+    {% call feature("images/microphone.svg") -%}<b><a href="https://placeholder.software/dissonance/docs/Basics/Getting-Started.html">Simple</a></b> drag and drop setup{%- endcall %}
     {% call feature("images/comments.svg") -%}<b><a href="https://www.reddit.com/r/dissonance_voip/">Friendly</a></b> and responsive support{%- endcall %}
     {% call feature("images/compress.svg") -%}<b>Efficient</b> encoding with the cutting edge Opus codec{%- endcall %}
-    {% call feature("images/flask.svg") -%}<b><a href="http://dissonance.readthedocs.io/en/latest/Tutorial%20-%20Multiple%20Rooms/">Powerful</a></b> room system supports multiple indepedent chat rooms{%- endcall %}
-    {% call feature("images/book.svg") -%}<b><a href="https://dissonance.readthedocs.io/en/latest/">Great</a></b> documentation with easy to follow video tutorials{%- endcall %}
+    {% call feature("images/flask.svg") -%}<b><a href="https://placeholder.software/dissonance/docs/Tutorials/Team-Chat-Rooms.html">Powerful</a></b> room system supports multiple indepedent chat rooms{%- endcall %}
+    {% call feature("images/book.svg") -%}<b><a href="https://placeholder.software/dissonance/docs/index.html">Great</a></b> documentation with easy to follow video tutorials{%- endcall %}
     {% call feature("images/rocket.svg") -%}<b>Fantastic</b> multithreaded performance with minimal memory usage{%- endcall %}
   </div>
 
