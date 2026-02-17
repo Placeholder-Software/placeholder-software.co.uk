@@ -1,0 +1,19 @@
+{% extends "templates/dissonance/changelog2.nunjucks" %}
+{% import "templates/common/macros/changelog.nunjucks" as changes %}
+
+{% set version_number = "9.0.8" %}
+
+{% set blurb %}{% markdown %}
+If you find an issue in Dissonance or want to request a new feature please report it on our [issue tracker](https://github.com/Placeholder-Software/Dissonance/issues) or on [Discord](https://placeholder.software/discord).
+{% endmarkdown %}{% endset %}
+
+{% block features %}{% markdown %}
+ - Added support for Android 16KB page size
+ - Added a delay after the end of speech before stopping playback, this allows SFX such as reverb to continue playing for a while
+{% endmarkdown %}{% endblock %}
+
+{% block bugfixes %}{% markdown %}
+ - Fixed performance issue when FMODVoicePlayback inspector is open
+ - Fixed warnings about `FindObjectsOfType` in Unity 6
+ - Mitigation for maliciously crafted packets causing users to disconnect from voice session
+{% endmarkdown %}{% endblock %}
